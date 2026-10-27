@@ -1,7 +1,7 @@
-import { useEffect, useState, useSyncExternalStore } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type { ReactNode } from 'react';
 import QRCode from 'qrcode';
-import type { PlayerView, Snapshot } from '@jeopardy/shared';
+import type { CurrentClueView, PlayerView, Snapshot } from '@jeopardy/shared';
 import { FINAL_ANSWER_MS, MAX_PLAYERS } from '@jeopardy/shared';
 import {
   Countdown,
@@ -12,7 +12,9 @@ import {
 } from '../components/common';
 import { ranked } from '../components/Standings';
 import { MarqueeBulbs, Studio } from '../components/Studio';
+import { useRemaining } from '../lib/clock';
 import { formatMoney } from '../lib/format';
+import type { Point } from '../lib/studioScene';
 import { useJoinBase } from '../lib/useJoinBase';
 import { useRoom } from '../lib/useRoom';
 
@@ -65,6 +67,7 @@ function Stage({ children }: { children: ReactNode }) {
   return (
     <div className="fixed inset-0 overflow-hidden bg-black">
       <div
+        data-stage
         className="absolute origin-top-left overflow-hidden bg-board-deep"
         style={{
           width: STAGE_W,
@@ -141,18 +144,76 @@ function Screen({ snapshot, offset }: { snapshot: Snapshot; offset: number }) {
 // Pieces
 // ---------------------------------------------------------------------------------------------
 
+function prefersReducedMotion(): boolean {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+interface Rect {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+/**
+ * An element's box in stage pixels. Offsets ignore CSS transforms, so neither the stage's
+ * scaling nor an animation in progress skews it.
+ */
+function stageRect(element: HTMLElement): Rect {
+  let x = 0;
+  let y = 0;
+  let node: HTMLElement | null = element;
+  while (node && !node.hasAttribute('data-stage')) {
+    x += node.offsetLeft;
+    y += node.offsetTop;
+    node = node.offsetParent as HTMLElement | null;
+  }
+  return { x, y, width: element.offsetWidth, height: element.offsetHeight };
+}
+
+const STRIP_H = 150;
 const STRIP_GAP = 16;
+
+const SCORE_SLAM: Keyframe[] = [
+  { transform: 'scale(1)' },
+  { transform: 'scale(1.45) rotate(-3deg)', offset: 0.35 },
+  { transform: 'scale(1)' },
+];
+
+/** A score that slams when it changes. Mounting with a score doesn't count as a change. */
+function ScoreValue({ score, size }: { score: number; size: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const seen = useRef(score);
+  useEffect(() => {
+    if (score !== seen.current && !prefersReducedMotion()) {
+      ref.current?.animate(SCORE_SLAM, { duration: 600, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' });
+    }
+    seen.current = score;
+  }, [score]);
+  return (
+    <div
+      ref={ref}
+      className={`font-pixel leading-none pixel-drop ${score < 0 ? 'text-neon-pink' : 'text-bulb'}`}
+      style={{ fontSize: size }}
+    >
+      {formatMoney(score)}
+    </div>
+  );
+}
 
 function ScoreStrip({ snapshot }: { snapshot: Snapshot }) {
   const { players, controlPlayerId, current } = snapshot;
-  if (players.length === 0) return <div className="h-[150px]" />;
+  if (players.length === 0) return <div style={{ height: STRIP_H }} />;
   const crowded = players.length > 6;
   // Press Start 2P is monospaced at 1em per glyph, so size scores to fit the narrowest chip.
   const chipWidth = (STAGE_W - 64 - (players.length - 1) * STRIP_GAP) / players.length;
   const longest = Math.max(5, ...players.map((p) => formatMoney(p.score).length));
   const scoreSize = Math.min(34, Math.floor((chipWidth - 20) / longest));
   return (
-    <div className="flex h-[150px] bg-studio-deep/80 px-8 py-5" style={{ gap: STRIP_GAP }}>
+    <div
+      className="flex shrink-0 bg-studio-deep/80 px-8 py-5"
+      style={{ gap: STRIP_GAP, height: STRIP_H }}
+    >
       {players.map((player) => {
         const buzzed = current?.buzzedPlayerId === player.id;
         const lockedOut = current?.lockedOut.includes(player.id) ?? false;
@@ -171,14 +232,7 @@ function ScoreStrip({ snapshot }: { snapshot: Snapshot }) {
             >
               {player.name}
             </div>
-            <div
-              className={`font-pixel leading-none pixel-drop ${
-                player.score < 0 ? 'text-neon-pink' : 'text-bulb'
-              }`}
-              style={{ fontSize: scoreSize }}
-            >
-              {formatMoney(player.score)}
-            </div>
+            <ScoreValue score={player.score} size={scoreSize} />
           </div>
         );
       })}
@@ -225,6 +279,45 @@ function MarqueeTitle({ text }: { text: string }) {
 
 function BlinkingCursor() {
   return <span className="studio-blink">_</span>;
+}
+
+const COUNTDOWN_BLOCKS = 20;
+
+/** A row of pixel blocks that go out one by one as the server deadline approaches. */
+function PixelCountdown({
+  snapshot,
+  offset,
+  totalMs,
+}: {
+  snapshot: Snapshot;
+  offset: number;
+  totalMs: number;
+}) {
+  const remaining = useRemaining(snapshot.deadline, offset, snapshot.remainingMs);
+  if (remaining === null) return null;
+  const lit = Math.ceil(Math.min(1, Math.max(0, remaining / totalMs)) * COUNTDOWN_BLOCKS);
+  const urgent = lit <= COUNTDOWN_BLOCKS * 0.3;
+  return (
+    <div className="flex gap-2">
+      {Array.from({ length: COUNTDOWN_BLOCKS }, (_, i) => (
+        <span
+          key={i}
+          className={`h-6 w-9 ${i < lit ? (urgent ? 'bg-neon-pink' : 'bg-bulb') : 'bg-white/10'}`}
+        />
+      ))}
+    </div>
+  );
+}
+
+/** Clue text in VT323, which reads smaller than most fonts at the same size. */
+function clueTextSize(text: string): number {
+  const length = text.length;
+  if (length < 50) return 140;
+  if (length < 100) return 120;
+  if (length < 170) return 100;
+  if (length < 260) return 84;
+  if (length < 400) return 66;
+  return 52;
 }
 
 function clueFontSize(text: string): number {
@@ -340,16 +433,42 @@ function fillOrder(c: number, r: number, cells: number): number {
   return (c * 7 + r * 13) % cells;
 }
 
-function BoardScreen({ snapshot }: { snapshot: Snapshot }) {
-  const grid = snapshot.grid ?? [];
-  const rows = grid[0]?.cells.length ?? 0;
-  const controller = snapshot.players.find((p) => p.id === snapshot.controlPlayerId);
+function tileKey(categoryIndex: number, clueIndex: number): string {
+  return `${categoryIndex}-${clueIndex}`;
+}
 
+/** Where each tile last sat on the board, in stage pixels, so a clue can zoom out of its tile. */
+const tileRects = new Map<string, Rect>();
+
+function BoardScreen({ snapshot }: { snapshot: Snapshot }) {
   const roundKey = `${snapshot.code}:${snapshot.board?.roundIndex ?? 0}`;
   const [fillIn] = useState(() => !filledRounds.has(roundKey));
   useEffect(() => {
     filledRounds.add(roundKey);
   }, [roundKey]);
+
+  return (
+    <Studio>
+      <div className="flex h-full flex-col">
+        <BoardView snapshot={snapshot} fillIn={fillIn} />
+        <ScoreStrip snapshot={snapshot} />
+      </div>
+    </Studio>
+  );
+}
+
+/** The round name, who's up next, and the grid of tiles. Fills the space above the score strip. */
+function BoardView({ snapshot, fillIn }: { snapshot: Snapshot; fillIn: boolean }) {
+  const grid = snapshot.grid ?? [];
+  const rows = grid[0]?.cells.length ?? 0;
+  const controller = snapshot.players.find((p) => p.id === snapshot.controlPlayerId);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    gridRef.current?.querySelectorAll<HTMLElement>('[data-tile]').forEach((tile) => {
+      tileRects.set(tile.dataset.tile ?? '', stageRect(tile));
+    });
+  });
 
   // Press Start 2P is monospaced at 1em per glyph, so size values to fit the column.
   const columnWidth = (STAGE_W - 2 * BOARD_PAD_X - (grid.length - 1) * BOARD_GAP) / grid.length;
@@ -360,78 +479,76 @@ function BoardScreen({ snapshot }: { snapshot: Snapshot }) {
   const valueSize = Math.min(64, Math.floor((columnWidth - 40) / longest));
 
   return (
-    <Studio>
-      <div className="flex h-full flex-col">
-        {/* Padded down so the text clears the lamps on the lighting truss. */}
-        <div className="flex h-[112px] shrink-0 items-center justify-between px-10 pt-9">
-          <div className="font-crt text-[56px] uppercase tracking-[0.2em] text-neon-cyan chroma-text-sm">
-            {snapshot.board?.roundName}
+    <div className="flex min-h-0 flex-1 flex-col">
+      {/* Padded down so the text clears the lamps on the lighting truss. */}
+      <div className="flex h-[112px] shrink-0 items-center justify-between px-10 pt-9">
+        <div className="font-crt text-[56px] uppercase tracking-[0.2em] text-neon-cyan chroma-text-sm">
+          {snapshot.board?.roundName}
+        </div>
+        {controller ? (
+          <div className="gold-pulse flex items-center gap-5 bg-studio-deep px-6 py-2">
+            <span className="studio-blink h-0 w-0 border-y-[14px] border-l-[18px] border-y-transparent border-l-bulb" />
+            <span className="font-crt text-[44px] uppercase text-white/70">Up next</span>
+            <span className="font-pixel text-[30px] uppercase text-bulb">{controller.name}</span>
           </div>
-          {controller ? (
-            <div className="gold-pulse flex items-center gap-5 bg-studio-deep px-6 py-2">
-              <span className="studio-blink h-0 w-0 border-y-[14px] border-l-[18px] border-y-transparent border-l-bulb" />
-              <span className="font-crt text-[44px] uppercase text-white/70">Up next</span>
-              <span className="font-pixel text-[30px] uppercase text-bulb">{controller.name}</span>
-            </div>
-          ) : null}
-        </div>
-
-        <div
-          className="grid flex-1 pb-8 pt-2"
-          style={{
-            gap: BOARD_GAP,
-            paddingInline: BOARD_PAD_X,
-            gridTemplateColumns: `repeat(${grid.length}, minmax(0, 1fr))`,
-            gridTemplateRows: `140px repeat(${rows}, minmax(0, 1fr))`,
-          }}
-        >
-          {grid.map((category, c) => (
-            <div
-              key={`h${c}`}
-              className={`flex items-center justify-center overflow-hidden bg-royal-deep px-3 text-center font-crt uppercase leading-[0.95] text-white pixel-frame chroma-text-sm ${
-                fillIn ? 'slam-in' : ''
-              }`}
-              style={{
-                fontSize: category.name.length > 16 ? 44 : 54,
-                animationDelay: fillIn ? `${c * 90}ms` : undefined,
-              }}
-            >
-              {category.name}
-            </div>
-          ))}
-          {Array.from({ length: rows }, (_, r) =>
-            grid.map((category, c) => {
-              const cell = category.cells[r];
-              const live = cell !== undefined && !cell.used;
-              return (
-                <div
-                  key={`${c}-${r}`}
-                  className={`flex items-center justify-center ${live ? 'pixel-tile' : 'pixel-tile-used'} ${
-                    fillIn ? 'tile-in' : ''
-                  }`}
-                  style={
-                    fillIn
-                      ? { animationDelay: `${600 + fillOrder(c, r, grid.length * rows) * 35}ms` }
-                      : undefined
-                  }
-                >
-                  {live ? (
-                    <span
-                      className="font-pixel leading-none text-bulb pixel-drop"
-                      style={{ fontSize: valueSize }}
-                    >
-                      {formatMoney(cell.value)}
-                    </span>
-                  ) : null}
-                </div>
-              );
-            }),
-          )}
-        </div>
-
-        <ScoreStrip snapshot={snapshot} />
+        ) : null}
       </div>
-    </Studio>
+
+      <div
+        ref={gridRef}
+        className="grid flex-1 pb-8 pt-2"
+        style={{
+          gap: BOARD_GAP,
+          paddingInline: BOARD_PAD_X,
+          gridTemplateColumns: `repeat(${grid.length}, minmax(0, 1fr))`,
+          gridTemplateRows: `140px repeat(${rows}, minmax(0, 1fr))`,
+        }}
+      >
+        {grid.map((category, c) => (
+          <div
+            key={`h${c}`}
+            className={`flex items-center justify-center overflow-hidden bg-royal-deep px-3 text-center font-crt uppercase leading-[0.95] text-white pixel-frame chroma-text-sm ${
+              fillIn ? 'slam-in' : ''
+            }`}
+            style={{
+              fontSize: category.name.length > 16 ? 44 : 54,
+              animationDelay: fillIn ? `${c * 90}ms` : undefined,
+            }}
+          >
+            {category.name}
+          </div>
+        ))}
+        {Array.from({ length: rows }, (_, r) =>
+          grid.map((category, c) => {
+            const cell = category.cells[r];
+            const live = cell !== undefined && !cell.used;
+            return (
+              <div
+                key={`${c}-${r}`}
+                data-tile={tileKey(c, r)}
+                className={`flex items-center justify-center ${live ? 'pixel-tile' : 'pixel-tile-used'} ${
+                  fillIn ? 'tile-in' : ''
+                }`}
+                style={
+                  fillIn
+                    ? { animationDelay: `${600 + fillOrder(c, r, grid.length * rows) * 35}ms` }
+                    : undefined
+                }
+              >
+                {live ? (
+                  <span
+                    className="font-pixel leading-none text-bulb pixel-drop"
+                    style={{ fontSize: valueSize }}
+                  >
+                    {formatMoney(cell.value)}
+                  </span>
+                ) : null}
+              </div>
+            );
+          }),
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -459,96 +576,254 @@ function DailyDoubleScreen({ snapshot }: { snapshot: Snapshot }) {
   );
 }
 
+const ZOOM_MS = 550;
+const CARD_INSET_X = 32;
+const CARD_TOP = 36;
+const CARD_BOTTOM = 28;
+const STATUS_H = 200;
+
+/** Where the spotlights land when someone is answering: the middle of the card's status line. */
+const STATUS_SPOT: Point = {
+  x: STAGE_W / 2,
+  y: STAGE_H - STRIP_H - CARD_BOTTOM - STATUS_H / 2,
+};
+
+const SHAKE: Keyframe[] = [
+  { transform: 'translate(0, 0)' },
+  { transform: 'translate(-16px, 6px)' },
+  { transform: 'translate(14px, -6px)' },
+  { transform: 'translate(-9px, 4px)' },
+  { transform: 'translate(5px, -2px)' },
+  { transform: 'translate(0, 0)' },
+];
+
 function ClueScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }) {
   const current = snapshot.current;
   if (!current) return null;
+  return <ClueCard snapshot={snapshot} current={current} offset={offset} />;
+}
+
+/**
+ * The clue on a big blue card. When a clue has just been picked, the card zooms out of its tile
+ * while the board fades away behind it.
+ */
+function ClueCard({
+  snapshot,
+  current,
+  offset,
+}: {
+  snapshot: Snapshot;
+  current: CurrentClueView;
+  offset: number;
+}) {
   const { phase, result } = snapshot;
-  const buzzed = playerName(snapshot, current.buzzedPlayerId);
+  const { categoryIndex, clueIndex } = current;
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Only zoom straight off the board, not when the display joins mid-clue.
+  const [zoom] = useState(
+    () =>
+      phase === 'clue' &&
+      tileRects.has(tileKey(categoryIndex, clueIndex)) &&
+      !prefersReducedMotion(),
+  );
+  const [ghostBoard, setGhostBoard] = useState(zoom);
+
+  useLayoutEffect(() => {
+    const card = cardRef.current;
+    const tile = tileRects.get(tileKey(categoryIndex, clueIndex));
+    if (!zoom || !card || !tile) return;
+    const to = stageRect(card);
+    const animation = card.animate(
+      [
+        {
+          transform: `translate(${tile.x - to.x}px, ${tile.y - to.y}px) scale(${
+            tile.width / to.width
+          }, ${tile.height / to.height})`,
+        },
+        { transform: 'none' },
+      ],
+      { duration: ZOOM_MS, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
+    );
+    animation.finished.then(
+      () => setGhostBoard(false),
+      () => undefined,
+    );
+    return () => animation.cancel();
+  }, [zoom, categoryIndex, clueIndex]);
+
+  // A wrong answer shakes the card and stamps a red X on it.
+  const missKey =
+    result?.outcome === 'incorrect'
+      ? `${tileKey(categoryIndex, clueIndex)}:${result.playerId}`
+      : null;
+  const [missOnMount] = useState(missKey);
+  const seenMiss = useRef(missKey);
+  useEffect(() => {
+    if (missKey && missKey !== seenMiss.current && !prefersReducedMotion()) {
+      cardRef.current?.animate(SHAKE, { duration: 450, easing: 'ease-out' });
+    }
+    seenMiss.current = missKey;
+  }, [missKey]);
+  const stampMiss = missKey !== null && missKey !== missOnMount && !prefersReducedMotion();
+
   const clueText = current.clue ?? '';
-  const timeoutMs = snapshot.settings.buzzTimeoutMs;
+  const spotlight = phase === 'answering' || phase === 'dailyDoubleClue' ? STATUS_SPOT : null;
 
   return (
-    <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between px-14 pt-8">
-        <div className="font-display text-5xl uppercase tracking-wide text-white/90 board-text">
-          {current.category}
-        </div>
-        <div className="font-display text-6xl text-gold board-text">
-          {current.dailyDouble ? 'Daily Double' : formatMoney(current.value)}
-        </div>
-      </div>
+    <Studio spotlight={spotlight}>
+      <div className="flex h-full flex-col">
+        <div className="relative min-h-0 flex-1">
+          {ghostBoard ? (
+            <div className="clue-ghost absolute inset-0 flex flex-col">
+              <BoardView snapshot={snapshot} fillIn={false} />
+            </div>
+          ) : null}
 
-      <div className="flex flex-1 items-center justify-center px-24 text-center">
-        <p
-          className="font-clue uppercase leading-snug board-text"
-          style={{ fontSize: clueFontSize(clueText) }}
-        >
-          {clueText}
-        </p>
-      </div>
+          <div
+            ref={cardRef}
+            className="pixel-tile absolute origin-top-left"
+            style={{ left: CARD_INSET_X, right: CARD_INSET_X, top: CARD_TOP, bottom: CARD_BOTTOM }}
+          >
+            <div className={`flex h-full flex-col ${zoom ? 'clue-content-in' : ''}`}>
+              <header className="flex items-center justify-between px-12 pt-8">
+                <div className="font-crt text-[56px] uppercase tracking-[0.15em] text-neon-cyan chroma-text-sm">
+                  {current.category}
+                </div>
+                <div
+                  className={`font-pixel text-[44px] uppercase pixel-drop ${
+                    current.dailyDouble ? 'text-neon-pink' : 'text-bulb'
+                  }`}
+                >
+                  {current.dailyDouble ? 'Daily Double' : formatMoney(current.value)}
+                </div>
+              </header>
 
-      <div className="flex h-[200px] flex-col items-center justify-center gap-3 px-24 text-center">
-        {phase === 'clue' && <div className="text-5xl text-white/50">Listen for the clue…</div>}
+              <div className="flex min-h-0 flex-1 items-center justify-center px-20 text-center">
+                <p
+                  className="font-crt uppercase leading-[1.05] text-white pixel-drop"
+                  style={{ fontSize: clueTextSize(clueText) }}
+                >
+                  {clueText}
+                </p>
+              </div>
 
-        {phase === 'buzzersOpen' && (
-          <>
-            {result?.outcome === 'incorrect' ? (
-              <div className="text-4xl text-red-300">
-                {playerName(snapshot, result.playerId)} missed. {formatMoney(result.delta)}
+              <div
+                className="flex shrink-0 flex-col items-center justify-center gap-4 px-20 text-center"
+                style={{ height: STATUS_H }}
+              >
+                <ClueStatus snapshot={snapshot} current={current} offset={offset} />
+              </div>
+            </div>
+
+            {stampMiss ? (
+              <div
+                key={missKey}
+                className="x-stamp pointer-events-none absolute inset-0 flex items-center justify-center font-pixel text-[360px] leading-none text-buzz-out"
+              >
+                X
               </div>
             ) : null}
-            <div className="font-display text-7xl uppercase text-buzz-open board-text">
-              Buzz in!
-            </div>
-            {timeoutMs !== null ? (
-              <CountdownBar
-                snapshot={snapshot}
-                offset={offset}
-                totalMs={timeoutMs}
-                className="max-w-[900px]"
-              />
-            ) : null}
-          </>
-        )}
-
-        {phase === 'answering' && (
-          <div className="pop font-display text-8xl uppercase text-gold board-text">{buzzed}</div>
-        )}
-
-        {phase === 'dailyDoubleClue' && (
-          <div className="text-5xl">
-            <span className="font-bold uppercase text-gold">
-              {playerName(snapshot, snapshot.controlPlayerId)}
-            </span>{' '}
-            wagered {current.wager === null ? '' : formatMoney(current.wager)}
           </div>
-        )}
+        </div>
 
-        {phase === 'reveal' && (
-          <>
-            <div className="font-clue text-7xl uppercase text-gold board-text">
-              {current.answer}
-            </div>
-            <div className="text-4xl text-white/80">
-              {result?.outcome === 'correct' && (
-                <>
-                  {playerName(snapshot, result.playerId)} is right! {formatMoney(result.delta)}
-                </>
-              )}
-              {result?.outcome === 'incorrect' && (
-                <>
-                  {playerName(snapshot, result.playerId)} missed. {formatMoney(result.delta)}
-                </>
-              )}
-              {result?.outcome === 'timeout' && <>Time's up</>}
-            </div>
-          </>
-        )}
+        <ScoreStrip snapshot={snapshot} />
       </div>
-
-      <ScoreStrip snapshot={snapshot} />
-    </div>
+    </Studio>
   );
+}
+
+function ClueStatus({
+  snapshot,
+  current,
+  offset,
+}: {
+  snapshot: Snapshot;
+  current: CurrentClueView;
+  offset: number;
+}) {
+  const { phase, result } = snapshot;
+  const timeoutMs = snapshot.settings.buzzTimeoutMs;
+
+  switch (phase) {
+    case 'clue':
+      return (
+        <div className="font-crt text-6xl uppercase text-white/60">
+          Listen for the clue
+          <BlinkingCursor />
+        </div>
+      );
+
+    case 'buzzersOpen':
+      return (
+        <>
+          {result?.outcome === 'incorrect' ? (
+            <div className="font-crt text-[54px] uppercase leading-none text-neon-pink pixel-drop">
+              {playerName(snapshot, result.playerId)} missed · {formatMoney(result.delta)}
+            </div>
+          ) : null}
+          <div className="beat font-pixel text-[64px] uppercase leading-none text-buzz-open pixel-drop">
+            Buzz in!
+          </div>
+          {timeoutMs !== null ? (
+            <PixelCountdown snapshot={snapshot} offset={offset} totalMs={timeoutMs} />
+          ) : null}
+        </>
+      );
+
+    case 'answering':
+      return (
+        <div className="slam-in gold-pulse bg-studio-deep px-10 py-5 font-pixel text-[72px] uppercase leading-none text-bulb">
+          {playerName(snapshot, current.buzzedPlayerId)}
+        </div>
+      );
+
+    case 'dailyDoubleClue':
+      return (
+        <div className="flex items-baseline gap-5 font-crt text-6xl uppercase text-white/80">
+          <span className="font-pixel text-[44px] text-bulb">
+            {playerName(snapshot, snapshot.controlPlayerId)}
+          </span>
+          wagered
+          <span className="font-pixel text-[44px] text-bulb">
+            {current.wager === null ? '' : formatMoney(current.wager)}
+          </span>
+        </div>
+      );
+
+    case 'reveal': {
+      const answer = current.answer ?? '';
+      const answerSize = answer.length > 90 ? 50 : answer.length > 40 ? 68 : 96;
+      return (
+        <>
+          <div
+            className="slam-in font-crt uppercase leading-none text-bulb chroma-text-sm"
+            style={{ fontSize: answerSize }}
+          >
+            {answer}
+          </div>
+          {result?.outcome === 'correct' ? (
+            <div className="font-crt text-[54px] uppercase leading-none text-buzz-open pixel-drop">
+              {playerName(snapshot, result.playerId)} is right · +{formatMoney(result.delta)}
+            </div>
+          ) : null}
+          {result?.outcome === 'incorrect' ? (
+            <div className="font-crt text-[54px] uppercase leading-none text-neon-pink pixel-drop">
+              {playerName(snapshot, result.playerId)} missed · {formatMoney(result.delta)}
+            </div>
+          ) : null}
+          {result?.outcome === 'timeout' ? (
+            <div className="font-crt text-[54px] uppercase leading-none text-white/70 pixel-drop">
+              Time's up
+            </div>
+          ) : null}
+        </>
+      );
+    }
+
+    default:
+      return null;
+  }
 }
 
 function StandingsScreen({

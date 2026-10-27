@@ -1,6 +1,15 @@
 import { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
-import { SCENE_H, SCENE_W, drawBackdrop, drawBeams } from '../lib/studioScene';
+import {
+  SCENE_H,
+  SCENE_SCALE,
+  SCENE_W,
+  aimBeams,
+  drawBackdrop,
+  drawBeams,
+  idleBeamAngles,
+} from '../lib/studioScene';
+import type { Point } from '../lib/studioScene';
 
 /**
  * The prime time studio: a pixel-art set behind the content, spotlights washing over it, and a
@@ -8,13 +17,24 @@ import { SCENE_H, SCENE_W, drawBackdrop, drawBeams } from '../lib/studioScene';
  */
 export function Studio({
   audience = false,
+  spotlight = null,
   children,
 }: {
   audience?: boolean;
+  /** A point in stage pixels for every spotlight to swing onto. */
+  spotlight?: Point | null;
   children: ReactNode;
 }) {
   const backRef = useRef<HTMLCanvasElement>(null);
   const beamRef = useRef<HTMLCanvasElement>(null);
+  const target = useRef<Point | null>(null);
+
+  const spotX = spotlight?.x ?? null;
+  const spotY = spotlight?.y ?? null;
+  useEffect(() => {
+    target.current =
+      spotX === null || spotY === null ? null : { x: spotX / SCENE_SCALE, y: spotY / SCENE_SCALE };
+  }, [spotX, spotY]);
 
   useEffect(() => {
     const back = backRef.current?.getContext('2d');
@@ -22,10 +42,15 @@ export function Studio({
     if (!back || !beams) return;
     const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let frame = 0;
+    let angles: number[] | null = null;
+    let last: number | null = null;
     const draw = (now: number) => {
       const t = now / 1000;
+      angles ??= idleBeamAngles(t);
+      aimBeams(angles, t, last === null ? 0 : t - last, target.current);
+      last = t;
       drawBackdrop(back, t, audience);
-      drawBeams(beams, t);
+      drawBeams(beams, angles);
       if (!still) frame = requestAnimationFrame(draw);
     };
     frame = requestAnimationFrame(draw);

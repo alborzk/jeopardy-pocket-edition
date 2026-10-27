@@ -2,10 +2,18 @@
  * The prime time studio set, drawn at a quarter of 1920x1080 and scaled up with
  * `image-rendering: pixelated`, so every scene pixel lands as a chunky 4x4 block on the TV.
  */
-export const SCENE_W = 480;
-export const SCENE_H = 270;
+export const SCENE_SCALE = 4;
+export const SCENE_W = 1920 / SCENE_SCALE;
+export const SCENE_H = 1080 / SCENE_SCALE;
+
+export interface Point {
+  x: number;
+  y: number;
+}
 
 const TRUSS_H = 8;
+/** Where the beams leave the lamps. */
+const LAMP_Y = 11;
 /** Top of the stage lip; the audience sits below it. */
 const LIP_Y = SCENE_H - 44;
 
@@ -110,7 +118,7 @@ export function drawBackdrop(ctx: CanvasRenderingContext2D, t: number, audience:
     ctx.fillStyle = '#1d2766';
     ctx.fillRect(beam.x - 4, 5, 9, 6);
     ctx.fillStyle = `rgb(${beam.rgb})`;
-    ctx.fillRect(beam.x - 2, 10, 5, 2);
+    ctx.fillRect(beam.x - 2, LAMP_Y - 1, 5, 2);
   }
 
   if (!audience) return;
@@ -138,29 +146,50 @@ export function drawBackdrop(ctx: CanvasRenderingContext2D, t: number, audience:
   }
 }
 
+function idleAngle(beam: Beam, t: number): number {
+  return beam.base + beam.swing * Math.sin(t * beam.speed + beam.phase);
+}
+
+/**
+ * Where each beam points at time `t` when nothing is in the spotlight. The sweep only depends
+ * on the clock, so a new scene picks up exactly where the last one left off.
+ */
+export function idleBeamAngles(t: number): number[] {
+  return BEAMS.map((beam) => idleAngle(beam, t));
+}
+
+/** Eases each beam toward its idle sweep or, given a target in scene pixels, onto the target. */
+export function aimBeams(angles: number[], t: number, dt: number, target: Point | null) {
+  BEAMS.forEach((beam, i) => {
+    const goal = target ? Math.atan2(target.x - beam.x, target.y - LAMP_Y) : idleAngle(beam, t);
+    const angle = angles[i] ?? goal;
+    angles[i] = angle + (goal - angle) * Math.min(1, dt * 4);
+  });
+}
+
 /** Spotlight cones, drawn on their own canvas that is screen-blended over the content. */
-export function drawBeams(ctx: CanvasRenderingContext2D, t: number) {
+export function drawBeams(ctx: CanvasRenderingContext2D, angles: number[]) {
   ctx.clearRect(0, 0, SCENE_W, SCENE_H);
   const length = 360;
-  for (const beam of BEAMS) {
-    const angle = beam.base + beam.swing * Math.sin(t * beam.speed + beam.phase);
+  BEAMS.forEach((beam, i) => {
+    const angle = angles[i] ?? beam.base;
     for (const [spread, alpha] of [
       [0.12, 0.07],
       [0.05, 0.08],
     ] as const) {
       ctx.fillStyle = `rgba(${beam.rgb}, ${alpha})`;
       ctx.beginPath();
-      ctx.moveTo(beam.x, 11);
+      ctx.moveTo(beam.x, LAMP_Y);
       ctx.lineTo(
         beam.x + Math.sin(angle - spread) * length,
-        11 + Math.cos(angle - spread) * length,
+        LAMP_Y + Math.cos(angle - spread) * length,
       );
       ctx.lineTo(
         beam.x + Math.sin(angle + spread) * length,
-        11 + Math.cos(angle + spread) * length,
+        LAMP_Y + Math.cos(angle + spread) * length,
       );
       ctx.closePath();
       ctx.fill();
     }
-  }
+  });
 }

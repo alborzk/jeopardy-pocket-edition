@@ -306,6 +306,69 @@ body {
   animation: bulb-chase 1.2s linear infinite;
 }
 
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+.beat {
+  animation: beat 0.8s ease-in-out infinite;
+}
+
+/* The clue zoom: the board fades out behind the card as it grows, then the text comes up. */
+@keyframes clue-ghost-out {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.clue-ghost {
+  animation: clue-ghost-out 550ms linear both;
+}
+
+@keyframes clue-content-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.clue-content-in {
+  animation: clue-content-in 300ms ease-out 250ms both;
+}
+
+/* A wrong answer: a big red X stamps onto the card, then fades. */
+@keyframes x-stamp {
+  0% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+  12% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.x-stamp {
+  text-shadow: 12px 12px 0 #2a0008;
+  animation: x-stamp 0.9s var(--ease-soft) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .studio-bob,
   .studio-flicker,
@@ -313,7 +376,10 @@ body {
   .tile-in,
   .slam-in,
   .gold-pulse,
-  .bulb {
+  .bulb,
+  .beat,
+  .clue-ghost,
+  .clue-content-in {
     animation: none;
   }
 }
