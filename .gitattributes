@@ -1,2 +1,3 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Auto detect text files, store them with LF, and check them out with LF on every OS, whatever
+# core.autocrlf says. Matches .editorconfig and Prettier.
+* text=auto eol=lf
