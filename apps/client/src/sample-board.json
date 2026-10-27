@@ -1,0 +1,384 @@
+{
+  "id": "sample-board",
+  "title": "Sample Trivia Night",
+  "rounds": [
+    {
+      "name": "Jeopardy!",
+      "categories": [
+        {
+          "name": "World Capitals",
+          "clues": [
+            {
+              "value": 200,
+              "clue": "This city on the Seine is the capital of France.",
+              "answer": "What is Paris?"
+            },
+            {
+              "value": 400,
+              "clue": "Canberra, not Sydney, is the capital of this country.",
+              "answer": "What is Australia?"
+            },
+            {
+              "value": 600,
+              "clue": "The capital of Canada, it sits on the Ottawa River.",
+              "answer": "What is Ottawa?"
+            },
+            {
+              "value": 800,
+              "clue": "Bolivia's seat of government, it is one of the highest capital cities in the world.",
+              "answer": "What is La Paz?"
+            },
+            {
+              "value": 1000,
+              "clue": "Formerly named Nur-Sultan, this is the capital of Kazakhstan.",
+              "answer": "What is Astana?"
+            }
+          ]
+        },
+        {
+          "name": "Science",
+          "clues": [
+            {
+              "value": 200,
+              "clue": "H2O is the chemical formula for this liquid.",
+              "answer": "What is water?"
+            },
+            {
+              "value": 400,
+              "clue": "This planet is known as the Red Planet.",
+              "answer": "What is Mars?"
+            },
+            {
+              "value": 600,
+              "clue": "This organelle, the powerhouse of the cell, produces most of its ATP.",
+              "answer": "What is the mitochondrion?"
+            },
+            {
+              "value": 800,
+              "clue": "His 1905 papers included special relativity and the equation E = mc².",
+              "answer": "Who is Albert Einstein?"
+            },
+            {
+              "value": 1000,
+              "clue": "This element, atomic number 79, has the symbol Au.",
+              "answer": "What is gold?"
+            }
+          ]
+        },
+        {
+          "name": "At the Movies",
+          "clues": [
+            {
+              "value": 200,
+              "clue": "In this 1997 film, Jack and Rose meet aboard an ill-fated ocean liner.",
+              "answer": "What is Titanic?"
+            },
+            {
+              "value": 400,
+              "clue": "Mufasa and Simba are characters in this animated Disney film.",
+              "answer": "What is The Lion King?"
+            },
+            {
+              "value": 600,
+              "clue": "Christopher Nolan directed this 2010 film about stealing secrets from inside dreams.",
+              "answer": "What is Inception?"
+            },
+            {
+              "value": 800,
+              "clue": "Marlon Brando played Vito Corleone in this 1972 crime classic.",
+              "answer": "What is The Godfather?",
+              "dailyDouble": true
+            },
+            {
+              "value": 1000,
+              "clue": "In 2020 this South Korean film became the first non-English-language film to win Best Picture.",
+              "answer": "What is Parasite?"
+            }
+          ]
+        },
+        {
+          "name": "Food & Drink",
+          "clues": [
+            {
+              "value": 200,
+              "clue": "This Italian dish topped with tomato sauce and mozzarella was born in Naples.",
+              "answer": "What is pizza?"
+            },
+            {
+              "value": 400,
+              "clue": "The world's most expensive spice by weight, it comes from the crocus flower.",
+              "answer": "What is saffron?"
+            },
+            {
+              "value": 600,
+              "clue": "Guacamole is mainly made from this fruit.",
+              "answer": "What is an avocado?"
+            },
+            {
+              "value": 800,
+              "clue": "This French term means \"to put in place\" and describes prepping ingredients before cooking.",
+              "answer": "What is mise en place?"
+            },
+            {
+              "value": 1000,
+              "clue": "Kimchi, fermented cabbage, is a staple of the cuisine of this country.",
+              "answer": "What is Korea?"
+            }
+          ]
+        },
+        {
+          "name": "Sports",
+          "clues": [
+            {
+              "value": 200,
+              "clue": "In this sport, players shoot a ball through a hoop 10 feet above the floor.",
+              "answer": "What is basketball?"
+            },
+            {
+              "value": 400,
+              "clue": "The Summer Olympics are held every this many years.",
+              "answer": "What is four?"
+            },
+            {
+              "value": 600,
+              "clue": "This country has won the most men's FIFA World Cups, with five titles.",
+              "answer": "What is Brazil?"
+            },
+            {
+              "value": 800,
+              "clue": "In tennis, a score of zero is called this.",
+              "answer": "What is love?"
+            },
+            {
+              "value": 1000,
+              "clue": "Born Cassius Clay, this boxer promised to \"float like a butterfly, sting like a bee\".",
+              "answer": "Who is Muhammad Ali?"
+            }
+          ]
+        },
+        {
+          "name": "Word Play",
+          "clues": [
+            {
+              "value": 200,
+              "clue": "A word that reads the same forward and backward, like \"level\" or \"radar\", is called this.",
+              "answer": "What is a palindrome?"
+            },
+            {
+              "value": 400,
+              "clue": "Words that sound alike but are spelled differently, like \"knight\" and \"night\", are these.",
+              "answer": "What are homophones?"
+            },
+            {
+              "value": 600,
+              "clue": "This figure of speech compares two things using \"like\" or \"as\".",
+              "answer": "What is a simile?"
+            },
+            {
+              "value": 800,
+              "clue": "This is the only letter that doesn't appear in the name of any U.S. state.",
+              "answer": "What is Q?"
+            },
+            {
+              "value": 1000,
+              "clue": "From the Greek for \"same name\", it's a word like \"bark\" with two unrelated meanings.",
+              "answer": "What is a homonym?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Double Jeopardy!",
+      "categories": [
+        {
+          "name": "History",
+          "clues": [
+            {
+              "value": 400,
+              "clue": "Columbus sailed in 1492 under the flag of Ferdinand and Isabella, monarchs of this country.",
+              "answer": "What is Spain?"
+            },
+            {
+              "value": 800,
+              "clue": "Begun in 1961, this wall divided East and West Berlin until 1989.",
+              "answer": "What is the Berlin Wall?"
+            },
+            {
+              "value": 1200,
+              "clue": "This queen ruled Egypt until 30 BC and allied herself with Julius Caesar and Mark Antony.",
+              "answer": "Who is Cleopatra?"
+            },
+            {
+              "value": 1600,
+              "clue": "The Magna Carta was sealed in 1215 by this English king.",
+              "answer": "Who is King John?"
+            },
+            {
+              "value": 2000,
+              "clue": "This 1648 settlement ended the Thirty Years' War in Europe.",
+              "answer": "What is the Peace of Westphalia?"
+            }
+          ]
+        },
+        {
+          "name": "Geography",
+          "clues": [
+            {
+              "value": 400,
+              "clue": "This is the largest ocean on Earth.",
+              "answer": "What is the Pacific Ocean?"
+            },
+            {
+              "value": 800,
+              "clue": "The Nile flows north through Egypt and empties into this sea.",
+              "answer": "What is the Mediterranean Sea?"
+            },
+            {
+              "value": 1200,
+              "clue": "Mount Kilimanjaro, Africa's highest peak, is in this country.",
+              "answer": "What is Tanzania?"
+            },
+            {
+              "value": 1600,
+              "clue": "This is the world's largest hot desert, covering much of North Africa.",
+              "answer": "What is the Sahara?"
+            },
+            {
+              "value": 2000,
+              "clue": "Lake Baikal, the world's deepest lake, is in this country.",
+              "answer": "What is Russia?"
+            }
+          ]
+        },
+        {
+          "name": "Music",
+          "clues": [
+            {
+              "value": 400,
+              "clue": "This \"King of Pop\" released the 1982 album Thriller.",
+              "answer": "Who is Michael Jackson?"
+            },
+            {
+              "value": 800,
+              "clue": "\"The Four Seasons\" is a set of violin concertos by this Italian Baroque composer.",
+              "answer": "Who is Vivaldi?"
+            },
+            {
+              "value": 1200,
+              "clue": "Freddie Mercury was the lead singer of this British rock band.",
+              "answer": "What is Queen?"
+            },
+            {
+              "value": 1600,
+              "clue": "A standard piano has this many keys, 52 white and 36 black.",
+              "answer": "What is 88?"
+            },
+            {
+              "value": 2000,
+              "clue": "His Ninth Symphony, written when he was almost completely deaf, ends with the \"Ode to Joy\".",
+              "answer": "Who is Beethoven?"
+            }
+          ]
+        },
+        {
+          "name": "Literature",
+          "clues": [
+            {
+              "value": 400,
+              "clue": "The Harry Potter books were written by this British author.",
+              "answer": "Who is J.K. Rowling?"
+            },
+            {
+              "value": 800,
+              "clue": "This Shakespeare tragedy features a Danish prince who asks, \"To be, or not to be\".",
+              "answer": "What is Hamlet?"
+            },
+            {
+              "value": 1200,
+              "clue": "Captain Ahab hunts a white whale in this Herman Melville novel.",
+              "answer": "What is Moby-Dick?"
+            },
+            {
+              "value": 1600,
+              "clue": "George Orwell's novel about Big Brother and the Thought Police is titled with this year.",
+              "answer": "What is 1984?",
+              "dailyDouble": true
+            },
+            {
+              "value": 2000,
+              "clue": "Gabriel García Márquez set One Hundred Years of Solitude in this fictional town.",
+              "answer": "What is Macondo?"
+            }
+          ]
+        },
+        {
+          "name": "Technology",
+          "clues": [
+            {
+              "value": 400,
+              "clue": "This company created the iPhone.",
+              "answer": "What is Apple?"
+            },
+            {
+              "value": 800,
+              "clue": "In \"HTML\", the M and the L stand for these two words.",
+              "answer": "What is Markup Language?"
+            },
+            {
+              "value": 1200,
+              "clue": "In 1989 Tim Berners-Lee proposed this system, shortened to \"WWW\", while working at CERN.",
+              "answer": "What is the World Wide Web?"
+            },
+            {
+              "value": 1600,
+              "clue": "In 1997 IBM's Deep Blue defeated this chess world champion.",
+              "answer": "Who is Garry Kasparov?"
+            },
+            {
+              "value": 2000,
+              "clue": "Created by Guido van Rossum, this programming language is named after a British comedy group.",
+              "answer": "What is Python?"
+            }
+          ]
+        },
+        {
+          "name": "Nature",
+          "clues": [
+            {
+              "value": 400,
+              "clue": "This is the largest land animal on Earth.",
+              "answer": "What is the elephant?"
+            },
+            {
+              "value": 800,
+              "clue": "Bees collect this sweet liquid from flowers to make honey.",
+              "answer": "What is nectar?"
+            },
+            {
+              "value": 1200,
+              "clue": "A group of crows is called this ominous word.",
+              "answer": "What is a murder?",
+              "dailyDouble": true
+            },
+            {
+              "value": 1600,
+              "clue": "This big cat is the fastest land animal, reaching about 60 mph.",
+              "answer": "What is the cheetah?"
+            },
+            {
+              "value": 2000,
+              "clue": "Photosynthesis turns carbon dioxide and water into glucose and releases this gas.",
+              "answer": "What is oxygen?"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final": {
+    "category": "Scientists",
+    "clue": "In 1903 she became the first woman to win a Nobel Prize, sharing the Physics prize with her husband and Henri Becquerel.",
+    "answer": "Who is Marie Curie?"
+  }
+}

@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-board: #0b1fb8;
+  --color-board-light: #1a35e0;
+  --color-board-deep: #050b5c;
+  --color-board-edge: #000630;
+  --color-gold: #ffcc33;
+  --color-gold-deep: #d79a00;
+  --color-buzz-open: #17b34a;
+  --color-buzz-locked: #5b6070;
+  --color-buzz-out: #d62839;
+  --font-display: 'Swiss 911', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  --font-clue: Korinna, 'Itc Korinna', Georgia, 'Times New Roman', serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-board-deep);
+  color: white;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Buzzers and other tap targets: no text selection, no callouts, no double-tap zoom. */
+.tap-target {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.board-text {
+  text-shadow: 0.06em 0.06em 0 rgba(0, 0, 0, 0.85);
+}
+
+.tile-shadow {
+  box-shadow:
+    inset 0 0 0 4px var(--color-board-edge),
+    inset 0 6px 14px rgba(255, 255, 255, 0.12);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pop {
+  animation: pop 0.45s ease-out both;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(23, 179, 74, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 40px rgba(23, 179, 74, 0);
+  }
+}
+
+.buzz-ready {
+  animation: pulse-ring 1.1s ease-out infinite;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-base font-semibold
+    transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40;
+}
+
+@utility btn-primary {
+  @apply btn bg-gold text-board-deep shadow-lg hover:bg-yellow-300;
+}
+
+@utility btn-secondary {
+  @apply btn bg-white/10 text-white hover:bg-white/20;
+}
+
+@utility btn-good {
+  @apply btn bg-buzz-open text-white hover:bg-green-500;
+}
+
+@utility btn-bad {
+  @apply btn bg-buzz-out text-white hover:bg-red-500;
+}
+
+@utility field {
+  @apply w-full rounded-lg border border-white/20 bg-board-deep/60 px-3 py-2 text-white
+    placeholder-white/40 outline-none focus:border-gold;
+}
+
+@utility card {
+  @apply rounded-2xl border border-white/10 bg-white/5 p-4;
+}
