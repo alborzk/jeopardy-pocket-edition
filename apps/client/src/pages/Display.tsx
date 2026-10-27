@@ -11,6 +11,7 @@ import {
   playerName,
 } from '../components/common';
 import { ranked } from '../components/Standings';
+import { MarqueeBulbs, Studio } from '../components/Studio';
 import { formatMoney } from '../lib/format';
 import { useJoinBase } from '../lib/useJoinBase';
 import { useRoom } from '../lib/useRoom';
@@ -140,12 +141,18 @@ function Screen({ snapshot, offset }: { snapshot: Snapshot; offset: number }) {
 // Pieces
 // ---------------------------------------------------------------------------------------------
 
+const STRIP_GAP = 16;
+
 function ScoreStrip({ snapshot }: { snapshot: Snapshot }) {
   const { players, controlPlayerId, current } = snapshot;
   if (players.length === 0) return <div className="h-[150px]" />;
   const crowded = players.length > 6;
+  // Press Start 2P is monospaced at 1em per glyph, so size scores to fit the narrowest chip.
+  const chipWidth = (STAGE_W - 64 - (players.length - 1) * STRIP_GAP) / players.length;
+  const longest = Math.max(5, ...players.map((p) => formatMoney(p.score).length));
+  const scoreSize = Math.min(34, Math.floor((chipWidth - 20) / longest));
   return (
-    <div className="flex h-[150px] gap-3 bg-black/40 px-8 py-4">
+    <div className="flex h-[150px] bg-studio-deep/80 px-8 py-5" style={{ gap: STRIP_GAP }}>
       {players.map((player) => {
         const buzzed = current?.buzzedPlayerId === player.id;
         const lockedOut = current?.lockedOut.includes(player.id) ?? false;
@@ -153,20 +160,22 @@ function ScoreStrip({ snapshot }: { snapshot: Snapshot }) {
         return (
           <div
             key={player.id}
-            className={`flex min-w-0 flex-1 flex-col items-center justify-center rounded-xl px-3 transition-colors ${
-              buzzed ? 'bg-buzz-open' : lockedOut ? 'bg-buzz-out/70' : 'bg-board'
-            } ${inControl ? 'ring-4 ring-gold' : ''} ${player.connected ? '' : 'opacity-40'}`}
+            className={`flex min-w-0 flex-1 flex-col items-center justify-center gap-2 px-3 transition-colors ${
+              buzzed ? 'bg-buzz-open' : lockedOut ? 'bg-buzz-out/70' : 'bg-royal'
+            } ${inControl ? 'gold-pulse' : 'pixel-frame'} ${player.connected ? '' : 'opacity-40'}`}
           >
             <div
-              className={`w-full truncate text-center font-bold uppercase ${crowded ? 'text-2xl' : 'text-3xl'}`}
+              className={`w-full truncate text-center font-crt uppercase leading-none ${
+                crowded ? 'text-[34px]' : 'text-[42px]'
+              }`}
             >
-              {inControl ? '🎯 ' : ''}
               {player.name}
             </div>
             <div
-              className={`font-display tabular-nums board-text ${
-                crowded ? 'text-5xl' : 'text-6xl'
-              } ${player.score < 0 ? 'text-red-300' : 'text-gold'}`}
+              className={`font-pixel leading-none pixel-drop ${
+                player.score < 0 ? 'text-neon-pink' : 'text-bulb'
+              }`}
+              style={{ fontSize: scoreSize }}
             >
               {formatMoney(player.score)}
             </div>
@@ -181,7 +190,7 @@ function QrCode({ value }: { value: string }) {
   const [src, setSrc] = useState<string | null>(null);
   useEffect(() => {
     let cancelled = false;
-    QRCode.toDataURL(value, { margin: 1, width: 400, color: { dark: '#050b5c', light: '#ffffff' } })
+    QRCode.toDataURL(value, { margin: 1, width: 400, color: { dark: '#050820', light: '#ffffff' } })
       .then((url) => {
         if (!cancelled) setSrc(url);
       })
@@ -191,10 +200,31 @@ function QrCode({ value }: { value: string }) {
     };
   }, [value]);
   return src ? (
-    <img src={src} alt={`QR code to join: ${value}`} className="h-[400px] w-[400px] rounded-2xl" />
+    <img src={src} alt={`QR code to join: ${value}`} className="h-[280px] w-[280px] pixel-frame" />
   ) : (
-    <div className="h-[400px] w-[400px] rounded-2xl bg-white/10" />
+    <div className="h-[280px] w-[280px] bg-white/10 pixel-frame" />
   );
+}
+
+/** The show title, letters bobbing out of step like a marquee sign. */
+function MarqueeTitle({ text }: { text: string }) {
+  return (
+    <h1 className="studio-flicker font-pixel text-[60px] uppercase leading-none text-bulb chroma-text">
+      {[...text].map((char, i) =>
+        char === ' ' ? (
+          <span key={i}> </span>
+        ) : (
+          <span key={i} className="studio-bob" style={{ animationDelay: `${i * -0.18}s` }}>
+            {char}
+          </span>
+        ),
+      )}
+    </h1>
+  );
+}
+
+function BlinkingCursor() {
+  return <span className="studio-blink">_</span>;
 }
 
 function clueFontSize(text: string): number {
@@ -210,67 +240,104 @@ function clueFontSize(text: string): number {
 // Screens
 // ---------------------------------------------------------------------------------------------
 
+const CODE_PANEL_W = 1040;
+const CODE_PANEL_H = 640;
+
 function LobbyScreen({ snapshot }: { snapshot: Snapshot }) {
   const base = useJoinBase();
   const joinUrl = `${base}/join?code=${snapshot.code}`;
   const shortHost = base.replace(/^https?:\/\//, '');
 
   return (
-    <div className="flex h-full flex-col gap-8 p-14">
-      <header className="flex items-baseline justify-between">
-        <h1 className="font-display text-7xl uppercase text-gold board-text">Jeopardy Party</h1>
-        {snapshot.board ? (
-          <div className="text-4xl text-white/70">{snapshot.board.title}</div>
-        ) : (
-          <div className="text-4xl text-white/50">Waiting for the host to pick a board…</div>
-        )}
-      </header>
-
-      <div className="flex flex-1 gap-14">
-        <section className="flex w-[1000px] flex-col items-center justify-center gap-6 rounded-3xl bg-board p-10 tile-shadow">
-          <div className="text-4xl uppercase tracking-widest text-white/80">Room code</div>
-          <div className="font-display text-[260px] leading-none tracking-[0.12em] text-gold board-text">
-            {snapshot.code}
-          </div>
-          <div className="flex items-center gap-10">
-            <QrCode value={joinUrl} />
-            <div className="flex flex-col gap-4 text-4xl">
-              <div className="text-white/70">Scan, or go to</div>
-              <div className="font-mono text-4xl font-bold text-white">
-                <div>{shortHost}</div>
-                <div>/join</div>
-              </div>
-              <div className="text-white/70">and enter the code</div>
-            </div>
-          </div>
-        </section>
-
-        <section className="flex flex-1 flex-col gap-5">
-          <h2 className="text-4xl uppercase tracking-widest text-white/70">
-            Players {snapshot.players.length}/{MAX_PLAYERS}
-          </h2>
-          {snapshot.players.length === 0 ? (
-            <div className="flex flex-1 items-center justify-center text-5xl text-white/40">
-              Waiting for players…
+    <Studio audience>
+      {/* The bottom 200px stays clear for the studio audience. */}
+      <div className="flex h-full flex-col gap-12 px-14 pb-[200px] pt-12">
+        <header className="flex items-center justify-between">
+          <MarqueeTitle text="Jeopardy Party" />
+          {snapshot.board ? (
+            <div className="font-crt text-5xl uppercase text-neon-cyan chroma-text-sm">
+              {snapshot.board.title}
             </div>
           ) : (
-            <div className="grid grid-cols-2 content-start gap-4">
-              {snapshot.players.map((player) => (
-                <div
-                  key={player.id}
-                  className={`pop truncate rounded-2xl bg-board px-6 py-4 text-4xl font-bold uppercase tile-shadow ${
-                    player.connected ? '' : 'opacity-40'
-                  }`}
-                >
-                  {player.name}
-                </div>
-              ))}
+            <div className="font-crt text-5xl uppercase text-white/60">
+              Waiting for a board
+              <BlinkingCursor />
             </div>
           )}
-        </section>
+        </header>
+
+        <div className="flex gap-16">
+          <section
+            className="relative shrink-0"
+            style={{ width: CODE_PANEL_W, height: CODE_PANEL_H }}
+          >
+            <MarqueeBulbs width={CODE_PANEL_W} height={CODE_PANEL_H} />
+            <div className="absolute inset-[26px] flex flex-col items-center justify-center gap-8 bg-studio-deep/90">
+              <div className="font-crt text-5xl uppercase tracking-[0.3em] text-white/70">
+                Room code
+              </div>
+              <div className="font-pixel text-[168px] leading-none text-bulb chroma-text">
+                {snapshot.code}
+              </div>
+              <div className="flex items-center gap-10">
+                <QrCode value={joinUrl} />
+                <div className="flex flex-col gap-3 font-crt text-5xl uppercase leading-tight">
+                  <div className="text-white/70">Scan, or go to</div>
+                  <div className="text-neon-cyan">
+                    <div>{shortHost}</div>
+                    <div>/join</div>
+                  </div>
+                  <div className="text-white/70">and enter the code</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="flex flex-1 flex-col gap-8" style={{ height: CODE_PANEL_H }}>
+            <h2 className="flex items-baseline justify-between font-crt text-5xl uppercase tracking-[0.2em] text-white/80">
+              <span>Contestants</span>
+              <span className="text-bulb">
+                {snapshot.players.length}/{MAX_PLAYERS}
+              </span>
+            </h2>
+            {snapshot.players.length === 0 ? (
+              <div className="flex flex-1 items-center justify-center font-crt text-6xl uppercase text-white/50">
+                Waiting for players
+                <BlinkingCursor />
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 content-start gap-x-7 gap-y-6">
+                {snapshot.players.map((player) => (
+                  <div
+                    key={player.id}
+                    className={`slam-in flex items-center gap-4 bg-royal px-5 py-3 pixel-frame ${
+                      player.connected ? '' : 'opacity-40'
+                    }`}
+                  >
+                    <span className="h-9 w-3 shrink-0 bg-bulb" />
+                    <span className="truncate font-crt text-[46px] uppercase leading-none">
+                      {player.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        </div>
       </div>
-    </div>
+    </Studio>
   );
+}
+
+const BOARD_PAD_X = 32;
+const BOARD_GAP = 14;
+
+/** Rounds whose board has already filled in on this screen, so it only animates once. */
+const filledRounds = new Set<string>();
+
+/** Scatters the fill-in order across the grid, like the board lighting up on the show. */
+function fillOrder(c: number, r: number, cells: number): number {
+  return (c * 7 + r * 13) % cells;
 }
 
 function BoardScreen({ snapshot }: { snapshot: Snapshot }) {
@@ -278,55 +345,93 @@ function BoardScreen({ snapshot }: { snapshot: Snapshot }) {
   const rows = grid[0]?.cells.length ?? 0;
   const controller = snapshot.players.find((p) => p.id === snapshot.controlPlayerId);
 
+  const roundKey = `${snapshot.code}:${snapshot.board?.roundIndex ?? 0}`;
+  const [fillIn] = useState(() => !filledRounds.has(roundKey));
+  useEffect(() => {
+    filledRounds.add(roundKey);
+  }, [roundKey]);
+
+  // Press Start 2P is monospaced at 1em per glyph, so size values to fit the column.
+  const columnWidth = (STAGE_W - 2 * BOARD_PAD_X - (grid.length - 1) * BOARD_GAP) / grid.length;
+  const longest = Math.max(
+    1,
+    ...grid.flatMap((category) => category.cells.map((cell) => formatMoney(cell.value).length)),
+  );
+  const valueSize = Math.min(64, Math.floor((columnWidth - 40) / longest));
+
   return (
-    <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between px-10 py-3">
-        <div className="font-display text-4xl uppercase tracking-wide text-white/80">
-          {snapshot.board?.roundName}
+    <Studio>
+      <div className="flex h-full flex-col">
+        {/* Padded down so the text clears the lamps on the lighting truss. */}
+        <div className="flex h-[112px] shrink-0 items-center justify-between px-10 pt-9">
+          <div className="font-crt text-[56px] uppercase tracking-[0.2em] text-neon-cyan chroma-text-sm">
+            {snapshot.board?.roundName}
+          </div>
+          {controller ? (
+            <div className="gold-pulse flex items-center gap-5 bg-studio-deep px-6 py-2">
+              <span className="studio-blink h-0 w-0 border-y-[14px] border-l-[18px] border-y-transparent border-l-bulb" />
+              <span className="font-crt text-[44px] uppercase text-white/70">Up next</span>
+              <span className="font-pixel text-[30px] uppercase text-bulb">{controller.name}</span>
+            </div>
+          ) : null}
         </div>
-        {controller ? (
-          <div className="text-4xl">
-            <span className="text-white/70">Up next: </span>
-            <span className="font-bold uppercase text-gold">{controller.name}</span>
-          </div>
-        ) : null}
-      </div>
 
-      <div
-        className="grid flex-1 gap-2 px-8 pb-4"
-        style={{
-          gridTemplateColumns: `repeat(${grid.length}, minmax(0, 1fr))`,
-          gridTemplateRows: `150px repeat(${rows}, minmax(0, 1fr))`,
-        }}
-      >
-        {grid.map((category, c) => (
-          <div
-            key={`h${c}`}
-            className="flex items-center justify-center overflow-hidden rounded-md bg-board px-3 text-center font-display uppercase leading-tight tile-shadow board-text"
-            style={{ fontSize: category.name.length > 16 ? 34 : 44 }}
-          >
-            {category.name}
-          </div>
-        ))}
-        {Array.from({ length: rows }, (_, r) =>
-          grid.map((category, c) => {
-            const cell = category.cells[r];
-            return (
-              <div
-                key={`${c}-${r}`}
-                className={`flex items-center justify-center rounded-md font-display text-[88px] text-gold board-text ${
-                  cell?.used ? 'bg-board-deep' : 'bg-board tile-shadow'
-                }`}
-              >
-                {cell && !cell.used ? formatMoney(cell.value) : ''}
-              </div>
-            );
-          }),
-        )}
-      </div>
+        <div
+          className="grid flex-1 pb-8 pt-2"
+          style={{
+            gap: BOARD_GAP,
+            paddingInline: BOARD_PAD_X,
+            gridTemplateColumns: `repeat(${grid.length}, minmax(0, 1fr))`,
+            gridTemplateRows: `140px repeat(${rows}, minmax(0, 1fr))`,
+          }}
+        >
+          {grid.map((category, c) => (
+            <div
+              key={`h${c}`}
+              className={`flex items-center justify-center overflow-hidden bg-royal-deep px-3 text-center font-crt uppercase leading-[0.95] text-white pixel-frame chroma-text-sm ${
+                fillIn ? 'slam-in' : ''
+              }`}
+              style={{
+                fontSize: category.name.length > 16 ? 44 : 54,
+                animationDelay: fillIn ? `${c * 90}ms` : undefined,
+              }}
+            >
+              {category.name}
+            </div>
+          ))}
+          {Array.from({ length: rows }, (_, r) =>
+            grid.map((category, c) => {
+              const cell = category.cells[r];
+              const live = cell !== undefined && !cell.used;
+              return (
+                <div
+                  key={`${c}-${r}`}
+                  className={`flex items-center justify-center ${live ? 'pixel-tile' : 'pixel-tile-used'} ${
+                    fillIn ? 'tile-in' : ''
+                  }`}
+                  style={
+                    fillIn
+                      ? { animationDelay: `${600 + fillOrder(c, r, grid.length * rows) * 35}ms` }
+                      : undefined
+                  }
+                >
+                  {live ? (
+                    <span
+                      className="font-pixel leading-none text-bulb pixel-drop"
+                      style={{ fontSize: valueSize }}
+                    >
+                      {formatMoney(cell.value)}
+                    </span>
+                  ) : null}
+                </div>
+              );
+            }),
+          )}
+        </div>
 
-      <ScoreStrip snapshot={snapshot} />
-    </div>
+        <ScoreStrip snapshot={snapshot} />
+      </div>
+    </Studio>
   );
 }
 

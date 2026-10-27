@@ -12,6 +12,18 @@
   --color-buzz-out: #d62839;
   --font-display: 'Swiss 911', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   --font-clue: Korinna, 'Itc Korinna', Georgia, 'Times New Roman', serif;
+
+  /* Prime time studio */
+  --color-studio: #0a0f2e;
+  --color-studio-deep: #050820;
+  --color-royal: #1b2fd1;
+  --color-royal-deep: #12208f;
+  --color-royal-used: #0a1250;
+  --color-bulb: #ffd166;
+  --color-neon-pink: #ff5d8f;
+  --color-neon-cyan: #4de3ff;
+  --font-pixel: 'Press Start 2P', ui-monospace, monospace;
+  --font-crt: VT323, ui-monospace, monospace;
 }
 
 html,
@@ -112,4 +124,196 @@ body {
 
 @utility card {
   @apply rounded-2xl border border-white/10 bg-white/5 p-4;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Prime time studio: the 8-bit game-show look. So far only the display lobby and board use it.
+   --------------------------------------------------------------------------------------------- */
+
+:root {
+  --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pixel-canvas {
+  image-rendering: pixelated;
+}
+
+.studio-vignette {
+  background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgb(2 4 14 / 0.75) 100%);
+}
+
+.studio-scanlines {
+  background: repeating-linear-gradient(0deg, rgb(0 0 0 / 0.16) 0 1px, transparent 1px 4px);
+}
+
+/* CRT colour fringing: pink and cyan copies pushed apart, plus a soft glow. */
+.chroma-text {
+  text-shadow:
+    -4px 3px 0 var(--color-neon-pink),
+    4px -3px 0 rgb(77 227 255 / 0.85),
+    0 0 28px rgb(77 227 255 / 0.35);
+}
+
+.chroma-text-sm {
+  text-shadow:
+    -2px 1px 0 rgb(255 93 143 / 0.8),
+    2px -1px 0 rgb(77 227 255 / 0.7);
+}
+
+/* Hard 8-bit drop shadow, no blur. */
+.pixel-drop {
+  text-shadow: 5px 5px 0 #000a3a;
+}
+
+/* Chunky pixel frame: a dark ring, then a darker ledge underneath for depth. */
+.pixel-frame {
+  box-shadow:
+    0 0 0 4px var(--color-studio-deep),
+    0 8px 0 4px #000418;
+}
+
+.pixel-tile {
+  background: var(--color-royal);
+  box-shadow:
+    0 0 0 4px var(--color-studio-deep),
+    0 8px 0 4px #000418,
+    inset 0 6px 0 rgb(255 255 255 / 0.14),
+    inset 0 -8px 0 rgb(0 0 0 / 0.28);
+}
+
+.pixel-tile-used {
+  background: var(--color-royal-used);
+  box-shadow:
+    0 0 0 4px var(--color-studio-deep),
+    inset 0 0 0 2px rgb(255 255 255 / 0.04);
+}
+
+@keyframes studio-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.studio-bob {
+  display: inline-block;
+  animation: studio-bob 2.8s ease-in-out infinite;
+}
+
+@keyframes studio-flicker {
+  0%,
+  88%,
+  91%,
+  100% {
+    opacity: 1;
+  }
+  89% {
+    opacity: 0.55;
+  }
+  90% {
+    opacity: 0.9;
+  }
+}
+
+.studio-flicker {
+  animation: studio-flicker 6s linear infinite;
+}
+
+@keyframes studio-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.studio-blink {
+  animation: studio-blink 1s steps(1) infinite;
+}
+
+@keyframes tile-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+}
+
+.tile-in {
+  animation: tile-in 0.45s var(--ease-snap) both;
+}
+
+@keyframes slam-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.6) rotate(-3deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.94) rotate(1deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.slam-in {
+  animation: slam-in 0.5s var(--ease-soft) both;
+}
+
+@keyframes gold-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px var(--color-bulb),
+      0 0 22px rgb(255 209 102 / 0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px #fff0c2,
+      0 0 54px rgb(255 209 102 / 0.9);
+  }
+}
+
+.gold-pulse {
+  box-shadow: 0 0 0 4px var(--color-bulb);
+  animation: gold-pulse 1.6s ease-in-out infinite;
+}
+
+/* Marquee bulbs: every third one is lit, and the lit set steps along the row. */
+@keyframes bulb-chase {
+  0%,
+  32% {
+    background: #fff4cc;
+    box-shadow:
+      0 0 0 3px var(--color-studio-deep),
+      0 0 16px 3px rgb(255 209 102 / 0.85);
+  }
+  33%,
+  100% {
+    background: #5c4718;
+    box-shadow: 0 0 0 3px var(--color-studio-deep);
+  }
+}
+
+.bulb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #ffe9a8;
+  box-shadow: 0 0 0 3px var(--color-studio-deep);
+  animation: bulb-chase 1.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-bob,
+  .studio-flicker,
+  .studio-blink,
+  .tile-in,
+  .slam-in,
+  .gold-pulse,
+  .bulb {
+    animation: none;
+  }
 }
