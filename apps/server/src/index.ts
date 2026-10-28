@@ -12,7 +12,10 @@ const fromSource = import.meta.url.endsWith('.ts');
 // Both src/index.ts (dev) and dist/index.js (built) sit two levels below apps/, next to ../client.
 const here = path.dirname(fileURLToPath(import.meta.url));
 const clientDist = path.resolve(process.env.CLIENT_DIST ?? path.join(here, '../../client/dist'));
-const staticDir = existsSync(path.join(clientDist, 'index.html')) ? clientDist : null;
+// In development Vite serves the live client, and a leftover build here is almost always stale,
+// so only the built server hands out the built client.
+const staticDir =
+  !fromSource && existsSync(path.join(clientDist, 'index.html')) ? clientDist : null;
 
 const server = await startServer({ port, host, staticDir });
 
