@@ -73,6 +73,23 @@ docker run -p 8080:8080 jeopardy-party
 Run **one instance only**: rooms live in the server's memory, so a second instance can't see them.
 A restart ends all games in progress.
 
+### Render (free)
+
+`render.yaml` describes the whole service: a single free web service built from the
+`Dockerfile`, with `/healthz` as its health check.
+
+1. Push this repo to GitHub.
+2. In [Render](https://render.com), sign in with GitHub, choose **New > Blueprint**, pick the
+   repo, and apply. The first build takes a few minutes.
+3. Open `https://<service-name>.onrender.com`. A custom domain can be added later in the
+   service's settings.
+
+On the free plan the service sleeps after 15 minutes with nobody connected, and the first visit
+afterwards takes about a minute to wake it, so open the link a little before game night. Render
+can also restart free services at any time, which ends games in progress.
+
+Vercel and other serverless hosts don't fit: players must all reach the same long-running process.
+
 ### Screen wake lock
 
 Phones ask to keep the screen on while in a room. Browsers only allow that on HTTPS (or

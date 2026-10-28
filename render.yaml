@@ -1,0 +1,18 @@
+# Render Blueprint: one web service on Render's free plan, built from the Dockerfile.
+# In Render: New > Blueprint, then pick this repo. Spec: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: jeopardy-pocket-edition
+    runtime: docker
+    plan: free
+    # Can't be changed after the service is created. Also: ohio, virginia, frankfurt, singapore.
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    # Rooms live in the server's memory, so there must only ever be one instance.
+    numInstances: 1
+    autoDeployTrigger: commit
+    envVars:
+      # Matches the Dockerfile, so the port is never left to a platform default.
+      - key: PORT
+        value: '8080'
