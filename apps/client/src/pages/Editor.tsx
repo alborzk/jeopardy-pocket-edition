@@ -14,6 +14,8 @@ import {
   makeId,
 } from '@jeopardy/shared';
 import type { Board, Clue } from '@jeopardy/shared';
+import { useModal } from '../components/Modal';
+import { DailyDoubleBadge } from '../components/Studio';
 import { downloadBoard, loadBoards, sampleBoard, saveBoards } from '../lib/boards';
 import { formatMoney } from '../lib/format';
 import { hostGame } from '../lib/hostGame';
@@ -33,6 +35,7 @@ export function Editor() {
   const [saveFailed, setSaveFailed] = useState(false);
   const [hosting, setHosting] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
+  const { confirm } = useModal();
 
   const board = boards.find((b) => b.id === selectedId) ?? null;
   const issues = useMemo(() => (board ? describeBoardIssues(board) : []), [board]);
@@ -69,8 +72,15 @@ export function Editor() {
     addBoard({ ...structuredClone(board), id: makeId(), title: `${board.title} (copy)` });
   };
 
-  const remove = () => {
-    if (!board || !window.confirm(`Delete "${board.title || 'Untitled board'}"?`)) return;
+  const remove = async () => {
+    if (!board) return;
+    const ok = await confirm({
+      title: 'Delete board?',
+      message: `"${board.title || 'Untitled board'}" and every clue on it will be gone from this browser. Export it first if you might want it back.`,
+      confirmLabel: 'Delete',
+      tone: 'danger',
+    });
+    if (!ok) return;
     const rest = boards.filter((b) => b.id !== board.id);
     commit(rest, rest[0]?.id ?? '');
     setCell(null);
@@ -118,14 +128,14 @@ export function Editor() {
 
   return (
     <div className="flex min-h-full flex-col lg:flex-row">
-      <aside className="flex shrink-0 flex-col gap-3 border-b border-white/10 bg-black/25 p-4 lg:w-72 lg:border-b-0 lg:border-r">
+      <aside className="flex shrink-0 flex-col gap-4 border-b-[3px] border-[#1c2a70] bg-studio-deep/90 p-4 lg:w-72 lg:border-b-0 lg:border-r-[3px]">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-sm text-gold underline">
+          <Link to="/" className="text-xl uppercase text-neon-cyan hover:text-white">
             ← Home
           </Link>
-          <h1 className="font-display text-2xl uppercase text-gold">Boards</h1>
+          <h1 className="font-pixel text-base uppercase text-bulb chroma-text-sm">Boards</h1>
         </div>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-3">
           <button
             type="button"
             className="btn-primary px-3 py-2"
@@ -148,7 +158,7 @@ export function Editor() {
             onChange={importFile}
           />
         </div>
-        <ul className="flex flex-col gap-1.5">
+        <ul className="flex flex-col gap-4">
           {boards.map((b) => {
             const problems = describeBoardIssues(b).length;
             return (
@@ -156,15 +166,17 @@ export function Editor() {
                 <button
                   type="button"
                   onClick={() => select(b.id)}
-                  className={`w-full rounded-xl px-3 py-2 text-left transition ${
+                  className={`w-full px-3 py-2 text-left transition pixel-frame ${
                     b.id === selectedId
-                      ? 'bg-gold text-board-deep'
-                      : 'bg-white/10 hover:bg-white/20'
+                      ? 'bg-bulb text-studio-deep'
+                      : 'bg-royal-used hover:bg-royal'
                   }`}
                 >
-                  <div className="truncate font-semibold">{b.title || 'Untitled board'}</div>
-                  <div className="text-xs opacity-70">
-                    {countClues(b)} clues · {problems === 0 ? 'ready ✓' : `${problems} to fix`}
+                  <div className="truncate text-xl uppercase leading-tight">
+                    {b.title || 'Untitled board'}
+                  </div>
+                  <div className="text-base opacity-75">
+                    {countClues(b)} clues · {problems === 0 ? 'ready' : `${problems} to fix`}
                   </div>
                 </button>
               </li>
@@ -180,10 +192,10 @@ export function Editor() {
             Restore sample board
           </button>
         ) : null}
-        <p className="mt-auto text-xs text-white/50">
+        <p className="mt-auto text-base text-white/50">
           Boards autosave in this browser.{' '}
           {saveFailed ? (
-            <strong className="text-red-300">Saving failed. Export your board to keep it.</strong>
+            <strong className="text-neon-pink">Saving failed. Export your board to keep it.</strong>
           ) : null}
         </p>
       </aside>
@@ -199,7 +211,7 @@ export function Editor() {
               <label className="flex min-w-[240px] flex-1 flex-col gap-1">
                 <span className="text-xs uppercase tracking-widest text-white/60">Board title</span>
                 <input
-                  className="field text-xl font-bold"
+                  className="field text-2xl"
                   value={board.title}
                   onChange={(event) => update((d) => void (d.title = event.target.value))}
                   placeholder="Friday trivia night"
@@ -211,7 +223,7 @@ export function Editor() {
               <button type="button" className="btn-secondary" onClick={duplicate}>
                 Duplicate
               </button>
-              <button type="button" className="btn-secondary text-red-300" onClick={remove}>
+              <button type="button" className="btn-secondary text-neon-pink" onClick={remove}>
                 Delete
               </button>
               <button
@@ -228,13 +240,13 @@ export function Editor() {
             {message ? (
               <p
                 role={message.tone === 'error' ? 'alert' : 'status'}
-                className={`rounded-lg p-3 text-sm ${message.tone === 'error' ? 'bg-buzz-out/25' : 'bg-buzz-open/25'}`}
+                className={`p-3 text-lg ${message.tone === 'error' ? 'bg-buzz-out/25' : 'bg-buzz-open/25'}`}
               >
                 {message.text}
               </p>
             ) : null}
 
-            <nav className="flex flex-wrap gap-2" aria-label="Rounds">
+            <nav className="flex flex-wrap gap-3" aria-label="Rounds">
               {board.rounds.map((round, index) => (
                 <button
                   key={index}
@@ -309,12 +321,12 @@ export function Editor() {
             ) : null}
 
             <details className="card" open={issues.length > 0 && issues.length <= 12}>
-              <summary className="cursor-pointer text-sm font-semibold">
+              <summary className="cursor-pointer text-xl uppercase">
                 {issues.length === 0
                   ? 'Board is ready to play ✓'
                   : `${issues.length} thing${issues.length === 1 ? '' : 's'} to fix before you can host`}
               </summary>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-white/80">
+              <ul className="mt-3 list-disc space-y-1 pl-5 text-lg text-white/80">
                 {issues.slice(0, 40).map((issue, index) => (
                   <li key={index}>{issue}</li>
                 ))}
@@ -347,10 +359,14 @@ function RoundEditor({
   update: Update;
   onRemoveRound: () => void;
 }) {
+  const { confirm } = useModal();
   const round = board.rounds[roundIndex];
   if (!round) return null;
   const columns = round.categories.length;
   const rows = round.categories[0]?.clues.length ?? 0;
+  const valuesAreDefault = round.categories.every((category) =>
+    category.clues.every((clue, i) => clue.value === defaultClueValue(roundIndex, i)),
+  );
 
   const editRound = (edit: (draft: Board['rounds'][number]) => void) =>
     update((d) => {
@@ -369,7 +385,7 @@ function RoundEditor({
             onChange={(event) => editRound((r) => void (r.name = event.target.value))}
           />
         </label>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           <button
             type="button"
             className="btn-secondary px-3 py-2 text-sm"
@@ -432,7 +448,12 @@ function RoundEditor({
           <button
             type="button"
             className="btn-secondary px-3 py-2 text-sm"
-            title="Set every value back to the default for this round"
+            disabled={valuesAreDefault}
+            title={
+              valuesAreDefault
+                ? 'Every value is already the default for this round'
+                : 'Set every value back to the default for this round'
+            }
             onClick={() =>
               editRound((r) =>
                 r.categories.forEach((c) =>
@@ -446,9 +467,15 @@ function RoundEditor({
           {roundIndex === 1 ? (
             <button
               type="button"
-              className="btn-secondary px-3 py-2 text-sm text-red-300"
-              onClick={() => {
-                if (window.confirm('Remove this round and all its clues?')) onRemoveRound();
+              className="btn-secondary px-3 py-2 text-sm text-neon-pink"
+              onClick={async () => {
+                const ok = await confirm({
+                  title: 'Remove round?',
+                  message: `"${round.name || 'Round 2'}" and all its clues will be removed from this board.`,
+                  confirmLabel: 'Remove',
+                  tone: 'danger',
+                });
+                if (ok) onRemoveRound();
               }}
             >
               Remove round
@@ -459,13 +486,13 @@ function RoundEditor({
 
       <div className="overflow-x-auto pb-2">
         <div
-          className="grid min-w-[760px] gap-1.5"
+          className="grid min-w-[760px] gap-3"
           style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}
         >
           {round.categories.map((category, c) => (
             <input
               key={`name${c}`}
-              className="field rounded-md bg-board text-center text-sm font-bold uppercase"
+              className="field bg-royal-deep text-center text-lg uppercase"
               value={category.name}
               placeholder={`Category ${c + 1}`}
               aria-label={`Category ${c + 1} name`}
@@ -487,33 +514,28 @@ function RoundEditor({
                   key={`${c}-${k}`}
                   type="button"
                   onClick={() => onSelect({ category: c, clue: k })}
-                  className={`relative flex h-20 flex-col items-center justify-center rounded-md px-1 text-center transition ${
+                  className={`relative flex h-24 flex-col items-center justify-center gap-2 px-2 text-center transition hover:brightness-125 ${
                     isComplete(clue)
-                      ? 'bg-board'
-                      : 'bg-white/10 outline-dashed outline-1 outline-red-300/60'
-                  } ${selected ? 'ring-2 ring-gold' : 'hover:bg-board-light'}`}
+                      ? 'pixel-tile'
+                      : 'pixel-tile-used outline-dashed outline-2 -outline-offset-4 outline-neon-pink/70'
+                  } ${selected ? 'outline-solid outline-4 outline-offset-[3px] outline-bulb' : ''}`}
                   aria-label={`${category.name || `Category ${c + 1}`}, ${formatMoney(clue.value)}`}
                 >
-                  <span className="font-display text-2xl text-gold">{formatMoney(clue.value)}</span>
-                  <span className="line-clamp-1 w-full text-[10px] text-white/70">
+                  <span className="font-pixel text-base leading-none text-bulb pixel-drop-sm">
+                    {formatMoney(clue.value)}
+                  </span>
+                  <span className="line-clamp-1 w-full text-base uppercase leading-none text-white/70">
                     {clue.clue || 'empty'}
                   </span>
-                  {clue.dailyDouble ? (
-                    <span
-                      className="absolute right-1 top-0.5 text-xs text-white"
-                      title="Daily Double"
-                    >
-                      ★
-                    </span>
-                  ) : null}
+                  {clue.dailyDouble ? <DailyDoubleBadge /> : null}
                 </button>
               );
             }),
           )}
         </div>
       </div>
-      <p className="text-xs text-white/50">
-        Click a tile to edit its clue. ★ marks a Daily Double. Dashed tiles are missing a clue or
+      <p className="text-base text-white/50">
+        Click a tile to edit its clue. DD marks a Daily Double. Dashed tiles are missing a clue or
         answer.
       </p>
     </section>
@@ -531,7 +553,7 @@ function ClueEditor({
 }) {
   return (
     <section className="card flex flex-col gap-3">
-      <h2 className="font-display text-2xl uppercase text-gold">
+      <h2 className="font-pixel text-base uppercase leading-snug text-bulb">
         {title} · {formatMoney(clue.value)}
       </h2>
       <div className="grid gap-3 sm:grid-cols-[140px_1fr]">
@@ -553,7 +575,7 @@ function ClueEditor({
         <label className="flex items-end gap-3 pb-2">
           <input
             type="checkbox"
-            className="h-5 w-5 accent-yellow-400"
+            className="h-6 w-6 accent-bulb"
             checked={clue.dailyDouble === true}
             onChange={(event) =>
               onChange((c) => {
@@ -589,7 +611,7 @@ function ClueEditor({
 function FinalEditor({ board, update }: { board: Board; update: Update }) {
   return (
     <section className="card flex flex-col gap-3">
-      <h2 className="font-display text-2xl uppercase text-gold">Final Jeopardy</h2>
+      <h2 className="font-pixel text-base uppercase leading-snug text-bulb">Final Jeopardy</h2>
       <label className="flex flex-col gap-1">
         <span className="text-xs uppercase tracking-widest text-white/60">Category</span>
         <input

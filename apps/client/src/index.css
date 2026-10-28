@@ -1,32 +1,65 @@
 @import 'tailwindcss';
 
+/*
+ * Prime time studio: an 8-bit TV game-show look on every screen. Press Start 2P for titles and
+ * money, VT323 for everything else.
+ */
 @theme {
-  --color-board: #0b1fb8;
-  --color-board-light: #1a35e0;
-  --color-board-deep: #050b5c;
-  --color-board-edge: #000630;
-  --color-gold: #ffcc33;
-  --color-gold-deep: #d79a00;
-  --color-buzz-open: #17b34a;
-  --color-buzz-locked: #5b6070;
-  --color-buzz-out: #d62839;
-  --font-display: 'Swiss 911', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-  --font-clue: Korinna, 'Itc Korinna', Georgia, 'Times New Roman', serif;
-
-  /* Prime time studio */
   --color-studio: #0a0f2e;
   --color-studio-deep: #050820;
   --color-royal: #1b2fd1;
+  --color-royal-light: #2f47f0;
   --color-royal-deep: #12208f;
   --color-royal-used: #0a1250;
   --color-bulb: #ffd166;
   --color-neon-pink: #ff5d8f;
   --color-neon-cyan: #4de3ff;
+  --color-buzz-open: #17b34a;
+  --color-buzz-locked: #5b6070;
+  --color-buzz-out: #d62839;
+
+  /* Older names for the same palette. */
+  --color-board: #1b2fd1;
+  --color-board-light: #2f47f0;
+  --color-board-deep: #0a0f2e;
+  --color-board-edge: #050820;
+  --color-gold: #ffd166;
+  --color-gold-deep: #c99a2e;
+
   --font-pixel: 'Press Start 2P', ui-monospace, monospace;
   --font-crt: VT323, ui-monospace, monospace;
+  --font-display: VT323, ui-monospace, monospace;
+  --font-clue: VT323, ui-monospace, monospace;
+
+  /* VT323 reads about a quarter smaller than most fonts, so the whole type scale steps up. */
+  --text-xs: 1rem;
+  --text-sm: 1.125rem;
+  --text-base: 1.25rem;
+  --text-lg: 1.4rem;
+  --text-xl: 1.6rem;
+  --text-2xl: 1.875rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.25rem;
+  --text-7xl: 5rem;
+  --text-8xl: 6.5rem;
+  --text-9xl: 8.5rem;
+
+  /* A pixel font wants tighter lines than the defaults. */
+  --text-xs--line-height: 1.25;
+  --text-sm--line-height: 1.25;
+  --text-base--line-height: 1.25;
+  --text-lg--line-height: 1.25;
+  --text-xl--line-height: 1.2;
+  --text-2xl--line-height: 1.15;
 }
 
-html,
+html {
+  height: 100%;
+  background: var(--color-studio);
+}
+
 body,
 #root {
   height: 100%;
@@ -34,16 +67,127 @@ body,
 
 body {
   margin: 0;
-  background: var(--color-board-deep);
   color: white;
-  font-family:
-    system-ui,
-    -apple-system,
-    'Segoe UI',
-    Roboto,
-    sans-serif;
+  font-family: var(--font-crt);
+  font-size: var(--text-base);
+  line-height: 1.35;
   overscroll-behavior: none;
   -webkit-text-size-adjust: 100%;
+}
+
+/* A sunburst behind every page. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 62%,
+    #0d1440 0deg 10deg,
+    transparent 10deg 20deg
+  );
+}
+
+/* A CRT finish over everything: scanlines and a vignette. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg, rgb(0 0 0 / 0.16) 0 1px, transparent 1px 4px),
+    radial-gradient(ellipse at 50% 45%, transparent 60%, rgb(2 4 14 / 0.6) 100%);
+}
+
+::selection {
+  background: var(--color-neon-pink);
+  color: white;
+}
+
+/* VT323 has a single weight, and faked bold smears it, so emphasis is colour instead. */
+b,
+strong {
+  font-weight: inherit;
+  color: var(--color-bulb);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-neon-cyan);
+  outline-offset: 3px;
+}
+
+/*
+ * Modals: a native <dialog> in the top layer. The top layer sits above the page-wide CRT finish,
+ * so the backdrop and the panel bring their own scanlines.
+ */
+.modal {
+  width: min(28rem, calc(100vw - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  /* Browsers centre a modal dialog with margin: auto, which Tailwind's reset zeroes. */
+  margin: auto;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  color: white;
+  background: transparent;
+}
+
+.modal::backdrop {
+  background:
+    repeating-linear-gradient(0deg, rgb(0 0 0 / 0.16) 0 1px, transparent 1px 4px),
+    rgb(5 8 32 / 0.82);
+}
+
+.modal-panel {
+  position: relative;
+}
+
+.modal-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgb(0 0 0 / 0.16) 0 1px, transparent 1px 4px);
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.modal[open]::backdrop {
+  animation: backdrop-in 0.2s ease-out both;
+}
+
+.modal[open] .modal-panel {
+  animation: tile-in 0.3s var(--ease-snap) both;
+}
+
+/* The page behind a modal doesn't scroll. */
+html:has(.modal[open]) {
+  overflow: hidden;
+}
+
+/* Pixel checkboxes: a dark square, filled with a gold block when ticked. */
+input[type='checkbox'] {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: var(--color-studio-deep);
+  box-shadow: inset 0 0 0 3px #26357f;
+}
+
+input[type='checkbox']:checked {
+  background: var(--color-bulb);
+  box-shadow:
+    inset 0 0 0 3px #26357f,
+    inset 0 0 0 6px var(--color-studio-deep);
 }
 
 /* Buzzers and other tap targets: no text selection, no callouts, no double-tap zoom. */
@@ -55,80 +199,114 @@ body {
   touch-action: manipulation;
 }
 
-.board-text {
-  text-shadow: 0.06em 0.06em 0 rgba(0, 0, 0, 0.85);
-}
-
-.tile-shadow {
-  box-shadow:
-    inset 0 0 0 4px var(--color-board-edge),
-    inset 0 6px 14px rgba(255, 255, 255, 0.12);
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.pop {
-  animation: pop 0.45s ease-out both;
-}
-
-@keyframes pulse-ring {
-  0% {
-    box-shadow: 0 0 0 0 rgba(23, 179, 74, 0.7);
-  }
-  100% {
-    box-shadow: 0 0 0 40px rgba(23, 179, 74, 0);
-  }
-}
-
-.buzz-ready {
-  animation: pulse-ring 1.1s ease-out infinite;
-}
-
+/* Chunky pixel buttons that press down into their ledge. */
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-base font-semibold
-    transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem 0.6rem;
+  font-family: var(--font-crt);
+  font-size: var(--text-xl);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  box-shadow:
+    0 0 0 3px var(--color-studio-deep),
+    0 6px 0 3px #000418;
+  transition:
+    transform 70ms,
+    box-shadow 70ms,
+    background-color 120ms;
+  &:active:not(:disabled) {
+    transform: translateY(5px);
+    box-shadow:
+      0 0 0 3px var(--color-studio-deep),
+      0 1px 0 3px #000418;
+  }
+  /* While pressed the button sits 5px lower, so stretch its hit area back up. Otherwise a
+     press near the top edge would release outside the button and the click would be lost. */
+  &:active:not(:disabled)::before {
+    content: '';
+    position: absolute;
+    inset: -6px 0 0;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
 }
 
 @utility btn-primary {
-  @apply btn bg-gold text-board-deep shadow-lg hover:bg-yellow-300;
+  @apply btn;
+  background-color: var(--color-bulb);
+  color: var(--color-studio-deep);
+  &:hover:not(:disabled) {
+    background-color: #ffe08a;
+  }
 }
 
 @utility btn-secondary {
-  @apply btn bg-white/10 text-white hover:bg-white/20;
+  @apply btn;
+  background-color: var(--color-royal);
+  color: white;
+  &:hover:not(:disabled) {
+    background-color: var(--color-royal-light);
+  }
 }
 
 @utility btn-good {
-  @apply btn bg-buzz-open text-white hover:bg-green-500;
+  @apply btn;
+  background-color: var(--color-buzz-open);
+  color: white;
+  &:hover:not(:disabled) {
+    background-color: #1fcf58;
+  }
 }
 
 @utility btn-bad {
-  @apply btn bg-buzz-out text-white hover:bg-red-500;
+  @apply btn;
+  background-color: var(--color-buzz-out);
+  color: white;
+  &:hover:not(:disabled) {
+    background-color: #ec3a4c;
+  }
 }
 
 @utility field {
-  @apply w-full rounded-lg border border-white/20 bg-board-deep/60 px-3 py-2 text-white
-    placeholder-white/40 outline-none focus:border-gold;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: var(--text-lg);
+  line-height: 1.2;
+  color: white;
+  background-color: rgb(5 8 32 / 0.85);
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  box-shadow: inset 0 0 0 3px #26357f;
+  &::placeholder {
+    color: rgb(255 255 255 / 0.35);
+  }
+  &:focus {
+    box-shadow: inset 0 0 0 3px var(--color-neon-cyan);
+  }
+  /* The cyan ring above already shows focus, so skip the page-wide outline. */
+  &:focus-visible {
+    outline: none;
+  }
 }
 
+/* A dark pixel panel with a ring and a ledge underneath. */
 @utility card {
-  @apply rounded-2xl border border-white/10 bg-white/5 p-4;
+  padding: 1rem;
+  background-color: rgb(5 8 32 / 0.88);
+  box-shadow:
+    0 0 0 3px #1c2a70,
+    0 8px 0 3px #000418;
 }
-
-/* ---------------------------------------------------------------------------------------------
-   Prime time studio: the 8-bit game-show look. So far only the display lobby and board use it.
-   --------------------------------------------------------------------------------------------- */
 
 :root {
   --ease-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -137,14 +315,6 @@ body {
 
 .pixel-canvas {
   image-rendering: pixelated;
-}
-
-.studio-vignette {
-  background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgb(2 4 14 / 0.75) 100%);
-}
-
-.studio-scanlines {
-  background: repeating-linear-gradient(0deg, rgb(0 0 0 / 0.16) 0 1px, transparent 1px 4px);
 }
 
 /* CRT colour fringing: pink and cyan copies pushed apart, plus a soft glow. */
@@ -164,6 +334,62 @@ body {
 /* Hard 8-bit drop shadow, no blur. */
 .pixel-drop {
   text-shadow: 5px 5px 0 #000a3a;
+}
+
+.pixel-drop-sm {
+  text-shadow: 2px 2px 0 #000a3a;
+}
+
+/* The phone buzzer: a big arcade button with a bevel, sitting on a deep ledge. */
+.buzzer {
+  --bevel:
+    inset 0 10px 0 rgb(255 255 255 / 0.22), inset 0 -14px 0 rgb(0 0 0 / 0.28),
+    0 0 0 4px var(--color-studio-deep), 0 12px 0 4px #000418;
+  box-shadow: var(--bevel);
+  transition:
+    transform 60ms,
+    background-color 100ms;
+}
+
+.buzzer:active {
+  transform: translateY(8px);
+}
+
+@keyframes buzz-ring {
+  from {
+    box-shadow:
+      var(--bevel),
+      0 0 0 4px rgb(23 179 74 / 0.8);
+  }
+  to {
+    box-shadow:
+      var(--bevel),
+      0 0 0 40px rgb(23 179 74 / 0);
+  }
+}
+
+/* Buzzers open: a green ring steps outward. */
+.buzz-ready {
+  animation: buzz-ring 1s steps(6) infinite;
+}
+
+@keyframes buzz-glow {
+  0%,
+  100% {
+    box-shadow:
+      var(--bevel),
+      0 0 24px 6px rgb(255 209 102 / 0.5);
+  }
+  50% {
+    box-shadow:
+      var(--bevel),
+      0 0 60px 16px rgb(255 209 102 / 0.9);
+  }
+}
+
+/* You won the buzz: a gold glow. */
+.buzz-won {
+  animation: buzz-glow 0.9s ease-in-out infinite;
 }
 
 /* Chunky pixel frame: a dark ring, then a darker ledge underneath for depth. */
@@ -369,6 +595,19 @@ body {
   animation: x-stamp 0.9s var(--ease-soft) both;
 }
 
+/* A bar of pixel blocks in its text colour that grows in from the left. */
+@keyframes bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+.pixel-bar {
+  background: repeating-linear-gradient(90deg, currentColor 0 24px, transparent 24px 30px);
+  transform-origin: left;
+  animation: bar-grow 0.9s var(--ease-soft) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .studio-bob,
   .studio-flicker,
@@ -379,7 +618,12 @@ body {
   .bulb,
   .beat,
   .clue-ghost,
-  .clue-content-in {
+  .clue-content-in,
+  .pixel-bar,
+  .buzz-ready,
+  .buzz-won,
+  .modal[open] .modal-panel,
+  .modal[open]::backdrop {
     animation: none;
   }
 }

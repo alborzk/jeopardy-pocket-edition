@@ -1,7 +1,8 @@
-# Jeopardy Party
+# Jeopardy Pocket Edition
 
-Multiplayer Jeopardy for in-person game nights. The host shows the board on a TV or laptop,
-players join on their phones with a 4-letter room code, and each phone is a buzzer.
+Multiplayer Jeopardy for in-person game nights: a buzzer in every pocket. The host shows the board
+on a TV or laptop, players join on their phones with a 4-letter room code, and each phone is a
+buzzer.
 
 See [CLAUDE.md](CLAUDE.md) for the full spec this was built from.
 

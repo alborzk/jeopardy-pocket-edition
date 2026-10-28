@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { boardSchema, countClues, describeBoardIssues } from '@jeopardy/shared';
+import { MarqueeTitle, StudioBackdrop } from '../components/Studio';
 import { loadBoards } from '../lib/boards';
 import { hostGame } from '../lib/hostGame';
 import { lastSession } from '../lib/session';
@@ -31,87 +32,88 @@ export function Landing() {
   };
 
   return (
-    <main className="mx-auto flex min-h-full max-w-3xl flex-col justify-center gap-8 p-6">
-      <header className="text-center">
-        <h1 className="font-display text-6xl uppercase tracking-wider text-gold board-text sm:text-7xl">
-          Jeopardy Party
-        </h1>
-        <p className="mt-3 text-lg text-white/70">
-          Game night with a TV, a host and everyone's phones.
-        </p>
-      </header>
-
-      {previous ? (
-        <Link
-          to={previous.role === 'host' ? `/host/${previous.code}` : `/play/${previous.code}`}
-          className="btn-secondary justify-between"
-        >
-          <span>
-            Rejoin room <strong className="font-mono tracking-widest">{previous.code}</strong>
-            {previous.role === 'player' && previous.name ? ` as ${previous.name}` : ' as host'}
-          </span>
-          <span aria-hidden>→</span>
-        </Link>
-      ) : null}
-
-      <div className="grid gap-6 sm:grid-cols-2">
-        <section className="card flex flex-col gap-4">
-          <h2 className="font-display text-3xl uppercase text-gold">Host a game</h2>
-          <p className="text-sm text-white/70">
-            Pick a board, then put the display on your TV and run the game from your phone.
+    <StudioBackdrop audience>
+      {/* The bottom padding keeps the cards clear of the studio audience. */}
+      <main className="mx-auto flex min-h-dvh max-w-4xl flex-col justify-center gap-10 px-4 pb-48 pt-16 sm:px-8">
+        <header className="flex flex-col items-center gap-5 text-center">
+          <MarqueeTitle text="Jeopardy Pocket Edition" className="text-[clamp(22px,6vw,54px)]" />
+          <p className="text-xl uppercase tracking-wider text-neon-cyan chroma-text-sm sm:text-2xl">
+            A buzzer in every pocket
           </p>
+        </header>
 
-          {boards.length > 0 ? (
-            <label className="flex flex-col gap-1 text-sm">
-              <span className="text-white/70">Board</span>
-              <select
-                className="field"
-                value={boardId}
-                onChange={(event) => setBoardId(event.target.value)}
-              >
-                {boards.map((b) => (
-                  <option key={b.id} value={b.id}>
-                    {b.title || 'Untitled board'} ({countClues(b)} clues)
-                  </option>
-                ))}
-              </select>
-            </label>
-          ) : (
-            <p className="rounded-lg bg-white/10 p-3 text-sm">No boards yet. Make one first.</p>
-          )}
-
-          {issues.length > 0 ? (
-            <p className="rounded-lg bg-buzz-out/20 p-3 text-sm">
-              This board isn't finished ({issues.length} problem{issues.length === 1 ? '' : 's'}).
-              Open the editor to fix it.
-            </p>
-          ) : null}
-          {error ? <p className="text-sm text-red-300">{error}</p> : null}
-
-          <button
-            type="button"
-            className="btn-primary"
-            disabled={busy || !board || issues.length > 0}
-            onClick={create}
+        {previous ? (
+          <Link
+            to={previous.role === 'host' ? `/host/${previous.code}` : `/play/${previous.code}`}
+            className="btn-secondary justify-between text-left"
           >
-            {busy ? 'Creating…' : 'Create room'}
-          </button>
-          <Link to="/editor" className="text-center text-sm text-gold underline">
-            Board editor
+            <span>
+              Rejoin room <strong>{previous.code}</strong>
+              {previous.role === 'player' && previous.name ? ` as ${previous.name}` : ' as host'}
+            </span>
+            <span aria-hidden>▶</span>
           </Link>
-        </section>
+        ) : null}
 
-        <section className="card flex flex-col gap-4">
-          <h2 className="font-display text-3xl uppercase text-gold">Join a game</h2>
-          <p className="text-sm text-white/70">
-            Enter the 4-letter room code shown on the TV, or scan its QR code.
-          </p>
-          <div className="flex-1" />
-          <Link to="/join" className="btn-primary">
-            Join with a code
-          </Link>
-        </section>
-      </div>
-    </main>
+        <div className="grid gap-8 sm:grid-cols-2">
+          <section className="card flex flex-col gap-5">
+            <h2 className="font-pixel text-lg uppercase leading-snug text-bulb">Host a game</h2>
+            <p className="text-xl text-white/75">
+              Pick a board, then put the display on your TV and run the game from your phone.
+            </p>
+
+            {boards.length > 0 ? (
+              <label className="flex flex-col gap-2">
+                <span className="text-base uppercase tracking-widest text-white/60">Board</span>
+                <select
+                  className="field"
+                  value={boardId}
+                  onChange={(event) => setBoardId(event.target.value)}
+                >
+                  {boards.map((b) => (
+                    <option key={b.id} value={b.id}>
+                      {b.title || 'Untitled board'} ({countClues(b)} clues)
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ) : (
+              <p className="bg-royal-used p-3 text-lg">No boards yet. Make one first.</p>
+            )}
+
+            {issues.length > 0 ? (
+              <p className="bg-buzz-out/25 p-3 text-lg">
+                This board isn't finished ({issues.length} problem{issues.length === 1 ? '' : 's'}).
+                Open the editor to fix it.
+              </p>
+            ) : null}
+            {error ? <p className="text-lg text-neon-pink">{error}</p> : null}
+
+            <button
+              type="button"
+              className="btn-primary"
+              disabled={busy || !board || issues.length > 0}
+              onClick={create}
+            >
+              {busy ? 'Creating…' : 'Create room'}
+            </button>
+            <Link to="/editor" className="btn-secondary">
+              Board editor
+            </Link>
+          </section>
+
+          <section className="card flex flex-col gap-5">
+            <h2 className="font-pixel text-lg uppercase leading-snug text-bulb">Join a game</h2>
+            <p className="text-xl text-white/75">
+              Enter the 4-letter room code shown on the TV, or scan its QR code.
+            </p>
+            <div className="flex-1" />
+            <Link to="/join" className="btn-primary">
+              Join with a code
+            </Link>
+          </section>
+        </div>
+      </main>
+    </StudioBackdrop>
   );
 }

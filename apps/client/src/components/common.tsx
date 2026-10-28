@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import type { Snapshot } from '@jeopardy/shared';
 import { useRemaining } from '../lib/clock';
+import { BlinkingCursor } from './Studio';
 import type { RoomView } from '../lib/useRoom';
 
 export function Toast({ message }: { message: string | null }) {
@@ -9,7 +10,7 @@ export function Toast({ message }: { message: string | null }) {
   return (
     <div
       role="alert"
-      className="pointer-events-none fixed inset-x-0 top-3 z-50 mx-auto w-fit max-w-[90vw] rounded-full bg-buzz-out px-5 py-2 text-sm font-semibold text-white shadow-xl"
+      className="pointer-events-none fixed inset-x-0 top-3 z-50 mx-auto w-fit max-w-[90vw] bg-buzz-out px-5 py-2 text-xl uppercase leading-tight text-white pixel-frame"
     >
       {message}
     </div>
@@ -31,11 +32,12 @@ export function ReconnectingBanner({
       role="status"
       className={
         floating
-          ? 'fixed left-1/2 top-3 z-50 -translate-x-1/2 rounded-full bg-yellow-500 px-5 py-1.5 text-sm font-bold text-black shadow-lg'
-          : 'sticky top-0 z-40 shrink-0 bg-yellow-500 px-3 py-1.5 text-center text-sm font-bold text-black'
+          ? 'fixed left-1/2 top-3 z-50 -translate-x-1/2 bg-bulb px-5 py-1.5 text-xl uppercase text-studio-deep pixel-frame'
+          : 'sticky top-0 z-40 shrink-0 bg-bulb px-3 py-1.5 text-center text-xl uppercase text-studio-deep'
       }
     >
-      Reconnecting…
+      Reconnecting
+      <BlinkingCursor />
     </div>
   );
 }
@@ -50,9 +52,11 @@ export function ScreenMessage({
   action?: ReactNode;
 }) {
   return (
-    <div className="flex min-h-full flex-col items-center justify-center gap-4 p-6 text-center">
-      <h1 className="font-display text-3xl uppercase tracking-wide text-gold">{title}</h1>
-      {children ? <div className="max-w-md text-white/80">{children}</div> : null}
+    <div className="flex min-h-full flex-col items-center justify-center gap-6 p-6 text-center">
+      <h1 className="font-pixel text-xl uppercase leading-snug text-bulb chroma-text-sm">
+        {title}
+      </h1>
+      {children ? <div className="max-w-md text-xl uppercase text-white/80">{children}</div> : null}
       {action}
     </div>
   );
@@ -122,9 +126,9 @@ export function CountdownBar({
   if (remaining === null) return null;
   const fraction = Math.min(1, Math.max(0, remaining / totalMs));
   return (
-    <div className={`h-3 w-full overflow-hidden rounded-full bg-white/15 ${className ?? ''}`}>
+    <div className={`h-4 w-full overflow-hidden bg-white/10 ${className ?? ''}`}>
       <div
-        className="h-full rounded-full bg-gold"
+        className={`h-full ${fraction < 0.3 ? 'bg-neon-pink' : 'bg-bulb'}`}
         style={{ width: `${fraction * 100}%`, transition: 'width 120ms linear' }}
       />
     </div>

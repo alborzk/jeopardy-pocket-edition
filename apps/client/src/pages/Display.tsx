@@ -3,15 +3,9 @@ import type { ReactNode } from 'react';
 import QRCode from 'qrcode';
 import type { CurrentClueView, PlayerView, Snapshot } from '@jeopardy/shared';
 import { FINAL_ANSWER_MS, MAX_PLAYERS } from '@jeopardy/shared';
-import {
-  Countdown,
-  CountdownBar,
-  ReconnectingBanner,
-  RoomGate,
-  playerName,
-} from '../components/common';
+import { Countdown, ReconnectingBanner, RoomGate, playerName } from '../components/common';
 import { ranked } from '../components/Standings';
-import { MarqueeBulbs, Studio } from '../components/Studio';
+import { BlinkingCursor, MarqueeBulbs, MarqueeTitle, Studio } from '../components/Studio';
 import { useRemaining } from '../lib/clock';
 import { formatMoney } from '../lib/format';
 import type { Point } from '../lib/studioScene';
@@ -44,17 +38,38 @@ function subscribeFullscreen(onChange: () => void): () => void {
   return () => document.removeEventListener('fullscreenchange', onChange);
 }
 
+/** How long the fullscreen button stays up after the mouse last moved. */
+const BUTTON_IDLE_MS = 2500;
+
+/** Only shows while the mouse is moving, so it never sits on top of the show. */
 function FullscreenButton() {
   const fullscreen = useSyncExternalStore(
     subscribeFullscreen,
     () => document.fullscreenElement !== null,
   );
+  const [awake, setAwake] = useState(false);
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const wake = () => {
+      setAwake(true);
+      clearTimeout(timer);
+      timer = setTimeout(() => setAwake(false), BUTTON_IDLE_MS);
+    };
+    window.addEventListener('pointermove', wake);
+    return () => {
+      window.removeEventListener('pointermove', wake);
+      clearTimeout(timer);
+    };
+  }, []);
+
   if (fullscreen || !document.documentElement.requestFullscreen) return null;
   return (
     <button
       type="button"
       onClick={() => void document.documentElement.requestFullscreen().catch(() => undefined)}
-      className="fixed right-3 top-3 z-50 rounded-lg bg-black/60 px-3 py-1.5 text-sm font-semibold text-white opacity-40 transition hover:opacity-100"
+      className={`fixed right-3 top-3 z-50 bg-studio-deep/90 px-3 py-1.5 text-lg uppercase text-white transition-opacity pixel-frame ${
+        awake ? 'opacity-100' : 'pointer-events-none opacity-0'
+      }`}
     >
       ⛶ Fullscreen
     </button>
@@ -104,12 +119,15 @@ export function Display({ code }: { code: string }) {
 function PausedOverlay({ snapshot }: { snapshot: Snapshot }) {
   if (snapshot.phase === 'lobby' && snapshot.hostConnected) return null;
   return (
-    <div className="absolute inset-0 z-40 flex flex-col items-center justify-center gap-6 bg-black/75">
-      <div className="font-display text-[200px] uppercase leading-none text-gold board-text">
+    <div className="absolute inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-studio-deep/85">
+      <div className="studio-flicker font-pixel text-[120px] uppercase leading-none text-bulb chroma-text">
         {snapshot.hostConnected ? 'Paused' : 'Host away'}
       </div>
       {snapshot.hostConnected ? null : (
-        <div className="text-5xl text-white/80">Waiting for the host to reconnect…</div>
+        <div className="font-crt text-[56px] uppercase text-white/80">
+          Waiting for the host to reconnect
+          <BlinkingCursor />
+        </div>
       )}
     </div>
   );
@@ -260,27 +278,6 @@ function QrCode({ value }: { value: string }) {
   );
 }
 
-/** The show title, letters bobbing out of step like a marquee sign. */
-function MarqueeTitle({ text }: { text: string }) {
-  return (
-    <h1 className="studio-flicker font-pixel text-[60px] uppercase leading-none text-bulb chroma-text">
-      {[...text].map((char, i) =>
-        char === ' ' ? (
-          <span key={i}> </span>
-        ) : (
-          <span key={i} className="studio-bob" style={{ animationDelay: `${i * -0.18}s` }}>
-            {char}
-          </span>
-        ),
-      )}
-    </h1>
-  );
-}
-
-function BlinkingCursor() {
-  return <span className="studio-blink">_</span>;
-}
-
 const COUNTDOWN_BLOCKS = 20;
 
 /** A row of pixel blocks that go out one by one as the server deadline approaches. */
@@ -302,7 +299,7 @@ function PixelCountdown({
       {Array.from({ length: COUNTDOWN_BLOCKS }, (_, i) => (
         <span
           key={i}
-          className={`h-6 w-9 ${i < lit ? (urgent ? 'bg-neon-pink' : 'bg-bulb') : 'bg-white/10'}`}
+          className={`h-8 w-10 ${i < lit ? (urgent ? 'bg-neon-pink' : 'bg-bulb') : 'bg-white/10'}`}
         />
       ))}
     </div>
@@ -318,15 +315,6 @@ function clueTextSize(text: string): number {
   if (length < 260) return 84;
   if (length < 400) return 66;
   return 52;
-}
-
-function clueFontSize(text: string): number {
-  const length = text.length;
-  if (length < 50) return 112;
-  if (length < 100) return 96;
-  if (length < 170) return 80;
-  if (length < 260) return 66;
-  return 54;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -346,13 +334,13 @@ function LobbyScreen({ snapshot }: { snapshot: Snapshot }) {
       {/* The bottom 200px stays clear for the studio audience. */}
       <div className="flex h-full flex-col gap-12 px-14 pb-[200px] pt-12">
         <header className="flex items-center justify-between">
-          <MarqueeTitle text="Jeopardy Party" />
+          <MarqueeTitle text="Jeopardy Pocket Edition" className="text-[60px]" />
           {snapshot.board ? (
-            <div className="font-crt text-5xl uppercase text-neon-cyan chroma-text-sm">
+            <div className="font-crt text-[48px] uppercase text-neon-cyan chroma-text-sm">
               {snapshot.board.title}
             </div>
           ) : (
-            <div className="font-crt text-5xl uppercase text-white/60">
+            <div className="font-crt text-[48px] uppercase text-white/60">
               Waiting for a board
               <BlinkingCursor />
             </div>
@@ -366,7 +354,7 @@ function LobbyScreen({ snapshot }: { snapshot: Snapshot }) {
           >
             <MarqueeBulbs width={CODE_PANEL_W} height={CODE_PANEL_H} />
             <div className="absolute inset-[26px] flex flex-col items-center justify-center gap-8 bg-studio-deep/90">
-              <div className="font-crt text-5xl uppercase tracking-[0.3em] text-white/70">
+              <div className="font-crt text-[48px] uppercase tracking-[0.3em] text-white/70">
                 Room code
               </div>
               <div className="font-pixel text-[168px] leading-none text-bulb chroma-text">
@@ -374,7 +362,7 @@ function LobbyScreen({ snapshot }: { snapshot: Snapshot }) {
               </div>
               <div className="flex items-center gap-10">
                 <QrCode value={joinUrl} />
-                <div className="flex flex-col gap-3 font-crt text-5xl uppercase leading-tight">
+                <div className="flex flex-col gap-3 font-crt text-[48px] uppercase leading-tight">
                   <div className="text-white/70">Scan, or go to</div>
                   <div className="text-neon-cyan">
                     <div>{shortHost}</div>
@@ -387,14 +375,14 @@ function LobbyScreen({ snapshot }: { snapshot: Snapshot }) {
           </section>
 
           <section className="flex flex-1 flex-col gap-8" style={{ height: CODE_PANEL_H }}>
-            <h2 className="flex items-baseline justify-between font-crt text-5xl uppercase tracking-[0.2em] text-white/80">
+            <h2 className="flex items-baseline justify-between font-crt text-[48px] uppercase tracking-[0.2em] text-white/80">
               <span>Contestants</span>
               <span className="text-bulb">
                 {snapshot.players.length}/{MAX_PLAYERS}
               </span>
             </h2>
             {snapshot.players.length === 0 ? (
-              <div className="flex flex-1 items-center justify-center font-crt text-6xl uppercase text-white/50">
+              <div className="flex flex-1 items-center justify-center font-crt text-[60px] uppercase text-white/50">
                 Waiting for players
                 <BlinkingCursor />
               </div>
@@ -552,27 +540,39 @@ function BoardView({ snapshot, fillIn }: { snapshot: Snapshot; fillIn: boolean }
   );
 }
 
+/** The spotlights land on the big Daily Double title. */
+const DAILY_DOUBLE_SPOT: Point = { x: STAGE_W / 2, y: 320 };
+
 function DailyDoubleScreen({ snapshot }: { snapshot: Snapshot }) {
   const current = snapshot.current;
   const player = playerName(snapshot, snapshot.controlPlayerId);
   return (
-    <div className="flex h-full flex-col">
-      <div className="flex flex-1 flex-col items-center justify-center gap-8 text-center">
-        <div className="pop font-display text-[230px] uppercase leading-none text-gold board-text">
-          Daily Double
-        </div>
-        <div className="text-6xl uppercase tracking-wide text-white/80">{current?.category}</div>
-        <div className="text-6xl">
-          <span className="font-bold uppercase text-gold">{player}</span> is placing a wager…
-        </div>
-        {current?.wagerLimits ? (
-          <div className="text-4xl text-white/60">
-            {formatMoney(current.wagerLimits.min)} to {formatMoney(current.wagerLimits.max)}
+    <Studio spotlight={DAILY_DOUBLE_SPOT}>
+      <div className="flex h-full flex-col">
+        <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-10 text-center">
+          <div className="slam-in flex flex-col items-center gap-6 font-pixel text-[150px] uppercase leading-none text-bulb chroma-text">
+            <span>Daily</span>
+            <span>Double</span>
           </div>
-        ) : null}
+          <div className="font-crt text-[64px] uppercase tracking-[0.15em] text-neon-cyan chroma-text-sm">
+            {current?.category}
+          </div>
+          <div className="flex items-baseline gap-5 font-crt text-[56px] uppercase text-white/80">
+            <span className="font-pixel text-[44px] text-bulb">{player}</span>
+            <span>
+              is placing a wager
+              <BlinkingCursor />
+            </span>
+          </div>
+          {current?.wagerLimits ? (
+            <div className="font-crt text-[44px] uppercase text-white/60">
+              {formatMoney(current.wagerLimits.min)} to {formatMoney(current.wagerLimits.max)}
+            </div>
+          ) : null}
+        </div>
+        <ScoreStrip snapshot={snapshot} />
       </div>
-      <ScoreStrip snapshot={snapshot} />
-    </div>
+    </Studio>
   );
 }
 
@@ -748,7 +748,7 @@ function ClueStatus({
   switch (phase) {
     case 'clue':
       return (
-        <div className="font-crt text-6xl uppercase text-white/60">
+        <div className="font-crt text-[60px] uppercase text-white/60">
           Listen for the clue
           <BlinkingCursor />
         </div>
@@ -780,7 +780,7 @@ function ClueStatus({
 
     case 'dailyDoubleClue':
       return (
-        <div className="flex items-baseline gap-5 font-crt text-6xl uppercase text-white/80">
+        <div className="flex items-baseline gap-5 font-crt text-[60px] uppercase text-white/80">
           <span className="font-pixel text-[44px] text-bulb">
             {playerName(snapshot, snapshot.controlPlayerId)}
           </span>
@@ -839,45 +839,64 @@ function StandingsScreen({
   const top = standings[0]?.score ?? 0;
   const max = Math.max(1, top, ...standings.map((p) => Math.abs(p.score)));
   const crowded = standings.length > 8;
+  const champion = winner ? standings[0] : undefined;
 
   return (
-    <div className="flex h-full flex-col gap-6 px-24 py-12">
-      <h1 className="text-center font-display text-8xl uppercase text-gold board-text">{title}</h1>
-      {winner && standings[0] ? (
-        <div className="pop text-center text-5xl">
-          🏆 <span className="font-bold uppercase text-gold">{standings[0].name}</span> wins!
-        </div>
-      ) : null}
-      <div className={`flex flex-1 flex-col justify-center ${crowded ? 'gap-2' : 'gap-4'}`}>
-        {standings.map((player, index) => (
-          <div key={player.id} className="flex items-center gap-6">
-            <div className="w-16 text-right font-display text-5xl text-white/60">{index + 1}</div>
-            <div
-              className={`w-[420px] truncate font-bold uppercase ${crowded ? 'text-3xl' : 'text-4xl'}`}
-            >
-              {player.name}
-            </div>
-            <div className="flex-1">
-              <div
-                className={`rounded-r-xl ${index === 0 && winner ? 'bg-gold' : 'bg-board-light'} ${
-                  crowded ? 'h-8' : 'h-12'
-                }`}
-                style={{ width: `${Math.max(2, (Math.max(0, player.score) / max) * 100)}%` }}
-              />
-            </div>
-            <div
-              className={`w-[300px] text-right font-display tabular-nums board-text ${
-                crowded ? 'text-5xl' : 'text-6xl'
-              } ${player.score < 0 ? 'text-red-300' : 'text-gold'}`}
-            >
-              {formatMoney(player.score)}
-            </div>
+    <Studio audience={winner} spotlight={champion ? WINNER_SPOT : null}>
+      {/* With the audience in, the bottom 200px stays clear for it. */}
+      <div className={`flex h-full flex-col gap-8 px-24 pt-14 ${winner ? 'pb-[200px]' : 'pb-14'}`}>
+        <MarqueeTitle text={title} className="text-center text-[64px]" />
+        {champion ? (
+          <div className="slam-in gold-pulse mx-auto flex items-baseline gap-6 bg-studio-deep px-10 py-5">
+            <span className="font-pixel text-[48px] uppercase leading-none text-bulb">
+              {champion.name}
+            </span>
+            <span className="font-crt text-[56px] uppercase leading-none">wins!</span>
           </div>
-        ))}
+        ) : null}
+        <div
+          className={`flex min-h-0 flex-1 flex-col justify-center ${crowded ? 'gap-2' : 'gap-4'}`}
+        >
+          {standings.map((player, index) => (
+            <div key={player.id} className="flex items-center gap-6">
+              <div className="w-20 text-right font-pixel text-[36px] text-white/60">
+                {index + 1}
+              </div>
+              <div
+                className={`w-[420px] truncate font-crt uppercase leading-none ${
+                  crowded ? 'text-[44px]' : 'text-[56px]'
+                }`}
+              >
+                {player.name}
+              </div>
+              <div className="flex-1">
+                <div
+                  className={`pixel-bar ${index === 0 && winner ? 'text-bulb' : 'text-royal-light'} ${
+                    crowded ? 'h-8' : 'h-12'
+                  }`}
+                  style={{
+                    width: `${Math.max(2, (Math.max(0, player.score) / max) * 100)}%`,
+                    animationDelay: `${index * 70}ms`,
+                  }}
+                />
+              </div>
+              <div
+                className={`w-[320px] text-right font-pixel leading-none pixel-drop ${
+                  crowded ? 'text-[32px]' : 'text-[40px]'
+                } ${player.score < 0 ? 'text-neon-pink' : 'text-bulb'}`}
+              >
+                {formatMoney(player.score)}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </Studio>
   );
 }
+
+/** The spotlights land on the winner's name at the end of the game. */
+const WINNER_SPOT: Point = { x: STAGE_W / 2, y: 210 };
 
 function PlayerChips({
   players,
@@ -889,7 +908,7 @@ function PlayerChips({
   done: string[];
 }) {
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-wrap justify-center gap-6">
       {ids.map((id) => {
         const player = players.find((p) => p.id === id);
         if (!player) return null;
@@ -897,11 +916,11 @@ function PlayerChips({
         return (
           <div
             key={id}
-            className={`rounded-2xl px-8 py-4 text-4xl font-bold uppercase transition-colors ${
-              ready ? 'bg-buzz-open text-white' : 'bg-white/10 text-white/60'
+            className={`flex items-center gap-4 px-7 py-3 font-crt text-[44px] uppercase leading-none transition-colors pixel-frame ${
+              ready ? 'bg-buzz-open text-white' : 'bg-royal-used text-white/60'
             }`}
           >
-            {ready ? '✓ ' : ''}
+            <span className={`h-4 w-4 ${ready ? 'bg-bulb' : 'bg-white/15'}`} />
             {player.name}
           </div>
         );
@@ -910,101 +929,141 @@ function PlayerChips({
   );
 }
 
+/** The spotlights land on the Final Jeopardy category while players wager. */
+const FINAL_CATEGORY_SPOT: Point = { x: STAGE_W / 2, y: 500 };
+/** And on each answer as the host reveals it. */
+const FINAL_ANSWER_SPOT: Point = { x: STAGE_W / 2, y: 470 };
+
+function revealSize(answer: string): number {
+  if (answer.length > 60) return 56;
+  if (answer.length > 30) return 72;
+  return 96;
+}
+
 function FinalScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }) {
   const final = snapshot.final;
   if (!final) return null;
 
   if (snapshot.phase === 'finalWager') {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-10 px-24 text-center">
-        <div className="font-display text-9xl uppercase text-gold board-text">Final Jeopardy</div>
-        <div className="font-display text-8xl uppercase text-white board-text">
-          {final.category}
+      <Studio spotlight={FINAL_CATEGORY_SPOT}>
+        <div className="flex h-full flex-col items-center justify-center gap-12 px-24 text-center">
+          <MarqueeTitle text="Final Jeopardy" className="text-[88px]" />
+          <div className="slam-in pixel-tile px-16 py-10 font-crt text-[96px] uppercase leading-none pixel-drop">
+            {final.category}
+          </div>
+          <div className="font-crt text-[56px] uppercase text-white/70">
+            Place your wagers
+            <BlinkingCursor />
+          </div>
+          <PlayerChips players={snapshot.players} ids={final.eligible} done={final.wagered} />
         </div>
-        <div className="text-5xl text-white/70">Place your wagers…</div>
-        <PlayerChips players={snapshot.players} ids={final.eligible} done={final.wagered} />
-      </div>
+      </Studio>
     );
   }
 
   if (snapshot.phase === 'finalAnswer') {
     const clueText = final.clue ?? '';
     return (
-      <div className="flex h-full flex-col items-center justify-between gap-6 px-24 py-12 text-center">
-        <div className="font-display text-6xl uppercase text-white/90 board-text">
-          {final.category}
-        </div>
-        <p
-          className="font-clue uppercase leading-snug board-text"
-          style={{ fontSize: Math.min(clueFontSize(clueText), 88) }}
-        >
-          {clueText}
-        </p>
-        <div className="flex w-full flex-col items-center gap-5">
-          <Countdown
-            snapshot={snapshot}
-            offset={offset}
-            className="font-display text-[140px] leading-none text-gold board-text"
-          />
-          <CountdownBar
-            snapshot={snapshot}
-            offset={offset}
-            totalMs={FINAL_ANSWER_MS}
-            className="max-w-[1100px]"
-          />
+      <Studio>
+        <div className="flex h-full flex-col gap-8 px-8 pb-10 pt-9">
+          <div className="pixel-tile flex min-h-0 flex-1 flex-col">
+            <header className="flex items-center justify-between px-12 pt-8">
+              <div className="font-crt text-[56px] uppercase tracking-[0.15em] text-neon-cyan chroma-text-sm">
+                {final.category}
+              </div>
+              <div className="font-pixel text-[44px] uppercase text-bulb pixel-drop">Final</div>
+            </header>
+            <div className="flex min-h-0 flex-1 items-center justify-center px-20 text-center">
+              <p
+                className="font-crt uppercase leading-[1.05] pixel-drop"
+                style={{ fontSize: Math.min(clueTextSize(clueText), 120) }}
+              >
+                {clueText}
+              </p>
+            </div>
+          </div>
+          <div className="flex shrink-0 items-center justify-center gap-10">
+            <Countdown
+              snapshot={snapshot}
+              offset={offset}
+              className="w-[220px] text-right font-pixel text-[96px] leading-none text-bulb pixel-drop"
+            />
+            <PixelCountdown snapshot={snapshot} offset={offset} totalMs={FINAL_ANSWER_MS} />
+          </div>
           <PlayerChips players={snapshot.players} ids={final.eligible} done={final.answered} />
         </div>
-      </div>
+      </Studio>
     );
   }
 
   // finalReveal
   const current = final.reveals.find((r) => r.playerId === final.currentRevealId);
   const waiting = final.order.filter((id) => !final.reveals.some((r) => r.playerId === id));
+  const answer = current ? current.answer || '(no answer)' : '';
   return (
-    <div className="flex h-full flex-col gap-6 px-24 py-12 text-center">
-      <div className="font-display text-6xl uppercase text-white/90 board-text">
-        {final.category}
-      </div>
-      <div className="flex flex-1 flex-col items-center justify-center gap-6">
-        {current ? (
-          <>
-            <div className="text-5xl text-white/70">
-              <span className="font-bold uppercase text-gold">
-                {playerName(snapshot, current.playerId)}
-              </span>{' '}
-              answered
-            </div>
-            <div className="pop font-clue text-8xl uppercase board-text">
-              {current.answer || '(no answer)'}
-            </div>
-            {current.correct !== null ? (
-              <div
-                className={`pop font-display text-7xl board-text ${
-                  current.correct ? 'text-buzz-open' : 'text-red-300'
-                }`}
-              >
-                {current.correct ? 'Correct' : 'Incorrect'} · {current.correct ? '+' : '-'}
-                {formatMoney(current.wager ?? 0)}
-              </div>
+    <Studio spotlight={current ? FINAL_ANSWER_SPOT : null}>
+      <div className="flex h-full flex-col">
+        <div className="flex min-h-0 flex-1 flex-col items-center gap-8 px-24 pt-12 text-center">
+          <div className="font-crt text-[60px] uppercase tracking-[0.15em] text-neon-cyan chroma-text-sm">
+            {final.category}
+          </div>
+          <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-8">
+            {current ? (
+              <>
+                <div className="flex items-baseline gap-5 font-crt text-[56px] uppercase text-white/70">
+                  <span className="font-pixel text-[44px] text-bulb">
+                    {playerName(snapshot, current.playerId)}
+                  </span>
+                  answered
+                </div>
+                <div
+                  key={current.playerId}
+                  className="slam-in pixel-tile max-w-[1600px] px-14 py-8 font-crt uppercase leading-none pixel-drop"
+                  style={{ fontSize: revealSize(answer) }}
+                >
+                  {answer}
+                </div>
+                {current.correct !== null ? (
+                  <div
+                    key={`${current.playerId}-judged`}
+                    className={`slam-in font-pixel text-[56px] uppercase leading-none pixel-drop ${
+                      current.correct ? 'text-buzz-open' : 'text-neon-pink'
+                    }`}
+                  >
+                    {current.correct ? 'Correct' : 'Incorrect'} · {current.correct ? '+' : '-'}
+                    {formatMoney(current.wager ?? 0)}
+                  </div>
+                ) : (
+                  <div className="font-crt text-[48px] uppercase text-white/50">
+                    Judging
+                    <BlinkingCursor />
+                  </div>
+                )}
+              </>
             ) : (
-              <div className="text-4xl text-white/50">Judging…</div>
+              <div className="flex items-baseline gap-5 font-crt text-[60px] uppercase text-white/70">
+                {waiting.length > 0 ? (
+                  <>
+                    Up first:
+                    <span className="font-pixel text-[48px] text-bulb">
+                      {playerName(snapshot, waiting[0])}
+                    </span>
+                  </>
+                ) : (
+                  'All answers are in'
+                )}
+              </div>
             )}
-          </>
-        ) : (
-          <div className="text-6xl text-white/60">
-            {waiting.length > 0
-              ? `Up first: ${playerName(snapshot, waiting[0])}`
-              : 'All answers are in'}
+            {final.answer ? (
+              <div className="font-crt text-[48px] uppercase text-white/70">
+                Correct response: <span className="text-bulb">{final.answer}</span>
+              </div>
+            ) : null}
           </div>
-        )}
-        {final.answer ? (
-          <div className="mt-6 text-4xl text-white/70">
-            Correct response: <span className="font-clue text-gold">{final.answer}</span>
-          </div>
-        ) : null}
+        </div>
+        <ScoreStrip snapshot={snapshot} />
       </div>
-      <ScoreStrip snapshot={snapshot} />
-    </div>
+    </Studio>
   );
 }

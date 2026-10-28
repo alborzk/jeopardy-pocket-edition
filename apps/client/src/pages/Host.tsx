@@ -4,7 +4,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { boardSchema, describeBoardIssues } from '@jeopardy/shared';
 import type { Phase, Snapshot } from '@jeopardy/shared';
 import { Countdown, ReconnectingBanner, RoomGate, Toast, playerName } from '../components/common';
+import { useModal } from '../components/Modal';
 import { Standings } from '../components/Standings';
+import { ControlMarker, DailyDoubleBadge } from '../components/Studio';
 import { loadBoards } from '../lib/boards';
 import { formatMoney } from '../lib/format';
 import { useAction } from '../lib/useAction';
@@ -43,6 +45,7 @@ export function Host({ code }: { code: string }) {
 
 function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }) {
   const { run, error } = useAction();
+  const { confirm } = useModal();
   const { phase } = snapshot;
   const canPause = phase !== 'lobby' && phase !== 'gameOver';
 
@@ -50,32 +53,38 @@ function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }
     <div className="mx-auto flex min-h-dvh max-w-2xl flex-col gap-4 px-4 pb-6 pt-4">
       <Toast message={error} />
 
-      <header className="flex items-center gap-3">
-        <div className="min-w-0 flex-1">
-          <div className="text-xs uppercase tracking-widest text-white/50">Host · room</div>
-          <div className="font-display text-4xl leading-none tracking-[0.2em] text-gold">
-            {snapshot.code}
+      <header className="flex flex-col gap-3">
+        <div className="flex items-center gap-3">
+          <div className="min-w-0 flex-1">
+            <div className="text-base uppercase tracking-widest text-white/50">Host · room</div>
+            <div className="font-pixel text-2xl leading-none tracking-[0.15em] text-bulb chroma-text-sm">
+              {snapshot.code}
+            </div>
           </div>
-        </div>
-        <div className="text-right">
-          <div className="text-sm font-semibold">{PHASE_LABEL[phase]}</div>
-          {snapshot.board && phase !== 'lobby' ? (
-            <div className="text-xs text-white/50">{snapshot.board.roundName}</div>
+          {canPause ? (
+            <button
+              type="button"
+              className={snapshot.paused ? 'btn-primary px-3 py-2' : 'btn-secondary px-3 py-2'}
+              onClick={() => run(snapshot.paused ? 'host:resume' : 'host:pause', {})}
+            >
+              {snapshot.paused ? '▶ Resume' : '⏸ Pause'}
+            </button>
           ) : null}
         </div>
-        {canPause ? (
-          <button
-            type="button"
-            className={snapshot.paused ? 'btn-primary px-3 py-2' : 'btn-secondary px-3 py-2'}
-            onClick={() => run(snapshot.paused ? 'host:resume' : 'host:pause', {})}
-          >
-            {snapshot.paused ? '▶ Resume' : '⏸ Pause'}
-          </button>
-        ) : null}
+        <div className="flex items-baseline justify-between gap-3 border-y-[3px] border-[#1c2a70] py-1.5">
+          <span className="text-2xl uppercase leading-none text-neon-cyan">
+            {PHASE_LABEL[phase]}
+          </span>
+          {snapshot.board && phase !== 'lobby' ? (
+            <span className="truncate text-lg uppercase leading-none text-white/50">
+              {snapshot.board.roundName}
+            </span>
+          ) : null}
+        </div>
       </header>
 
       {snapshot.frozen ? (
-        <div className="rounded-xl bg-yellow-500 px-4 py-2 text-center text-sm font-bold text-black">
+        <div className="bg-bulb px-4 py-2 text-center text-xl uppercase text-studio-deep pixel-frame">
           Game paused. Timers are stopped.
         </div>
       ) : null}
@@ -86,7 +95,7 @@ function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }
 
       {phase !== 'lobby' ? (
         <details className="card">
-          <summary className="cursor-pointer text-sm font-semibold text-white/80">
+          <summary className="cursor-pointer text-xl uppercase text-white/80">
             Game settings
           </summary>
           <div className="mt-3">
@@ -95,7 +104,7 @@ function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }
         </details>
       ) : null}
 
-      <footer className="mt-auto flex gap-3 pt-2">
+      <footer className="mt-auto flex gap-4 pt-4">
         <button
           type="button"
           className="btn-secondary flex-1"
@@ -108,10 +117,14 @@ function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }
           <button
             type="button"
             className="btn-secondary flex-1"
-            onClick={() => {
-              if (window.confirm('End the game now and show the final standings?')) {
-                void run('host:endGame', {});
-              }
+            onClick={async () => {
+              const ok = await confirm({
+                title: 'End the game?',
+                message: 'Everyone goes straight to the final standings. Undo can take it back.',
+                confirmLabel: 'End game',
+                tone: 'danger',
+              });
+              if (ok) void run('host:endGame', {});
             }}
           >
             End game
@@ -128,7 +141,7 @@ function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }
 
 function ActionBar({ children }: { children: ReactNode }) {
   return (
-    <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-2 border-t border-white/10 bg-board-deep px-4 py-3">
+    <div className="sticky bottom-0 z-10 -mx-4 flex flex-col gap-4 border-t-[3px] border-[#1c2a70] bg-studio-deep px-4 pb-5 pt-4">
       {children}
     </div>
   );
@@ -139,17 +152,17 @@ function ClueCard({ snapshot }: { snapshot: Snapshot }) {
   if (!current) return null;
   return (
     <div className="card">
-      <div className="flex items-baseline justify-between gap-3 text-xs uppercase tracking-widest text-white/60">
+      <div className="flex items-baseline justify-between gap-3 text-base uppercase tracking-widest text-white/60">
         <span className="truncate">{current.category}</span>
-        <span className="shrink-0 font-bold text-gold">
+        <span className="shrink-0 font-pixel text-sm text-bulb">
           {current.dailyDouble ? 'Daily Double · ' : ''}
           {formatMoney(current.value)}
         </span>
       </div>
-      <p className="mt-3 font-clue text-xl leading-snug">{current.clue}</p>
-      <div className="mt-4 rounded-xl bg-gold/15 p-3">
-        <div className="text-xs font-bold uppercase tracking-widest text-gold">Answer</div>
-        <div className="font-clue text-xl text-gold">{current.answer}</div>
+      <p className="mt-3 text-2xl uppercase leading-tight">{current.clue}</p>
+      <div className="mt-4 bg-bulb/10 p-3 shadow-[inset_0_0_0_3px_rgb(255_209_102/0.45)]">
+        <div className="text-base uppercase tracking-widest text-bulb">Answer</div>
+        <div className="text-2xl uppercase leading-tight text-bulb">{current.answer}</div>
       </div>
     </div>
   );
@@ -158,11 +171,21 @@ function ClueCard({ snapshot }: { snapshot: Snapshot }) {
 function JudgeButtons({ onJudge }: { onJudge: (correct: boolean) => void }) {
   return (
     <div className="grid grid-cols-2 gap-3">
-      <button type="button" className="btn-good py-5 text-xl" onClick={() => onJudge(true)}>
-        ✓ Correct
+      <button
+        type="button"
+        className="btn-good flex-col py-4 text-2xl"
+        onClick={() => onJudge(true)}
+      >
+        <span className="text-3xl leading-none">✓</span>
+        Correct
       </button>
-      <button type="button" className="btn-bad py-5 text-xl" onClick={() => onJudge(false)}>
-        ✗ Incorrect
+      <button
+        type="button"
+        className="btn-bad flex-col py-4 text-2xl"
+        onClick={() => onJudge(false)}
+      >
+        <span className="text-3xl leading-none">✗</span>
+        Incorrect
       </button>
     </div>
   );
@@ -235,7 +258,7 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
               <div className="mt-1 text-white/70">Waiting for a buzz</div>
             )}
             {resultLine(snapshot) ? (
-              <div className="mt-2 text-sm text-red-300">{resultLine(snapshot)}</div>
+              <div className="mt-2 text-lg text-neon-pink">{resultLine(snapshot)}</div>
             ) : null}
           </div>
           <ActionBar>
@@ -248,8 +271,8 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
       return (
         <>
           <div className="card text-center">
-            <div className="text-xs uppercase tracking-widest text-white/60">Buzzed in</div>
-            <div className="font-display text-5xl uppercase text-gold">
+            <div className="text-base uppercase tracking-widest text-white/60">Buzzed in</div>
+            <div className="font-pixel text-[clamp(18px,6.5vw,34px)] uppercase leading-tight text-bulb [overflow-wrap:anywhere]">
               {playerName(snapshot, snapshot.current?.buzzedPlayerId)}
             </div>
           </div>
@@ -266,7 +289,9 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
       return (
         <>
           <div className="card text-center">
-            <div className="font-display text-4xl uppercase text-gold">Daily Double!</div>
+            <div className="font-pixel text-[clamp(18px,6vw,30px)] uppercase leading-tight text-neon-pink chroma-text-sm">
+              Daily Double!
+            </div>
             <div className="mt-1">
               Waiting for{' '}
               <strong className="uppercase">
@@ -288,10 +313,10 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
       return (
         <>
           <div className="card text-center">
-            <div className="text-xs uppercase tracking-widest text-white/60">
+            <div className="text-base uppercase tracking-widest text-white/60">
               {playerName(snapshot, snapshot.controlPlayerId)} wagered
             </div>
-            <div className="font-display text-5xl text-gold">
+            <div className="font-pixel text-3xl text-bulb pixel-drop-sm">
               {formatMoney(snapshot.current?.wager ?? 0)}
             </div>
           </div>
@@ -308,7 +333,7 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
         <>
           <ClueCard snapshot={snapshot} />
           {resultLine(snapshot) ? (
-            <div className="card text-center font-semibold">{resultLine(snapshot)}</div>
+            <div className="card text-center text-2xl uppercase">{resultLine(snapshot)}</div>
           ) : null}
           <ActionBar>
             <button
@@ -328,7 +353,7 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
       return (
         <>
           <div className="card">
-            <h2 className="mb-3 text-center font-display text-3xl uppercase text-gold">
+            <h2 className="mb-4 text-center font-pixel text-xl uppercase leading-snug text-bulb">
               Round over
             </h2>
             <Standings players={snapshot.players} />
@@ -354,7 +379,9 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
     case 'gameOver':
       return (
         <div className="card flex flex-col gap-4">
-          <h2 className="text-center font-display text-4xl uppercase text-gold">Final standings</h2>
+          <h2 className="text-center font-pixel text-xl uppercase leading-snug text-bulb">
+            Final standings
+          </h2>
           <Standings players={snapshot.players} />
           <Link to="/" className="btn-secondary">
             Back to start
@@ -380,14 +407,16 @@ function LobbyPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
   return (
     <>
       <section className="card flex flex-col gap-3">
-        <h2 className="font-display text-2xl uppercase text-gold">1. Show the display</h2>
-        <p className="text-sm text-white/70">
+        <h2 className="font-display text-3xl uppercase leading-none text-bulb chroma-text-sm">
+          1. Show the display
+        </h2>
+        <p className="text-lg text-white/70">
           Open this on the TV or a laptop connected to it. Players join with the code{' '}
-          <strong className="text-white">{snapshot.code}</strong> at{' '}
-          <span className="break-all font-mono">{joinUrl}</span>
+          <strong>{snapshot.code}</strong> at{' '}
+          <span className="break-all text-neon-cyan">{joinUrl}</span>
         </p>
         <input
-          className="field font-mono text-sm"
+          className="field text-base"
           readOnly
           value={displayUrl}
           onFocus={(event) => event.target.select()}
@@ -399,21 +428,23 @@ function LobbyPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
       </section>
 
       <section className="card flex flex-col gap-3">
-        <h2 className="font-display text-2xl uppercase text-gold">2. Board</h2>
+        <h2 className="font-display text-3xl uppercase leading-none text-bulb chroma-text-sm">
+          2. Board
+        </h2>
         {snapshot.board ? (
-          <p className="rounded-lg bg-buzz-open/20 p-3 text-sm">
+          <p className="bg-buzz-open/20 p-3 text-lg">
             Loaded: <strong>{snapshot.board.title}</strong> ({snapshot.board.roundCount} round
             {snapshot.board.roundCount === 1 ? '' : 's'} + Final)
           </p>
         ) : (
-          <p className="rounded-lg bg-yellow-500/20 p-3 text-sm">
+          <p className="bg-bulb/15 p-3 text-lg">
             {initialBoardError
               ? `The board was refused: ${initialBoardError}`
               : 'No board loaded yet.'}
           </p>
         )}
         {boards.length > 0 ? (
-          <div className="flex gap-2">
+          <div className="flex gap-4">
             <select
               className="field"
               value={boardId}
@@ -437,7 +468,7 @@ function LobbyPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
           </div>
         ) : null}
         {issues.length > 0 ? (
-          <p className="text-sm text-red-300">
+          <p className="text-lg text-neon-pink">
             That board has {issues.length} problem{issues.length === 1 ? '' : 's'}. Fix it in the{' '}
             <Link to="/editor" className="underline">
               editor
@@ -448,7 +479,9 @@ function LobbyPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
       </section>
 
       <section className="card flex flex-col gap-3">
-        <h2 className="font-display text-2xl uppercase text-gold">3. Settings</h2>
+        <h2 className="font-display text-3xl uppercase leading-none text-bulb chroma-text-sm">
+          3. Settings
+        </h2>
         <SettingsFields snapshot={snapshot} run={run} />
       </section>
 
@@ -462,7 +495,7 @@ function LobbyPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
           Start game ({snapshot.players.length} player{snapshot.players.length === 1 ? '' : 's'})
         </button>
         {!ready ? (
-          <p className="text-center text-xs text-white/60">
+          <p className="text-center text-base text-white/60">
             {snapshot.board ? 'Waiting for at least one player to join.' : 'Load a board first.'}
           </p>
         ) : null}
@@ -485,8 +518,8 @@ function SettingsFields({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <div className="mb-2 text-sm text-white/80">Reveal the clue if nobody buzzes within</div>
-        <div className="flex flex-wrap gap-2">
+        <div className="mb-3 text-lg text-white/80">Reveal the clue if nobody buzzes within</div>
+        <div className="flex flex-wrap gap-3">
           {TIMEOUT_CHOICES.map((choice) => (
             <button
               key={choice.label}
@@ -501,10 +534,10 @@ function SettingsFields({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
           ))}
         </div>
       </div>
-      <label className="flex items-center gap-3 text-sm">
+      <label className="flex items-center gap-3 text-lg">
         <input
           type="checkbox"
-          className="h-5 w-5 accent-yellow-400"
+          className="h-6 w-6 shrink-0 accent-bulb"
           checked={finalIncludeAll}
           onChange={(event) => run('host:setSettings', { finalIncludeAll: event.target.checked })}
         />
@@ -522,21 +555,21 @@ function BoardPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
   return (
     <section className="card flex flex-col gap-3">
       <div className="text-center">
-        <div className="text-xs uppercase tracking-widest text-white/60">In control</div>
-        <div className="font-display text-3xl uppercase text-gold">{controller}</div>
-        <div className="text-sm text-white/70">
-          Tap the clue they call out. ★ is a Daily Double.
+        <div className="text-base uppercase tracking-widest text-white/60">In control</div>
+        <div className="font-pixel text-xl uppercase leading-tight text-bulb">{controller}</div>
+        <div className="text-lg text-white/70">
+          Tap the clue they call out. DD is a Daily Double.
         </div>
       </div>
       <div
-        className="grid gap-1.5"
+        className="grid gap-2"
         style={{ gridTemplateColumns: `repeat(${grid.length}, minmax(0, 1fr))` }}
       >
         {grid.map((category, c) => (
           <div
             key={`h${c}`}
             title={category.name}
-            className="flex h-12 items-center justify-center overflow-hidden rounded bg-board px-0.5 text-center text-[10px] font-bold uppercase leading-tight"
+            className="flex h-14 items-center justify-center overflow-hidden bg-royal-deep px-0.5 text-center text-[14px] uppercase leading-[0.95] [overflow-wrap:anywhere]"
           >
             {category.name}
           </div>
@@ -551,13 +584,13 @@ function BoardPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
                 type="button"
                 disabled={cell.used}
                 aria-label={`${category.name} for ${cell.value}`}
-                className="tap-target h-14 rounded bg-board font-display text-lg text-gold transition active:scale-95 disabled:bg-white/5 disabled:text-transparent"
+                className={`tap-target relative h-14 text-xl text-bulb transition active:brightness-125 ${
+                  cell.used ? 'pixel-tile-used' : 'pixel-tile'
+                }`}
                 onClick={() => run('host:selectClue', { categoryIndex: c, clueIndex: r })}
               >
                 {cell.used ? '' : cell.value}
-                {!cell.used && cell.dailyDouble ? (
-                  <span className="text-xs text-white"> ★</span>
-                ) : null}
+                {!cell.used && cell.dailyDouble ? <DailyDoubleBadge /> : null}
               </button>
             );
           }),
@@ -574,12 +607,12 @@ function FinalPanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
 
   const header = (
     <div className="card">
-      <div className="text-xs uppercase tracking-widest text-white/60">Final Jeopardy</div>
+      <div className="text-base uppercase tracking-widest text-white/60">Final Jeopardy</div>
       <div className="font-display text-3xl uppercase text-gold">{final.category}</div>
-      <p className="mt-2 font-clue text-lg leading-snug">{final.clue}</p>
-      <div className="mt-3 rounded-xl bg-gold/15 p-3">
-        <div className="text-xs font-bold uppercase tracking-widest text-gold">Answer</div>
-        <div className="font-clue text-xl text-gold">{final.answer}</div>
+      <p className="mt-2 text-2xl uppercase leading-tight">{final.clue}</p>
+      <div className="mt-3 bg-bulb/10 p-3 shadow-[inset_0_0_0_3px_rgb(255_209_102/0.45)]">
+        <div className="text-base uppercase tracking-widest text-bulb">Answer</div>
+        <div className="text-2xl uppercase leading-tight text-bulb">{final.answer}</div>
       </div>
     </div>
   );
@@ -589,11 +622,11 @@ function FinalPanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
       <>
         {header}
         <div className="card flex flex-col gap-2">
-          <h3 className="font-semibold">
+          <h3 className="text-xl uppercase text-bulb">
             Wagers ({final.wagered.length}/{final.eligible.length})
           </h3>
           {final.eligible.map((id) => (
-            <div key={id} className="flex justify-between rounded-lg bg-white/10 px-3 py-2">
+            <div key={id} className="flex justify-between bg-royal-used px-3 py-2">
               <span>{name(id)}</span>
               <span className={final.wagered.includes(id) ? 'text-buzz-open' : 'text-white/50'}>
                 {final.wagers?.[id] !== undefined ? formatMoney(final.wagers[id] ?? 0) : 'waiting…'}
@@ -620,17 +653,17 @@ function FinalPanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
         {header}
         <div className="card flex flex-col gap-2">
           <div className="flex items-baseline justify-between">
-            <h3 className="font-semibold">
+            <h3 className="text-xl uppercase text-bulb">
               Answers ({final.answered.length}/{final.eligible.length})
             </h3>
             <Countdown
               snapshot={snapshot}
               offset={offset}
-              className="font-display text-4xl text-gold"
+              className="font-pixel text-2xl text-bulb"
             />
           </div>
           {final.eligible.map((id) => (
-            <div key={id} className="rounded-lg bg-white/10 px-3 py-2">
+            <div key={id} className="bg-royal-used px-3 py-2">
               <div className="flex justify-between">
                 <span>{name(id)}</span>
                 <span className={final.answered.includes(id) ? 'text-buzz-open' : 'text-white/50'}>
@@ -638,7 +671,7 @@ function FinalPanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
                 </span>
               </div>
               {final.answers?.[id] ? (
-                <div className="font-clue text-white/80">{final.answers[id]}</div>
+                <div className="text-xl uppercase text-white/80">{final.answers[id]}</div>
               ) : null}
             </div>
           ))}
@@ -662,20 +695,20 @@ function FinalPanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
     <>
       {header}
       <div className="card flex flex-col gap-2">
-        <h3 className="font-semibold">Reveal order (lowest score first)</h3>
+        <h3 className="text-xl uppercase text-bulb">Reveal order (lowest score first)</h3>
         {final.order.map((id) => {
           const reveal = final.reveals.find((r) => r.playerId === id);
           const wager = final.wagers?.[id] ?? 0;
           return (
-            <div key={id} className="rounded-lg bg-white/10 px-3 py-2">
+            <div key={id} className="bg-royal-used px-3 py-2">
               <div className="flex justify-between gap-2">
-                <span className="font-semibold">{name(id)}</span>
-                <span className="text-sm text-white/70">
+                <span className="uppercase">{name(id)}</span>
+                <span className="text-base text-white/70">
                   wagered {formatMoney(wager)}
                   {reveal?.correct === true ? ' · ✓' : reveal?.correct === false ? ' · ✗' : ''}
                 </span>
               </div>
-              <div className="font-clue text-white/80">
+              <div className="text-xl uppercase text-white/80">
                 {final.answers?.[id] ?? <span className="text-white/40">(no answer)</span>}
               </div>
             </div>
@@ -685,7 +718,7 @@ function FinalPanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
       <ActionBar>
         {awaitingJudgement && currentId ? (
           <>
-            <div className="text-center text-sm text-white/70">
+            <div className="text-center text-lg text-white/70">
               Judge <strong>{name(currentId)}</strong>'s answer
             </div>
             <JudgeButtons
@@ -722,19 +755,20 @@ const STEPS = [100, 200, 500, 1000];
 
 function Scoreboard({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
   const [step, setStep] = useState(100);
+  const { confirm } = useModal();
   const buzzed = snapshot.current?.buzzedPlayerId;
 
   return (
     <section className="card flex flex-col gap-3">
-      <div className="flex items-center justify-between gap-3">
-        <h2 className="font-semibold">Players</h2>
-        <div className="flex items-center gap-1 text-xs text-white/60">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-3xl uppercase leading-none text-bulb chroma-text-sm">Players</h2>
+        <div className="flex items-center gap-1.5 text-lg text-white/60">
           <span className="mr-1">±</span>
           {STEPS.map((amount) => (
             <button
               key={amount}
               type="button"
-              className={`rounded-md px-2 py-1 ${step === amount ? 'bg-gold font-bold text-board-deep' : 'bg-white/10'}`}
+              className={`px-2 py-1 ${step === amount ? 'bg-bulb text-studio-deep' : 'bg-royal-used'}`}
               onClick={() => setStep(amount)}
             >
               {amount}
@@ -742,32 +776,34 @@ function Scoreboard({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
           ))}
         </div>
       </div>
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-3">
         {snapshot.players.map((player) => (
           <li
             key={player.id}
-            className={`flex items-center gap-2 rounded-xl px-3 py-2 ${
-              player.id === buzzed ? 'bg-buzz-open/30 ring-2 ring-buzz-open' : 'bg-white/10'
+            className={`flex items-center gap-3 px-3 py-2 ${
+              player.id === buzzed
+                ? 'bg-buzz-open/30 shadow-[inset_0_0_0_3px_var(--color-buzz-open)]'
+                : 'bg-royal-used'
             }`}
           >
             <span
               title={player.connected ? 'Connected' : 'Disconnected'}
-              className={`h-2.5 w-2.5 shrink-0 rounded-full ${player.connected ? 'bg-buzz-open' : 'bg-white/30'}`}
+              className={`h-3 w-3 shrink-0 ${player.connected ? 'bg-buzz-open' : 'bg-white/30'}`}
             />
-            <div className="min-w-0 flex-1">
-              <div className="truncate font-semibold">
-                {player.id === snapshot.controlPlayerId ? '🎯 ' : ''}
-                {player.name}
+            <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+              <div className="flex items-center gap-2 text-xl uppercase leading-none">
+                {player.id === snapshot.controlPlayerId ? <ControlMarker /> : null}
+                <span className="truncate">{player.name}</span>
               </div>
               <div
-                className={`font-display text-xl tabular-nums ${player.score < 0 ? 'text-red-300' : 'text-gold'}`}
+                className={`font-pixel text-xs ${player.score < 0 ? 'text-neon-pink' : 'text-bulb'}`}
               >
                 {formatMoney(player.score)}
               </div>
             </div>
             <button
               type="button"
-              className="btn-secondary h-10 w-10 p-0 text-xl"
+              className="btn-secondary h-11 w-11 p-0 text-2xl"
               aria-label={`Subtract ${step} from ${player.name}`}
               onClick={() => run('host:adjustScore', { playerId: player.id, delta: -step })}
             >
@@ -775,7 +811,7 @@ function Scoreboard({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
             </button>
             <button
               type="button"
-              className="btn-secondary h-10 w-10 p-0 text-xl"
+              className="btn-secondary h-11 w-11 p-0 text-2xl"
               aria-label={`Add ${step} to ${player.name}`}
               onClick={() => run('host:adjustScore', { playerId: player.id, delta: step })}
             >
@@ -783,13 +819,18 @@ function Scoreboard({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
             </button>
             <button
               type="button"
-              className="btn-secondary h-10 w-10 p-0 text-sm text-red-300"
+              className="btn-secondary h-11 w-11 p-0 text-xl text-neon-pink"
               aria-label={`Remove ${player.name}`}
               title="Remove player"
-              onClick={() => {
-                if (window.confirm(`Remove ${player.name} from the game?`)) {
-                  void run('host:kick', { playerId: player.id });
-                }
+              onClick={async () => {
+                const ok = await confirm({
+                  title: `Remove ${player.name}?`,
+                  message:
+                    'They lose their seat and score, and their phone shows they were removed.',
+                  confirmLabel: 'Remove',
+                  tone: 'danger',
+                });
+                if (ok) void run('host:kick', { playerId: player.id });
               }}
             >
               ✕

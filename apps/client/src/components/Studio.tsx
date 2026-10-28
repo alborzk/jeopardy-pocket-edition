@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import type { ReactNode } from 'react';
+import type { ReactNode, RefObject } from 'react';
 import {
   SCENE_H,
   SCENE_SCALE,
@@ -12,23 +12,20 @@ import {
 import type { Point } from '../lib/studioScene';
 
 /**
- * The prime time studio: a pixel-art set behind the content, spotlights washing over it, and a
- * CRT finish on top. Fills its parent, which is the 1920x1080 display stage.
+ * Runs the studio scene on two canvases: the set behind the content and the spotlights
+ * screen-blended over it. `fitWindow` sizes the canvases to the window instead of leaving them
+ * at the display stage's fixed size. `spotlight` is in CSS pixels of the scene's box.
  */
-export function Studio({
-  audience = false,
-  spotlight = null,
-  children,
-}: {
-  audience?: boolean;
-  /** A point in stage pixels for every spotlight to swing onto. */
-  spotlight?: Point | null;
-  children: ReactNode;
-}) {
-  const backRef = useRef<HTMLCanvasElement>(null);
-  const beamRef = useRef<HTMLCanvasElement>(null);
+function useStudioScene(
+  backRef: RefObject<HTMLCanvasElement | null>,
+  beamRef: RefObject<HTMLCanvasElement | null>,
+  {
+    audience,
+    spotlight,
+    fitWindow,
+  }: { audience: boolean; spotlight: Point | null; fitWindow: boolean },
+) {
   const target = useRef<Point | null>(null);
-
   const spotX = spotlight?.x ?? null;
   const spotY = spotlight?.y ?? null;
   useEffect(() => {
@@ -44,18 +41,57 @@ export function Studio({
     let frame = 0;
     let angles: number[] | null = null;
     let last: number | null = null;
+
     const draw = (now: number) => {
       const t = now / 1000;
       angles ??= idleBeamAngles(t);
-      aimBeams(angles, t, last === null ? 0 : t - last, target.current);
+      aimBeams(angles, t, last === null ? 0 : t - last, target.current, back.canvas.width);
       last = t;
       drawBackdrop(back, t, audience);
       drawBeams(beams, angles);
       if (!still) frame = requestAnimationFrame(draw);
     };
+
+    const fit = () => {
+      const width = Math.ceil(window.innerWidth / SCENE_SCALE);
+      const height = Math.ceil(window.innerHeight / SCENE_SCALE);
+      for (const canvas of [back.canvas, beams.canvas]) {
+        if (canvas.width !== width) canvas.width = width;
+        if (canvas.height !== height) canvas.height = height;
+      }
+      // Resizing clears a canvas, so a still scene has to be drawn again.
+      if (still) draw(performance.now());
+    };
+
+    if (fitWindow) {
+      fit();
+      window.addEventListener('resize', fit);
+    }
     frame = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(frame);
-  }, [audience]);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('resize', fit);
+    };
+  }, [backRef, beamRef, audience, fitWindow]);
+}
+
+/**
+ * The prime time studio on the 1920x1080 display stage: a pixel-art set behind the content and
+ * spotlights washing over it. Fills its parent.
+ */
+export function Studio({
+  audience = false,
+  spotlight = null,
+  children,
+}: {
+  audience?: boolean;
+  /** A point in stage pixels for every spotlight to swing onto. */
+  spotlight?: Point | null;
+  children: ReactNode;
+}) {
+  const backRef = useRef<HTMLCanvasElement>(null);
+  const beamRef = useRef<HTMLCanvasElement>(null);
+  useStudioScene(backRef, beamRef, { audience, spotlight, fitWindow: false });
 
   return (
     <div className="relative h-full w-full overflow-hidden bg-studio">
@@ -72,8 +108,33 @@ export function Studio({
         height={SCENE_H}
         className="pixel-canvas pointer-events-none absolute inset-0 z-20 h-full w-full mix-blend-screen"
       />
-      <div className="studio-vignette pointer-events-none absolute inset-0 z-30" />
-      <div className="studio-scanlines pointer-events-none absolute inset-0 z-30" />
+    </div>
+  );
+}
+
+/**
+ * The studio as a full-window backdrop for an ordinary scrolling page. The set stays put while
+ * the content scrolls over it.
+ */
+export function StudioBackdrop({
+  audience = false,
+  children,
+}: {
+  audience?: boolean;
+  children: ReactNode;
+}) {
+  const backRef = useRef<HTMLCanvasElement>(null);
+  const beamRef = useRef<HTMLCanvasElement>(null);
+  useStudioScene(backRef, beamRef, { audience, spotlight: null, fitWindow: true });
+
+  return (
+    <div className="relative min-h-full">
+      <canvas ref={backRef} className="pixel-canvas fixed inset-0 h-full w-full" />
+      <div className="relative z-10 min-h-full">{children}</div>
+      <canvas
+        ref={beamRef}
+        className="pixel-canvas pointer-events-none fixed inset-0 z-20 h-full w-full mix-blend-screen"
+      />
     </div>
   );
 }
@@ -113,5 +174,60 @@ export function MarqueeBulbs({
         />
       ))}
     </>
+  );
+}
+
+/**
+ * The show title, letters bobbing out of step like a marquee sign. Size it with `className`.
+ * Each word is one unbreakable box, so a narrow screen wraps between words, never inside one.
+ */
+export function MarqueeTitle({ text, className = '' }: { text: string; className?: string }) {
+  let letter = 0;
+  return (
+    <h1
+      className={`studio-flicker font-pixel uppercase leading-[1.15] text-bulb chroma-text ${className}`}
+    >
+      {text.split(' ').map((word, w) => (
+        <span key={w}>
+          {w > 0 ? ' ' : null}
+          <span className="inline-block whitespace-nowrap">
+            {[...word].map((char) => {
+              const i = letter++;
+              return (
+                <span key={i} className="studio-bob" style={{ animationDelay: `${i * -0.18}s` }}>
+                  {char}
+                </span>
+              );
+            })}
+          </span>
+        </span>
+      ))}
+    </h1>
+  );
+}
+
+export function BlinkingCursor() {
+  return <span className="studio-blink">_</span>;
+}
+
+/** Marks a Daily Double tile for the host. Put it in a relative parent. */
+export function DailyDoubleBadge() {
+  return (
+    <span
+      title="Daily Double"
+      className="absolute right-1 top-1 bg-neon-pink px-1 py-0.5 font-pixel text-[9px] leading-none text-white"
+    >
+      DD
+    </span>
+  );
+}
+
+/** A small pixel triangle pointing right, for whoever is in control. */
+export function ControlMarker({ className = '' }: { className?: string }) {
+  return (
+    <span
+      aria-label="In control"
+      className={`inline-block h-0 w-0 shrink-0 border-y-[0.4em] border-l-[0.55em] border-y-transparent border-l-bulb ${className}`}
+    />
   );
 }

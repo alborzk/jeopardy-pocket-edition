@@ -112,27 +112,29 @@ function PlayerScreen({
     <div className="flex h-dvh flex-col">
       <Toast message={error} />
       <ReconnectingBanner connected={connected} />
-      <header className="flex items-center justify-between gap-3 bg-black/30 px-4 pb-3 pt-4">
+      <header className="flex items-center justify-between gap-3 border-b-[3px] border-[#1c2a70] bg-studio-deep/90 px-4 pb-3 pt-4">
         <div className="min-w-0">
-          <div className="truncate text-lg font-bold">{you.name}</div>
-          <div className="text-xs uppercase tracking-widest text-white/50">
+          <div className="truncate text-3xl uppercase leading-none">{you.name}</div>
+          <div className="text-base uppercase tracking-widest text-white/50">
             Room {snapshot.code}
           </div>
         </div>
         <div
-          className={`font-display text-4xl tabular-nums ${you.score < 0 ? 'text-red-300' : 'text-gold'}`}
+          className={`shrink-0 font-pixel text-xl pixel-drop-sm ${you.score < 0 ? 'text-neon-pink' : 'text-bulb'}`}
         >
           {formatMoney(you.score)}
         </div>
       </header>
 
       {snapshot.frozen ? (
-        <div className="bg-yellow-500 px-4 py-1.5 text-center text-sm font-bold text-black">
+        <div className="bg-bulb px-4 py-1.5 text-center text-xl uppercase text-studio-deep">
           {snapshot.hostConnected ? 'Game paused' : 'Waiting for the host to reconnect…'}
         </div>
       ) : null}
 
-      <p className="px-4 py-3 text-center text-lg font-semibold">{statusLine(snapshot)}</p>
+      <p className="px-4 py-4 text-center text-3xl uppercase leading-tight">
+        {statusLine(snapshot)}
+      </p>
 
       <main className="flex min-h-0 flex-1 flex-col px-4 pb-6">
         {showBuzzer ? (
@@ -170,9 +172,9 @@ function PlayerScreen({
 }
 
 const BUZZER_LOOK: Record<BuzzerState, { label: string; className: string }> = {
-  locked: { label: 'WAIT', className: 'bg-buzz-locked text-white/80' },
+  locked: { label: 'WAIT', className: 'bg-buzz-locked text-white/70' },
   open: { label: 'BUZZ!', className: 'bg-buzz-open buzz-ready text-white' },
-  in: { label: "YOU'RE IN!", className: 'bg-gold text-board-deep' },
+  in: { label: "YOU'RE IN!", className: 'bg-bulb buzz-won text-studio-deep' },
   lockedOut: { label: 'LOCKED OUT', className: 'bg-buzz-out text-white' },
 };
 
@@ -213,9 +215,9 @@ function Buzzer({ snapshot, offset }: { snapshot: Snapshot; offset: number }) {
   const current = snapshot.current;
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-3">
+    <div className="flex min-h-0 flex-1 flex-col gap-4">
       {current ? (
-        <div className="text-center text-sm uppercase tracking-widest text-white/60">
+        <div className="text-center text-xl uppercase tracking-widest text-neon-cyan">
           {current.category} · {formatMoney(current.value)}
         </div>
       ) : null}
@@ -224,12 +226,12 @@ function Buzzer({ snapshot, offset }: { snapshot: Snapshot; offset: number }) {
         onPointerDown={onPointerDown}
         onKeyDown={onKeyDown}
         onContextMenu={(event) => event.preventDefault()}
-        className={`tap-target flex flex-1 select-none flex-col items-center justify-center rounded-[2.5rem] font-display text-6xl tracking-wide shadow-2xl transition-colors duration-100 ${look.className}`}
+        className={`tap-target buzzer mb-3 flex flex-1 select-none flex-col items-center justify-center px-4 text-center font-pixel text-[clamp(26px,9vw,48px)] uppercase leading-tight ${look.className}`}
         aria-label="Buzzer"
       >
         <span>{flash ?? look.label}</span>
         {state === 'open' && snapshot.deadline !== null ? (
-          <span className="mt-2 text-xl font-sans opacity-80">
+          <span className="mt-4 font-pixel text-xl opacity-80">
             <Countdown snapshot={snapshot} offset={offset} />
           </span>
         ) : null}
@@ -252,7 +254,7 @@ function WagerForm({
   const [value, setValue] = useState(current === null ? '' : String(current));
   const [busy, setBusy] = useState(false);
 
-  if (!limits) return <p className="text-center text-white/70">No wager needed.</p>;
+  if (!limits) return <p className="text-center text-xl text-white/70">No wager needed.</p>;
 
   const amount = Number(value);
   const valid =
@@ -261,7 +263,7 @@ function WagerForm({
 
   return (
     <form
-      className="card flex flex-col gap-4"
+      className="card flex flex-col gap-5"
       onSubmit={async (event) => {
         event.preventDefault();
         if (!valid) return;
@@ -270,12 +272,14 @@ function WagerForm({
         setBusy(false);
       }}
     >
-      <h2 className="text-center font-display text-3xl uppercase text-gold">{title}</h2>
-      <p className="text-center text-sm text-white/70">
+      <h2 className="text-center font-pixel text-xl uppercase leading-snug text-bulb chroma-text-sm">
+        {title}
+      </h2>
+      <p className="text-center text-xl text-white/70">
         Wager between {formatMoney(limits.min)} and {formatMoney(limits.max)}
       </p>
       <input
-        className="field text-center font-display text-5xl tabular-nums"
+        className="field py-4 text-center font-pixel text-3xl"
         type="number"
         inputMode="numeric"
         min={limits.min}
@@ -286,7 +290,7 @@ function WagerForm({
         placeholder="0"
         aria-label="Wager amount"
       />
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-3 gap-3">
         <button
           type="button"
           className="btn-secondary"
@@ -305,11 +309,11 @@ function WagerForm({
           Max
         </button>
       </div>
-      <button type="submit" className="btn-primary text-lg" disabled={!valid || busy}>
+      <button type="submit" className="btn-primary text-2xl" disabled={!valid || busy}>
         {current === null ? 'Lock in wager' : 'Update wager'}
       </button>
       {current !== null ? (
-        <p className="text-center text-sm text-white/70">Wager locked in: {formatMoney(current)}</p>
+        <p className="text-center text-xl text-white/70">Wager locked in: {formatMoney(current)}</p>
       ) : null}
     </form>
   );
@@ -327,7 +331,7 @@ function FinalWager({
   return (
     <div className="flex flex-col gap-4">
       <div className="card text-center">
-        <div className="text-xs uppercase tracking-widest text-white/60">
+        <div className="text-base uppercase tracking-widest text-white/60">
           Final Jeopardy category
         </div>
         <div className="mt-1 font-display text-3xl uppercase text-gold">{final.category}</div>
@@ -340,7 +344,7 @@ function FinalWager({
           onSubmit={onWager}
         />
       ) : (
-        <p className="card text-center text-white/80">
+        <p className="card text-center text-xl text-white/80">
           Only players with a positive score play Final Jeopardy. Sit tight and watch!
         </p>
       )}
@@ -366,29 +370,29 @@ function FinalAnswer({
   const submitted = final.yourAnswer;
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-3">
+    <div className="flex min-h-0 flex-1 flex-col gap-4">
       <div className="card text-center">
-        <div className="font-display text-xl uppercase text-gold">{final.category}</div>
-        <p className="mt-2 font-clue text-lg leading-snug">{final.clue}</p>
+        <div className="text-2xl uppercase text-bulb">{final.category}</div>
+        <p className="mt-2 text-2xl uppercase leading-tight">{final.clue}</p>
       </div>
       <div className="flex items-center gap-3">
         <CountdownBar snapshot={snapshot} offset={offset} totalMs={FINAL_ANSWER_MS} />
         <Countdown
           snapshot={snapshot}
           offset={offset}
-          className="w-8 text-right font-display text-2xl"
+          className="w-12 shrink-0 text-right font-pixel text-lg text-bulb"
         />
       </div>
       {!eligible ? (
-        <p className="card text-center text-white/80">You're watching this one.</p>
+        <p className="card text-center text-xl text-white/80">You're watching this one.</p>
       ) : submitted !== null ? (
         <div className="card flex flex-1 flex-col items-center justify-center gap-2 text-center">
-          <div className="text-sm uppercase tracking-widest text-buzz-open">Answer locked in</div>
-          <p className="font-clue text-2xl">{submitted}</p>
+          <div className="text-xl uppercase tracking-widest text-buzz-open">Answer locked in</div>
+          <p className="text-3xl uppercase leading-tight">{submitted}</p>
         </div>
       ) : (
         <form
-          className="flex min-h-0 flex-1 flex-col gap-3"
+          className="flex min-h-0 flex-1 flex-col gap-4"
           onSubmit={async (event) => {
             event.preventDefault();
             if (!text.trim()) return;
@@ -398,7 +402,7 @@ function FinalAnswer({
           }}
         >
           <textarea
-            className="field min-h-0 flex-1 resize-none text-xl"
+            className="field min-h-0 flex-1 resize-none text-2xl"
             value={text}
             onChange={(event) => setText(event.target.value)}
             maxLength={FINAL_ANSWER_MAX_LENGTH}
@@ -406,7 +410,7 @@ function FinalAnswer({
             aria-label="Your Final Jeopardy answer"
             autoFocus
           />
-          <button type="submit" className="btn-primary text-lg" disabled={busy || !text.trim()}>
+          <button type="submit" className="btn-primary text-2xl" disabled={busy || !text.trim()}>
             Submit answer
           </button>
         </form>
@@ -419,24 +423,24 @@ function FinalSummary({ snapshot }: { snapshot: Snapshot }) {
   const final = snapshot.final;
   if (!final || final.reveals.length === 0) return null;
   return (
-    <div className="mb-4 flex flex-col gap-2">
+    <div className="mb-5 flex flex-col gap-4">
       {final.reveals.map((reveal) => (
         <div key={reveal.playerId} className="card">
           <div className="flex items-baseline justify-between gap-2">
-            <span className="font-semibold">{playerName(snapshot, reveal.playerId)}</span>
+            <span className="text-xl uppercase">{playerName(snapshot, reveal.playerId)}</span>
             {reveal.correct === null ? null : (
-              <span className={reveal.correct ? 'text-buzz-open' : 'text-red-300'}>
+              <span className={`text-xl ${reveal.correct ? 'text-buzz-open' : 'text-neon-pink'}`}>
                 {reveal.correct ? '+' : '-'}
                 {formatMoney(reveal.wager ?? 0)}
               </span>
             )}
           </div>
-          <p className="font-clue text-lg">{reveal.answer || '(no answer)'}</p>
+          <p className="text-xl uppercase">{reveal.answer || '(no answer)'}</p>
         </div>
       ))}
       {final.answer ? (
-        <p className="text-center text-sm text-white/70">
-          Correct response: <span className="font-clue text-base text-gold">{final.answer}</span>
+        <p className="text-center text-xl text-white/70">
+          Correct response: <span className="text-bulb">{final.answer}</span>
         </p>
       ) : null}
     </div>
