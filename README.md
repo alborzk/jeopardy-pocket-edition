@@ -81,8 +81,9 @@ A restart ends all games in progress.
 1. Push this repo to GitHub.
 2. In [Render](https://render.com), sign in with GitHub, choose **New > Blueprint**, pick the
    repo, and apply. The first build takes a few minutes.
-3. Open `https://<service-name>.onrender.com`. A custom domain can be added later in the
-   service's settings.
+3. Open `https://<service-name>.onrender.com`. Custom domains go in the `domains` list in
+   `render.yaml` (this one serves [jeepy.party](https://jeepy.party)), with DNS records pointing
+   at Render.
 
 On the free plan the service sleeps after 15 minutes with nobody connected, and the first visit
 afterwards takes about a minute to wake it, so open the link a little before game night. Render

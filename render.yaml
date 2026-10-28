@@ -9,6 +9,10 @@ services:
     region: oregon
     dockerfilePath: ./Dockerfile
     healthCheckPath: /healthz
+    # Render also adds www.jeepy.party, redirecting to the root. DNS lives at Namecheap: an A record
+    # for @ to Render's 216.24.57.1, and a CNAME for www to this service's onrender.com address.
+    domains:
+      - jeepy.party
     # Rooms live in the server's memory, so there must only ever be one instance.
     numInstances: 1
     autoDeployTrigger: commit
