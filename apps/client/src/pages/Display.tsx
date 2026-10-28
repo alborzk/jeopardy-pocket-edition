@@ -334,7 +334,7 @@ function LobbyScreen({ snapshot }: { snapshot: Snapshot }) {
       {/* The bottom 200px stays clear for the studio audience. */}
       <div className="flex h-full flex-col gap-12 px-14 pb-[200px] pt-12">
         <header className="flex items-center justify-between">
-          <MarqueeTitle text="Jeopardy Pocket Edition" className="text-[60px]" />
+          <MarqueeTitle text="Jeepy Party!" className="text-[60px]" />
           {snapshot.board ? (
             <div className="font-crt text-[48px] uppercase text-neon-cyan chroma-text-sm">
               {snapshot.board.title}
@@ -948,7 +948,7 @@ function FinalScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number 
     return (
       <Studio spotlight={FINAL_CATEGORY_SPOT}>
         <div className="flex h-full flex-col items-center justify-center gap-12 px-24 text-center">
-          <MarqueeTitle text="Final Jeopardy" className="text-[88px]" />
+          <MarqueeTitle text="Final Jeepy!" className="text-[88px]" />
           <div className="slam-in pixel-tile px-16 py-10 font-crt text-[96px] uppercase leading-none pixel-drop">
             {final.category}
           </div>

@@ -20,7 +20,7 @@ const staticDir =
 const server = await startServer({ port, host, staticDir });
 
 const lan = getLanAddresses();
-console.log(`Jeopardy server listening on port ${server.port}`);
+console.log(`Jeepy Party! server listening on port ${server.port}`);
 console.log(`  Local:   http://localhost:${server.port}`);
 if (fromSource) {
   // In development the client is served by Vite, which proxies the socket to this server.

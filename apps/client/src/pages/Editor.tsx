@@ -269,10 +269,10 @@ export function Editor() {
                   type="button"
                   className="btn-secondary px-4 py-2"
                   onClick={() =>
-                    update((d) => void d.rounds.push(createEmptyRound(1, 'Double Jeopardy!')))
+                    update((d) => void d.rounds.push(createEmptyRound(1, 'Double Jeepy!')))
                   }
                 >
-                  + Double Jeopardy round
+                  + Double Jeepy! round
                 </button>
               ) : null}
               <button
@@ -285,7 +285,7 @@ export function Editor() {
                   setCell(null);
                 }}
               >
-                Final Jeopardy
+                Final Jeepy!
               </button>
             </nav>
 
@@ -611,7 +611,7 @@ function ClueEditor({
 function FinalEditor({ board, update }: { board: Board; update: Update }) {
   return (
     <section className="card flex flex-col gap-3">
-      <h2 className="font-pixel text-base uppercase leading-snug text-bulb">Final Jeopardy</h2>
+      <h2 className="font-pixel text-base uppercase leading-snug text-bulb">Final Jeepy!</h2>
       <label className="flex flex-col gap-1">
         <span className="text-xs uppercase tracking-widest text-white/60">Category</span>
         <input

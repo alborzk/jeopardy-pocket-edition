@@ -1,4 +1,4 @@
-# Jeopardy Party App
+# Jeepy Party! App
 
 Multiplayer Jeopardy for in-person game nights. The host creates a room and shows the board on a TV or laptop. Players join on their phones with a 4-letter room code. Each phone is a buzzer, and players also use it to wager and to write Final Jeopardy answers. The host builds boards ahead of time and runs the game from a controller view.
 

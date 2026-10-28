@@ -36,9 +36,9 @@ export function Landing() {
       {/* The bottom padding keeps the cards clear of the studio audience. */}
       <main className="mx-auto flex min-h-dvh max-w-4xl flex-col justify-center gap-10 px-4 pb-48 pt-16 sm:px-8">
         <header className="flex flex-col items-center gap-5 text-center">
-          <MarqueeTitle text="Jeopardy Pocket Edition" className="text-[clamp(22px,6vw,54px)]" />
+          <MarqueeTitle text="Jeepy Party!" className="text-[clamp(22px,6vw,54px)]" />
           <p className="text-xl uppercase tracking-wider text-neon-cyan chroma-text-sm sm:text-2xl">
-            A buzzer in every pocket
+            A Jeopardy game for friends and enemies
           </p>
         </header>
 

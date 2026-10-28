@@ -1,4 +1,4 @@
-# Jeopardy Pocket Edition
+# Jeepy Party!
 
 Multiplayer Jeopardy for in-person game nights: a buzzer in every pocket. The host shows the board
 on a TV or laptop, players join on their phones with a 4-letter room code, and each phone is a
@@ -60,8 +60,8 @@ One long-running Node process, because websockets and in-memory rooms don't fit 
 The included `Dockerfile` builds everything and runs `node apps/server/dist/index.js`.
 
 ```bash
-docker build -t jeopardy-party .
-docker run -p 8080:8080 jeopardy-party
+docker build -t jeepy-party .
+docker run -p 8080:8080 jeepy-party
 ```
 
 | Variable      | Default   | Meaning                                   |

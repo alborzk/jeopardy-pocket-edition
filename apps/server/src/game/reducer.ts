@@ -579,7 +579,7 @@ export function tryReduce(state: GameState, action: Action, now: number): StepRe
       if (state.phase === 'finalWager') {
         const final = state.final;
         if (!final || !final.eligible.includes(action.playerId)) {
-          return fail('You are not in Final Jeopardy');
+          return fail('You are not in Final Jeepy!');
         }
         const max = Math.max(0, player.score);
         if (amount < 0 || amount > max) return fail(`Wager between 0 and ${max}`);
@@ -594,7 +594,7 @@ export function tryReduce(state: GameState, action: Action, now: number): StepRe
     case 'finalAnswer': {
       const final = state.final;
       if (state.phase !== 'finalAnswer' || !final) return fail('It is not time to answer');
-      if (!final.eligible.includes(action.playerId)) return fail('You are not in Final Jeopardy');
+      if (!final.eligible.includes(action.playerId)) return fail('You are not in Final Jeepy!');
       if (state.deadline === null || now >= state.deadline) return fail('Time is up');
       if (final.answers[action.playerId] !== undefined)
         return fail('You already submitted an answer');
@@ -610,7 +610,7 @@ export function tryReduce(state: GameState, action: Action, now: number): StepRe
       const final = state.final;
       if (state.phase !== 'finalReveal' || !final) return fail('It is not time to reveal answers');
       if (!final.eligible.includes(action.playerId))
-        return fail('That player is not in Final Jeopardy');
+        return fail('That player is not in Final Jeepy!');
       if (final.revealed.includes(action.playerId)) return fail('That answer was already revealed');
       if (final.currentRevealId !== null && final.judged[final.currentRevealId] === undefined) {
         return fail('Judge the current answer first');

@@ -364,7 +364,7 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
               className="btn-primary py-5 text-xl"
               onClick={() => run('host:continue', {})}
             >
-              {nextIsFinal ? 'Go to Final Jeopardy' : 'Start next round'}
+              {nextIsFinal ? 'Go to Final Jeepy!' : 'Start next round'}
             </button>
           </ActionBar>
         </>
@@ -541,7 +541,7 @@ function SettingsFields({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
           checked={finalIncludeAll}
           onChange={(event) => run('host:setSettings', { finalIncludeAll: event.target.checked })}
         />
-        Let everyone play Final Jeopardy, even with a score of $0 or less
+        Let players with $0 or less play Final Jeepy! too
       </label>
     </div>
   );
@@ -607,7 +607,7 @@ function FinalPanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
 
   const header = (
     <div className="card">
-      <div className="text-base uppercase tracking-widest text-white/60">Final Jeopardy</div>
+      <div className="text-base uppercase tracking-widest text-white/60">Final Jeepy!</div>
       <div className="font-display text-3xl uppercase text-gold">{final.category}</div>
       <p className="mt-2 text-2xl uppercase leading-tight">{final.clue}</p>
       <div className="mt-3 bg-bulb/10 p-3 shadow-[inset_0_0_0_3px_rgb(255_209_102/0.45)]">

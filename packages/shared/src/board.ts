@@ -94,7 +94,7 @@ export function createEmptyBoard(title = 'Untitled board'): Board {
   return {
     id: makeId(),
     title,
-    rounds: [createEmptyRound(0, 'Jeopardy!'), createEmptyRound(1, 'Double Jeopardy!')],
+    rounds: [createEmptyRound(0, 'Jeepy Party!'), createEmptyRound(1, 'Double Jeepy!')],
     final: { category: '', clue: '', answer: '' },
   };
 }

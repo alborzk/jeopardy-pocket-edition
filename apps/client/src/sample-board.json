@@ -3,7 +3,7 @@
   "title": "Sample Trivia Night",
   "rounds": [
     {
-      "name": "Jeopardy!",
+      "name": "Jeepy Party!",
       "categories": [
         {
           "name": "World Capitals",
@@ -189,7 +189,7 @@
       ]
     },
     {
-      "name": "Double Jeopardy!",
+      "name": "Double Jeepy!",
       "categories": [
         {
           "name": "History",

@@ -83,9 +83,9 @@ function statusLine(snapshot: Snapshot): string {
     case 'roundEnd':
       return 'End of the round';
     case 'finalWager':
-      return 'Final Jeopardy';
+      return 'Final Jeepy!';
     case 'finalAnswer':
-      return 'Final Jeopardy';
+      return 'Final Jeepy!';
     case 'finalReveal':
       return 'The host is revealing answers';
     case 'gameOver':
@@ -332,7 +332,7 @@ function FinalWager({
     <div className="flex flex-col gap-4">
       <div className="card text-center">
         <div className="text-base uppercase tracking-widest text-white/60">
-          Final Jeopardy category
+          Final Jeepy! category
         </div>
         <div className="mt-1 font-display text-3xl uppercase text-gold">{final.category}</div>
       </div>
@@ -345,7 +345,7 @@ function FinalWager({
         />
       ) : (
         <p className="card text-center text-xl text-white/80">
-          Only players with a positive score play Final Jeopardy. Sit tight and watch!
+          Only players with a positive score play Final Jeepy! Sit tight and watch.
         </p>
       )}
     </div>
@@ -407,7 +407,7 @@ function FinalAnswer({
             onChange={(event) => setText(event.target.value)}
             maxLength={FINAL_ANSWER_MAX_LENGTH}
             placeholder="What is…?"
-            aria-label="Your Final Jeopardy answer"
+            aria-label="Your Final Jeepy! answer"
             autoFocus
           />
           <button type="submit" className="btn-primary text-2xl" disabled={busy || !text.trim()}>
