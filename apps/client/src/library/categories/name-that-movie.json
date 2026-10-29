@@ -1,0 +1,45 @@
+{
+  "id": "name-that-movie",
+  "tiers": [
+    [
+      ["A boy is left behind at Christmas and defends his house from two clumsy burglars.", "What is Home Alone?"],
+      ["A clownfish crosses the ocean to find his missing son.", "What is Finding Nemo?"],
+      ["A lion cub flees his kingdom after his father's death, then returns to take the throne.", "What is The Lion King?"],
+      ["A girl from Kansas is swept away by a tornado and follows a yellow brick road.", "What is The Wizard of Oz?"],
+      ["A shark terrorizes a New England beach town, and the police chief says they'll need a bigger boat.", "What is Jaws?"],
+      ["A group of toys secretly comes to life whenever their owner leaves the room.", "What is Toy Story?"]
+    ],
+    [
+      ["A scientist clones dinosaurs for an island theme park, and the security system fails.", "What is Jurassic Park?"],
+      ["A farm boy joins a rebellion, learns about the Force, and helps destroy a moon-sized space station.", "What is Star Wars? (Also: A New Hope)"],
+      ["An ogre rescues a princess for a short-tempered lord, with a talkative donkey along for the ride.", "What is Shrek?"],
+      ["A ship strikes an iceberg on its maiden voyage while a poor artist and a first-class passenger fall in love.", "What is Titanic?"],
+      ["A boy learns on his eleventh birthday that he is a wizard and is invited to a school for magic.", "What is Harry Potter and the Sorcerer's Stone? (Also: Philosopher's Stone)"],
+      ["A rat in Paris dreams of becoming a chef by hiding under a young cook's hat.", "What is Ratatouille?"]
+    ],
+    [
+      ["A thief who enters people's dreams is hired to plant an idea in a CEO's mind.", "What is Inception?"],
+      ["A hacker learns his reality is a simulation after a stranger offers him a choice between a red pill and a blue one.", "What is The Matrix?"],
+      ["A man with short-term memory loss tattoos clues on his body to hunt his wife's killer.", "What is Memento?"],
+      ["A lonely robot tidies a trash-covered Earth and falls for a sleek probe named Eve.", "What is WALL-E?"],
+      ["Four friends wake up after a Vegas bachelor party with no memory, a baby, and a tiger in the bathroom.", "What is The Hangover?"],
+      ["A boy befriends a stranded alien and helps him find a way to phone home.", "What is E.T. the Extra-Terrestrial?"]
+    ],
+    [
+      ["An elderly widower ties thousands of balloons to his house and floats to South America.", "What is Up?"],
+      ["A banker convicted of murdering his wife befriends a fellow inmate over decades and plans an escape.", "What is The Shawshank Redemption?"],
+      ["A Gotham vigilante faces a chaotic clown who wants to watch the city burn.", "What is The Dark Knight?"],
+      ["A poor family infiltrates a wealthy household one member at a time.", "What is Parasite?"],
+      ["An insomniac and a soap salesman start an underground club where men fight each other.", "What is Fight Club?"],
+      ["A cursed prince, an enchanted castle full of talking furniture, and a bookish girl who takes her father's place as prisoner.", "What is Beauty and the Beast?"]
+    ],
+    [
+      ["A girl's parents turn into pigs after they wander into a spirit world, and she takes a job at a bathhouse.", "What is Spirited Away?"],
+      ["A 1974 neo-noir in which a private detective uncovers a conspiracy over water in 1930s Los Angeles.", "What is Chinatown?"],
+      ["A linguist is brought in to communicate with aliens who arrive in twelve giant pods.", "What is Arrival?"],
+      ["This black-and-white 1941 film begins with a newspaper tycoon's dying word, 'Rosebud'.", "What is Citizen Kane?"],
+      ["In this 1999 thriller, a child psychologist works with a boy who says he sees dead people.", "What is The Sixth Sense?"],
+      ["A young drummer is pushed to the brink by a ruthless conductor at a music conservatory.", "What is Whiplash?"]
+    ]
+  ]
+}

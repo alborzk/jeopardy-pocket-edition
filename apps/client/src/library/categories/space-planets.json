@@ -1,0 +1,45 @@
+{
+  "id": "space-planets",
+  "tiers": [
+    [
+      ["This is the closest planet to the Sun.", "What is Mercury?"],
+      ["This rusty-colored world is called the Red Planet.", "What is Mars?"],
+      ["This planet is famous for its bright rings.", "What is Saturn?"],
+      ["Our solar system revolves around this star.", "What is the Sun?"],
+      ["This gas giant is the largest planet in our solar system.", "What is Jupiter?"],
+      ["Earth's only natural satellite is this.", "What is the Moon?"]
+    ],
+    [
+      ["In 1969 he became the first person to walk on the Moon.", "Who is Neil Armstrong?"],
+      ["Our solar system is in this spiral galaxy.", "What is the Milky Way?"],
+      ["In 1957 the Soviet Union launched the first artificial satellite, named this.", "What is Sputnik?"],
+      ["In 1961 this cosmonaut became the first human in space.", "Who is Yuri Gagarin?"],
+      ["Earth takes about this many days to orbit the Sun.", "What is 365?"],
+      ["Astronauts on the first Moon landing mission rode in this Apollo spacecraft.", "What is Apollo 11?"]
+    ],
+    [
+      ["In 2006 this world was reclassified as a dwarf planet.", "What is Pluto?"],
+      ["Saturn's largest moon, with a thick atmosphere, is called this.", "What is Titan?"],
+      ["This planet spins on its side, tilted almost 90 degrees.", "What is Uranus?"],
+      ["This is the hottest planet in our solar system, thanks to a runaway greenhouse effect.", "What is Venus?"],
+      ["Light travels at roughly this many kilometers per second.", "What is 300,000?"],
+      ["Voyager 2 is the only spacecraft to have flown past this planet, the farthest from the Sun.", "What is Neptune?"]
+    ],
+    [
+      ["The tallest volcano in the solar system, found on Mars, is called this.", "What is Olympus Mons?"],
+      ["A light-year is a measure of this.", "What is distance?"],
+      ["In 1963 this Soviet cosmonaut became the first woman in space.", "Who is Valentina Tereshkova?"],
+      ["Besides the Sun, the closest star system to Earth is this one.", "What is Alpha Centauri? (Also: Proxima Centauri)"],
+      ["NASA's rover Perseverance landed on Mars in this year.", "What is 2021?"],
+      ["Jupiter's most famous feature, a giant storm, is called this.", "What is the Great Red Spot?"]
+    ],
+    [
+      ["Jupiter's four largest moons, discovered by Galileo, are known by this name.", "What are the Galilean moons?"],
+      ["The boundary around a black hole beyond which nothing can escape is called this.", "What is the event horizon?"],
+      ["Launched in December 2021, this NASA space telescope looks at the universe in infrared.", "What is the James Webb Space Telescope?"],
+      ["Mars has two small moons with these names.", "What are Phobos and Deimos?"],
+      ["Jupiter's moon with hundreds of active volcanoes has this name.", "What is Io?"],
+      ["Carl Sagan famously described Earth in a Voyager 1 photo as this 'pale' color of dot.", "What is blue?"]
+    ]
+  ]
+}

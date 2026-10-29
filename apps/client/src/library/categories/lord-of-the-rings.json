@@ -1,0 +1,45 @@
+{
+  "id": "lord-of-the-rings",
+  "tiers": [
+    [
+      ["This small, hairy-footed hero carries the One Ring to Mordor.", "Who is Frodo Baggins? (Also: Frodo)"],
+      ["This wise wizard in a gray robe and pointy hat leads the Fellowship.", "Who is Gandalf?"],
+      ["The One Ring can only be destroyed in the fires of this volcano.", "What is Mount Doom? (Also: Orodruin)"],
+      ["This slimy creature, once named Sméagol, is obsessed with his precious Ring.", "Who is Gollum?"],
+      ["The hobbits live in this peaceful, green homeland.", "What is the Shire?"],
+      ["The Dark Lord who forged the One Ring is named this.", "Who is Sauron?"]
+    ],
+    [
+      ["Frodo's loyal gardener and best friend is this hobbit.", "Who is Samwise Gamgee? (Also: Sam)"],
+      ["The Fellowship is formed at the Council of Elrond in this elven valley.", "What is Rivendell?"],
+      ["This elven archer, played by Orlando Bloom, is known for his incredible aim.", "Who is Legolas?"],
+      ["This dwarf, Legolas's friend, keeps a friendly count of the orcs he slays.", "Who is Gimli?"],
+      ["Aragorn is the long-lost heir to the throne of this kingdom of Men.", "What is Gondor?"],
+      ["The Lord of the Rings was written by this English author.", "Who is J.R.R. Tolkien?"]
+    ],
+    [
+      ["Gandalf's horse, the lord of all horses, is named this.", "Who is Shadowfax?"],
+      ["Bilbo Baggins's elvish sword glows blue when orcs are near and is called this.", "What is Sting?"],
+      ["Gandalf the Grey falls fighting this fiery demon in the Mines of Moria.", "What is the Balrog?"],
+      ["Aragorn wields this sword, reforged from the shards of Narsil.", "What is Anduril? (Also: Andúril)"],
+      ["Peter Jackson filmed the trilogy mostly in this country.", "What is New Zealand?"],
+      ["This elven queen of Lothlórien, played by Cate Blanchett, offers Frodo a glowing phial.", "Who is Galadriel?"]
+    ],
+    [
+      ["Treebeard is the leader of these giant, tree-like shepherds.", "What are the Ents?"],
+      ["The White City of Gondor, besieged in The Return of the King, is named this.", "What is Minas Tirith?"],
+      ["Sauron's nine fearsome servants, once kings of Men, are known by this Black Speech name.", "What are the Nazgul? (Also: Ringwraiths)"],
+      ["Bilbo's adventure with thirteen dwarves is told in this earlier Tolkien book.", "What is The Hobbit?"],
+      ["This dwarf prince leads the quest to reclaim Erebor from a dragon.", "Who is Thorin Oakenshield? (Also: Thorin)"],
+      ["The dragon who guards the Lonely Mountain is named this.", "Who is Smaug?"]
+    ],
+    [
+      ["The Return of the King won this many Academy Awards, tying the all-time record.", "What is eleven? (Also: 11)"],
+      ["Tolkien was a professor at Oxford of this early form of English.", "What is Anglo-Saxon? (Also: Old English)"],
+      ["The One Ring's inscription is written in this language of Mordor.", "What is the Black Speech?"],
+      ["Frodo inherits the Ring from this elderly hobbit, who found it in Gollum's cave.", "Who is Bilbo Baggins? (Also: Bilbo)"],
+      ["Éowyn slays the Witch-king of Angmar with help from this hobbit.", "Who is Merry? (Also: Meriadoc Brandybuck)"],
+      ["Tolkien's history of the First Age was published after his death under this title.", "What is The Silmarillion?"]
+    ]
+  ]
+}

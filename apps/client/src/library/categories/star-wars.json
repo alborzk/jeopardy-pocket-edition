@@ -1,0 +1,45 @@
+{
+  "id": "star-wars",
+  "tiers": [
+    [
+      ["This green, pointy-eared Jedi Master speaks in backwards sentences.", "Who is Yoda?"],
+      ["Luke Skywalker's father, a Sith Lord in a black helmet, is known by this name.", "Who is Darth Vader? (Also: Anakin Skywalker)"],
+      ["The weapon of a Jedi is this glowing sword.", "What is a lightsaber?"],
+      ["Han Solo's loyal co-pilot is this furry Wookiee.", "Who is Chewbacca?"],
+      ["Han Solo's ship, the fastest hunk of junk in the galaxy, is called this.", "What is the Millennium Falcon?"],
+      ["These two droids, one golden and one beeping and blue, accompany the heroes.", "Who are C-3PO and R2-D2?"]
+    ],
+    [
+      ["Luke Skywalker grows up on this desert planet with two suns.", "What is Tatooine?"],
+      ["This battle station, the size of a small moon, is destroyed by Luke in the first film.", "What is the Death Star?"],
+      ["Princess Leia's peaceful home planet is destroyed by the Empire.", "What is Alderaan?"],
+      ["Han Solo is frozen in this substance on Cloud City.", "What is carbonite?"],
+      ["This Jedi Master, played by Alec Guinness, trains Luke in the original film.", "Who is Obi-Wan Kenobi?"],
+      ["The Emperor, a Sith who shoots lightning from his fingers, is named this.", "Who is Palpatine? (Also: Darth Sidious)"]
+    ],
+    [
+      ["The Rebels' Echo Base is on this frozen planet where the AT-AT walkers attack.", "What is Hoth?"],
+      ["Anakin Skywalker's Padawan in The Clone Wars is this young Togruta.", "Who is Ahsoka Tano?"],
+      ["Luke trains with Yoda on this swampy planet in The Empire Strikes Back.", "What is Dagobah?"],
+      ["This bounty hunter in Mandalorian armor captures Han Solo for Jabba the Hutt.", "Who is Boba Fett?"],
+      ["The Mandalorian features a tiny green child who goes by this name.", "Who is Grogu? (Also: Baby Yoda, The Child)"],
+      ["Luke's twin sister, a Rebel leader, is known by this name.", "Who is Princess Leia? (Also: Leia Organa)"]
+    ],
+    [
+      ["Han Solo boasts the Falcon made the Kessel Run in less than twelve of these units.", "What are parsecs?"],
+      ["The original Star Wars film was released in this year.", "What is 1977?"],
+      ["George Lucas founded this visual-effects company to make the original film's effects.", "What is Industrial Light & Magic?"],
+      ["This 2015 film, directed by J.J. Abrams, launched the sequel trilogy.", "What is The Force Awakens?"],
+      ["Rey grew up scavenging Star Destroyer wrecks on this desert planet.", "What is Jakku?"],
+      ["Darth Maul fights Qui-Gon Jinn with this unusual weapon that has a blade at each end.", "What is a double-bladed lightsaber? (Also: a saberstaff)"]
+    ],
+    [
+      ["Jedi Master Mace Windu is famous for wielding this unusual color of lightsaber.", "What is purple?"],
+      ["The prequel trilogy begins with this 1999 film.", "What is The Phantom Menace?"],
+      ["Anakin was discovered as a child slave on Tatooine by this Jedi Master.", "Who is Qui-Gon Jinn?"],
+      ["Admiral Ackbar famously shouts that the Imperial ambush at Endor is this.", "What is a trap?"],
+      ["The Rebels destroy the second Death Star's shield generator on this forest moon.", "What is Endor?"],
+      ["This Kel Dor Jedi Council member wears a breathing mask.", "Who is Plo Koon?"]
+    ]
+  ]
+}

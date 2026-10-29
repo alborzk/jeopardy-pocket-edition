@@ -1,0 +1,45 @@
+{
+  "id": "nhl",
+  "tiers": [
+    [
+      ["The NHL's championship trophy has this name.", "What is the Stanley Cup?"],
+      ["Montreal's famous NHL team goes by this nickname, 'the Habs'.", "What are the Canadiens?"],
+      ["A regulation NHL game has this many periods.", "What is three?"],
+      ["Wayne Gretzky's nickname was this.", "Who is The Great One?"],
+      ["A player who stops shots in front of the net is called this.", "What is a goalie?"],
+      ["A player who is penalized sits in this box.", "What is the penalty box?"]
+    ],
+    [
+      ["The Original Six included the Bruins, Blackhawks, Red Wings, Canadiens, Rangers and this Canadian team.", "What are the Toronto Maple Leafs?"],
+      ["Wayne Gretzky's jersey number, retired across the entire league, is this.", "What is 99?"],
+      ["Sidney Crosby, 'Sid the Kid', was drafted first overall in 2005 by this Pennsylvania team.", "What are the Pittsburgh Penguins?"],
+      ["The Vegas Golden Knights won their first Stanley Cup in this year.", "What is 2023?"],
+      ["The Stanley Cup was donated by this Governor General of Canada.", "Who is Lord Stanley?"],
+      ["Gordie Howe spent most of his career with this Michigan team.", "What are the Detroit Red Wings?"]
+    ],
+    [
+      ["This team has won the most Stanley Cups, with 24.", "What are the Montreal Canadiens?"],
+      ["The Vezina Trophy goes to the league's best player at this position.", "What is goaltender?"],
+      ["Bobby Orr scored his famous flying goal for this team to win the 1970 Stanley Cup.", "What are the Boston Bruins?"],
+      ["The Conn Smythe Trophy goes to the most valuable player of this part of the season.", "What are the playoffs?"],
+      ["The Edmonton Oilers won their dynasty-era Cups led by Gretzky in this decade.", "What is the 1980s?"],
+      ["Ottawa's NHL team shares its name with members of the upper house of Canada's Parliament.", "What are the Senators?"]
+    ],
+    [
+      ["Wayne Gretzky won four Stanley Cups with this team.", "What are the Edmonton Oilers?"],
+      ["The Maurice 'Rocket' Richard Trophy goes to the league's leader in this statistic.", "What is goals?"],
+      ["In 1959 this Montreal goalie became the first to wear a mask regularly in NHL games.", "Who is Jacques Plante?"],
+      ["A 'Gordie Howe hat trick' is a goal, an assist and this.", "What is a fight?"],
+      ["Bobby Hull, the 'Golden Jet', starred for this Chicago team.", "What are the Chicago Blackhawks?"],
+      ["Nicknamed 'Super Mario', this Penguins star was drafted first overall in 1984 and later owned the team.", "Who is Mario Lemieux?"]
+    ],
+    [
+      ["Paul Henderson scored the series-winning goal in 1972 against this country's team.", "What is the Soviet Union?"],
+      ["In 1994 this team ended a 54-year Stanley Cup drought.", "What are the New York Rangers?"],
+      ["Gretzky was traded to the Los Angeles Kings in this year.", "What is 1988?"],
+      ["The Quebec Nordiques moved to Denver in 1995 and became this team.", "What is the Colorado Avalanche?"],
+      ["The Stanley Cup is also nicknamed this, after its donor.", "What is Lord Stanley's Mug?"],
+      ["The Hockey Hall of Fame, which displays the Stanley Cup, is in this Canadian city.", "What is Toronto?"]
+    ]
+  ]
+}

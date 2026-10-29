@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 import type { Snapshot } from '@jeopardy/shared';
 import { useRemaining } from '../lib/clock';
+import { SlideLink } from './SlideLink';
 import { BlinkingCursor } from './Studio';
 import type { RoomView } from '../lib/useRoom';
 
@@ -64,9 +64,9 @@ export function ScreenMessage({
 
 export function HomeLink({ children = 'Back to start' }: { children?: ReactNode }) {
   return (
-    <Link to="/" className="btn-secondary">
+    <SlideLink to="/" className="btn-secondary">
       {children}
-    </Link>
+    </SlideLink>
   );
 }
 

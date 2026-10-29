@@ -135,6 +135,15 @@ strong {
   background: transparent;
 }
 
+.modal-wide {
+  width: min(48rem, calc(100vw - 2rem));
+}
+
+/* A wide modal's content scrolls inside the panel, so the title and buttons stay on screen. */
+.modal-wide .modal-panel {
+  max-height: calc(100dvh - 2rem);
+}
+
 .modal::backdrop {
   background:
     repeating-linear-gradient(0deg, rgb(0 0 0 / 0.16) 0 1px, transparent 1px 4px),
@@ -606,6 +615,72 @@ input[type='checkbox']:checked {
   background: repeating-linear-gradient(90deg, currentColor 0 24px, transparent 24px 30px);
   transform-origin: left;
   animation: bar-grow 0.9s var(--ease-soft) both;
+}
+
+/*
+ * Page slides. lib/slide.ts sets data-slide on <html> for the length of a navigation and runs it as
+ * a view transition. The page (#root) is the part that moves, so the sunburst behind it stays put,
+ * and the scanline finish stays on top of it.
+ */
+html[data-slide] #root {
+  view-transition-name: page;
+}
+
+html[data-slide] body::after {
+  view-transition-name: crt;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(page),
+::view-transition-new(page) {
+  mix-blend-mode: normal;
+  animation-duration: 0.4s;
+  animation-timing-function: var(--ease-soft);
+  animation-fill-mode: both;
+}
+
+@keyframes page-out-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes page-in-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes page-out-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes page-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+html[data-slide='forward']::view-transition-old(page) {
+  animation-name: page-out-left;
+}
+
+html[data-slide='forward']::view-transition-new(page) {
+  animation-name: page-in-right;
+}
+
+html[data-slide='back']::view-transition-old(page) {
+  animation-name: page-out-right;
+}
+
+html[data-slide='back']::view-transition-new(page) {
+  animation-name: page-in-left;
 }
 
 @media (prefers-reduced-motion: reduce) {

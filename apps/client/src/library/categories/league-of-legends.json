@@ -1,0 +1,45 @@
+{
+  "id": "league-of-legends",
+  "tiers": [
+    [
+      ["League of Legends is developed by this company.", "What is Riot Games?"],
+      ["The standard 5v5 map in League is called this.", "What is Summoner's Rift?"],
+      ["The characters players control in League are called this.", "What are champions?"],
+      ["To win a standard match, a team must destroy the enemy's this, at the heart of their base.", "What is the Nexus?"],
+      ["Each team in a standard match has this many players.", "What is five?"],
+      ["This tiny scout, known for planting poisonous mushrooms, has a reputation for annoying other players.", "Who is Teemo?"]
+    ],
+    [
+      ["Killing this purple monster in the pit late in the game gives your whole team a powerful buff.", "Who is Baron Nashor?"],
+      ["Netflix's 2021 animated series set in the League universe is called this.", "What is Arcane?"],
+      ["Besides top, middle and bottom lanes, champions also roam this area between them.", "What is the jungle?"],
+      ["Killing minions to earn gold is known as this.", "What is farming? (Also: last-hitting or CS)"],
+      ["Riot's annual world championship tournament is known as this.", "What is Worlds?"],
+      ["Teemo's species, as well as Tristana's and Lulu's, is this small, furry race.", "What are yordles?"]
+    ],
+    [
+      ["This nine-tailed fox champion uses charm to lure enemies.", "Who is Ahri?"],
+      ["Jinx and Vi are sisters from the twin cities of Zaun and this one.", "What is Piltover?"],
+      ["This South Korean mid laner is widely considered the greatest League player ever.", "Who is Faker?"],
+      ["In the bottom lane, the damage-dealing role paired with a support is known by this three-letter abbreviation's full name.", "What is Attack Damage Carry? (Also: ADC)"],
+      ["Garen and Lux belong to this noble, law-abiding kingdom.", "What is Demacia?"],
+      ["Ashe, the Frost Archer, leads a tribe in this icy northern region of Runeterra.", "What is the Freljord?"]
+    ],
+    [
+      ["Riot Games was founded by Marc Merrill and this co-founder.", "Who is Brandon Beck?"],
+      ["The first-ever League world champion, in 2011, was this European team.", "What is Fnatic?"],
+      ["Darius and Draven come from this militaristic, expansionist empire.", "What is Noxus?"],
+      ["League of Legends was inspired by Defense of the Ancients, a custom map for this Blizzard strategy game.", "What is Warcraft III?"],
+      ["Killing five enemy champions in quick succession earns this announcement.", "What is a Pentakill?"],
+      ["The world in which League of Legends is set is called this.", "What is Runeterra?"]
+    ],
+    [
+      ["The French animation studio behind Arcane is called this.", "What is Fortiche?"],
+      ["Riot's 2019 auto-battler spinoff in which you build a team of champions is called this.", "What is Teamfight Tactics?"],
+      ["Yasuo's brother, a fellow wind-sword wielder, goes by this name.", "Who is Yone?"],
+      ["Riot's digital collectible card game set in Runeterra is called this.", "What is Legends of Runeterra?"],
+      ["Faker's long-time professional team is known by this short name.", "What is T1?"],
+      ["The one-lane Howling Abyss mode, ARAM, stands for 'All Random All' this.", "What is Mid?"]
+    ]
+  ]
+}

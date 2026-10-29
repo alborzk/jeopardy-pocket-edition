@@ -24,6 +24,7 @@ export function Modal({
   onClose,
   actions,
   alert = false,
+  wide = false,
   children,
 }: {
   open: boolean;
@@ -33,6 +34,8 @@ export function Modal({
   actions: ReactNode;
   /** For a question that needs an answer before going on, such as a confirm. */
   alert?: boolean;
+  /** Room for a list or a form: a wider panel whose content scrolls when it outgrows the screen. */
+  wide?: boolean;
   children?: ReactNode;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -50,7 +53,7 @@ export function Modal({
       ref={ref}
       role={alert ? 'alertdialog' : undefined}
       aria-labelledby={titleId}
-      className="modal"
+      className={wide ? 'modal modal-wide' : 'modal'}
       onCancel={(event) => {
         // Escape: let React's state decide, so `open` stays the single source of truth.
         event.preventDefault();
@@ -64,12 +67,19 @@ export function Modal({
       <div className="modal-panel card flex flex-col gap-5">
         <h2
           id={titleId}
-          className="font-pixel text-lg uppercase leading-snug text-bulb chroma-text-sm"
+          className="break-words font-pixel text-lg uppercase leading-snug text-bulb chroma-text-sm"
         >
           {title}
         </h2>
-        {children ? <div className="text-xl leading-snug text-white/85">{children}</div> : null}
-        <div className="grid grid-cols-2 gap-3">{actions}</div>
+        {children ? (
+          <div
+            // The negative margin and padding give focus rings at the edge room inside the scroll box.
+            className={`text-xl leading-snug text-white/85 ${wide ? '-mx-2 min-h-0 overflow-y-auto px-2 py-1' : ''}`}
+          >
+            {children}
+          </div>
+        ) : null}
+        <div className="grid grid-cols-2 gap-3 [&>:only-child]:col-span-2">{actions}</div>
       </div>
     </dialog>
   );

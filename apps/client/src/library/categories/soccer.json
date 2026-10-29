@@ -1,0 +1,45 @@
+{
+  "id": "soccer",
+  "tiers": [
+    [
+      ["The world's biggest soccer tournament, held every four years, is called this.", "What is the World Cup? (Also: the FIFA World Cup)"],
+      ["A soccer team has this many players on the field at once.", "What is eleven?"],
+      ["This Argentine superstar finally won the World Cup in 2022.", "Who is Lionel Messi?"],
+      ["This Portuguese star is famous for his SIUUU celebration.", "Who is Cristiano Ronaldo?"],
+      ["The only players allowed to use their hands during play are these.", "Who are goalkeepers?"],
+      ["The 2022 World Cup was held in this country.", "What is Qatar?"]
+    ],
+    [
+      ["Brazil has won the World Cup more than any other country, with this many titles.", "What is five?"],
+      ["England's top soccer division is called this.", "What is the Premier League?"],
+      ["Spain's most successful club, nicknamed Los Blancos, plays in this capital city.", "What is Madrid?"],
+      ["A player shown a red card must do this.", "What is leave the field? (Also: be sent off)"],
+      ["The 2018 World Cup was won by this country.", "What is France?"],
+      ["Pelé, known as The King of Football, was from this country.", "What is Brazil?"]
+    ],
+    [
+      ["FC Barcelona's giant home stadium is called this.", "What is Camp Nou?"],
+      ["Diego Maradona scored his Hand of God goal in 1986 against this country.", "What is England?"],
+      ["The Champions League trophy has this nickname because of its large handles.", "What is Big Ears?"],
+      ["The very first World Cup, in 1930, was hosted and won by this South American country.", "What is Uruguay?"],
+      ["Manchester United's stadium is nicknamed the Theatre of Dreams and is called this.", "What is Old Trafford?"],
+      ["This European country won its first Women's World Cup in 2023.", "What is Spain?"]
+    ],
+    [
+      ["Messi spent most of his career at this club before moving to Paris Saint-Germain.", "What is FC Barcelona?"],
+      ["The Golden Boot at the World Cup is awarded to this player.", "What is the top scorer?"],
+      ["Pelé won this many World Cups as a player.", "What is three?"],
+      ["The 2010 World Cup was held in this African country.", "What is South Africa?"],
+      ["In 2016, this unlikely club won the Premier League at 5000-1 odds.", "What is Leicester City?"],
+      ["Zinedine Zidane was sent off in the 2006 World Cup final for headbutting this Italian defender.", "Who is Marco Materazzi?"]
+    ],
+    [
+      ["Germany beat Brazil 7-1 in the 2014 World Cup semifinal played in this city.", "What is Belo Horizonte?"],
+      ["Brazil's shock loss to Uruguay in the 1950 final is remembered by this name.", "What is the Maracanazo?"],
+      ["Italy has won the World Cup this many times.", "What is four?"],
+      ["The FA Cup, the world's oldest soccer competition, was first played in this year.", "What is 1871?"],
+      ["The 2002 World Cup was co-hosted by Japan and this country.", "What is South Korea?"],
+      ["Cristiano Ronaldo began his senior career at this Lisbon club.", "What is Sporting CP?"]
+    ]
+  ]
+}

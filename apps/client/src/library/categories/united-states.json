@@ -1,0 +1,45 @@
+{
+  "id": "united-states",
+  "tiers": [
+    [
+      ["The capital of the United States is this city.", "What is Washington, D.C.?"],
+      ["The Statue of Liberty stands in the harbor of this city.", "What is New York City?"],
+      ["The largest US state by area is this one.", "What is Alaska?"],
+      ["The United States has this many states.", "What is 50?"],
+      ["The famous Hollywood sign overlooks this California city.", "What is Los Angeles?"],
+      ["The president lives in this house at 1600 Pennsylvania Avenue.", "What is the White House?"]
+    ],
+    [
+      ["The Grand Canyon is in this state.", "What is Arizona?"],
+      ["The Golden Gate Bridge spans the bay at this city.", "What is San Francisco?"],
+      ["The Mississippi River empties into this body of water.", "What is the Gulf of Mexico?"],
+      ["The smallest US state by area is this one.", "What is Rhode Island?"],
+      ["The Lone Star State is this one.", "What is Texas?"],
+      ["This island state became the 50th state in 1959.", "What is Hawaii?"]
+    ],
+    [
+      ["The Great Lakes include Superior, Michigan, Huron, Erie and this smallest one.", "What is Lake Ontario?"],
+      ["Mount Rushmore is in this state.", "What is South Dakota?"],
+      ["The Windy City is this Illinois city.", "What is Chicago?"],
+      ["The Sunshine State is this one.", "What is Florida?"],
+      ["Mardi Gras is famously celebrated in this Louisiana city.", "What is New Orleans?"],
+      ["The Liberty Bell is housed in this Pennsylvania city.", "What is Philadelphia?"]
+    ],
+    [
+      ["The capital of California is this city.", "What is Sacramento?"],
+      ["The Peach State is this one.", "What is Georgia?"],
+      ["At the Four Corners, Utah, Colorado, Arizona and this state all meet.", "What is New Mexico?"],
+      ["Yellowstone, the first national park, lies mostly in this state.", "What is Wyoming?"],
+      ["The Alamo is in this Texas city.", "What is San Antonio?"],
+      ["The Gateway Arch stands in this Missouri city.", "What is St. Louis?"]
+    ],
+    [
+      ["Only one state borders just one other state, and it is this one.", "What is Maine?"],
+      ["The capital of Vermont is this small city.", "What is Montpelier?"],
+      ["The highest point in the contiguous US, Mount Whitney, is in this state.", "What is California?"],
+      ["The Cornhusker State is this one.", "What is Nebraska?"],
+      ["The Hoosier State is this one.", "What is Indiana?"],
+      ["The Keystone State is this one.", "What is Pennsylvania?"]
+    ]
+  ]
+}

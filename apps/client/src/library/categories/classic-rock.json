@@ -1,0 +1,45 @@
+{
+  "id": "classic-rock",
+  "tiers": [
+    [
+      ["This British band, fronted by Freddie Mercury, recorded Bohemian Rhapsody.", "Who is Queen?"],
+      ["The Beatles came from this English port city.", "What is Liverpool?"],
+      ["This legendary guitarist famously set his guitar on fire at the Monterey Pop Festival.", "Who is Jimi Hendrix?"],
+      ["The Rolling Stones' lead singer is this man.", "Who is Mick Jagger?"],
+      ["Led Zeppelin's lead singer is this man.", "Who is Robert Plant?"],
+      ["AC/DC's lead guitarist plays in a schoolboy uniform and goes by this name.", "Who is Angus Young?"]
+    ],
+    [
+      ["Pink Floyd's 1973 album with a prism on its cover is titled this.", "What is The Dark Side of the Moon?"],
+      ["The Eagles' 1976 song about a luxury hotel is titled this.", "What is Hotel California?"],
+      ["Fleetwood Mac's 1977 album, featuring Dreams, is titled this.", "What is Rumours?"],
+      ["The Who's drummer, famous for destroying his kits, was this man.", "Who is Keith Moon?"],
+      ["Queen's guitarist, who also has a PhD in astrophysics, is this man.", "Who is Brian May?"],
+      ["Jim Morrison fronted this LA band whose name comes from a book by Aldous Huxley.", "Who are The Doors?"]
+    ],
+    [
+      ["Led Zeppelin's untitled 1971 album includes this eight-minute epic.", "What is Stairway to Heaven?"],
+      ["The Beatles' 1967 album with a famously crowded, colorful cover is titled this.", "What is Sgt. Pepper's Lonely Hearts Club Band?"],
+      ["Bruce Springsteen is nicknamed this.", "Who is The Boss?"],
+      ["Lynyrd Skynyrd's 1974 hit is a tribute to this Southern state.", "What is Sweet Home Alabama?"],
+      ["This 1969 New York festival is the most famous rock concert ever.", "What is Woodstock?"],
+      ["The Beach Boys' main songwriter and producer is this man.", "Who is Brian Wilson?"]
+    ],
+    [
+      ["The Who's 1969 rock opera about a deaf, dumb and blind boy is titled this.", "What is Tommy?"],
+      ["Queen's 1985 performance at this London charity concert is often called the greatest live set ever.", "What is Live Aid?"],
+      ["The Rolling Stones recorded much of Exile on Main St. in the cellar of a villa in this country.", "What is France?"],
+      ["Jimi Hendrix died in this year.", "What is 1970?"],
+      ["Deep Purple's Smoke on the Water was inspired by a casino fire in this Swiss town.", "What is Montreux?"],
+      ["Jethro Tull's Ian Anderson is famous for playing this unusual rock instrument.", "What is the flute?"]
+    ],
+    [
+      ["Pink Floyd's founding frontman, who left in 1968, was this man.", "Who is Syd Barrett?"],
+      ["Led Zeppelin's drummer John Bonham died in this year.", "What is 1980?"],
+      ["Freddie Mercury was born on this island off the coast of Tanzania.", "What is Zanzibar?"],
+      ["Fans of the Grateful Dead are known by this nickname.", "What are Deadheads?"],
+      ["Stevie Nicks and this guitarist joined Fleetwood Mac in 1975.", "Who is Lindsey Buckingham?"],
+      ["The cover of the Eagles' 1976 album shows this real Los Angeles hotel.", "What is the Beverly Hills Hotel?"]
+    ]
+  ]
+}

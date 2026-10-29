@@ -1,0 +1,45 @@
+{
+  "id": "tech-internet",
+  "tiers": [
+    [
+      ["This company makes the iPhone, the iPad and the Mac.", "What is Apple?"],
+      ["People say 'just look it up' using this search engine, whose name became a verb.", "What is Google?"],
+      ["The 'www' at the start of many web addresses stands for this.", "What is the World Wide Web?"],
+      ["Elon Musk bought this social platform, once symbolized by a blue bird, and renamed it X.", "What is Twitter?"],
+      ["In an email address, the @ symbol is read aloud as this word.", "What is 'at'?"],
+      ["Echo smart speakers that answer to 'Alexa' are made by this company.", "What is Amazon?"]
+    ],
+    [
+      ["Bill Gates and Paul Allen founded this software company in 1975.", "What is Microsoft?"],
+      ["This short-range wireless technology, named after a Viking king, connects headphones to phones.", "What is Bluetooth?"],
+      ["In USB, the 'B' stands for this word.", "What is Bus?"],
+      ["Elon Musk's electric car company is named after this Serbian-American inventor of the AC motor.", "Who is Nikola Tesla?"],
+      ["The chatbot ChatGPT was created by this AI company.", "What is OpenAI?"],
+      ["In web addresses, 'HTTP' stands for HyperText Transfer this.", "What is Protocol?"]
+    ],
+    [
+      ["Steve Jobs co-founded Apple with this engineer, nicknamed 'Woz'.", "Who is Steve Wozniak?"],
+      ["Alan Turing proposed a test of whether a machine can pass for a human in conversation, named after him as this.", "What is the Turing test?"],
+      ["Unwanted junk email shares its name with this canned meat.", "What is spam?"],
+      ["Google's early informal motto was 'Don't be' this.", "What is evil?"],
+      ["This programming language, named after a comedy troupe rather than a snake, is popular in data science.", "What is Python?"],
+      ["Google bought the Android operating system's original company in this year.", "What is 2005?"]
+    ],
+    [
+      ["The pseudonymous creator of Bitcoin goes by this name.", "Who is Satoshi Nakamoto?"],
+      ["ARPANET, the ancestor of the internet, first linked computers in this decade.", "What is the 1960s?"],
+      ["Moore's law says the number of these on a chip roughly doubles every two years.", "What are transistors?"],
+      ["In 1971 this computer engineer sent the first networked email and chose the @ symbol.", "Who is Ray Tomlinson?"],
+      ["This man started Amazon in 1994 as an online bookstore.", "Who is Jeff Bezos?"],
+      ["Google's name is a play on this word for a 1 followed by 100 zeros.", "What is googol?"]
+    ],
+    [
+      ["Intel released the 4004, the first commercial microprocessor, in this year.", "What is 1971?"],
+      ["The first website was published at this European physics laboratory.", "What is CERN?"],
+      ["The first .com domain, symbolics.com, was registered in this year.", "What is 1985?"],
+      ["An IPv4 address is made of this many bits.", "What is 32?"],
+      ["A moth found in a Harvard computer in 1947 popularized this term for a computer fault.", "What is a bug?"],
+      ["The first web browser, created by Tim Berners-Lee, was named this.", "What is WorldWideWeb?"]
+    ]
+  ]
+}

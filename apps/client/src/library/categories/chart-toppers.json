@@ -1,0 +1,45 @@
+{
+  "id": "chart-toppers",
+  "tiers": [
+    [
+      ["Released in 1982, this Michael Jackson album is often called the best-selling album of all time.", "What is Thriller?"],
+      ["This rapper's 2019 genre-blending hit 'Old Town Road' featured Billy Ray Cyrus.", "Who is Lil Nas X?"],
+      ["This Canadian singer's 2012 earworm was 'Call Me Maybe'.", "Who is Carly Rae Jepsen?"],
+      ["Pharrell Williams had a huge 2013 hit with this cheerful one-word song from Despicable Me 2.", "What is 'Happy'?"],
+      ["In 2017 this British singer topped charts with 'Shape of You'.", "Who is Ed Sheeran?"],
+      ["This boy band sang 'I Want It That Way' in 1999.", "Who are the Backstreet Boys?"]
+    ],
+    [
+      ["This singer's hits include 'Bad Romance' and 'Poker Face'.", "Who is Lady Gaga?"],
+      ["Bruno Mars and Mark Ronson teamed up in 2014 for this funky chart-topper.", "What is 'Uptown Funk'?"],
+      ["This 1983 Michael Jackson hit debuted the moonwalk on the Motown 25 TV special.", "What is 'Billie Jean'?"],
+      ["This Toronto rapper had a 2018 hit with 'God's Plan'.", "Who is Drake?"],
+      ["The Beatles spent nine weeks at number one in the US with this 1968 song that runs over seven minutes.", "What is 'Hey Jude'?"],
+      ["Whitney Houston's version of this Dolly Parton song, from The Bodyguard, spent 14 weeks at number one.", "What is 'I Will Always Love You'?"]
+    ],
+    [
+      ["This six-minute 1975 Queen song, with no chorus, hit number one in the UK twice.", "What is 'Bohemian Rhapsody'?"],
+      ["The Spice Girls' 1996 debut single was a number-one hit in dozens of countries.", "What is 'Wannabe'?"],
+      ["This 1984 Prince single from the film Purple Rain topped the US charts.", "What is 'When Doves Cry'?"],
+      ["This Canadian singer is known for 'My Heart Will Go On' from the film Titanic.", "Who is Céline Dion?"],
+      ["Los del Río's 1996 dance hit spent 14 weeks at number one in the US.", "What is 'Macarena'?"],
+      ["This boy band's 2000 hit 'Bye Bye Bye' featured a famous marionette-style dance video.", "Who is *NSYNC?"]
+    ],
+    [
+      ["This ABBA song was the group's only number-one hit in the US.", "What is 'Dancing Queen'?"],
+      ["In 1956, this Elvis Presley hit became his first Billboard number one.", "What is 'Heartbreak Hotel'?"],
+      ["Adele's 2011 album featuring 'Rolling in the Deep' was named after her age at the time.", "What is 21?"],
+      ["The Weeknd's synth-pop smash from 2019 was called this.", "What is 'Blinding Lights'?"],
+      ["The Beatles' 1967 album with a collage cover of famous faces is named after this fictional band.", "What is Sgt. Pepper's Lonely Hearts Club Band?"],
+      ["This 1991 Nirvana song launched grunge into the mainstream, peaking at number six in the US.", "What is 'Smells Like Teen Spirit'?"]
+    ],
+    [
+      ["This 1999 Santana album, featuring 'Smooth', won eight Grammys.", "What is Supernatural?"],
+      ["Carole King's 1971 album, with 'It's Too Late' and 'You've Got a Friend', has this one-word title.", "What is Tapestry?"],
+      ["In 2020 this teenage singer swept the four main Grammy categories.", "Who is Billie Eilish?"],
+      ["In 1964 this Beatles song became their first number one in the US.", "What is 'I Want to Hold Your Hand'?"],
+      ["Fleetwood Mac's 1977 album, which won Album of the Year, has this title.", "What is Rumours?"],
+      ["This singer's 2021 debut single 'drivers license' broke Spotify streaming records.", "Who is Olivia Rodrigo?"]
+    ]
+  ]
+}

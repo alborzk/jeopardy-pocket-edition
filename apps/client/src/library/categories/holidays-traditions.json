@@ -1,0 +1,45 @@
+{
+  "id": "holidays-traditions",
+  "tiers": [
+    [
+      ["Santa Claus delivers presents on this holiday.", "What is Christmas?"],
+      ["Carving jack-o'-lanterns is a tradition of this October holiday.", "What is Halloween?"],
+      ["On February 14, people trade cards and chocolates on this day.", "What is Valentine's Day?"],
+      ["In the US and Canada, this bird is the traditional centerpiece of Thanksgiving dinner.", "What is a turkey?"],
+      ["A giant ball drops in this New York City square on New Year's Eve.", "What is Times Square?"],
+      ["Easter eggs are traditionally delivered by this animal.", "What is the Easter Bunny?"]
+    ],
+    [
+      ["This Jewish holiday lasts eight nights and is celebrated with a menorah.", "What is Hanukkah?"],
+      ["Cinco de Mayo commemorates a battle victory in this country.", "What is Mexico?"],
+      ["People wear this color on St. Patrick's Day.", "What is green?"],
+      ["Canadians celebrate Thanksgiving in this month.", "What is October?"],
+      ["The Chinese zodiac cycles through this many animals.", "What is twelve?"],
+      ["Diwali, the Hindu festival of lights, celebrates the triumph of light over this.", "What is darkness?"]
+    ],
+    [
+      ["This orange flower, called cempasúchil, is strongly linked to Día de los Muertos.", "What is the marigold?"],
+      ["Kwanzaa is celebrated for this many days.", "What is seven?"],
+      ["Boxing Day, observed in Canada and the UK, falls on this date.", "What is December 26?"],
+      ["During Ramadan, Muslims fast from dawn until this time of day.", "What is sunset?"],
+      ["In Scotland, Hogmanay is the celebration of this.", "What is New Year's Eve?"],
+      ["Britain's Guy Fawkes Night is held on this date.", "What is November 5?"]
+    ],
+    [
+      ["Mardi Gras means 'Fat Tuesday' in this language.", "What is French?"],
+      ["Holi, celebrated in India, is known as the festival of these.", "What are colors?"],
+      ["Oktoberfest is held in this German city.", "What is Munich?"],
+      ["Groundhog Day's famous groundhog, Punxsutawney Phil, lives in this US state.", "What is Pennsylvania?"],
+      ["The Passover seder remembers the Israelites' exodus from this country.", "What is Egypt?"],
+      ["In Japan, picnicking under blooming cherry trees is called this.", "What is hanami?"]
+    ],
+    [
+      ["Eid al-Fitr marks the end of this holy month.", "What is Ramadan?"],
+      ["The Celtic festival of Beltane marks the start of this season.", "What is summer?"],
+      ["Brazil's Carnival is held just before this Christian season of fasting.", "What is Lent?"],
+      ["This president declared Thanksgiving a national holiday in 1863.", "Who is Abraham Lincoln?"],
+      ["Swedes celebrate Midsummer by dancing around this decorated pole.", "What is a maypole?"],
+      ["In the Netherlands, Saint Nicholas is known by this name.", "Who is Sinterklaas?"]
+    ]
+  ]
+}

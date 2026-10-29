@@ -38,6 +38,8 @@ export interface PlayerView {
 }
 
 export interface BoardInfo {
+  /** The loaded board's id, so the host's board picker can show which one is in the room. */
+  id: string;
   title: string;
   roundIndex: number;
   roundCount: number;

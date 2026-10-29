@@ -1,0 +1,45 @@
+{
+  "id": "art-artists",
+  "tiers": [
+    [
+      ["He painted the Mona Lisa.", "Who is Leonardo da Vinci?"],
+      ["This Dutch artist painted The Starry Night and Sunflowers.", "Who is Vincent van Gogh?"],
+      ["This Spanish artist painted Guernica and helped found Cubism.", "Who is Pablo Picasso?"],
+      ["The Louvre, home of the Mona Lisa, is in this city.", "What is Paris?"],
+      ["This Pop Art icon painted Campbell's soup cans.", "Who is Andy Warhol?"],
+      ["Michelangelo painted a famous ceiling in this chapel in Vatican City.", "What is the Sistine Chapel?"]
+    ],
+    [
+      ["The Scream is the best-known work of this Norwegian painter.", "Who is Edvard Munch?"],
+      ["This French Impressionist painted a famous series of water lilies at Giverny.", "Who is Claude Monet?"],
+      ["Melting clocks appear in The Persistence of Memory by this Surrealist.", "Who is Salvador Dalí?"],
+      ["This Italian Renaissance painter made The Birth of Venus.", "Who is Sandro Botticelli?"],
+      ["This Dutch artist painted Girl with a Pearl Earring.", "Who is Johannes Vermeer?"],
+      ["Michelangelo's sculpture of David stands in this Italian city.", "What is Florence?"]
+    ],
+    [
+      ["The art movement named after a Monet painting titled 'Impression, Sunrise' is this.", "What is Impressionism?"],
+      ["Frida Kahlo, famous for her self-portraits, was from this country.", "What is Mexico?"],
+      ["Da Vinci painted The Last Supper on a convent wall in this Italian city.", "What is Milan?"],
+      ["Rembrandt's The Night Watch hangs in this Amsterdam museum.", "What is the Rijksmuseum?"],
+      ["This Austrian painter used gold leaf in The Kiss.", "Who is Gustav Klimt?"],
+      ["Hokusai's The Great Wave off Kanagawa is a famous example of this Japanese art form.", "What is ukiyo-e? (Also: woodblock print)"]
+    ],
+    [
+      ["This American painter painted American Gothic, with a farmer and his daughter.", "Who is Grant Wood?"],
+      ["Georgia O'Keeffe is known for close-up paintings of these.", "What are flowers?"],
+      ["Jackson Pollock's technique of dripping and pouring paint is called this.", "What is drip painting? (Also: action painting)"],
+      ["This Dutch painter created the triptych The Garden of Earthly Delights.", "Who is Hieronymus Bosch?"],
+      ["The anonymous street artist Banksy is thought to be from this European country.", "What is the United Kingdom? (Also: England)"],
+      ["The Group of Seven, famous for bold landscape paintings, were artists from this country.", "What is Canada?"]
+    ],
+    [
+      ["This Spanish court painter made Las Meninas in 1656.", "Who is Diego Velázquez?"],
+      ["This French artist led the Fauvism movement and made The Dance.", "Who is Henri Matisse?"],
+      ["In 1911 this Italian handyman stole the Mona Lisa from the Louvre.", "Who is Vincenzo Peruggia?"],
+      ["This Spanish architect designed Barcelona's Sagrada Família.", "Who is Antoni Gaudí?"],
+      ["Georges Seurat's A Sunday on La Grande Jatte is built from tiny dots, a technique called this.", "What is pointillism?"],
+      ["This French sculptor created The Thinker.", "Who is Auguste Rodin?"]
+    ]
+  ]
+}

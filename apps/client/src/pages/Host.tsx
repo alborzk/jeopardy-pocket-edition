@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { boardSchema, describeBoardIssues } from '@jeopardy/shared';
 import type { Phase, Snapshot } from '@jeopardy/shared';
 import { Countdown, ReconnectingBanner, RoomGate, Toast, playerName } from '../components/common';
 import { useModal } from '../components/Modal';
+import { SlideLink } from '../components/SlideLink';
 import { Standings } from '../components/Standings';
 import { ControlMarker, DailyDoubleBadge } from '../components/Studio';
 import { loadBoards } from '../lib/boards';
@@ -12,6 +13,7 @@ import { formatMoney } from '../lib/format';
 import { useAction } from '../lib/useAction';
 import { useJoinBase } from '../lib/useJoinBase';
 import { useRoom } from '../lib/useRoom';
+import { useSeenTracker } from '../library/useSeenTracker';
 
 type Run = ReturnType<typeof useAction>['run'];
 
@@ -46,8 +48,11 @@ export function Host({ code }: { code: string }) {
 function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }) {
   const { run, error } = useAction();
   const { confirm } = useModal();
+  // Remember which clues get played, so the next board built here leads with unseen ones.
+  useSeenTracker(snapshot);
   const { phase } = snapshot;
-  const canPause = phase !== 'lobby' && phase !== 'gameOver';
+  // The lobby and the final standings have no game to pause, undo, end or tweak.
+  const inGame = phase !== 'lobby' && phase !== 'gameOver';
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-2xl flex-col gap-4 px-4 pb-6 pt-4">
@@ -61,7 +66,7 @@ function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }
               {snapshot.code}
             </div>
           </div>
-          {canPause ? (
+          {inGame ? (
             <button
               type="button"
               className={snapshot.paused ? 'btn-primary px-3 py-2' : 'btn-secondary px-3 py-2'}
@@ -91,9 +96,11 @@ function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }
 
       <PhasePanel snapshot={snapshot} offset={offset} run={run} />
 
-      {snapshot.players.length > 0 ? <Scoreboard snapshot={snapshot} run={run} /> : null}
+      {phase !== 'gameOver' && snapshot.players.length > 0 ? (
+        <Scoreboard snapshot={snapshot} run={run} />
+      ) : null}
 
-      {phase !== 'lobby' ? (
+      {inGame ? (
         <details className="card">
           <summary className="cursor-pointer text-xl uppercase text-white/80">
             Game settings
@@ -105,31 +112,42 @@ function HostScreen({ snapshot, offset }: { snapshot: Snapshot; offset: number }
       ) : null}
 
       <footer className="mt-auto flex gap-4 pt-4">
-        <button
-          type="button"
-          className="btn-secondary flex-1"
-          disabled={!snapshot.canUndo}
-          onClick={() => run('host:undo', {})}
-        >
-          ↶ Undo
-        </button>
-        {phase !== 'gameOver' ? (
-          <button
-            type="button"
-            className="btn-secondary flex-1"
-            onClick={async () => {
-              const ok = await confirm({
-                title: 'End the game?',
-                message: 'Everyone goes straight to the final standings. Undo can take it back.',
-                confirmLabel: 'End game',
-                tone: 'danger',
-              });
-              if (ok) void run('host:endGame', {});
-            }}
+        {inGame ? (
+          <>
+            <button
+              type="button"
+              className="btn-secondary flex-1"
+              disabled={!snapshot.canUndo}
+              onClick={() => run('host:undo', {})}
+            >
+              ↶ Undo
+            </button>
+            <button
+              type="button"
+              className="btn-secondary flex-1"
+              onClick={async () => {
+                const ok = await confirm({
+                  title: 'End the game?',
+                  message: 'Everyone goes straight to the final standings.',
+                  confirmLabel: 'End game',
+                  tone: 'danger',
+                });
+                if (ok) void run('host:endGame', {});
+              }}
+            >
+              End game
+            </button>
+          </>
+        ) : (
+          // Nothing to undo or end here, so the only way on is back out. After the game it's the
+          // obvious next step. In the lobby that's starting the game, so this stays quiet.
+          <SlideLink
+            to="/"
+            className={`flex-1 ${phase === 'gameOver' ? 'btn-primary' : 'btn-secondary'}`}
           >
-            End game
-          </button>
-        ) : null}
+            Back to start
+          </SlideLink>
+        )}
       </footer>
     </div>
   );
@@ -383,9 +401,6 @@ function PhasePanel({ snapshot, offset, run }: { snapshot: Snapshot; offset: num
             Final standings
           </h2>
           <Standings players={snapshot.players} />
-          <Link to="/" className="btn-secondary">
-            Back to start
-          </Link>
         </div>
       );
   }
@@ -396,9 +411,23 @@ function LobbyPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
   const location = useLocation();
   const initialBoardError = (location.state as { boardError?: string } | null)?.boardError;
   const boards = useMemo(() => loadBoards(), []);
-  const [boardId, setBoardId] = useState(boards[0]?.id ?? '');
-  const board = boards.find((b) => b.id === boardId);
-  const issues = useMemo(() => (board ? describeBoardIssues(board) : []), [board]);
+  // Boards that can't be hosted yet are listed but can't be picked.
+  const incomplete = useMemo(
+    () => new Set(boards.filter((b) => describeBoardIssues(b).length > 0).map((b) => b.id)),
+    [boards],
+  );
+  // The picker shows the board the room has loaded. While a pick is on its way to the server it
+  // shows the pick instead, so the select doesn't jump back. A refusal puts it back.
+  const [picked, setPicked] = useState<string | null>(null);
+  const shown = picked ?? snapshot.board?.id ?? '';
+
+  const chooseBoard = async (id: string) => {
+    const board = boards.find((b) => b.id === id);
+    if (!board || incomplete.has(id)) return;
+    setPicked(id);
+    await run('host:loadBoard', { board: boardSchema.parse(board) });
+    setPicked(null);
+  };
 
   const displayUrl = `${base}/display/${snapshot.code}`;
   const joinUrl = `${base}/join?code=${snapshot.code}`;
@@ -431,12 +460,7 @@ function LobbyPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
         <h2 className="font-display text-3xl uppercase leading-none text-bulb chroma-text-sm">
           2. Board
         </h2>
-        {snapshot.board ? (
-          <p className="bg-buzz-open/20 p-3 text-lg">
-            Loaded: <strong>{snapshot.board.title}</strong> ({snapshot.board.roundCount} round
-            {snapshot.board.roundCount === 1 ? '' : 's'} + Final)
-          </p>
-        ) : (
+        {snapshot.board ? null : (
           <p className="bg-bulb/15 p-3 text-lg">
             {initialBoardError
               ? `The board was refused: ${initialBoardError}`
@@ -444,35 +468,32 @@ function LobbyPanel({ snapshot, run }: { snapshot: Snapshot; run: Run }) {
           </p>
         )}
         {boards.length > 0 ? (
-          <div className="flex gap-4">
-            <select
-              className="field"
-              value={boardId}
-              onChange={(event) => setBoardId(event.target.value)}
-              aria-label="Saved boards"
-            >
-              {boards.map((b) => (
-                <option key={b.id} value={b.id}>
-                  {b.title || 'Untitled board'}
-                </option>
-              ))}
-            </select>
-            <button
-              type="button"
-              className="btn-secondary shrink-0"
-              disabled={!board || issues.length > 0}
-              onClick={() => board && run('host:loadBoard', { board: boardSchema.parse(board) })}
-            >
-              Load
-            </button>
-          </div>
+          <select
+            className="field"
+            value={shown}
+            onChange={(event) => void chooseBoard(event.target.value)}
+            aria-label="Saved boards"
+          >
+            {/* Nothing loaded yet, or the loaded board isn't among this browser's saved ones. */}
+            {boards.some((b) => b.id === shown) ? null : (
+              <option value={shown} disabled>
+                {snapshot.board?.title ?? 'Choose a board…'}
+              </option>
+            )}
+            {boards.map((b) => (
+              <option key={b.id} value={b.id} disabled={incomplete.has(b.id)}>
+                {b.title || 'Untitled board'}
+                {incomplete.has(b.id) ? ' (needs fixing)' : ''}
+              </option>
+            ))}
+          </select>
         ) : null}
-        {issues.length > 0 ? (
-          <p className="text-lg text-neon-pink">
-            That board has {issues.length} problem{issues.length === 1 ? '' : 's'}. Fix it in the{' '}
-            <Link to="/editor" className="underline">
+        {incomplete.size > 0 ? (
+          <p className="text-lg text-white/60">
+            Boards marked “needs fixing” are unfinished. Finish them in the{' '}
+            <SlideLink to="/editor" className="underline">
               editor
-            </Link>
+            </SlideLink>
             .
           </p>
         ) : null}

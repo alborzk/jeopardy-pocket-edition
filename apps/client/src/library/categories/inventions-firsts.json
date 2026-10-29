@@ -1,0 +1,45 @@
+{
+  "id": "inventions-firsts",
+  "tiers": [
+    [
+      ["Alexander Graham Bell is credited with inventing this device in 1876.", "What is the telephone?"],
+      ["This German printer introduced movable-type printing to Europe around 1450.", "Who is Johannes Gutenberg?"],
+      ["This Scottish scientist discovered penicillin in 1928.", "Who is Alexander Fleming?"],
+      ["Thomas Edison is famous for developing a practical version of this lighting invention.", "What is the light bulb?"],
+      ["The Wright brothers made the first powered flight near Kitty Hawk in this US state.", "What is North Carolina?"],
+      ["The first modern Olympic Games, in 1896, were held in this city.", "What is Athens?"]
+    ],
+    [
+      ["This Italian inventor sent the first transatlantic radio signal in 1901.", "Who is Guglielmo Marconi?"],
+      ["In 1886 this German engineer patented the first practical automobile, the Motorwagen.", "Who is Karl Benz?"],
+      ["In 1927 this American pilot made the first solo nonstop flight across the Atlantic.", "Who is Charles Lindbergh?"],
+      ["This American scientist developed the first successful polio vaccine.", "Who is Jonas Salk?"],
+      ["In 1932 she became the first woman to fly solo across the Atlantic.", "Who is Amelia Earhart?"],
+      ["In 1911 this Norwegian explorer was the first person to reach the South Pole.", "Who is Roald Amundsen?"]
+    ],
+    [
+      ["In 1953 Edmund Hillary and this Sherpa were the first to reach the summit of Mount Everest.", "Who is Tenzing Norgay?"],
+      ["Engineer Percy Spencer noticed a melted candy bar and invented this kitchen appliance.", "What is the microwave oven?"],
+      ["This Swedish inventor made his fortune from dynamite and left it to fund a famous set of prizes.", "Who is Alfred Nobel?"],
+      ["This English mathematician designed the Analytical Engine, an early concept for a programmable computer.", "Who is Charles Babbage?"],
+      ["She discovered the elements polonium and radium.", "Who is Marie Curie?"],
+      ["This American statesman invented the lightning rod.", "Who is Benjamin Franklin?"]
+    ],
+    [
+      ["This Hollywood actress co-invented a frequency-hopping system that influenced later wireless technology.", "Who is Hedy Lamarr?"],
+      ["This Frenchman made the earliest surviving photograph from nature around 1826.", "Who is Nicéphore Niépce?"],
+      ["After picking burrs off his dog, this Swiss engineer invented Velcro.", "Who is George de Mestral?"],
+      ["In 1796 this English doctor developed the first vaccine, against smallpox.", "Who is Edward Jenner?"],
+      ["This Scottish engineer greatly improved the steam engine in the 1700s.", "Who is James Watt?"],
+      ["This Frenchman, blind from childhood, invented a reading system of raised dots.", "Who is Louis Braille?"]
+    ],
+    [
+      ["This American inventor patented the cotton gin in 1794.", "Who is Eli Whitney?"],
+      ["This American businessman organized the laying of the first transatlantic telegraph cable in 1858.", "Who is Cyrus Field?"],
+      ["In 1869 this Russian chemist published the first widely recognized periodic table.", "Who is Dmitri Mendeleev?"],
+      ["In 1800 this Italian physicist invented the first electric battery.", "Who is Alessandro Volta?"],
+      ["This French mathematician built an early mechanical calculator, the Pascaline, as a teenager.", "Who is Blaise Pascal?"],
+      ["In 1903 this American inventor patented windshield wipers.", "Who is Mary Anderson?"]
+    ]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "food-cooking",
+  "tiers": [
+    [
+      ["This Italian dish is topped with tomato sauce and mozzarella.", "What is pizza?"],
+      ["Sushi is built around vinegared grains of this.", "What is rice?"],
+      ["Guacamole is mainly made from this green fruit.", "What is the avocado?"],
+      ["Hummus is made mostly from these blended legumes.", "What are chickpeas?"],
+      ["This long, thin French loaf is crusty outside and soft inside.", "What is a baguette?"],
+      ["This pasta comes in long, thin strands and is often topped with meatballs.", "What is spaghetti?"]
+    ],
+    [
+      ["Kimchi, fermented spicy cabbage, is a staple of this country's cuisine.", "What is Korea?"],
+      ["Paella, cooked with saffron rice, comes from this country.", "What is Spain?"],
+      ["This is the world's most expensive spice by weight, harvested from crocus flowers.", "What is saffron?"],
+      ["Tofu is made from curdled milk of this bean.", "What is the soybean?"],
+      ["Sourdough bread gets its tang from a fermented mix of flour and water called this.", "What is a starter?"],
+      ["Pad Thai is a famous noodle dish from this country.", "What is Thailand?"]
+    ],
+    [
+      ["The French cooking term 'mise en place' means to do this with your ingredients.", "What is have everything in place? (Also: prepare and organize)"],
+      ["This Scottish dish is made from sheep's organs, oats and spices, traditionally cooked in a stomach.", "What is haggis?"],
+      ["A roux is a cooked mixture of flour and this.", "What is butter? (Also: fat)"],
+      ["This Mexican sauce, often made with chili and chocolate, is traditionally served over chicken.", "What is mole?"],
+      ["Gazpacho is a cold soup made mostly from these red fruits.", "What are tomatoes?"],
+      ["Sashimi is thin slices of this, served without rice.", "What is raw fish?"]
+    ],
+    [
+      ["The Scoville scale measures this property of peppers.", "What is spiciness? (Also: heat)"],
+      ["Authentic Parmigiano-Reggiano cheese comes from this country.", "What is Italy?"],
+      ["In ceviche, raw fish is 'cooked' by marinating it in this.", "What is citrus juice?"],
+      ["Bouillabaisse is a fish stew from this French port city.", "What is Marseille?"],
+      ["A 'julienne' cut slices vegetables into this shape.", "What are thin matchsticks?"],
+      ["This Indian flatbread is traditionally baked on the walls of a tandoor oven.", "What is naan?"]
+    ],
+    [
+      ["In 1908 this Japanese chemist identified umami as the fifth basic taste.", "Who is Kikunae Ikeda?"],
+      ["The Maillard reaction browns food through a reaction between amino acids and these.", "What are sugars?"],
+      ["This small salty fish is a classic ingredient in Caesar dressing.", "What is the anchovy?"],
+      ["Poutine, with fries, gravy and cheese curds, originated in this Canadian province.", "What is Quebec?"],
+      ["Béarnaise sauce is flavored with this herb.", "What is tarragon?"],
+      ["This chef codified the five French 'mother sauces' in the early 1900s.", "Who is Auguste Escoffier?"]
+    ]
+  ]
+}

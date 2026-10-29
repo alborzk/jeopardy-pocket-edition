@@ -1,0 +1,45 @@
+{
+  "id": "chemistry",
+  "tiers": [
+    [
+      ["Water is H2O, with two hydrogen atoms and one atom of this element.", "What is oxygen?"],
+      ["The chemical symbol Au stands for this precious metal.", "What is gold?"],
+      ["In table salt, NaCl, the Na stands for this element.", "What is sodium?"],
+      ["The most abundant gas in Earth's atmosphere is this one.", "What is nitrogen?"],
+      ["Pure water has a pH of this number.", "What is 7?"],
+      ["The lightest and most abundant element in the universe is this one.", "What is hydrogen?"]
+    ],
+    [
+      ["The periodic table was created by this Russian chemist.", "Who is Dmitri Mendeleev?"],
+      ["Fe is the symbol for this common metal.", "What is iron?"],
+      ["This noble gas makes balloons float and your voice squeaky.", "What is helium?"],
+      ["The positively charged particle in an atom's nucleus is this.", "What is a proton?"],
+      ["Dry ice is the solid form of this gas.", "What is carbon dioxide?"],
+      ["A substance with a pH below 7 is called this.", "What is an acid?"]
+    ],
+    [
+      ["Pb is the chemical symbol for this heavy, soft metal.", "What is lead?"],
+      ["This element, atomic number 6, forms the backbone of all organic molecules.", "What is carbon?"],
+      ["Avogadro's number is about 6.022 times 10 to this power.", "What is 23?"],
+      ["This is the only metal that is liquid at room temperature.", "What is mercury?"],
+      ["An acid reacting with a base produces water and this type of compound.", "What is a salt?"],
+      ["Neon and argon belong to this group of unreactive elements in the far-right column.", "What are noble gases?"]
+    ],
+    [
+      ["The symbol K stands for this element, from the Latin kalium.", "What is potassium?"],
+      ["This scientist discovered polonium and radium and won Nobel Prizes in two sciences.", "Who is Marie Curie?"],
+      ["Diamond and graphite are different forms of the same element, known by this term.", "What are allotropes?"],
+      ["The most electronegative element on the periodic table is this one.", "What is fluorine?"],
+      ["Tungsten has the highest melting point of all metals, and its symbol is this letter.", "What is W?"],
+      ["Elements with the same number of protons but different numbers of neutrons are called this.", "What are isotopes?"]
+    ],
+    [
+      ["Oganesson, element 118, is named after this Russian physicist.", "Who is Yuri Oganessian?"],
+      ["The noble gas with the symbol Xe is this one.", "What is xenon?"],
+      ["Gold's atomic number is this.", "What is 79?"],
+      ["The heaviest element found in nature in large amounts, used as nuclear fuel, is this one.", "What is uranium?"],
+      ["The Haber process makes this compound from nitrogen and hydrogen.", "What is ammonia?"],
+      ["The Bohr model of the atom was proposed by this Danish physicist.", "Who is Niels Bohr?"]
+    ]
+  ]
+}

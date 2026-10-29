@@ -1,0 +1,45 @@
+{
+  "id": "canada",
+  "tiers": [
+    [
+      ["The Rideau Canal, which becomes a giant skating rink in winter, runs through this capital city.", "What is Ottawa?"],
+      ["This busy rodent, known for building dams, is Canada's national animal.", "What is the beaver?"],
+      ["Canada's flag is dominated by a red one of these leaves.", "What is a maple leaf?"],
+      ["The Canadian one-dollar coin, the loonie, is named for this bird on its back.", "What is a loon?"],
+      ["Vancouver is the largest city in this western province.", "What is British Columbia?"],
+      ["This city is Canada's largest by population and home to the CN Tower.", "What is Toronto?"]
+    ],
+    [
+      ["Canada has this many provinces, plus three territories.", "What is ten?"],
+      ["Canada's two official languages are these.", "What are English and French?"],
+      ["Quebec's capital, with a famous Château Frontenac hotel, is this city.", "What is Quebec City?"],
+      ["Canada's two-dollar coin goes by this nickname.", "What is the toonie?"],
+      ["This famous waterfall straddles the border between Ontario and New York State.", "What is Niagara Falls?"],
+      ["Regina is the capital of this Prairie province.", "What is Saskatchewan?"]
+    ],
+    [
+      ["This is Canada's smallest province by area.", "What is Prince Edward Island?"],
+      ["This is Canada's largest territory, created in 1999.", "What is Nunavut?"],
+      ["Canada's Parliament buildings sit on this hill in Ottawa.", "What is Parliament Hill?"],
+      ["Banff and Jasper national parks are in the Rocky Mountains of this province.", "What is Alberta?"],
+      ["He was Canada's first prime minister.", "Who is Sir John A. Macdonald?"],
+      ["Canada became a country, through Confederation, in this year.", "What is 1867?"]
+    ],
+    [
+      ["Halifax is the capital of this Maritime province.", "What is Nova Scotia?"],
+      ["Canada's longest river, flowing north to the Arctic Ocean, is this one.", "What is the Mackenzie River?"],
+      ["Canada's highest mountain, in the Yukon, is this one.", "What is Mount Logan?"],
+      ["This is the largest lake located entirely within Canada.", "What is Great Bear Lake?"],
+      ["Canada's current maple leaf flag was first raised in this year.", "What is 1965?"],
+      ["This Quebec city, Canada's second largest, hosted the 1976 Summer Olympics.", "What is Montreal?"]
+    ],
+    [
+      ["Calgary hosted the Winter Olympics in this year.", "What is 1988?"],
+      ["Canada's official national summer sport is this one, a game invented by Indigenous peoples.", "What is lacrosse?"],
+      ["Newfoundland joined Canada in this year.", "What is 1949?"],
+      ["This Métis leader led the Red River Resistance and is seen as a founder of Manitoba.", "Who is Louis Riel?"],
+      ["Canada's official winter sport is this one.", "What is hockey?"],
+      ["This tidal bay between New Brunswick and Nova Scotia has some of the world's highest tides.", "What is the Bay of Fundy?"]
+    ]
+  ]
+}

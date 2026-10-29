@@ -1,0 +1,45 @@
+{
+  "id": "streaming-hits",
+  "tiers": [
+    [
+      ["This Netflix series follows kids in Hawkins, Indiana, who battle monsters from the Upside Down.", "What is Stranger Things?"],
+      ["In this 2021 Korean thriller, hundreds of debtors compete in deadly children's games for prize money.", "What is Squid Game?"],
+      ["Walter White, a chemistry teacher turned drug maker, stars in this AMC series.", "What is Breaking Bad?"],
+      ["Jenna Ortega plays a gloomy teen at Nevermore Academy in this Netflix series.", "What is Wednesday?"],
+      ["This red-logo streaming service began as a DVD-by-mail company in 1997.", "What is Netflix?"],
+      ["This Disney+ series follows a bounty hunter and a tiny green child across the galaxy.", "What is The Mandalorian?"]
+    ],
+    [
+      ["In Stranger Things, Eleven loves to eat these breakfast items.", "What are Eggo waffles? (Also: Eggos)"],
+      ["In Breaking Bad, Walter White's drug-dealing alias is this.", "Who is Heisenberg?"],
+      ["In Squid Game, the masked guards wear jumpsuits of this color.", "What is pink?"],
+      ["In Stranger Things, the dark alternate dimension filled with monsters is called this.", "What is the Upside Down?"],
+      ["In Bridgerton, the anonymous gossip writer is known by this name.", "Who is Lady Whistledown?"],
+      ["The Queen's Gambit follows an orphan who becomes a master of this game.", "What is chess?"]
+    ],
+    [
+      ["Better Call Saul follows this crooked lawyer, a spinoff of Breaking Bad.", "Who is Saul Goodman? (Also: Jimmy McGill)"],
+      ["Stranger Things was created by two brothers with this last name.", "Who are the Duffer Brothers?"],
+      ["Henry Cavill starred as Geralt of Rivia in this fantasy series.", "What is The Witcher?"],
+      ["Squid Game was written and directed by this South Korean filmmaker.", "Who is Hwang Dong-hyuk?"],
+      ["In HBO's The Last of Us, Pedro Pascal plays this hardened survivor.", "Who is Joel Miller? (Also: Joel)"],
+      ["Netflix's breakout 2013 original, a political drama starring Kevin Spacey, is this series.", "What is House of Cards?"]
+    ],
+    [
+      ["In The Mandalorian, the title bounty hunter's real name is this.", "Who is Din Djarin?"],
+      ["In Squid Game, the main character wears this player number.", "What is 456?"],
+      ["The Stranger Things theme was composed by Kyle Dixon and Michael Stein of this synth band.", "What is Survive?"],
+      ["The Crown dramatizes the reign of this British monarch.", "Who is Queen Elizabeth II? (Also: Elizabeth II)"],
+      ["Jason Sudeikis plays this American football coach hired to manage a London soccer club.", "Who is Ted Lasso?"],
+      ["In Succession, the Roy family controls this media conglomerate.", "What is Waystar Royco?"]
+    ],
+    [
+      ["In The Boys, the corrupt superhero team owned by Vought is called this.", "Who are the Seven?"],
+      ["Hulu's The Handmaid's Tale is based on a novel by this Canadian author.", "Who is Margaret Atwood?"],
+      ["In this Apple TV+ office drama, employees have their work and home memories surgically separated.", "What is Severance?"],
+      ["This Netflix docuseries followed the rivalry between Joe Exotic and Carole Baskin.", "What is Tiger King?"],
+      ["The animated Netflix series Arcane is set in the world of this popular PC game.", "What is League of Legends?"],
+      ["Disney+ launched in the United States in this year.", "What is 2019?"]
+    ]
+  ]
+}

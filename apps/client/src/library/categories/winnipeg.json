@@ -1,0 +1,45 @@
+{
+  "id": "winnipeg",
+  "tiers": [
+    [
+      ["Winnipeg is the capital of this Canadian province.", "What is Manitoba?"],
+      ["The Canada Life Centre is home ice for this NHL team.", "What are the Winnipeg Jets?"],
+      ["Winnipeg's CFL team is the Blue this.", "What are the Bombers?"],
+      ["Thanks to its bitterly cold winters, Winnipeg has this chilly nickname.", "What is Winterpeg?"],
+      ["The bear who inspired Winnie-the-Pooh was named after this Canadian city.", "What is Winnipeg?"],
+      ["Portage and this street make up Winnipeg's most famous intersection.", "What is Main Street?"]
+    ],
+    [
+      ["At The Forks, the Red River meets this river.", "What is the Assiniboine River?"],
+      ["This Winnipeg-born game-show host hosted Let's Make a Deal.", "Who is Monty Hall?"],
+      ["The Guess Who, a Winnipeg band, had a 1970 hit with this song.", "What is 'American Woman'?"],
+      ["The golden statue atop Manitoba's Legislative Building is known by this name.", "What is the Golden Boy?"],
+      ["At Winnipeg Jets playoff games, fans are asked to wear this color.", "What is white?"],
+      ["This large lake north of Winnipeg gave the city its name.", "What is Lake Winnipeg?"]
+    ],
+    [
+      ["The name Winnipeg comes from a Cree word meaning this.", "What is muddy water?"],
+      ["The Blue Bombers won the 2019 Grey Cup, ending a 29-year drought, by beating this team.", "What are the Hamilton Tiger-Cats?"],
+      ["Winnie, the bear named after Winnipeg by the soldier-veterinarian who bought her in 1914, ended up at this European capital's zoo.", "What is London?"],
+      ["Barricades went up at Portage and Main in this decade, keeping pedestrians off its surface crossings until 2025.", "What is the 1970s?"],
+      ["The Red River Floodway is nicknamed this after the premier who built it.", "What is Duff's Ditch?"],
+      ["Salisbury House, a Winnipeg chain, is famous for these small hamburgers.", "What are nips?"]
+    ],
+    [
+      ["The Red River flood of this year, called the 'Flood of the Century', threatened Winnipeg.", "What is 1997?"],
+      ["The 1919 Winnipeg General Strike lasted about this many weeks.", "What is six?"],
+      ["In 1996 the original Winnipeg Jets moved to this US city.", "What is Phoenix?"],
+      ["Opened in 2014 at The Forks, this museum is the first national museum built outside Ottawa.", "What is the Canadian Museum for Human Rights?"],
+      ["The Winnipeg Art Gallery holds a huge collection of this northern Indigenous art.", "What is Inuit art?"],
+      ["This rock icon moved to Winnipeg as a teenager and formed his first band, The Squires.", "Who is Neil Young?"]
+    ],
+    [
+      ["The Jets lost the 2018 Western Conference Final to this expansion team.", "What are the Vegas Golden Knights?"],
+      ["The Manitoba Museum displays a full-size replica of this 17th-century Hudson's Bay Company ship.", "What is the Nonsuch?"],
+      ["Winnipeg was incorporated as a city in this year.", "What is 1873?"],
+      ["The Esplanade Riel pedestrian bridge crosses this river.", "What is the Red River?"],
+      ["This Winnipeg band had a 1990s hit with 'Mmm Mmm Mmm Mmm'.", "Who are the Crash Test Dummies?"],
+      ["Gimli, north of Winnipeg, has the largest community outside Iceland of this ethnic group.", "Who are Icelanders?"]
+    ]
+  ]
+}

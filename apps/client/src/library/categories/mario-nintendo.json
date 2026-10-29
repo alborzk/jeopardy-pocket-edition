@@ -1,0 +1,45 @@
+{
+  "id": "mario-nintendo",
+  "tiers": [
+    [
+      ["This mustachioed plumber in a red cap is Nintendo's mascot.", "Who is Mario?"],
+      ["Mario's taller brother wears green.", "Who is Luigi?"],
+      ["Mario is always rescuing this princess from Bowser.", "Who is Princess Peach?"],
+      ["This fire-breathing, spiked-shell Koopa king is Mario's nemesis.", "Who is Bowser?"],
+      ["The green-clad hero of The Legend of Zelda is named this.", "Who is Link?"],
+      ["Mario collects these golden items, and gets an extra life for 100 of them.", "What are coins?"]
+    ],
+    [
+      ["Mario grows into Super Mario by eating this power-up.", "What is a Super Mushroom?"],
+      ["Nintendo's original Game Boy launched in this year.", "What is 1989?"],
+      ["The green dinosaur companion Mario rides in Super Mario World is named this.", "Who is Yoshi?"],
+      ["In Mario Kart, this spiny blue item hunts down the player in first place.", "What is a Blue Shell? (Also: Spiny Shell)"],
+      ["The Wii console, released in 2006, popularized this kind of controller.", "What are motion controls? (Also: the Wii Remote)"],
+      ["Nintendo's first big arcade hit, in 1981, starred Mario and this barrel-throwing ape.", "Who is Donkey Kong?"]
+    ],
+    [
+      ["Nintendo's hybrid console, which can be played docked or handheld, launched in this year.", "What is 2017?"],
+      ["Princess Zelda's kingdom in the Zelda series is called this.", "What is Hyrule?"],
+      ["In the original Donkey Kong, Mario was known by this name.", "What is Jumpman?"],
+      ["Super Smash Bros. debuted in 1999 on this console.", "What is the Nintendo 64?"],
+      ["Animal Crossing's raccoon dog shopkeeper, who always wants you to pay off your house, is this character.", "Who is Tom Nook?"],
+      ["This Japanese designer created Mario, Donkey Kong and Zelda.", "Who is Shigeru Miyamoto?"]
+    ],
+    [
+      ["Breath of the Wild launched in 2017 alongside this Nintendo console.", "What is the Nintendo Switch?"],
+      ["Bowser's son, who paints graffiti in Super Mario Sunshine, is named this.", "Who is Bowser Jr.?"],
+      ["Nintendo was founded in 1889 as a maker of these.", "What are playing cards? (Also: hanafuda cards)"],
+      ["The bounty hunter hero of the Metroid series is this woman in a power suit.", "Who is Samus Aran?"],
+      ["Super Mario Bros. launched in 1985 on this console, known as the Famicom in Japan.", "What is the NES?"],
+      ["Kirby's signature power is inhaling enemies to do this.", "What is copy their abilities? (Also: copy their powers)"]
+    ],
+    [
+      ["Nintendo's Wii U console launched in North America in this year.", "What is 2012?"],
+      ["The best-selling Nintendo handheld ever, with over 150 million sold, is this one.", "What is the Nintendo DS?"],
+      ["In Super Mario Bros. 3, this power-up gives Mario a raccoon tail and lets him fly.", "What is the Super Leaf?"],
+      ["In the 1998 N64 Zelda classic, Link travels through time by playing this wind instrument.", "What is the ocarina?"],
+      ["Tetris, bundled with the Game Boy, was created by this Soviet programmer.", "Who is Alexey Pajitnov?"],
+      ["This actor voiced Mario in the 2023 animated film.", "Who is Chris Pratt?"]
+    ]
+  ]
+}

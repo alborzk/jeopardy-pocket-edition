@@ -1,0 +1,45 @@
+{
+  "id": "naruto",
+  "tiers": [
+    [
+      ["The orange-clad ninja with whisker marks and a big dream is this boy.", "Who is Naruto Uzumaki? (Also: Naruto)"],
+      ["Naruto's home village is the Hidden village of this tree part.", "What is the Leaf Village? (Also: Konoha)"],
+      ["The leader of each ninja village earns this title, which Naruto dreams of holding.", "What is Hokage?"],
+      ["The powerful fox spirit sealed inside Naruto is called this.", "What is the Nine-Tailed Fox? (Also: Kurama)"],
+      ["Naruto's brooding rival and best friend, the last of the Uchiha, is this boy.", "Who is Sasuke Uchiha? (Also: Sasuke)"],
+      ["Naruto's signature jutsu creates many copies of himself.", "What is the Shadow Clone Jutsu?"]
+    ],
+    [
+      ["Naruto's masked, silver-haired teacher is this man.", "Who is Kakashi Hatake? (Also: Kakashi)"],
+      ["The Uchiha clan's special red eyes are called this.", "What is the Sharingan?"],
+      ["Naruto's favorite food, served at Ichiraku, is this noodle dish.", "What is ramen?"],
+      ["Naruto, Sasuke and Sakura form this three-person squad.", "What is Team 7?"],
+      ["The criminal organization of cloaked ninjas wearing red clouds is called this.", "What is the Akatsuki?"],
+      ["Sasuke's older brother, who massacred their clan, is this man.", "Who is Itachi Uchiha? (Also: Itachi)"]
+    ],
+    [
+      ["Naruto's father, the Fourth Hokage, is named this.", "Who is Minato Namikaze? (Also: Minato)"],
+      ["The Naruto manga was both written and drawn by this artist.", "Who is Masashi Kishimoto?"],
+      ["The Toad Sage who trains Naruto is this man.", "Who is Jiraiya?"],
+      ["This spinning sphere of chakra is Naruto's first big original technique.", "What is the Rasengan?"],
+      ["The sand-controlling Kazekage, another host of a tailed beast, is this man.", "Who is Gaara?"],
+      ["The Fifth Hokage, a legendary medical ninja with a gambling habit, is this woman.", "Who is Tsunade?"]
+    ],
+    [
+      ["The First Hokage, known as the God of Shinobi, is this man.", "Who is Hashirama Senju?"],
+      ["Naruto and Sasuke fight their final battle in this valley.", "What is the Valley of the End?"],
+      ["Naruto first ran in this Japanese weekly manga magazine.", "What is Weekly Shonen Jump?"],
+      ["Naruto's mother, nicknamed the Red Hot-Blooded Habanero, is this woman.", "Who is Kushina Uzumaki? (Also: Kushina)"],
+      ["Itachi's blue-skinned Akatsuki partner, who resembles a shark, is this man.", "Who is Kisame Hoshigaki? (Also: Kisame)"],
+      ["Rock Lee cannot use ninjutsu and relies only on this hand-to-hand combat style.", "What is taijutsu?"]
+    ],
+    [
+      ["The original Naruto manga ran for this many chapters.", "What is 700?"],
+      ["The masked Akatsuki member Tobi turns out to be this Uchiha.", "Who is Obito Uchiha?"],
+      ["The original Naruto manga ended in this year.", "What is 2014?"],
+      ["The sequel series follows Naruto's son and is titled this.", "What is Boruto: Naruto Next Generations? (Also: Boruto)"],
+      ["The ancestor of the Otsutsuki clan, who ate the forbidden chakra fruit, is this woman.", "Who is Kaguya Otsutsuki? (Also: Kaguya)"],
+      ["Rock Lee's green-clad, bowl-cut sensei is this man.", "Who is Might Guy? (Also: Guy)"]
+    ]
+  ]
+}

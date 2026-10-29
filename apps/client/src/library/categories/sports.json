@@ -1,0 +1,45 @@
+{
+  "id": "sports",
+  "tiers": [
+    [
+      ["In basketball, a successful free throw is worth this many points.", "What is one?"],
+      ["A soccer team has this many players on the field.", "What is eleven?"],
+      ["This sport is played with a racket and a feathered shuttlecock.", "What is badminton?"],
+      ["The Olympic flag has this many rings.", "What is five?"],
+      ["In baseball, three of these and you're out.", "What are strikes?"],
+      ["The Super Bowl is the championship game of this sport.", "What is American football?"]
+    ],
+    [
+      ["The Summer Olympics take place every this many years.", "What is four?"],
+      ["A marathon is this many miles long, to the nearest tenth.", "What is 26.2?"],
+      ["In tennis, a score of zero is called this.", "What is love?"],
+      ["This country has won the most men's FIFA World Cups, with five titles.", "What is Brazil?"],
+      ["In golf, one stroke under par on a hole is called this.", "What is a birdie?"],
+      ["The Indianapolis 500 is a famous race in this motorsport.", "What is IndyCar racing?"]
+    ],
+    [
+      ["This grass-court tennis tournament is held in a London suburb every summer.", "What is Wimbledon?"],
+      ["Scoring this many goals in one game is called a hat trick.", "What is three?"],
+      ["Born Cassius Clay, this boxer called himself 'The Greatest'.", "Who is Muhammad Ali?"],
+      ["England and Australia play for a tiny urn known as this in cricket.", "What are The Ashes?"],
+      ["In rugby union, the kick after a try, called a conversion, is worth this many points.", "What is two?"],
+      ["This Jamaican sprinter holds the 100-meter world record of 9.58 seconds.", "Who is Usain Bolt?"]
+    ],
+    [
+      ["The Tour de France leader wears a jersey of this color.", "What is yellow?"],
+      ["In 1962 this NBA star scored 100 points in a single game.", "Who is Wilt Chamberlain?"],
+      ["The Chicago Cubs ended a 108-year championship drought by winning the World Series in this year.", "What is 2016?"],
+      ["The technique of going over the bar backwards, used by Dick Fosbury, is part of this event.", "What is the high jump?"],
+      ["He holds the record for the most men's major golf championships, with 18.", "Who is Jack Nicklaus?"],
+      ["In soccer, the player who scores the most goals in a tournament wins this named shoe.", "What is the Golden Boot?"]
+    ],
+    [
+      ["In 1980 the US hockey team's 'Miracle on Ice' victory came against this country's team.", "What is the Soviet Union?"],
+      ["In 1954 Roger Bannister became the first person to break this barrier in the mile.", "What is four minutes?"],
+      ["In 1976 this Romanian gymnast scored the first perfect 10 in Olympic history.", "Who is Nadia Comăneci?"],
+      ["In 1980 this Canadian athlete began his Marathon of Hope, running across Canada on one leg.", "Who is Terry Fox?"],
+      ["The Kentucky Derby is nicknamed 'the Run for' this.", "What are the Roses?"],
+      ["In 1936 this American sprinter won four gold medals at the Berlin Olympics.", "Who is Jesse Owens?"]
+    ]
+  ]
+}

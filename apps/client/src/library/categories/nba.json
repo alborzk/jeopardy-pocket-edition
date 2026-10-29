@@ -1,0 +1,45 @@
+{
+  "id": "nba",
+  "tiers": [
+    [
+      ["Michael Jordan won six championships with this team.", "What are the Chicago Bulls?"],
+      ["LeBron James has played for the Cavaliers, the Heat and this Los Angeles team.", "What are the Lakers?"],
+      ["A regulation basketball hoop is this many feet high.", "What is ten?"],
+      ["This Golden State star is famous for his three-point shooting.", "Who is Stephen Curry?"],
+      ["This Canadian-born physical education teacher invented basketball in 1891.", "Who is James Naismith?"],
+      ["The Celtics play in this Massachusetts city.", "What is Boston?"]
+    ],
+    [
+      ["Kobe Bryant wore these two numbers during his Lakers career.", "What are 8 and 24?"],
+      ["The Toronto Raptors won their first NBA championship in this year.", "What is 2019?"],
+      ["The NBA Finals MVP trophy is named after this Celtics great.", "Who is Bill Russell?"],
+      ["Giannis Antetokounmpo is from this country, even though his parents are Nigerian.", "What is Greece?"],
+      ["Dirk Nowitzki, who played his whole career in Dallas, was born in this country.", "What is Germany?"],
+      ["The Larry O'Brien Trophy goes to the winner of this.", "What are the NBA Finals?"]
+    ],
+    [
+      ["Wilt Chamberlain scored 100 points in 1962 against this New York team.", "What are the Knicks?"],
+      ["This man held the NBA's career scoring record for 39 years before LeBron James passed him.", "Who is Kareem Abdul-Jabbar?"],
+      ["Stephen Curry and this teammate are known as the 'Splash Brothers'.", "Who is Klay Thompson?"],
+      ["Canadian Steve Nash won two MVP awards with this Arizona team.", "What are the Phoenix Suns?"],
+      ["Kareem's famous unstoppable shot is called this.", "What is the skyhook?"],
+      ["This Celtics forward, 'Larry Legend', won three straight MVP awards in the 1980s.", "Who is Larry Bird?"]
+    ],
+    [
+      ["This team set a regular-season record of 73 wins in 2015–16.", "What are the Golden State Warriors?"],
+      ["The 1992 US Olympic basketball squad full of stars was nicknamed this.", "What is the Dream Team?"],
+      ["Dennis Rodman won seven straight NBA titles in this statistic, collecting missed shots.", "What is rebounding?"],
+      ["Known as 'Dr. J', this star was famous for his high-flying dunks in the 1970s and 80s.", "Who is Julius Erving?"],
+      ["The 1997 Finals 'Flu Game' was played by Jordan's Bulls against this team.", "What are the Utah Jazz?"],
+      ["LeBron James was the first overall pick in the NBA draft in this year.", "What is 2003?"]
+    ],
+    [
+      ["The silhouette on the NBA logo is widely believed to be based on this Lakers legend.", "Who is Jerry West?"],
+      ["The NBA first adopted the three-point line in this season.", "What is 1979–80?"],
+      ["The Toronto Raptors played their first NBA season in this year.", "What is 1995?"],
+      ["This coach led the 'Showtime' Lakers of the 1980s and later the Miami Heat.", "Who is Pat Riley?"],
+      ["Bill Russell won this many NBA championships with the Celtics.", "What is eleven?"],
+      ["This player, nicknamed 'The Mailman', spent most of his career with the Utah Jazz.", "Who is Karl Malone?"]
+    ]
+  ]
+}

@@ -1,0 +1,152 @@
+import type { Recipe } from './types';
+
+/**
+ * Ready-made mixes. A recipe is only a list of categories: the builder deals the clues, so the
+ * same recipe gives a different board each time it's used.
+ */
+export const RECIPES: readonly Recipe[] = [
+  {
+    id: 'classic-mix',
+    title: 'Classic Mix',
+    blurb: 'A bit of everything. Good for any crowd.',
+    round1: [
+      'capitals-countries',
+      'animal-kingdom',
+      'name-that-movie',
+      'food-cooking',
+      'sports',
+      'word-play',
+    ],
+    round2: [
+      'history-buffs',
+      'space-planets',
+      'bands-artists',
+      'books-authors',
+      'tv-sitcoms',
+      'myths-legends',
+    ],
+  },
+  {
+    id: 'nostalgia-night',
+    title: 'Nostalgia Night',
+    blurb: 'Cartoons, cereal and the dial-up years.',
+    round1: [
+      'the-90s',
+      'y2k',
+      'cartoons-animation',
+      'video-games',
+      'chart-toppers',
+      'childhood-toys',
+    ],
+    round2: [
+      'tv-sitcoms',
+      'name-that-movie',
+      'fast-food-snacks',
+      'famous-actors',
+      'board-card-games',
+      'tech-internet',
+    ],
+  },
+  {
+    id: 'movie-tv-night',
+    title: 'Movie & TV Night',
+    blurb: 'For people who say "I think I saw that".',
+    round1: [
+      'famous-actors',
+      'name-that-movie',
+      'tv-sitcoms',
+      'cartoons-animation',
+      'oscar-night',
+      'superheroes-comics',
+    ],
+    round2: ['bands-artists', 'chart-toppers', 'anime', 'books-authors', 'video-games', 'the-90s'],
+  },
+  {
+    id: 'canada-night',
+    title: 'Canada Night',
+    blurb: 'Hockey, the Peg and everything north of the border.',
+    round1: ['canada', 'winnipeg', 'nhl', 'canadian-pop-culture', 'fast-food-snacks', 'sports'],
+    round2: [
+      'drake',
+      'famous-actors',
+      'bands-artists',
+      'history-buffs',
+      'animal-kingdom',
+      'food-cooking',
+    ],
+  },
+  {
+    id: 'nerd-night',
+    title: 'Nerd Night',
+    blurb: 'Games, anime, space and the internet.',
+    round1: [
+      'league-of-legends',
+      'anime',
+      'video-games',
+      'space-planets',
+      'human-body',
+      'tech-internet',
+    ],
+    round2: [
+      'superheroes-comics',
+      'myths-legends',
+      'inventions-firsts',
+      'tiktok',
+      'board-card-games',
+      'art-artists',
+    ],
+  },
+  {
+    id: 'fandom-night',
+    title: 'Fandom Night',
+    blurb: 'Wands, lightsabers, Poké Balls and pirate crews.',
+    round1: [
+      'harry-potter',
+      'star-wars',
+      'marvel-movies',
+      'lord-of-the-rings',
+      'pokemon',
+      'mario-nintendo',
+    ],
+    round2: ['disney-pixar', 'the-simpsons', 'the-office', 'streaming-hits', 'naruto', 'one-piece'],
+  },
+  {
+    id: 'gamer-night',
+    title: 'Gamer Night',
+    blurb: 'Battle royales, blocks, boss fights and the streamers.',
+    round1: [
+      'minecraft',
+      'fortnite',
+      'call-of-duty',
+      'valorant',
+      'league-of-legends',
+      'video-games',
+    ],
+    round2: [
+      'mario-nintendo',
+      'pokemon',
+      'youtubers-streamers',
+      'memes-viral',
+      'tech-internet',
+      'board-card-games',
+    ],
+  },
+  {
+    id: 'sports-bar-night',
+    title: 'Sports Bar Night',
+    blurb: 'Gridiron, hockey, hoops and the beautiful game.',
+    round1: ['nfl', 'nhl', 'nba', 'soccer', 'sports', 'gym-culture'],
+    round2: [
+      'classic-rock',
+      'fast-food-snacks',
+      'cars',
+      'tv-sitcoms',
+      'history-buffs',
+      'word-play',
+    ],
+  },
+];
+
+export function findRecipe(id: string): Recipe | undefined {
+  return RECIPES.find((r) => r.id === id);
+}

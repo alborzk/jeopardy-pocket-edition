@@ -1,0 +1,45 @@
+{
+  "id": "cartoons-animation",
+  "tiers": [
+    [
+      ["This yellow sponge lives in a pineapple under the sea.", "Who is SpongeBob SquarePants?"],
+      ["Created by Walt Disney, this mouse wears red shorts and has big round ears.", "Who is Mickey Mouse?"],
+      ["In Frozen, this snowman says he likes warm hugs.", "Who is Olaf?"],
+      ["This cat and mouse have been chasing each other in a classic Hanna-Barbera cartoon since 1940.", "Who are Tom and Jerry?"],
+      ["In Finding Nemo, this blue tang has trouble remembering anything.", "Who is Dory?"],
+      ["Fred Flintstone lives in this prehistoric town.", "What is Bedrock?"]
+    ],
+    [
+      ["This animated dad is known for the catchphrase 'D'oh!'", "Who is Homer Simpson?"],
+      ["Released in 1995, this was the first fully computer-animated feature film.", "What is Toy Story?"],
+      ["In Aladdin, this princess has a pet tiger named Rajah.", "Who is Jasmine?"],
+      ["This carrot-chomping Looney Tunes rabbit asks, 'What's up, Doc?'", "Who is Bugs Bunny?"],
+      ["On this Nickelodeon show, a boy named Aang is the last airbender.", "What is Avatar: The Last Airbender?"],
+      ["In Scooby-Doo, this snack-loving friend is the dog's owner.", "Who is Shaggy?"]
+    ],
+    [
+      ["Released in 1937, this was Disney's first full-length animated feature.", "What is Snow White and the Seven Dwarfs?"],
+      ["This animation studio, once owned by Steve Jobs and later bought by Disney, made Toy Story.", "What is Pixar?"],
+      ["This Japanese studio made Spirited Away and My Neighbor Totoro.", "What is Studio Ghibli?"],
+      ["This wisecracking meerkat teaches Simba 'Hakuna Matata' in The Lion King.", "Who is Timon?"],
+      ["In Finding Nemo, this overprotective clownfish is Nemo's dad.", "Who is Marlin?"],
+      ["Matt Groening created this sci-fi cartoon about a pizza delivery boy frozen for a thousand years.", "What is Futurama?"]
+    ],
+    [
+      ["In The Incredibles, this young superfan becomes the villain Syndrome.", "Who is Buddy Pine?"],
+      ["This 1940 Disney film features Mickey Mouse in 'The Sorcerer's Apprentice'.", "What is Fantasia?"],
+      ["This adult animated sitcom is set in Quahog, Rhode Island.", "What is Family Guy?"],
+      ["Finn the Human and Jake the Dog travel the Land of Ooo in this Cartoon Network series.", "What is Adventure Time?"],
+      ["This Sony film won Best Animated Feature at the Oscars and starred a teen from Brooklyn named Miles Morales.", "What is Spider-Man: Into the Spider-Verse?"],
+      ["This comedian voiced the Genie in Disney's Aladdin.", "Who is Robin Williams?"]
+    ],
+    [
+      ["This 1988 film mixed live action and animation, with Bob Hoskins and a wisecracking rabbit.", "What is Who Framed Roger Rabbit?"],
+      ["This director co-founded Studio Ghibli and made Spirited Away.", "Who is Hayao Miyazaki?"],
+      ["The Simpsons began in 1987 as short sketches on this variety show.", "What is The Tracey Ullman Show?"],
+      ["In 1991, this Disney film became the first animated feature nominated for Best Picture.", "What is Beauty and the Beast?"],
+      ["Trey Parker created South Park with this partner.", "Who is Matt Stone?"],
+      ["This 1988 Japanese film by Katsuhiro Otomo, set in a future Neo-Tokyo, helped bring anime to Western audiences.", "What is Akira?"]
+    ]
+  ]
+}

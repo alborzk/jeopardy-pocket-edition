@@ -1,0 +1,45 @@
+{
+  "id": "tiktok",
+  "tiers": [
+    [
+      ["This app is known for short vertical videos, dance trends and viral sounds.", "What is TikTok?"],
+      ["TikTok's main feed of recommended videos is called this page, often shortened to FYP.", "What is the For You Page?"],
+      ["This TikTok feature lets you place your video side by side with someone else's.", "What is a Duet?"],
+      ["When a video spreads rapidly to millions of viewers, it's said to have done this.", "What is going viral?"],
+      ["Tapping this heart-shaped button shows you like a video.", "What is the like button?"],
+      ["Many TikTok trends start when creators copy a dance set to a popular clip of this.", "What is a sound?"]
+    ],
+    [
+      ["TikTok is owned by this Chinese technology company.", "What is ByteDance?"],
+      ["In 2018 TikTok merged with this lip-sync video app.", "What is Musical.ly?"],
+      ["TikTok's Chinese version, launched in 2016, is called this.", "What is Douyin?"],
+      ["This rapper's 2019 hit 'Old Town Road' took off partly thanks to a TikTok cowboy trend.", "Who is Lil Nas X?"],
+      ["This feature lets you add part of another creator's video to the start of your own.", "What is Stitch?"],
+      ["The video app TikTok became available outside China in this year.", "What is 2017?"]
+    ],
+    [
+      ["This teen dancer was the first person to reach 100 million TikTok followers.", "Who is Charli D'Amelio?"],
+      ["In 2020 this Idaho man's skateboarding video, with a cranberry juice bottle, made Fleetwood Mac's 'Dreams' popular again.", "Who is Nathan Apodaca?"],
+      ["Jalaiah Harmon created this dance, which exploded on TikTok in 2019.", "What is the Renegade?"],
+      ["The New Zealand sea shanty 'Soon May the ___ Come' went viral on TikTok in 2021.", "What is 'Wellerman'?"],
+      ["Khaby Lame became famous on TikTok for silently mocking overcomplicated 'life hacks' with this simple gesture.", "What is a shrug? (Also: open-handed gesture)"],
+      ["TikTok videos with this three-letter label show a scene from the viewer's perspective.", "What is POV?"]
+    ],
+    [
+      ["ByteDance was founded by this entrepreneur.", "Who is Zhang Yiming?"],
+      ["In 2020 this US president signed an executive order aiming to ban TikTok unless it was sold.", "Who is Donald Trump?"],
+      ["This Singaporean executive testified to the US Congress as TikTok's CEO in March 2023.", "Who is Shou Zi Chew?"],
+      ["In 2020 Instagram launched this short-video feature to compete with TikTok.", "What is Reels?"],
+      ["YouTube's answer to TikTok, launched in 2020, is called this.", "What is Shorts?"],
+      ["This app, shut down in 2017, was known for six-second looping videos and was an early rival.", "What is Vine?"]
+    ],
+    [
+      ["Vine clips lasted this many seconds.", "What is six?"],
+      ["ByteDance reportedly paid between $800 million and this much, in US dollars, to acquire Musical.ly in 2017.", "What is $1 billion?"],
+      ["Douyin was launched by ByteDance in this year.", "What is 2016?"],
+      ["Musical.ly, the app that became part of TikTok, was founded in this year.", "What is 2014?"],
+      ["TikTok said it reached one billion monthly users in this year.", "What is 2021?"],
+      ["TikTok's vertical videos use this aspect ratio, taller than they are wide.", "What is 9:16?"]
+    ]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "harry-potter",
+  "tiers": [
+    [
+      ["The young wizard with a lightning-bolt scar on his forehead is named this.", "Who is Harry Potter?"],
+      ["This sport, played on flying broomsticks, features a Golden Snitch.", "What is Quidditch?"],
+      ["Hogwarts students are sorted into their houses by this talking hat.", "What is the Sorting Hat?"],
+      ["Harry's snowy owl, who delivers his mail, is named this.", "Who is Hedwig?"],
+      ["Harry's best friends are Hermione Granger and this red-haired boy.", "Who is Ron Weasley?"],
+      ["The dark wizard who killed Harry's parents goes by this name.", "Who is Voldemort? (Also: Lord Voldemort)"]
+    ],
+    [
+      ["The Hogwarts house whose emblem is a lion is this one.", "What is Gryffindor?"],
+      ["This kind-hearted giant is the gamekeeper at Hogwarts.", "Who is Hagrid? (Also: Rubeus Hagrid)"],
+      ["Students catch the Hogwarts Express at King's Cross from this oddly numbered platform.", "What is Platform 9¾?"],
+      ["This spell, which knocks a wand out of an opponent's hand, is one of Harry's favorites.", "What is Expelliarmus?"],
+      ["This potions master, who dresses in black and dislikes Harry, teaches at Hogwarts.", "Who is Severus Snape? (Also: Snape)"],
+      ["This Hogsmeade candy shop sells Chocolate Frogs and Fizzing Whizzbees.", "What is Honeydukes?"]
+    ],
+    [
+      ["This Hogwarts headmaster loves lemon drops and has a phoenix named Fawkes.", "Who is Albus Dumbledore? (Also: Dumbledore)"],
+      ["The Deathly Hallows are the Elder Wand, the Resurrection Stone and this garment.", "What is the Invisibility Cloak?"],
+      ["This three-headed dog guards the Philosopher's Stone in the first book.", "Who is Fluffy?"],
+      ["In Prisoner of Azkaban, Hermione uses this time-bending device to attend extra classes.", "What is a Time-Turner?"],
+      ["Godric Gryffindor, Salazar Slytherin and Helga Hufflepuff founded Hogwarts with this fourth founder.", "Who is Rowena Ravenclaw?"],
+      ["Wizarding money is kept in vaults at this bank, run by goblins.", "What is Gringotts?"]
+    ],
+    [
+      ["The Killing Curse, one of the three Unforgivable Curses, is cast with these words.", "What is Avada Kedavra?"],
+      ["The Order of the Phoenix meets at 12 Grimmauld Place, the ancestral home of this family.", "Who are the Blacks? (Also: the Black family)"],
+      ["Fred and George's joke shop in Diagon Alley is called this.", "What is Weasleys' Wizard Wheezes?"],
+      ["This Hufflepuff, chosen as a Triwizard champion, dies in Goblet of Fire.", "Who is Cedric Diggory?"],
+      ["Snape's Patronus, revealed in the final book, takes the form of this animal.", "What is a doe? (Also: a deer)"],
+      ["These skeletal winged horses, visible only to those who have seen death, pull the Hogwarts carriages.", "What are Thestrals?"]
+    ],
+    [
+      ["Sirius Black escaped from this wizarding prison, guarded by Dementors.", "What is Azkaban?"],
+      ["The Marauder's Map was made by Moony, Wormtail, Padfoot and this man, Harry's father.", "Who is James Potter? (Also: Prongs)"],
+      ["The first Harry Potter book was published in the UK in this year.", "What is 1997?"],
+      ["Voldemort's pet snake, one of his Horcruxes, is named this.", "What is Nagini?"],
+      ["This spell conjures a protective guardian from a happy memory.", "What is Expecto Patronum? (Also: the Patronus Charm)"],
+      ["The Hogwarts motto, Draco dormiens nunquam titillandus, warns you never to tickle this sleeping creature.", "What is a dragon?"]
+    ]
+  ]
+}

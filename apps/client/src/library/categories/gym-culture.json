@@ -1,0 +1,45 @@
+{
+  "id": "gym-culture",
+  "tiers": [
+    [
+      ["Lifting a barbell from the floor up to your hips is this exercise.", "What is a deadlift?"],
+      ["Squat, bench press and deadlift are the three lifts in this strength sport.", "What is powerlifting?"],
+      ["Skipping this day of training is a classic gym joke.", "What is leg day?"],
+      ["One round of lifting a weight once is called one of these.", "What is a rep?"],
+      ["This bodybuilder turned actor and governor starred in The Terminator.", "Who is Arnold Schwarzenegger?"],
+      ["A personal best lift is known by this two-letter abbreviation.", "What is a PR? (Also: personal record)"]
+    ],
+    [
+      ["Gym-goers who eat extra calories to gain size are doing this.", "What is bulking?"],
+      ["Whey protein is a byproduct of making this dairy product.", "What is cheese?"],
+      ["One of these 45-pound discs is slid onto each side of a barbell.", "What is a plate?"],
+      ["Planks, crunches and sit-ups train this central muscle group.", "What is the core?"],
+      ["Planet Fitness sounds this alarm at people who grunt or drop weights.", "What is the Lunk Alarm?"],
+      ["This bodybuilder won the Mr. Olympia title eight straight times from 1998 to 2005.", "Who is Ronnie Coleman?"]
+    ],
+    [
+      ["The most weight you can lift for a single rep is called this.", "What is a one-rep max? (Also: 1RM)"],
+      ["The original Gold's Gym, the Mecca of Bodybuilding, opened in this California beach neighborhood.", "What is Venice? (Also: Venice Beach)"],
+      ["Kettlebells originated in this country.", "What is Russia?"],
+      ["CrossFit athletes compete each year in these championship events.", "What are the CrossFit Games?"],
+      ["A standard men's Olympic barbell weighs this many kilograms.", "What is 20 kilograms? (Also: 45 pounds)"],
+      ["Performing two exercises one after the other with no rest is called a superset, done this way.", "What is back to back?"]
+    ],
+    [
+      ["Arnold Schwarzenegger starred in this classic 1977 bodybuilding documentary.", "What is Pumping Iron?"],
+      ["Pull-ups and rows target this large back muscle, nicknamed the lats.", "What is the latissimus dorsi?"],
+      ["To keep getting stronger, you gradually increase the weight, reps or sets, known by this term.", "What is progressive overload?"],
+      ["The first Mr. Olympia, held in 1965, was won by this bodybuilder.", "Who is Larry Scott?"],
+      ["The Mr. Olympia trophy is a statue named after this pioneering strongman.", "What is the Sandow?"],
+      ["The Arnold Sports Festival is held every year in this Ohio city.", "What is Columbus?"]
+    ],
+    [
+      ["Strongman competitors lift these giant round boulders onto platforms.", "What are Atlas Stones?"],
+      ["Hypertrophy is the technical term for this.", "What is muscle growth?"],
+      ["Creatine helps muscles quickly regenerate this energy molecule.", "What is ATP?"],
+      ["The Mr. Olympia contest is run by this bodybuilding federation.", "What is the IFBB?"],
+      ["This founder opened the first Gold's Gym in 1965.", "Who is Joe Gold?"],
+      ["Strongman Hafthor Bjornsson played this towering character in Game of Thrones.", "Who is Gregor Clegane? (Also: The Mountain)"]
+    ]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "human-body",
+  "tiers": [
+    [
+      ["This organ pumps blood around your body.", "What is the heart?"],
+      ["This is the body's largest organ.", "What is the skin?"],
+      ["You breathe in and out using these two organs.", "What are the lungs?"],
+      ["Your brain is protected by this bony structure.", "What is the skull?"],
+      ["You see with these two organs in your head.", "What are the eyes?"],
+      ["You chew your food with these hard, white structures in your mouth.", "What are teeth?"]
+    ],
+    [
+      ["An adult human has this many bones.", "What is 206?"],
+      ["The hardest substance in the human body is this coating on teeth.", "What is enamel?"],
+      ["The longest bone in the human body is this thigh bone.", "What is the femur?"],
+      ["These two bean-shaped organs filter blood and make urine.", "What are the kidneys?"],
+      ["Red blood cells carry oxygen using this iron-rich protein.", "What is hemoglobin?"],
+      ["The human heart has this many chambers.", "What is four?"]
+    ],
+    [
+      ["The pancreas makes this hormone to control blood sugar.", "What is insulin?"],
+      ["The colored part of the eye is called this.", "What is the iris?"],
+      ["An adult has roughly this many liters of blood.", "What is five?"],
+      ["Skin makes this vitamin when exposed to sunlight.", "What is vitamin D?"],
+      ["The medical name for the windpipe is this.", "What is the trachea?"],
+      ["Your stomach produces this acid to help break down food.", "What is hydrochloric acid?"]
+    ],
+    [
+      ["The smallest bone in the body is found in the middle ear and is called this.", "What is the stapes?"],
+      ["The largest muscle in the body is this one in your buttocks.", "What is the gluteus maximus?"],
+      ["Humans normally have this many chromosomes in each cell.", "What is 46?"],
+      ["The tiny air sacs in the lungs where oxygen enters the blood are called this.", "What are alveoli?"],
+      ["Hitting your 'funny bone' actually strikes this nerve.", "What is the ulnar nerve?"],
+      ["The body's main artery, leaving the heart, is called this.", "What is the aorta?"]
+    ],
+    [
+      ["This organ can regenerate itself after part of it is removed.", "What is the liver?"],
+      ["The part of the brain at the back that controls balance and coordination is this.", "What is the cerebellum?"],
+      ["This hormone, also called epinephrine, triggers the 'fight or flight' response.", "What is adrenaline?"],
+      ["This blood type is known as the universal donor.", "What is O negative?"],
+      ["The part of the brainstem that controls heartbeat and breathing is this.", "What is the medulla oblongata?"],
+      ["White blood cells are also known by this name.", "What are leukocytes?"]
+    ]
+  ]
+}

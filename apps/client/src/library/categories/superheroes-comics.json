@@ -1,0 +1,45 @@
+{
+  "id": "superheroes-comics",
+  "tiers": [
+    [
+      ["This web-slinging hero's secret identity is Peter Parker.", "Who is Spider-Man?"],
+      ["Billionaire Bruce Wayne fights crime in Gotham as this caped crusader.", "Who is Batman?"],
+      ["This reporter for the Daily Planet is secretly a Kryptonian.", "Who is Superman?"],
+      ["Scientist Bruce Banner turns into this green giant when he's angry.", "Who is the Hulk?"],
+      ["This Amazon princess carries a lasso of truth.", "Who is Wonder Woman?"],
+      ["This World War II soldier carries a round shield and wears red, white and blue.", "Who is Captain America?"]
+    ],
+    [
+      ["Tony Stark's company, which builds the Iron Man armor, has this name.", "What is Stark Industries?"],
+      ["Gotham City's police commissioner, a friend of Batman, is named this.", "Who is James Gordon?"],
+      ["This telepathic mutant leads the X-Men from a school for gifted youngsters.", "Who is Professor X? (Also: Charles Xavier)"],
+      ["Thor wields this magical hammer.", "What is Mjolnir?"],
+      ["Batman's loyal butler goes by this name.", "Who is Alfred Pennyworth?"],
+      ["Wolverine's skeleton is bonded with this unbreakable metal.", "What is adamantium?"]
+    ],
+    [
+      ["Superman was born on this doomed planet.", "What is Krypton?"],
+      ["Thanos collected these six gems to wipe out half of all life.", "What are the Infinity Stones?"],
+      ["Reed Richards of the Fantastic Four is known by this nickname.", "Who is Mr. Fantastic?"],
+      ["Barry Allen is the secret identity of this DC speedster.", "Who is The Flash?"],
+      ["The Avengers first assembled on film in 2012 and fought an alien army in this city.", "What is New York City?"],
+      ["Peter Parker lives with this relative, who raised him after his uncle's death.", "Who is Aunt May?"]
+    ],
+    [
+      ["This DC king rules the underwater realm of Atlantis.", "Who is Aquaman?"],
+      ["Captain America's real name is this.", "Who is Steve Rogers?"],
+      ["Magneto can control this natural force.", "What is magnetism?"],
+      ["A Green Lantern draws his power from this piece of jewelry.", "What is a power ring?"],
+      ["In Guardians of the Galaxy, this tree-like hero is known for saying only three words.", "Who is Groot?"],
+      ["T'Challa is the king of this fictional African nation.", "What is Wakanda?"]
+    ],
+    [
+      ["Alan Moore and Dave Gibbons wrote this groundbreaking 1986 graphic novel about retired, flawed heroes.", "What is Watchmen?"],
+      ["Frank Miller wrote the 1986 story that showed an older Bruce Wayne coming out of retirement, called this.", "What is The Dark Knight Returns?"],
+      ["Stan Lee and Jack Kirby launched this Marvel team in 1961.", "Who are the Fantastic Four?"],
+      ["This wisecracking Marvel antihero is nicknamed the 'Merc with a Mouth'.", "Who is Deadpool?"],
+      ["Oswald Cobblepot is the real name of this Batman villain.", "Who is The Penguin?"],
+      ["Spider-Man was co-created by Stan Lee and this artist.", "Who is Steve Ditko?"]
+    ]
+  ]
+}

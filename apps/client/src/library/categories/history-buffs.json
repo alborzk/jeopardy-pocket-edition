@@ -1,0 +1,45 @@
+{
+  "id": "history-buffs",
+  "tiers": [
+    [
+      ["He was the first president of the United States.", "Who is George Washington?"],
+      ["The Declaration of Independence was adopted in this year.", "What is 1776?"],
+      ["The Pilgrims crossed the Atlantic in 1620 aboard this ship.", "What is the Mayflower?"],
+      ["This Egyptian queen allied herself with Julius Caesar and later Mark Antony.", "Who is Cleopatra?"],
+      ["In 1963 he gave his 'I Have a Dream' speech at the Lincoln Memorial.", "Who is Martin Luther King Jr.?"],
+      ["The Titanic sank in this ocean in 1912.", "What is the Atlantic Ocean?"]
+    ],
+    [
+      ["The French Revolution began in this year.", "What is 1789?"],
+      ["World War II ended in this year.", "What is 1945?"],
+      ["This man was British prime minister for most of World War II.", "Who is Winston Churchill?"],
+      ["Julius Caesar's adopted heir became Rome's first emperor under this name.", "Who is Augustus?"],
+      ["The American Civil War was fought between the Union and this group of states.", "What is the Confederacy?"],
+      ["Christopher Columbus sailed under the flag of this country in 1492.", "What is Spain?"]
+    ],
+    [
+      ["The Magna Carta was sealed in this year.", "What is 1215?"],
+      ["The Incas built Machu Picchu in the mountains of this country.", "What is Peru?"],
+      ["Margaret Thatcher was known by this nickname as British prime minister.", "What is the Iron Lady?"],
+      ["He founded the Mongol Empire in the early 13th century.", "Who is Genghis Khan?"],
+      ["The Berlin Wall fell in this year.", "What is 1989?"],
+      ["In 1517 this German monk nailed his Ninety-five Theses to a church door.", "Who is Martin Luther?"]
+    ],
+    [
+      ["He won the Battle of Hastings in 1066 and became king of England.", "Who is William the Conqueror?"],
+      ["The Treaty of Versailles formally ended this war.", "What is World War I?"],
+      ["The assassination of this archduke in Sarajevo in 1914 triggered World War I.", "Who is Archduke Franz Ferdinand?"],
+      ["Napoleon was finally defeated at this 1815 battle in what is now Belgium.", "What is Waterloo?"],
+      ["Lincoln issued this 1863 order freeing slaves in Confederate-held territory.", "What is the Emancipation Proclamation?"],
+      ["The Hundred Years' War was fought between England and this country.", "What is France?"]
+    ],
+    [
+      ["The 1648 Peace of Westphalia ended this long European war.", "What is the Thirty Years' War?"],
+      ["In 480 BC a small Greek force held off the Persian army at this narrow mountain pass.", "What is Thermopylae?"],
+      ["The Rosetta Stone helped scholars decipher this ancient writing system.", "What are Egyptian hieroglyphs?"],
+      ["This Mughal emperor built the Taj Mahal in memory of his wife.", "Who is Shah Jahan?"],
+      ["The 1494 Treaty of Tordesillas divided the New World between Spain and this country.", "What is Portugal?"],
+      ["The 1857 uprising against the British East India Company is often called this.", "What is the Indian Rebellion? (Also: Sepoy Mutiny)"]
+    ]
+  ]
+}

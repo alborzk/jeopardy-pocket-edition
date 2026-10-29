@@ -1,0 +1,45 @@
+{
+  "id": "tv-sitcoms",
+  "tiers": [
+    [
+      ["Six pals in New York hang out at the Central Perk coffeehouse in this NBC sitcom.", "What is Friends?"],
+      ["Homer, Marge, Bart, Lisa and Maggie live in the town of Springfield in this long-running animated sitcom.", "What is The Simpsons?"],
+      ["This mockumentary-style comedy follows the employees of the Dunder Mifflin paper company.", "What is The Office?"],
+      ["This 1980s sitcom follows four older women sharing a house and eating plenty of cheesecake.", "What is The Golden Girls?"],
+      ["Sheldon, Leonard, Penny, Howard and Raj are the main characters of this comedy.", "What is The Big Bang Theory?"],
+      ["Jerry, George, Elaine and Kramer star in this 'show about nothing'.", "What is Seinfeld?"]
+    ],
+    [
+      ["Ted Mosby tells his kids the long story of how he met their mother in this sitcom.", "What is How I Met Your Mother?"],
+      ["A wealthy family loses its fortune and moves into a motel in a town they once bought as a joke.", "What is Schitt's Creek?"],
+      ["Leslie Knope and Ron Swanson work in the Parks Department of Pawnee, Indiana.", "What is Parks and Recreation?"],
+      ["A teenager from West Philadelphia is sent to live with his wealthy relatives in Bel-Air.", "What is The Fresh Prince of Bel-Air?"],
+      ["A snobbish Seattle psychiatrist hosts a radio show and lives with his father and brother.", "What is Frasier?"],
+      ["The Pritchett, Dunphy and Tucker households are all related in this documentary-style comedy.", "What is Modern Family?"]
+    ],
+    [
+      ["In The Office, Dwight Schrute's family farm grows this root vegetable.", "What are beets?"],
+      ["Ross's pet monkey on Friends goes by this name.", "Who is Marcel?"],
+      ["Cheers is set in a bar in this American city.", "What is Boston?"],
+      ["Jerry's neighbor, who bursts through the door without knocking, is named this.", "Who is Kramer? (Also: Cosmo Kramer)"],
+      ["Sheldon Cooper punctuates his jokes with this made-up word.", "What is 'Bazinga'?"],
+      ["This Fox sitcom follows the dysfunctional Bluth family and their frozen banana stand.", "What is Arrested Development?"]
+    ],
+    [
+      ["On Brooklyn Nine-Nine, Captain Holt's corgi is named after this dairy product.", "What is Cheddar?"],
+      ["Frank Costanza invented this 'holiday for the rest of us', complete with an aluminum pole.", "What is Festivus?"],
+      ["John Cleese plays the rude hotelier Basil in this British sitcom set in Torquay.", "What is Fawlty Towers?"],
+      ["Dorothy, Rose, Blanche and Sophia live in this Florida city.", "What is Miami?"],
+      ["The gang on How I Met Your Mother drinks at this bar.", "What is MacLaren's Pub?"],
+      ["This HBO comedy stars Larry David as a fictionalized version of himself.", "What is Curb Your Enthusiasm?"]
+    ],
+    [
+      ["This 1950s sitcom starring Lucille Ball included a famous scene with a conveyor belt of chocolates.", "What is I Love Lucy?"],
+      ["The 1983 finale of this Korean War sitcom drew one of the biggest US TV audiences ever.", "What is M*A*S*H?"],
+      ["Richie, Potsie, Ralph and the Fonz hang out at Arnold's in this 1970s Milwaukee sitcom.", "What is Happy Days?"],
+      ["Ralph Kramden, a Brooklyn bus driver, often threatened to send his wife 'to the moon'.", "What is The Honeymooners?"],
+      ["Rowan Atkinson plays a cunning schemer in a different historical era in each season of this British comedy.", "What is Blackadder?"],
+      ["Archie Bunker is the bigoted head of the household in this 1970s Norman Lear sitcom.", "What is All in the Family?"]
+    ]
+  ]
+}

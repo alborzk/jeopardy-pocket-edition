@@ -1,0 +1,45 @@
+{
+  "id": "video-games",
+  "tiers": [
+    [
+      ["This mustachioed plumber in red must rescue Princess Peach.", "Who is Mario?"],
+      ["Sega's speedy blue mascot collects golden rings.", "Who is Sonic the Hedgehog?"],
+      ["This yellow Pokémon with red cheeks is Ash's partner.", "What is Pikachu?"],
+      ["In this falling-blocks puzzle game, you rotate shapes to fill whole lines.", "What is Tetris?"],
+      ["In Minecraft, these green mobs sneak up and explode.", "What are creepers?"],
+      ["This 1980 arcade game has a yellow character eating dots and avoiding ghosts.", "What is Pac-Man?"]
+    ],
+    [
+      ["The hero of The Legend of Zelda games is named this, not Zelda.", "Who is Link?"],
+      ["Mario's taller, green-clad brother goes by this name.", "Who is Luigi?"],
+      ["Sony launched this home console in Japan in 1994.", "What is the PlayStation?"],
+      ["In Fortnite's most famous mode, 100 players fight until only one is left standing.", "What is Battle Royale?"],
+      ["The four ghosts in Pac-Man are Blinky, Pinky, Inky and this one.", "Who is Clyde?"],
+      ["Launched in 2017, this Nintendo console works both docked to a TV and as a handheld.", "What is the Nintendo Switch?"]
+    ],
+    [
+      ["Atari's 1972 tennis-style arcade hit is often called the first commercially successful video game.", "What is Pong?"],
+      ["The kingdom where The Legend of Zelda takes place is called this.", "What is Hyrule?"],
+      ["Master Chief is the hero of this Xbox series.", "What is Halo?"],
+      ["To reach the Nether in Minecraft, you build a portal out of this dark, glassy block.", "What is obsidian?"],
+      ["In The Last of Us, Joel escorts this teenager across a ruined America.", "Who is Ellie?"],
+      ["This Japanese company made Street Fighter and Resident Evil.", "What is Capcom?"]
+    ],
+    [
+      ["In the West, the Japanese Famicom was released as this console in 1985.", "What is the NES? (Also: Nintendo Entertainment System)"],
+      ["Rockstar's 2018 open-world western follows Arthur Morgan and the Van der Linde gang.", "What is Red Dead Redemption 2?"],
+      ["Valve's 1998 first-person shooter cast a physicist named Gordon Freeman as its hero.", "What is Half-Life?"],
+      ["Tetris was created in the Soviet Union by this programmer.", "Who is Alexey Pajitnov?"],
+      ["In this 1998 Nintendo 64 classic, Link travels through time with a musical instrument.", "What is The Legend of Zelda: Ocarina of Time?"],
+      ["This 1993 first-person shooter from id Software sent players to fight demons on Mars.", "What is Doom?"]
+    ],
+    [
+      ["He created Donkey Kong, Mario and Zelda at Nintendo.", "Who is Shigeru Miyamoto?"],
+      ["This famous cheat code goes up, up, down, down, left, right, left, right, B, A.", "What is the Konami Code?"],
+      ["The video game industry crashed in this region in 1983.", "What is North America?"],
+      ["This Polish studio developed The Witcher 3: Wild Hunt.", "What is CD Projekt Red?"],
+      ["In Super Mario Bros. the final boss, a fire-breathing turtle-like king, is this character.", "Who is Bowser?"],
+      ["Nintendo's first big arcade hit starred a gorilla who throws barrels at a carpenter named Jumpman.", "What is Donkey Kong?"]
+    ]
+  ]
+}

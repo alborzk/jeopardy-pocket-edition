@@ -1,0 +1,45 @@
+{
+  "id": "the-simpsons",
+  "tiers": [
+    [
+      ["Homer's catchphrase when something goes wrong is this exclamation.", "What is D'oh?"],
+      ["The Simpsons live in this fictional town.", "What is Springfield?"],
+      ["Bart's baby sister, who never speaks, is named this.", "Who is Maggie?"],
+      ["Homer works as a safety inspector at this local workplace.", "What is the Springfield Nuclear Power Plant?"],
+      ["Homer's favorite beer is this brand.", "What is Duff Beer? (Also: Duff)"],
+      ["The Simpsons' blue-haired mother is named this.", "Who is Marge? (Also: Marge Simpson)"]
+    ],
+    [
+      ["The show was created by this cartoonist, who named characters after his own family.", "Who is Matt Groening?"],
+      ["Bart's catchphrase is 'Eat my' these.", "What are shorts?"],
+      ["The Simpsons' cheerful neighbor, who says Hi-diddly-ho, is named this.", "Who is Ned Flanders?"],
+      ["Springfield's wealthy, ancient owner of the power plant is Mr. this.", "Who is Mr. Burns? (Also: Montgomery Burns)"],
+      ["Moe's is the Simpsons' local one of these.", "What is a bar? (Also: a tavern)"],
+      ["Lisa plays this musical instrument.", "What is the saxophone?"]
+    ],
+    [
+      ["The Simpsons premiered as a full series on Fox in this year.", "What is 1989?"],
+      ["The Simpsons' pet greyhound is named this.", "Who is Santa's Little Helper?"],
+      ["Springfield's donut-loving police chief is named this.", "Who is Chief Wiggum? (Also: Clancy Wiggum)"],
+      ["Sideshow Bob's greatest ambition is to kill this Simpson.", "Who is Bart?"],
+      ["Springfield Elementary's principal, who lives with his mother, is named this.", "Who is Principal Skinner? (Also: Seymour Skinner)"],
+      ["The Kwik-E-Mart's clerk, who works almost every shift, is this man.", "Who is Apu? (Also: Apu Nahasapeemapetilon)"]
+    ],
+    [
+      ["In The Simpsons Movie, Springfield is trapped under a dome by this agency.", "What is the EPA? (Also: the Environmental Protection Agency)"],
+      ["Bart's best friend, Milhouse, has this last name.", "What is Van Houten?"],
+      ["The Simpsons live at this house number on Evergreen Terrace.", "What is 742?"],
+      ["In Marge vs. the Monorail, this fast-talking salesman, voiced by Phil Hartman, sells Springfield a train.", "Who is Lyle Lanley?"],
+      ["Dan Castellaneta, the voice of Homer, also voices this red-nosed clown.", "Who is Krusty the Clown? (Also: Krusty)"],
+      ["The first Simpsons shorts debuted on this 1987 variety program.", "What is The Tracey Ullman Show?"]
+    ],
+    [
+      ["The show's theme song was composed by this former Oingo Boingo frontman.", "Who is Danny Elfman?"],
+      ["Homer's middle name, the J in Homer J. Simpson, stands for this.", "What is Jay?"],
+      ["Bart's full name is Bartholomew this.", "What is JoJo?"],
+      ["Marge's maiden name is this.", "What is Bouvier?"],
+      ["Itchy and this cat star in the show's violent cartoon-within-a-cartoon.", "Who is Scratchy?"],
+      ["Homer's father is this retirement-home resident.", "Who is Abe Simpson? (Also: Grampa)"]
+    ]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "y2k",
+  "tiers": [
+    [
+      ["Motorola's thin flip phone, a style icon in 2004, had this name.", "What is the Razr?"],
+      ["Apple's 2001 music player promised '1,000 songs in your pocket' and was called this.", "What is the iPod?"],
+      ["Mark Zuckerberg launched this social network from his Harvard dorm in 2004.", "What is Facebook?"],
+      ["This video-sharing site was founded in 2005 and bought by Google a year later.", "What is YouTube?"],
+      ["This 2009 James Cameron film set on the moon Pandora starred blue-skinned Na'vi.", "What is Avatar?"],
+      ["Simon Cowell famously judged contestants on this singing competition, which began in 2002 in the US.", "What is American Idol?"]
+    ],
+    [
+      ["Before Facebook took over, this social network let you pick a 'Top 8' friends list.", "What is Myspace?"],
+      ["Apple unveiled this touchscreen phone in 2007.", "What is the iPhone?"],
+      ["In 2006 Nintendo launched this console, which used motion-sensing controllers.", "What is the Wii?"],
+      ["Contestants on this CBS reality show are stranded on an island and voted out one by one.", "What is Survivor?"],
+      ["In the Twilight series, vampire Edward Cullen falls for this human.", "Who is Bella Swan?"],
+      ["This singer starred as a schoolgirl with a secret double life as a pop star on a Disney Channel show.", "Who is Miley Cyrus?"]
+    ],
+    [
+      ["The file-sharing service Napster let users trade music in this compressed audio format.", "What is MP3?"],
+      ["Peter Jackson's third Lord of the Rings film won eleven Oscars in 2004. It was called this.", "What is The Return of the King?"],
+      ["BlackBerry phones were famous for having one of these physical features.", "What is a keyboard?"],
+      ["This 2004 teen comedy set at North Shore High told girls 'on Wednesdays we wear pink'.", "What is Mean Girls?"],
+      ["Blizzard launched this hugely popular online fantasy game in 2004.", "What is World of Warcraft?"],
+      ["In this 2005 game, players strummed a plastic guitar to rock songs.", "What is Guitar Hero?"]
+    ],
+    [
+      ["In 2008, this man was elected the 44th president of the United States.", "Who is Barack Obama?"],
+      ["Before it became a streaming giant, this company mailed DVDs in red envelopes.", "What is Netflix?"],
+      ["Launched in 2000, this Sony console became one of the best-selling consoles ever.", "What is the PlayStation 2?"],
+      ["The King of Pop died in this year.", "What is 2009?"],
+      ["Twitter launched in this year and limited posts to 140 characters.", "What is 2006?"],
+      ["Wikipedia was launched in this year.", "What is 2001?"]
+    ],
+    [
+      ["In February 2003, this NASA space shuttle was lost as it returned to Earth.", "What is Columbia?"],
+      ["He won a record eight gold medals at the 2008 Beijing Olympics.", "Who is Michael Phelps?"],
+      ["The final Harry Potter book, The Deathly Hallows, was published in this year.", "What is 2007?"],
+      ["Euro banknotes and coins entered circulation in this year.", "What is 2002?"],
+      ["Janet Jackson's 2004 Super Bowl halftime show 'wardrobe malfunction' happened while performing with this singer.", "Who is Justin Timberlake?"],
+      ["In 2009 Susan Boyle stunned Britain's Got Talent by singing 'I Dreamed a Dream' from this musical.", "What is Les Misérables?"]
+    ]
+  ]
+}

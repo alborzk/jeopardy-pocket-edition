@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { NAME_MAX_LENGTH, ROOM_CODE_LENGTH } from '@jeopardy/shared';
+import { SlideLink } from '../components/SlideLink';
 import { StudioBackdrop } from '../components/Studio';
 import { ensureConnected, request } from '../lib/socket';
 import { saveSession } from '../lib/session';
+import { useSlideNavigate } from '../lib/slide';
 
 /** Codes are letters only and never contain I or O. Typing is forgiving, the server is strict. */
 const cleanCode = (value: string) =>
@@ -14,7 +16,7 @@ const cleanCode = (value: string) =>
     .slice(0, ROOM_CODE_LENGTH);
 
 export function Join() {
-  const navigate = useNavigate();
+  const navigate = useSlideNavigate();
   const [params] = useSearchParams();
   const [code, setCode] = useState(cleanCode(params.get('code') ?? ''));
   const [name, setName] = useState('');
@@ -90,9 +92,9 @@ export function Join() {
             {busy ? 'Joining…' : 'Join'}
           </button>
         </form>
-        <Link to="/" className="text-center text-xl uppercase text-white/60 hover:text-white">
+        <SlideLink to="/" className="text-center text-xl uppercase text-white/60 hover:text-white">
           ◀ Back
-        </Link>
+        </SlideLink>
       </main>
     </StudioBackdrop>
   );

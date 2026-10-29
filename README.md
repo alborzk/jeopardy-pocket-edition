@@ -30,6 +30,31 @@ example `http://192.168.1.20:5173`. Phones must be on the same Wi-Fi.
 Phones that lock or lose signal come back into the game on their own: the browser keeps a token
 for each room and rejoins on every reconnect, keeping the player's seat, score and lockouts.
 
+## The category library
+
+You don't have to write clues yourself: the board editor (`/editor`) can fill them in from a
+library of 69 categories, each with 30 clues: six candidates for each of five difficulty tiers. A
+board's rows draw from the matching tiers, so $200 is easy and $1,000 is hard, and the same
+category gives different clues each time.
+
+- **New** offers a blank board, a ready-made mix (Classic Mix, Nostalgia Night…) or **Surprise
+  me**, in one round or two. The clues are dealt for you.
+- **Click a column's name** to swap its category: pick one from the library (search it, or take a
+  random one) or choose **Custom** and name the column yourself.
+- The result is an ordinary board, saved with your others. Edit it, export it or host it as usual.
+  **↻ Reroll** swaps a clue or a whole column for fresh ones from the same category, **🎲 Daily
+  Doubles** re-rolls where they sit, and Final Jeepy! can draw its clue from the library too.
+- **Unseen first**: the host's browser remembers which clues have been played and the library
+  leads with ones it hasn't seen. Turn it off, or forget what's been played, at the bottom of the
+  editor's sidebar. It's per browser, so a different host device starts fresh.
+- Daily Doubles are placed for you (one in round one, two in round two, in the lower rows), and
+  the library avoids putting two clues on a board that share an answer or give each other away.
+
+To add a category, create `apps/client/src/library/categories/<id>.json` with five tiers of six
+`["clue", "What is the answer?"]` pairs, easiest tier first, and add an entry to `catalog.ts`.
+`pnpm test` checks the shape, the answer style, repeats, and answers that leak into their own clue.
+If the tests don't notice a new file, delete `node_modules/.vitest-cache` and run them again.
+
 ## Scripts
 
 | Command          | What it does                                             |

@@ -1,0 +1,45 @@
+{
+  "id": "trap",
+  "tiers": [
+    [
+      ["Trap music emerged in the 2000s in this Southern city, which is still its hub.", "What is Atlanta?"],
+      ["Travis Scott's 2018 album is named after this defunct Houston amusement park.", "What is Astroworld?"],
+      ["The Atlanta trio behind Bad and Boujee is this group.", "Who are Migos?"],
+      ["The Atlanta rapper behind the hit Mask Off is this man.", "Who is Future?"],
+      ["Radric Davis, a pioneer of trap, performs under this name.", "Who is Gucci Mane?"],
+      ["Trap beats are known for rapid, rolling versions of this cymbal sound.", "What are hi-hats?"]
+    ],
+    [
+      ["This Houston-born rapper had a 2018 hit with Sicko Mode.", "Who is Travis Scott?"],
+      ["Metro Boomin is best known as this kind of music professional.", "What is a producer?"],
+      ["The deep, booming bass sound in trap comes from a drum machine named this.", "What is the 808?"],
+      ["Migos popularized this rapid rapping style in their hit Versace.", "What is the triplet flow?"],
+      ["21 Savage was born in this country.", "What is the United Kingdom?"],
+      ["Cardi B's Bodak Yellow topped the Billboard Hot 100 in this year.", "What is 2017?"]
+    ],
+    [
+      ["Migos is made up of Quavo, Offset and this rapper.", "Who is Takeoff?"],
+      ["Lil Wayne rose to fame on this New Orleans label.", "What is Cash Money Records?"],
+      ["Travis Scott runs this record label named for a spiky desert plant.", "What is Cactus Jack?"],
+      ["Future's Atlanta-based record label is called this.", "What is Freebandz?"],
+      ["Offset married this Bronx-raised rapper in 2017.", "Who is Cardi B?"],
+      ["21 Savage and Metro Boomin released the 2016 EP called this.", "What is Savage Mode?"]
+    ],
+    [
+      ["Metro Boomin's birth name is this.", "Who is Leland Wayne?"],
+      ["Travis Scott's 2015 debut studio album is titled this.", "What is Rodeo?"],
+      ["Young Thug's mixtape Barter 6 was a playful nod to this Lil Wayne album series.", "What is Tha Carter?"],
+      ["Gucci Mane was released from federal prison in this year.", "What is 2016?"],
+      ["Migos' 2017 album, featuring Bad and Boujee, is titled this.", "What is Culture?"],
+      ["Playboi Carti founded this record label.", "What is Opium?"]
+    ],
+    [
+      ["The 808 sound is named after the TR-808 drum machine made by this Japanese company.", "What is Roland?"],
+      ["T.I.'s album Trap Muzik, which helped name the genre, came out in this year.", "What is 2003?"],
+      ["Young Jeezy's 2005 debut album is titled this.", "What is Let's Get It: Thug Motivation 101?"],
+      ["This Atlanta producer, known for piano-driven beats, worked with Gucci Mane and Migos.", "Who is Zaytoven?"],
+      ["Lil Wayne's Tha Carter III sold over a million copies in this amount of time.", "What is one week? (Also: its first week)"],
+      ["In trap slang, bands are stacks of cash held together by these.", "What are rubber bands?"]
+    ]
+  ]
+}

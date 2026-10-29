@@ -1,0 +1,45 @@
+{
+  "id": "pokemon",
+  "tiers": [
+    [
+      ["This yellow, electric mouse is the franchise's mascot.", "What is Pikachu?"],
+      ["Trainers catch Pokémon using this round, red-and-white device.", "What is a Poké Ball? (Also: Pokeball)"],
+      ["The anime's hero is this boy from Pallet Town who wants to be a Pokémon Master.", "Who is Ash Ketchum? (Also: Satoshi)"],
+      ["This catchphrase from the original theme song urges you to collect every Pokémon.", "What is Gotta Catch 'Em All?"],
+      ["Pikachu evolves into this Pokémon when exposed to a Thunder Stone.", "What is Raichu?"],
+      ["Charmander, Squirtle and this grass-type are the original starter choices.", "What is Bulbasaur?"]
+    ],
+    [
+      ["The original Pokémon Red and Blue games were released on this Nintendo handheld.", "What is the Game Boy?"],
+      ["This sleepy, giant Pokémon blocks roads until you wake it with a Poké Flute.", "What is Snorlax?"],
+      ["This Pokémon can evolve into Vaporeon, Jolteon or Flareon.", "What is Eevee?"],
+      ["Jessie and James's talking cat Pokémon in Team Rocket is named this.", "What is Meowth?"],
+      ["The professor who gives new trainers in Kanto their first Pokémon is Professor this.", "Who is Professor Oak? (Also: Samuel Oak)"],
+      ["Ash's arrogant childhood rival in the original series is this boy.", "Who is Gary Oak? (Also: Blue)"]
+    ],
+    [
+      ["There are this many Pokémon in the original first generation.", "What is 151?"],
+      ["Articuno, Zapdos and this fire-type make up the legendary birds of Kanto.", "What is Moltres?"],
+      ["Mewtwo was cloned from the DNA of this mythical Pokémon.", "What is Mew?"],
+      ["The augmented-reality mobile game Pokémon Go launched in this year.", "What is 2016?"],
+      ["Gym leaders reward trainers who defeat them with these.", "What are badges?"],
+      ["Nintendo publishes the games, but this company developed them from the start.", "What is Game Freak?"]
+    ],
+    [
+      ["Pokémon's creator, inspired by his childhood hobby of collecting insects, is this man.", "Who is Satoshi Tajiri?"],
+      ["This type, introduced in Generation 6, is super effective against Dragon.", "What is Fairy?"],
+      ["Charizard is a Fire type and also this second type.", "What is Flying?"],
+      ["Gold and Silver, set in this region, introduced breeding and 100 new Pokémon.", "What is Johto?"],
+      ["Sword and Shield take place in this region, based on Great Britain.", "What is Galar?"],
+      ["The villainous team in the original games wears uniforms with a big R.", "What is Team Rocket?"]
+    ],
+    [
+      ["Pokémon Red and Green first launched in Japan in this year.", "What is 1996?"],
+      ["Number 150 in the Pokédex is this genetically engineered Psychic type.", "What is Mewtwo?"],
+      ["This fire-breathing Pokémon is the one on the front of the Western Pokémon Red box.", "What is Charizard?"],
+      ["In Gold and Silver, the first Shiny Pokémon most players meet is a red version of this fish-like dragon.", "What is Gyarados?"],
+      ["Magikarp evolves into Gyarados at this level.", "What is level 20?"],
+      ["This famous glitch Pokémon can appear in the first games by exploiting an old-man trick.", "What is MissingNo.?"]
+    ]
+  ]
+}

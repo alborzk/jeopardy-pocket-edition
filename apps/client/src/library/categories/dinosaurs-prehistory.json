@@ -1,0 +1,45 @@
+{
+  "id": "dinosaurs-prehistory",
+  "tiers": [
+    [
+      ["This king of the dinosaurs had tiny arms and a huge bite.", "What is Tyrannosaurus rex? (Also: T. rex)"],
+      ["This dinosaur had three horns and a large bony frill.", "What is Triceratops?"],
+      ["Long-necked dinosaurs like Brachiosaurus ate this kind of food.", "What are plants? (Also: leaves)"],
+      ["Scientists who study fossils are called this.", "What are paleontologists?"],
+      ["Dinosaurs died out about this many million years ago.", "What is 66 million?"],
+      ["This film franchise features cloned dinosaurs on a theme-park island.", "What is Jurassic Park?"]
+    ],
+    [
+      ["This plated dinosaur had spikes on its tail called a thagomizer.", "What is Stegosaurus?"],
+      ["The real Velociraptor was about the size of this farm bird.", "What is a turkey?"],
+      ["The asteroid that likely ended the dinosaurs struck near this Mexican peninsula.", "What is the Yucatan Peninsula? (Also: Yucatán)"],
+      ["Dinosaurs lived during this era, which ended with their extinction.", "What is the Mesozoic Era?"],
+      ["Modern birds are considered the living descendants of this prehistoric group.", "What are dinosaurs?"],
+      ["This large, tusked, shaggy mammal roamed the Ice Age.", "What is a woolly mammoth?"]
+    ],
+    [
+      ["The Mesozoic Era is divided into the Triassic, Jurassic and this last period.", "What is the Cretaceous?"],
+      ["Sue, one of the most complete T. rex skeletons, is displayed at this Chicago museum.", "What is the Field Museum?"],
+      ["The word dinosaur means terrible lizard in this language.", "What is Greek?"],
+      ["Flying reptiles like Pteranodon, which were not dinosaurs, are called this.", "What are pterosaurs?"],
+      ["The saber-toothed cat of the Ice Age is known by this name.", "What is Smilodon?"],
+      ["The sail-backed Dimetrodon was more closely related to this group of animals than to dinosaurs.", "What are mammals?"]
+    ],
+    [
+      ["Mary Anning, a famous collector in Lyme Regis, found many of these.", "What are fossils?"],
+      ["The T. rex skeleton named Sue was found in this state.", "What is South Dakota?"],
+      ["The Great Dying, about 252 million years ago, is known by this name.", "What is the Permian-Triassic extinction?"],
+      ["In Jurassic Park, dinosaur DNA is taken from mosquitoes trapped in this fossilized tree resin.", "What is amber?"],
+      ["The feathered Archaeopteryx fossils were discovered in this European country.", "What is Germany?"],
+      ["Argentinosaurus, one of the largest dinosaurs ever, lived in what is now this continent.", "What is South America?"]
+    ],
+    [
+      ["The giant prehistoric shark that hunted whales is called this.", "What is Megalodon?"],
+      ["The first dinosaur ever scientifically described, in 1824, was this one.", "What is Megalosaurus?"],
+      ["The word dinosaur was coined in 1842 by this British anatomist.", "Who is Richard Owen?"],
+      ["The Bone Wars pitted Edward Cope against this fellow paleontologist.", "Who is Othniel Charles Marsh? (Also: O.C. Marsh)"],
+      ["Dinosaurs first appeared in this period, about 230 million years ago.", "What is the Triassic?"],
+      ["The famous Lucy skeleton, an early human ancestor, was found in this African country.", "What is Ethiopia?"]
+    ]
+  ]
+}

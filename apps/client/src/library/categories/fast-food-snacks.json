@@ -1,0 +1,45 @@
+{
+  "id": "fast-food-snacks",
+  "tiers": [
+    [
+      ["The golden arches belong to this fast-food chain.", "What is McDonald's?"],
+      ["This white-suited 'Colonel' is the face of Kentucky Fried Chicken.", "Who is Colonel Sanders?"],
+      ["'Snap, Crackle and Pop' are the mascots of this breakfast cereal.", "What is Rice Krispies?"],
+      ["These chips come stacked in a tube and have a mustachioed mascot.", "What are Pringles?"],
+      ["This candy 'melts in your mouth, not in your hand'.", "What are M&M's?"],
+      ["This Canadian coffee chain is known for double-doubles and Timbits.", "What is Tim Hortons?"]
+    ],
+    [
+      ["This burger chain's mascot is a red-haired girl with pigtails.", "What is Wendy's?"],
+      ["The Whopper is the signature sandwich at this chain.", "What is Burger King?"],
+      ["Chester Cheetah is the mascot of this orange, cheesy snack.", "What are Cheetos?"],
+      ["'Have a break, have a ___' is the slogan of this chocolate wafer bar.", "What is KitKat?"],
+      ["'Eat Fresh' is the slogan of this sandwich chain.", "What is Subway?"],
+      ["In-N-Out Burger was founded in this US state.", "What is California?"]
+    ],
+    [
+      ["Lay's dared you with 'Betcha can't eat just one' to sell this snack.", "What are potato chips?"],
+      ["This tangy, tomato-flavored chip is a Canadian favorite.", "What are ketchup chips?"],
+      ["This chicken chain is famously closed on Sundays.", "What is Chick-fil-A?"],
+      ["Starbucks' logo features a twin-tailed version of this mythical creature.", "What is a siren? (Also: mermaid)"],
+      ["Chipotle is named after a smoked version of this pepper.", "What is the jalapeño?"],
+      ["Dairy Queen's signature frozen treat is served upside down to prove how thick it is.", "What is a Blizzard?"]
+    ],
+    [
+      ["McDonald's was started by these two brothers before Ray Kroc built it into a franchise.", "Who are Richard and Maurice McDonald?"],
+      ["The Oreo cookie was introduced in this decade.", "What is the 1910s?"],
+      ["Colonel Sanders served his first fried chicken in a restaurant in this US state.", "What is Kentucky?"],
+      ["The Economist's 'Big Mac index' compares this around the world.", "What are currencies? (Also: prices)"],
+      ["The Kellogg brothers, John and Will, helped invent this breakfast food in Battle Creek.", "What is cornflakes?"],
+      ["The Colonel's Original Recipe is said to use this many herbs and spices.", "What is eleven?"]
+    ],
+    [
+      ["The shape of a Pringle is described mathematically as this saddle-like surface.", "What is a hyperbolic paraboloid?"],
+      ["The Happy Meal debuted at McDonald's in this decade.", "What is the 1970s?"],
+      ["Tim Hortons was founded by this hockey defenseman.", "Who is Tim Horton?"],
+      ["The secret flavoring formula for Coca-Cola is said to be known by this code name.", "What is 7X?"],
+      ["In the Pepsi Challenge, people compared the two colas in this kind of test.", "What is a blind taste test?"],
+      ["Cheetos were invented by Frito-Lay in this decade.", "What is the 1940s?"]
+    ]
+  ]
+}

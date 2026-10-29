@@ -1,0 +1,45 @@
+{
+  "id": "oscar-night",
+  "tiers": [
+    [
+      ["This 1997 film about a doomed ocean liner tied the record with eleven Oscars.", "What is Titanic?"],
+      ["In 2020, this South Korean film became the first non-English-language film to win Best Picture.", "What is Parasite?"],
+      ["This comedian hosted the Oscars a record number of times and is closely tied to the 'Road' movies with Bing Crosby.", "Who is Bob Hope?"],
+      ["The Oscar statuette shows a knight holding a sword and standing on a reel of this.", "What is film?"],
+      ["Tom Hanks won back-to-back Best Actor Oscars for Philadelphia and this 1994 film.", "What is Forrest Gump?"],
+      ["Michelle Yeoh won Best Actress for this multiverse film that also won Best Picture for 2022.", "What is Everything Everywhere All at Once?"]
+    ],
+    [
+      ["He won Best Director for Titanic.", "Who is James Cameron?"],
+      ["In 2002, she became the first Black woman to win Best Actress, for Monster's Ball.", "Who is Halle Berry?"],
+      ["This late-night host emceed the 2017 ceremony in which the wrong Best Picture was read out.", "Who is Jimmy Kimmel?"],
+      ["He won Best Director for Schindler's List and Saving Private Ryan.", "Who is Steven Spielberg?"],
+      ["This 2015 film about Boston Globe reporters investigating a scandal won Best Picture.", "What is Spotlight?"],
+      ["Which 2016 musical was announced as Best Picture by mistake before Moonlight was named the real winner?", "What is La La Land?"]
+    ],
+    [
+      ["Ben Kingsley won Best Actor for playing this Indian leader in a 1982 biopic.", "Who is Gandhi?"],
+      ["In 2010, Kathryn Bigelow became the first woman to win this award, for The Hurt Locker.", "What is Best Director?"],
+      ["Daniel Day-Lewis won his third Best Actor Oscar for playing this US president.", "Who is Abraham Lincoln?"],
+      ["Ben Affleck directed and starred in this Best Picture winner about rescuing hostages from Iran.", "What is Argo?"],
+      ["This 1998 romantic comedy about a young Shakespeare famously beat Saving Private Ryan for Best Picture.", "What is Shakespeare in Love?"],
+      ["Best Picture's first-ever winner, in the first ceremony, was this silent film about World War I fighter pilots.", "What is Wings?"]
+    ],
+    [
+      ["Hattie McDaniel became the first Black Oscar winner for her role in this 1939 epic.", "What is Gone with the Wind?"],
+      ["Only three films have won all of the 'Big Five' categories: It Happened One Night, One Flew Over the Cuckoo's Nest and this 1991 thriller.", "What is The Silence of the Lambs?"],
+      ["He won an Oscar for composing the score to The Lion King.", "Who is Hans Zimmer?"],
+      ["This composer of the Star Wars and Jaws scores has more Oscar nominations than any other living person.", "Who is John Williams?"],
+      ["He won Best Director for Parasite.", "Who is Bong Joon-ho?"],
+      ["In 2022, this family drama became the first Best Picture winner from a streaming service.", "What is CODA?"]
+    ],
+    [
+      ["He refused to accept his Best Actor Oscar for playing a World War II general in Patton.", "Who is George C. Scott?"],
+      ["Julie Andrews won Best Actress for her first film role, in this 1964 Disney musical.", "What is Mary Poppins?"],
+      ["This 1959 epic with a chariot race won a then-record eleven Oscars.", "What is Ben-Hur?"],
+      ["In 2002 this film about a green ogre won the first-ever Best Animated Feature award.", "What is Shrek?"],
+      ["Guillermo del Toro's film about a mute janitor and a captured sea creature won Best Picture for 2017.", "What is The Shape of Water?"],
+      ["This Taiwanese-born director won Best Director for both Brokeback Mountain and Life of Pi.", "Who is Ang Lee?"]
+    ]
+  ]
+}

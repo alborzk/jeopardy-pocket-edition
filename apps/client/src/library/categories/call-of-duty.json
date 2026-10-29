@@ -1,0 +1,45 @@
+{
+  "id": "call-of-duty",
+  "tiers": [
+    [
+      ["Call of Duty is published by this company, which Microsoft bought in 2023.", "What is Activision?"],
+      ["This mode, where players fight waves of undead Nazis, first appeared in a 2008 game.", "What is Zombies?"],
+      ["Players earn these rewards for getting consecutive kills without dying.", "What are killstreaks?"],
+      ["This British captain with a mustache and a bucket hat is the series' most famous character.", "Who is Captain Price? (Also: John Price)"],
+      ["The free-to-play battle royale launched by Call of Duty in 2020 is called this.", "What is Warzone?"],
+      ["The first Call of Duty game was released in this year.", "What is 2003?"]
+    ],
+    [
+      ["The 2007 game that moved the series to modern times and introduced perks is Call of Duty 4: this.", "What is Modern Warfare?"],
+      ["This Black Ops map is set in a fake 1950s suburb full of mannequins.", "What is Nuketown?"],
+      ["In Warzone, defeated players fight one-on-one in this prison to earn a respawn.", "What is the Gulag?"],
+      ["This small, fast-paced map is set in a shipping-container yard.", "What is Shipment?"],
+      ["Infinity Ward makes the Modern Warfare games, while this other studio makes the Black Ops games.", "What is Treyarch?"],
+      ["After reaching the max rank in older games, players could do this to reset and earn a special emblem.", "What is Prestige?"]
+    ],
+    [
+      ["The controversial airport mission No Russian appears in this 2009 game.", "What is Modern Warfare 2?"],
+      ["The first-ever Zombies map, set in a bunker, is called this.", "What is Nacht der Untoten?"],
+      ["The Zombies story features Dempsey, Nikolai, Takeo and this scientist.", "Who is Richtofen?"],
+      ["In the original 2009 Modern Warfare 2, 25 kills in a row earned this game-ending killstreak.", "What is a tactical nuke?"],
+      ["Call of Duty: WWII returns to fight in this decade.", "What is the 1940s?"],
+      ["The airport map in Modern Warfare 2 is called this.", "What is Terminal?"]
+    ],
+    [
+      ["Microsoft's purchase of Activision Blizzard was valued at about this many billion dollars.", "What is $68.7 billion?"],
+      ["The first Call of Duty was developed by this studio, founded by former Medal of Honor developers.", "What is Infinity Ward?"],
+      ["Black Ops Cold War's story is set during this decade.", "What is the 1980s?"],
+      ["Simon Riley, known as Ghost, is famous for wearing this on his face.", "What is a skull mask?"],
+      ["Warzone's original map, Verdansk, is set in this fictional country.", "What is Kastovia?"],
+      ["Players buy items in modern Call of Duty with this premium currency.", "What are COD Points?"]
+    ],
+    [
+      ["Black Ops II's main villain is this Nicaraguan drug lord turned revolutionary.", "Who is Raul Menendez?"],
+      ["Kevin Spacey played this private military CEO in Advanced Warfare.", "Who is Jonathan Irons?"],
+      ["In a famous Modern Warfare sniper mission, players sneak through this abandoned city near Chernobyl.", "What is Pripyat?"],
+      ["Call of Duty: Mobile launched in this year.", "What is 2019?"],
+      ["Riley, the loyal military dog in Call of Duty: Ghosts, is this breed.", "What is a German Shepherd?"],
+      ["Zombies mode first appeared in this 2008 game.", "What is World at War? (Also: Call of Duty: World at War)"]
+    ]
+  ]
+}

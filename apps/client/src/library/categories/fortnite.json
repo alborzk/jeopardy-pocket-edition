@@ -1,0 +1,45 @@
+{
+  "id": "fortnite",
+  "tiers": [
+    [
+      ["Battle Royale drops 100 players onto the map from this flying vehicle.", "What is the Battle Bus?"],
+      ["The in-game currency used to buy skins is called this.", "What are V-Bucks?"],
+      ["Winning a match earns you this two-word title.", "What is Victory Royale?"],
+      ["Players quickly construct walls and ramps using this signature mechanic.", "What is building?"],
+      ["The company that makes Fortnite is called this.", "What is Epic Games?"],
+      ["This backpack-kid dance, popularized by a viral video, became a famous Fortnite emote.", "What is the Floss?"]
+    ],
+    [
+      ["Fortnite Battle Royale was released in this year.", "What is 2017?"],
+      ["This early map location, with tall towers and non-stop fights, was famous for its action.", "What is Tilted Towers?"],
+      ["This banana-shaped skin is one of Fortnite's most popular characters.", "Who is Peely?"],
+      ["Fortnite's original co-op mode, where players fight zombies, is called this.", "What is Save the World?"],
+      ["Players glide down to the map after leaving the bus using this tool.", "What is the glider?"],
+      ["This streamer, Tyler Blevins, helped popularize Fortnite by playing with Drake in 2018.", "Who is Ninja?"]
+    ],
+    [
+      ["Epic Games was founded by this CEO.", "Who is Tim Sweeney?"],
+      ["The 2019 Fortnite World Cup solo champion, who won three million dollars, goes by this name.", "Who is Bugha?"],
+      ["Rapper Travis Scott held a virtual concert in Fortnite in this year.", "What is 2020?"],
+      ["Chapter 1 ended in October 2019 when the entire map was swallowed by this.", "What is a black hole?"],
+      ["Players start with a default male skin that goes by this name.", "Who is Jonesy?"],
+      ["DJ Marshmello held a virtual concert in Fortnite in this year.", "What is 2019?"]
+    ],
+    [
+      ["Fortnite runs on this popular game engine, also made by Epic.", "What is Unreal Engine?"],
+      ["Introduced in 2022, this mode removes the ability to build.", "What is Zero Build?"],
+      ["In 2020, Fortnite was removed from the App Store after Epic challenged this company's payment rules.", "What is Apple?"],
+      ["In weapon rarity, the orange tier above purple is called this.", "What is Legendary?"],
+      ["Players unlock a track of cosmetics each season by buying this.", "What is the Battle Pass?"],
+      ["This fish-headed skin is a fan-favorite.", "Who is Fishstick?"]
+    ],
+    [
+      ["The 2018 Avengers crossover let players become this villain by finding the Infinity Gauntlet.", "Who is Thanos?"],
+      ["The Epic Games Store competes with this Valve-run platform.", "What is Steam?"],
+      ["Fortnite Festival, a music game, was developed by this studio best known for Rock Band.", "What is Harmonix?"],
+      ["The colorful loot piñata that rains items is shaped like this South American animal.", "What is a llama?"],
+      ["The 2019 Fortnite World Cup finals were held in this New York stadium.", "What is Arthur Ashe Stadium?"],
+      ["Fortnite's battle royale mode was launched in response to the success of this rival game.", "What is PUBG? (Also: PlayerUnknown's Battlegrounds)"]
+    ]
+  ]
+}

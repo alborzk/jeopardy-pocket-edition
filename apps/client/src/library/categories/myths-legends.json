@@ -1,0 +1,45 @@
+{
+  "id": "myths-legends",
+  "tiers": [
+    [
+      ["In Greek myth, this god rules the sea and carries a trident.", "Who is Poseidon?"],
+      ["The Romans called the king of the gods by this name, instead of Zeus.", "Who is Jupiter?"],
+      ["In Norse myth, this god of thunder wields the hammer Mjolnir.", "Who is Thor?"],
+      ["The Greek monster Medusa had snakes in place of this on her head.", "What is hair?"],
+      ["This Greek hero was famous for performing twelve labors.", "Who is Heracles? (Also: Hercules)"],
+      ["This winged horse sprang from Medusa's blood in Greek myth.", "What is Pegasus?"]
+    ],
+    [
+      ["This Greek goddess of wisdom sprang fully grown from Zeus's head.", "Who is Athena?"],
+      ["This Roman god of war gave his name to a planet.", "Who is Mars?"],
+      ["The Minotaur, half man and half bull, lived in this maze.", "What is the Labyrinth?"],
+      ["In Arthurian legend, the king's famous sword has this name.", "What is Excalibur?"],
+      ["This Greek god rules the underworld.", "Who is Hades?"],
+      ["The Romans knew the Greek goddess of love, Aphrodite, as this.", "Who is Venus?"]
+    ],
+    [
+      ["In Greek myth this Titan was condemned to hold up the sky.", "Who is Atlas?"],
+      ["The home of the Norse gods is called this.", "What is Asgard?"],
+      ["Opening her jar released evils into the world in the story of this first woman.", "Who is Pandora?"],
+      ["Romulus and Remus, the legendary founders of Rome, were raised by this animal.", "What is a she-wolf?"],
+      ["This hero killed Medusa by looking only at her reflection in a shield.", "Who is Perseus?"],
+      ["The Greek god of wine and revelry is this one.", "Who is Dionysus?"]
+    ],
+    [
+      ["In Norse myth, this great tree connects the nine worlds.", "What is Yggdrasil?"],
+      ["Jason sailed on this ship to find the Golden Fleece.", "What is the Argo?"],
+      ["Hercules defeated this multi-headed serpent whose heads regrew when cut off.", "What is the Hydra?"],
+      ["Achilles was invulnerable except for this part of his body.", "What is his heel?"],
+      ["In Egyptian myth, the god of embalming has the head of this animal.", "What is a jackal?"],
+      ["In Norse myth, this is the apocalyptic final battle.", "What is Ragnarök?"]
+    ],
+    [
+      ["Odin's eight-legged horse is called this.", "What is Sleipnir?"],
+      ["Greek myth says the dead are ferried across this river by Charon.", "What is the Styx?"],
+      ["The three Fates spin, measure and cut this.", "What is the thread of life?"],
+      ["Odin's two ravens, who bring him news, are Huginn and this one.", "What is Muninn?"],
+      ["Fenrir, who is destined to devour Odin at Ragnarök, is this kind of creature.", "What is a wolf?"],
+      ["In Hindu myth, this elephant-headed god is the remover of obstacles.", "Who is Ganesha?"]
+    ]
+  ]
+}

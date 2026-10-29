@@ -1,0 +1,45 @@
+{
+  "id": "canadian-pop-culture",
+  "tiers": [
+    [
+      ["This Ontario-born singer, discovered on YouTube, sang Baby.", "Who is Justin Bieber?"],
+      ["This Canadian actor plays Deadpool.", "Who is Ryan Reynolds?"],
+      ["This coffee-and-donut chain is a Canadian institution.", "What is Tim Hortons?"],
+      ["Canadian comedian Mike Myers voiced this green ogre.", "Who is Shrek?"],
+      ["This Quebec-born singer performed My Heart Will Go On.", "Who is Celine Dion?"],
+      ["This Toronto-born rapper is known for the albums Take Care and Views.", "Who is Drake?"]
+    ],
+    [
+      ["Schitt's Creek was co-created by Eugene Levy and this son of his.", "Who is Dan Levy?"],
+      ["Alanis Morissette's 1995 breakout album is titled this.", "What is Jagged Little Pill?"],
+      ["Saturday Night Live was created by this Canadian producer.", "Who is Lorne Michaels?"],
+      ["The CBC's long-running Saturday night NHL broadcast is called this.", "What is Hockey Night in Canada?"],
+      ["Trailer Park Boys follows Ricky, Julian and Bubbles in this Atlantic province.", "What is Nova Scotia?"],
+      ["The teen drama Degrassi is set in this Canadian city.", "What is Toronto?"]
+    ],
+    [
+      ["Canadian actor Rick Moranis played Louis Tully in this 1984 comedy.", "What is Ghostbusters?"],
+      ["Anne of Green Gables is set on this Canadian island province.", "What is Prince Edward Island?"],
+      ["The Tragically Hip formed in this Ontario city.", "What is Kingston?"],
+      ["The Handmaid's Tale and Alias Grace were both written by this Canadian author.", "Who is Margaret Atwood?"],
+      ["British Columbia's film industry has earned this city the nickname Hollywood North.", "What is Vancouver?"],
+      ["Singer Michael Buble was born in this city in British Columbia.", "What is Burnaby?"]
+    ],
+    [
+      ["The sitcom Corner Gas is set in the fictional town of Dog River in this province.", "What is Saskatchewan?"],
+      ["Anne of Green Gables was written by this author.", "Who is L.M. Montgomery?"],
+      ["Rush's drummer and lyricist was this man.", "Who is Neil Peart?"],
+      ["This Montreal-based troupe is famous for acrobatic shows like O in Las Vegas.", "What is Cirque du Soleil?"],
+      ["Canada's public broadcaster goes by this three-letter abbreviation.", "What is the CBC?"],
+      ["Keanu Reeves, raised in Toronto, was born in this city.", "What is Beirut?"]
+    ],
+    [
+      ["This singer's 1970 hit Snowbird made her one of Canada's biggest stars.", "Who is Anne Murray?"],
+      ["Astronaut Chris Hadfield recorded a viral cover of this David Bowie song aboard the ISS.", "What is Space Oddity?"],
+      ["The comedy Letterkenny is set in a small town in this province.", "What is Ontario?"],
+      ["Celine Dion won the 1988 Eurovision Song Contest representing this country.", "What is Switzerland?"],
+      ["Canadian director James Cameron made this 1997 blockbuster.", "What is Titanic?"],
+      ["This Canadian director made body-horror films like The Fly and Crash.", "Who is David Cronenberg?"]
+    ]
+  ]
+}

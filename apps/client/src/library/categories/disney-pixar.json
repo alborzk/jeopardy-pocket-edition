@@ -1,0 +1,45 @@
+{
+  "id": "disney-pixar",
+  "tiers": [
+    [
+      ["This talking mouse is the mascot of the Walt Disney Company.", "Who is Mickey Mouse?"],
+      ["In Frozen, Elsa builds an ice palace while belting this Oscar-winning song.", "What is Let It Go?"],
+      ["This toy cowboy, voiced by Tom Hanks, is the star of Toy Story.", "Who is Woody?"],
+      ["In this 2003 Pixar film, a clownfish dad crosses the ocean to find his son.", "What is Finding Nemo?"],
+      ["The Lion King's young lion hero is named this.", "Who is Simba?"],
+      ["Cinderella loses one of these at the royal ball.", "What is a glass slipper?"]
+    ],
+    [
+      ["Pixar's first feature-length film, released in 1995, is this one.", "What is Toy Story?"],
+      ["This Disney princess has 70 feet of magical golden hair.", "Who is Rapunzel?"],
+      ["The sea witch in The Little Mermaid is this villain.", "Who is Ursula?"],
+      ["This blue, wisecracking spirit, voiced by Robin Williams in 1992, grants Aladdin's wishes.", "Who is the Genie?"],
+      ["Elsa's snowman sidekick, who loves warm hugs, is named this.", "Who is Olaf?"],
+      ["The Incredibles' stretchy superhero mom is known by this name.", "Who is Elastigirl? (Also: Helen Parr)"]
+    ],
+    [
+      ["Disney's first full-length animated feature, from 1937, is this film.", "What is Snow White and the Seven Dwarfs?"],
+      ["Walt Disney created a character before Mickey, named Oswald the Lucky, who was this animal.", "What is a rabbit?"],
+      ["Pixar's hopping desk-lamp mascot, who stars in its logo animation, is named this.", "Who is Luxo Jr.?"],
+      ["The wise mandrill who presents Simba to the Pride Lands is named this.", "Who is Rafiki?"],
+      ["This Pixar film features Joy, Sadness, Anger, Fear and Disgust.", "What is Inside Out?"],
+      ["Mulan's tiny dragon sidekick, voiced by Eddie Murphy, is named this.", "Who is Mushu?"]
+    ],
+    [
+      ["Walt Disney opened Disneyland in 1955 in this California city.", "What is Anaheim?"],
+      ["In Up, an old man ties thousands of these to his house to fly it.", "What are balloons?"],
+      ["In WALL-E, the human passengers live on this giant starliner.", "What is the Axiom?"],
+      ["Coco, a Pixar film, takes place during this Mexican holiday.", "What is the Day of the Dead? (Also: Dia de los Muertos)"],
+      ["Disney bought Pixar in this year.", "What is 2006?"],
+      ["Hans Zimmer composed the score and Elton John wrote the songs for this 1994 film.", "What is The Lion King?"]
+    ],
+    [
+      ["Fantasia's best-known segment, based on a Goethe poem, stars Mickey in this role.", "What is The Sorcerer's Apprentice?"],
+      ["In Ratatouille, this feared food critic is won over by a bite of the title dish.", "Who is Anton Ego?"],
+      ["Pixar's Brave stars this red-haired Scottish princess.", "Who is Merida?"],
+      ["This 1991 Disney film was the first animated movie nominated for Best Picture.", "What is Beauty and the Beast?"],
+      ["Pixar's Soul follows this jazz pianist and music teacher.", "Who is Joe Gardner?"],
+      ["The Little Mermaid's human prince is named this.", "Who is Prince Eric?"]
+    ]
+  ]
+}

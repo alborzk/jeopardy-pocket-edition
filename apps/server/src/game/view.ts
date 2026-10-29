@@ -151,6 +151,7 @@ export function viewFor(
     settings: state.settings,
     board: board
       ? {
+          id: board.id,
           title: board.title,
           roundIndex: state.roundIndex,
           roundCount: board.rounds.length,

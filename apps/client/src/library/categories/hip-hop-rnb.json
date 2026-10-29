@@ -1,0 +1,45 @@
+{
+  "id": "hip-hop-rnb",
+  "tiers": [
+    [
+      ["This Brooklyn-born rapper, nicknamed Hov, is married to Beyoncé.", "Who is Jay-Z?"],
+      ["The Queen of Soul, who sang Respect, is this singer.", "Who is Aretha Franklin?"],
+      ["This Compton rapper released the 2015 album To Pimp a Butterfly.", "Who is Kendrick Lamar?"],
+      ["Queen Bey is the nickname of this superstar.", "Who is Beyoncé?"],
+      ["The duo Outkast hails from this Georgia city.", "What is Atlanta?"],
+      ["Lose Yourself, from the film 8 Mile, won an Oscar for this rapper.", "Who is Eminem?"]
+    ],
+    [
+      ["Hip-hop is widely said to have been born in this New York borough in the 1970s.", "What is the Bronx?"],
+      ["This DJ is credited with founding hip-hop at a 1973 party on Sedgwick Avenue.", "Who is DJ Kool Herc?"],
+      ["This Brooklyn rapper, killed in 1997, recorded the album Ready to Die.", "Who is The Notorious B.I.G.? (Also: Biggie Smalls)"],
+      ["This West Coast rapper, killed in 1996, recorded All Eyez on Me.", "Who is Tupac Shakur? (Also: 2Pac)"],
+      ["Mary J. Blige is known as the Queen of this genre blending R&B and rap.", "What is hip-hop soul?"],
+      ["Usher's 2004 album featuring Yeah! is titled this.", "What is Confessions?"]
+    ],
+    [
+      ["Run-DMC and Aerosmith teamed up on this 1986 hit, a remake of a rock song.", "What is Walk This Way?"],
+      ["Dr. Dre's 1992 debut solo album, which defined G-funk, is titled this.", "What is The Chronic?"],
+      ["Lauryn Hill's only solo studio album, from 1998, is titled this.", "What is The Miseducation of Lauryn Hill?"],
+      ["The Wu-Tang Clan hails from this New York borough.", "What is Staten Island?"],
+      ["The Sugarhill Gang released the early rap hit Rapper's Delight in this year.", "What is 1979?"],
+      ["Alicia Keys' 2001 debut album was titled this.", "What is Songs in A Minor?"]
+    ],
+    [
+      ["N.W.A's 1988 debut album was titled this.", "What is Straight Outta Compton?"],
+      ["Jay-Z co-founded this record label with Dame Dash and Kareem Burke.", "What is Roc-A-Fella Records?"],
+      ["Kendrick Lamar won the 2018 Pulitzer Prize for Music with this album.", "What is DAMN.?"],
+      ["The Fugees' 1996 album, featuring Killing Me Softly, is titled this.", "What is The Score?"],
+      ["Nas's acclaimed 1994 debut album is titled this.", "What is Illmatic?"],
+      ["Mary J. Blige's 1992 debut album was titled this.", "What is What's the 411?"]
+    ],
+    [
+      ["Public Enemy's It Takes a Nation of Millions was made with this production team.", "Who are the Bomb Squad?"],
+      ["Grandmaster Flash and the Furious Five's 1982 social-commentary hit is titled this.", "What is The Message?"],
+      ["The Roots are the house band on this late-night show.", "What is The Tonight Show Starring Jimmy Fallon?"],
+      ["Hip-hop's four elements are DJing, MCing, breakdancing and this visual art.", "What is graffiti?"],
+      ["The Beastie Boys' 1986 debut was the first rap album to top the Billboard 200 and is titled this.", "What is Licensed to Ill?"],
+      ["Outkast's 2003 double album, with Hey Ya! on it, is titled this.", "What is Speakerboxxx/The Love Below?"]
+    ]
+  ]
+}

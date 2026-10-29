@@ -1,0 +1,45 @@
+{
+  "id": "cars",
+  "tiers": [
+    [
+      ["The prancing horse is the logo of this Italian sports car maker.", "What is Ferrari?"],
+      ["The Ford Mustang's logo shows this running animal.", "What is a horse?"],
+      ["This electric car maker is led by Elon Musk.", "What is Tesla?"],
+      ["The Model T, the first affordable mass-produced car, was built by this man's company.", "Who is Henry Ford?"],
+      ["Toyota is based in this country.", "What is Japan?"],
+      ["The Beetle was made by this German carmaker.", "What is Volkswagen?"]
+    ],
+    [
+      ["The Lamborghini logo shows this charging animal.", "What is a bull?"],
+      ["The luxury brand with a three-pointed star in a circle is this one.", "What is Mercedes-Benz?"],
+      ["The Porsche 911 is built in this German city.", "What is Stuttgart?"],
+      ["A car that runs entirely on a battery is called this, for short.", "What is an EV? (Also: electric vehicle)"],
+      ["Jeep's most famous rugged 4x4 is known by this name.", "What is the Wrangler?"],
+      ["The DeLorean time machine in Back to the Future has a body made of this metal.", "What is stainless steel?"]
+    ],
+    [
+      ["The British luxury brand with the Spirit of Ecstasy hood ornament is this.", "What is Rolls-Royce?"],
+      ["The Toyota Prius popularized this type of car that uses both gas and electric power.", "What is a hybrid?"],
+      ["The first Ford Mustang debuted in this year.", "What is 1964?"],
+      ["This Swedish brand is famous for its focus on safety.", "What is Volvo?"],
+      ["Subaru's logo of stars represents this star cluster.", "What is the Pleiades?"],
+      ["The Toyota AE86 drift car stars in this popular anime.", "What is Initial D?"]
+    ],
+    [
+      ["Audi's linked-ring logo represents this many companies that merged to form Auto Union.", "What is four?"],
+      ["The Nissan GT-R has this nickname, after a famous movie monster.", "What is Godzilla?"],
+      ["The Ford Model T was introduced in this year.", "What is 1908?"],
+      ["Karl Benz patented the first practical gasoline automobile in this year.", "What is 1886?"],
+      ["The orange Dodge Charger named the General Lee starred in this TV show.", "What is The Dukes of Hazzard?"],
+      ["The founder of Ferrari was this man.", "Who is Enzo Ferrari?"]
+    ],
+    [
+      ["Tesla's first car, launched in 2008, was this two-seater.", "What is the Roadster?"],
+      ["The best-selling car nameplate of all time, with over 50 million sold, is this Toyota.", "What is the Corolla?"],
+      ["The original Volkswagen Beetle was designed by this engineer.", "Who is Ferdinand Porsche?"],
+      ["Pagani builds its hypercars in this country.", "What is Italy?"],
+      ["Koenigsegg builds its hypercars in this Scandinavian country.", "What is Sweden?"],
+      ["Bugatti is based in this small town in France's Alsace region.", "What is Molsheim?"]
+    ]
+  ]
+}

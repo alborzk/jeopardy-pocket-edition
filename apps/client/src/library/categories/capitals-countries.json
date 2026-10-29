@@ -1,0 +1,45 @@
+{
+  "id": "capitals-countries",
+  "tiers": [
+    [
+      ["This city on the Seine is the capital of France.", "What is Paris?"],
+      ["Tokyo is the capital of this island country in East Asia.", "What is Japan?"],
+      ["This Spanish capital is home to the Prado Museum.", "What is Madrid?"],
+      ["The US capital shares its name with the first president.", "What is Washington, D.C.?"],
+      ["The Great Wall is found in this country.", "What is China?"],
+      ["Rio de Janeiro hosts a famous Carnival in this country, the largest in South America.", "What is Brazil?"]
+    ],
+    [
+      ["Sydney is its biggest city, but Australia's capital is this smaller one.", "What is Canberra?"],
+      ["The pyramids at Giza are near this capital of Egypt.", "What is Cairo?"],
+      ["Red Square and the Kremlin are in this capital city.", "What is Moscow?"],
+      ["The Brandenburg Gate stands in this German capital.", "What is Berlin?"],
+      ["Gangnam is a famous district of this South Korean capital.", "What is Seoul?"],
+      ["This city is the capital of India, adjacent to Old Delhi.", "What is New Delhi?"]
+    ],
+    [
+      ["Brazil's capital, a planned city inaugurated in 1960, is this one, not Rio or São Paulo.", "What is Brasília?"],
+      ["Turkey's capital is this central city, not Istanbul.", "What is Ankara?"],
+      ["Nigeria's capital is this city, not Lagos.", "What is Abuja?"],
+      ["This city on Cook Strait is the capital of New Zealand.", "What is Wellington?"],
+      ["Kenya's capital is this city, near a national park of the same name.", "What is Nairobi?"],
+      ["This South American capital is known as the 'Paris of the South' and is the birthplace of tango.", "What is Buenos Aires?"]
+    ],
+    [
+      ["The capital of Switzerland is this city, not Zurich or Geneva.", "What is Bern?"],
+      ["Morocco's capital, on the Atlantic coast, is this city, not Casablanca.", "What is Rabat?"],
+      ["This city is the capital of Vietnam.", "What is Hanoi?"],
+      ["Machu Picchu is a day trip from Cusco, but this city is Peru's capital.", "What is Lima?"],
+      ["This East African capital's name means 'new flower' in Amharic.", "What is Addis Ababa?"],
+      ["This northern capital is the world's northernmost capital of a sovereign state.", "What is Reykjavik?"]
+    ],
+    [
+      ["Since 2022 this city has been the name of Kazakhstan's capital, after being called Nur-Sultan.", "What is Astana?"],
+      ["Bhutan's capital, with no traffic lights, is this city.", "What is Thimphu?"],
+      ["Burkina Faso's capital is this city with a very hard-to-spell name.", "What is Ouagadougou?"],
+      ["Myanmar's capital since 2006 is this purpose-built city.", "What is Naypyidaw?"],
+      ["The world's coldest national capital, in a country with Genghis Khan as a national hero, is this city.", "What is Ulaanbaatar?"],
+      ["The capital of Brunei is this city with a long name.", "What is Bandar Seri Begawan?"]
+    ]
+  ]
+}

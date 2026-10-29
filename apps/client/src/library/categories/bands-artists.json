@@ -1,0 +1,45 @@
+{
+  "id": "bands-artists",
+  "tiers": [
+    [
+      ["This British band of John, Paul, George and Ringo was nicknamed the Fab Four.", "Who are The Beatles?"],
+      ["This singer, known as the 'Queen of Pop', released 'Like a Virgin' in 1984.", "Who is Madonna?"],
+      ["Bono is the lead singer of this Irish rock band.", "Who is U2?"],
+      ["This Canadian singer rose to fame as a teen with the 2010 hit 'Baby'.", "Who is Justin Bieber?"],
+      ["This pop star's record-breaking 'Eras Tour' began in 2023.", "Who is Taylor Swift?"],
+      ["Mick Jagger fronts this British rock band, formed in 1962.", "Who are The Rolling Stones?"]
+    ],
+    [
+      ["Freddie Mercury was the lead singer of this British rock band.", "Who is Queen?"],
+      ["This Colombian singer is known for 'Hips Don't Lie' and performing at the 2010 World Cup.", "Who is Shakira?"],
+      ["This Compton rapper won a Pulitzer Prize for Music for his album DAMN.", "Who is Kendrick Lamar?"],
+      ["This Swedish group had hits like 'Dancing Queen' and 'Mamma Mia'.", "Who is ABBA?"],
+      ["This singer from Barbados had a 2007 hit called 'Umbrella'.", "Who is Rihanna?"],
+      ["Nicknamed 'The Boss', this New Jersey rocker released Born to Run.", "Who is Bruce Springsteen?"]
+    ],
+    [
+      ["He was the lead singer of Led Zeppelin.", "Who is Robert Plant?"],
+      ["Kurt Cobain fronted this Seattle grunge band, which released Nevermind in 1991.", "Who is Nirvana?"],
+      ["This Canadian singer-songwriter wrote 'Hallelujah' and 'Suzanne'.", "Who is Leonard Cohen?"],
+      ["This Jamaican reggae legend sang 'No Woman, No Cry' and 'One Love'.", "Who is Bob Marley?"],
+      ["Beyoncé first became famous in this R&B trio with Kelly Rowland and Michelle Williams.", "Who is Destiny's Child?"],
+      ["This British singer has named her albums 19, 21, 25 and 30.", "Who is Adele?"]
+    ],
+    [
+      ["This guitarist set his guitar on fire at Monterey and played an iconic anthem at Woodstock.", "Who is Jimi Hendrix?"],
+      ["A glowing prism on its cover is the famous image on this Pink Floyd album.", "What is The Dark Side of the Moon?"],
+      ["David Bowie's lightning-bolt-faced alter ego from 1972 was called this.", "Who is Ziggy Stardust?"],
+      ["This heavy metal band released its 1991 self-titled 'Black Album'.", "Who is Metallica?"],
+      ["Diana Ross was the lead singer of this Motown group in the 1960s.", "Who are The Supremes?"],
+      ["Geddy Lee, Alex Lifeson and Neil Peart made up this Canadian prog-rock trio.", "Who is Rush?"]
+    ],
+    [
+      ["In 1992 this Irish singer tore up a photo of the Pope on Saturday Night Live.", "Who is Sinéad O'Connor?"],
+      ["In 1995 Oasis was famously pitted against this Britpop band in a chart battle over single releases.", "Who is Blur?"],
+      ["This jazz trumpeter released the best-selling jazz album Kind of Blue.", "Who is Miles Davis?"],
+      ["This nine-member hip-hop collective from Staten Island released 36 Chambers in 1993.", "Who is the Wu-Tang Clan?"],
+      ["Stevie Nicks and Lindsey Buckingham joined this band, which released Rumours in 1977.", "Who is Fleetwood Mac?"],
+      ["Prince recorded Purple Rain with this backing band.", "Who is The Revolution?"]
+    ]
+  ]
+}

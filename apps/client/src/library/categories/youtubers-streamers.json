@@ -1,0 +1,45 @@
+{
+  "id": "youtubers-streamers",
+  "tiers": [
+    [
+      ["This Swedish YouTuber, Felix Kjellberg, was long the most-subscribed individual on the site.", "Who is PewDiePie?"],
+      ["This YouTuber, Jimmy Donaldson, is famous for huge giveaways and expensive stunts.", "Who is MrBeast?"],
+      ["This Amazon-owned platform is best known for live game streaming.", "What is Twitch?"],
+      ["YouTube was founded in this year.", "What is 2005?"],
+      ["Tyler Blevins became a star streamer by playing this battle royale game.", "What is Fortnite?"],
+      ["YouTube gives creators this award for reaching 100,000 subscribers.", "What is the Silver Play Button?"]
+    ],
+    [
+      ["Google bought YouTube in 2006 for about this much.", "What is $1.65 billion?"],
+      ["Creators earn ad money on YouTube by joining this program.", "What is the YouTube Partner Program?"],
+      ["Ryan's World is a hugely popular kids' channel that reviews these items.", "What are toys?"],
+      ["The group Dude Perfect is famous for these stunts.", "What are trick shots?"],
+      ["Twitch began as a spinoff of this earlier live-streaming site.", "What is Justin.tv?"],
+      ["Amazon bought Twitch in 2014 for about this much.", "What is $970 million?"]
+    ],
+    [
+      ["MrBeast's real last name is this.", "What is Donaldson?"],
+      ["This boxer and YouTuber is the younger brother of Logan Paul.", "Who is Jake Paul?"],
+      ["Dude Perfect started in this US state.", "What is Texas?"],
+      ["The science channel Vsauce is hosted by this man.", "Who is Michael Stevens?"],
+      ["Cocomelon makes nursery-rhyme videos for this audience.", "Who are toddlers? (Also: babies and kids)"],
+      ["The streaming site Mixer, which Ninja joined in 2019, was owned by this company.", "What is Microsoft?"]
+    ],
+    [
+      ["MrBeast passed PewDiePie as the most-subscribed individual on YouTube in this year.", "What is 2024?"],
+      ["Indian music label T-Series passed PewDiePie as the most-subscribed channel in this year.", "What is 2019?"],
+      ["The Minecraft YouTuber Dream hides his face behind this kind of mask.", "What is a smiley face?"],
+      ["MrBeast's game-show series Beast Games streams on this platform.", "What is Prime Video?"],
+      ["The interview show Hot Ones has guests answer questions while eating these.", "What are hot wings?"],
+      ["Hot Ones is hosted by this man.", "Who is Sean Evans?"]
+    ],
+    [
+      ["YouTube co-founders Chad Hurley and Steve Chen both worked at this payments company first.", "What is PayPal?"],
+      ["Justin.tv, the predecessor of Twitch, launched in this year.", "What is 2007?"],
+      ["MrBeast reached 100 million subscribers in this year.", "What is 2023?"],
+      ["The Kappa emote on Twitch is based on a photo of this employee.", "Who is Josh DeSeno?"],
+      ["The widely disliked video YouTube Rewind: Everyone Controls Rewind came out in this year.", "What is 2018?"],
+      ["Neal Mohan became YouTube's CEO in 2023, succeeding this woman.", "Who is Susan Wojcicki?"]
+    ]
+  ]
+}

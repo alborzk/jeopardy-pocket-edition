@@ -1,0 +1,45 @@
+{
+  "id": "landmarks-wonders",
+  "tiers": [
+    [
+      ["This iron tower is the most famous landmark in Paris.", "What is the Eiffel Tower?"],
+      ["The famed pyramids of Giza stand in this country.", "What is Egypt?"],
+      ["The Statue of Liberty was a gift to the United States from this country.", "What is France?"],
+      ["This ancient Roman amphitheater once hosted gladiator fights.", "What is the Colosseum?"],
+      ["This wall stretches thousands of miles across northern China.", "What is the Great Wall of China?"],
+      ["This famous London clock tower is nicknamed after its great bell.", "What is Big Ben?"]
+    ],
+    [
+      ["This white marble mausoleum in Agra was built for Shah Jahan's wife.", "What is the Taj Mahal?"],
+      ["This Incan citadel sits high in the Andes of Peru.", "What is Machu Picchu?"],
+      ["This prehistoric ring of standing stones stands on England's Salisbury Plain.", "What is Stonehenge?"],
+      ["This sail-roofed building is the most famous landmark in Sydney's harbor.", "What is the Sydney Opera House?"],
+      ["This giant statue with outstretched arms overlooks Rio de Janeiro.", "What is Christ the Redeemer?"],
+      ["Four presidents are carved into this South Dakota mountain.", "What is Mount Rushmore?"]
+    ],
+    [
+      ["This rose-red city, carved into sandstone cliffs in Jordan, was the capital of the Nabataeans.", "What is Petra?"],
+      ["This vast temple complex in Cambodia is the largest religious monument in the world.", "What is Angkor Wat?"],
+      ["Gaudi's unfinished basilica in Barcelona is called this.", "What is the Sagrada Familia? (Also: Sagrada Família)"],
+      ["This Italian bell tower is famous for its tilt.", "What is the Leaning Tower of Pisa?"],
+      ["The world's tallest building stands in Dubai and is called this.", "What is the Burj Khalifa?"],
+      ["El Castillo, a stepped Maya pyramid, is the centerpiece of this site in Mexico.", "What is Chichen Itza?"]
+    ],
+    [
+      ["Of the Seven Wonders of the Ancient World, only this one still stands.", "What is the Great Pyramid of Giza?"],
+      ["The Parthenon sits on this hill above Athens.", "What is the Acropolis?"],
+      ["The Alhambra, a Moorish palace and fortress, is in this Spanish city.", "What is Granada?"],
+      ["Hagia Sophia, once a church and now a mosque, stands in this city.", "What is Istanbul?"],
+      ["This giant bronze statue of the sun god once stood at the harbor of Rhodes.", "What is the Colossus of Rhodes?"],
+      ["The Eiffel Tower was built for the 1889 World's Fair held in this city.", "What is Paris?"]
+    ],
+    [
+      ["The Statue of Liberty was designed by this French sculptor.", "Who is Frederic Auguste Bartholdi? (Also: Bartholdi)"],
+      ["Hiram Bingham brought Machu Picchu to the world's attention in this year.", "What is 1911?"],
+      ["The Colosseum was originally known by this name, after the emperors who built it.", "What is the Flavian Amphitheatre?"],
+      ["Easter Island is famous for its giant stone statues called this.", "What are moai?"],
+      ["Neuschwanstein Castle, which inspired Disney's castle, is in this German state.", "What is Bavaria?"],
+      ["Angkor Wat was originally built as a temple to this Hindu god.", "Who is Vishnu?"]
+    ]
+  ]
+}

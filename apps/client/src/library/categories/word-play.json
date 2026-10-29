@@ -1,0 +1,45 @@
+{
+  "id": "word-play",
+  "tiers": [
+    [
+      ["A word that reads the same forward and backward, like 'level' or 'radar', is called this.", "What is a palindrome?"],
+      ["Words that sound alike but are spelled differently, like 'knight' and 'night', are called this.", "What are homophones?"],
+      ["A word with the same meaning as another, like 'big' and 'large', is called this.", "What is a synonym?"],
+      ["Words like 'buzz' and 'sizzle' that imitate the sounds they describe are examples of this.", "What is onomatopoeia?"],
+      ["The English alphabet has this many letters.", "What is 26?"],
+      ["In English, the letter Q is almost always followed by this letter.", "What is U?"]
+    ],
+    [
+      ["Before & After: a Patrick Swayze dance film plus a celebrity dance competition.", "What is Dirty Dancing with the Stars?"],
+      ["Before & After: a dinosaur theme park film plus a fancy New York address.", "What is Jurassic Park Avenue?"],
+      ["Before & After: a Sylvester Stallone boxer, a Colorado mountain range, and a citrusy soda.", "What is Rocky Mountain Dew?"],
+      ["Before & After: a Disney princess with seven dwarfs plus the US president's residence.", "What is Snow White House?"],
+      ["Before & After: a Disney lion cub who becomes a ruler plus a giant movie ape.", "What is Lion King Kong?"],
+      ["Before & After: a sci-fi saga about rebels and an empire plus a medieval English civil conflict.", "What is Star Wars of the Roses?"]
+    ],
+    [
+      ["The word 'bookkeeper' has this many consecutive pairs of double letters.", "What is three?"],
+      ["The word 'quarantine' comes from the Italian for this many days.", "What is forty?"],
+      ["The word 'salary' comes from the Latin for money to buy this seasoning.", "What is salt?"],
+      ["A word like 'scuba' or 'laser', formed from the initial letters of other words, is called this.", "What is an acronym?"],
+      ["A slip like saying 'bunny phone' for 'funny bone' is named after this Oxford don.", "Who is William Spooner?"],
+      ["A phrase like 'jumbo shrimp' or 'deafening silence' is called this.", "What is an oxymoron?"]
+    ],
+    [
+      ["A word like 'cleave' or 'sanction' that can mean two opposite things is called this.", "What is a contronym?"],
+      ["The Oxford comma goes before this word in a list.", "What is 'and'?"],
+      ["A blend like 'brunch' or 'smog', made by merging two words, is called this.", "What is a portmanteau?"],
+      ["The word 'eavesdrop' comes from someone standing under this part of a house to listen.", "What are the eaves?"],
+      ["The word 'nice' originally meant this unflattering thing.", "What is foolish? (Also: ignorant)"],
+      ["A sentence that uses every letter of the alphabet, such as 'The quick brown fox jumps over the lazy ___', is called this.", "What is a pangram?"]
+    ],
+    [
+      ["This word meaning 'playfully joking' contains all five vowels in alphabetical order.", "What is facetious? (Also: abstemious)"],
+      ["Shakespeare used the long word 'honorificabilitudinitatibus' in this comedy.", "What is Love's Labour's Lost?"],
+      ["In 1754 this author coined 'serendipity' from a Persian fairy tale about the Three Princes of Serendip.", "Who is Horace Walpole?"],
+      ["In 1755 this man compiled the landmark A Dictionary of the English Language.", "Who is Samuel Johnson?"],
+      ["This is the only letter of the alphabet that doesn't appear in the name of any US state.", "What is Q?"],
+      ["The 'sandwich' is named after this English earl.", "Who is the Earl of Sandwich?"]
+    ]
+  ]
+}

@@ -3,3 +3,8 @@ dist
 coverage
 pnpm-lock.yaml
 CLAUDE.md
+
+# Hand-written trivia content: one clue per line reads and diffs far better than Prettier's
+# exploded arrays. src/library/content.test.ts is what keeps it consistent.
+apps/client/src/library/categories
+apps/client/src/library/finals.json

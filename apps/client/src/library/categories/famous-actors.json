@@ -1,0 +1,45 @@
+{
+  "id": "famous-actors",
+  "tiers": [
+    [
+      ["He played Iron Man in the Marvel films, starting in 2008.", "Who is Robert Downey Jr.?"],
+      ["This actor played Captain Jack Sparrow in the Pirates of the Caribbean films.", "Who is Johnny Depp?"],
+      ["She starred as Katniss Everdeen in The Hunger Games films.", "Who is Jennifer Lawrence?"],
+      ["This former Fresh Prince star headlined Men in Black and I, Robot.", "Who is Will Smith?"],
+      ["He voiced the cowboy Woody in the Toy Story films.", "Who is Tom Hanks?"],
+      ["She played Elle Woods in Legally Blonde.", "Who is Reese Witherspoon?"]
+    ],
+    [
+      ["He won Best Actor for Gladiator, playing the Roman general Maximus.", "Who is Russell Crowe?"],
+      ["She played Rose in Titanic, opposite Leonardo DiCaprio.", "Who is Kate Winslet?"],
+      ["He played Sherlock Holmes on the BBC and Doctor Strange in the Marvel films.", "Who is Benedict Cumberbatch?"],
+      ["This actress won an Oscar for playing Margaret Thatcher in The Iron Lady.", "Who is Meryl Streep?"],
+      ["He played Neo in The Matrix.", "Who is Keanu Reeves?"],
+      ["She played Black Widow in the Marvel Cinematic Universe.", "Who is Scarlett Johansson?"]
+    ],
+    [
+      ["He won a posthumous Oscar for playing the Joker in The Dark Knight.", "Who is Heath Ledger?"],
+      ["His deep voice brought both Darth Vader and Mufasa to life.", "Who is James Earl Jones?"],
+      ["She won Best Actress for La La Land and again for Poor Things.", "Who is Emma Stone?"],
+      ["He has played Ethan Hunt in the Mission: Impossible films since 1996.", "Who is Tom Cruise?"],
+      ["This Australian actor played Wolverine in the X-Men films and starred in The Greatest Showman.", "Who is Hugh Jackman?"],
+      ["He won Best Actor for Training Day and Best Supporting Actor for Glory.", "Who is Denzel Washington?"]
+    ],
+    [
+      ["He played Hannibal Lecter in The Silence of the Lambs.", "Who is Anthony Hopkins?"],
+      ["She won Best Actress for Monster after transforming to play Aileen Wuornos.", "Who is Charlize Theron?"],
+      ["He finally won his Best Actor Oscar for The Revenant.", "Who is Leonardo DiCaprio?"],
+      ["He won Best Actor for On the Waterfront and famously declined his Oscar for The Godfather.", "Who is Marlon Brando?"],
+      ["She won Best Actress for both Boys Don't Cry and Million Dollar Baby.", "Who is Hilary Swank?"],
+      ["This British actor played Gandalf in The Lord of the Rings.", "Who is Ian McKellen?"]
+    ],
+    [
+      ["He made only three major films, East of Eden, Rebel Without a Cause and Giant, before dying at 24.", "Who is James Dean?"],
+      ["He holds the record with three Best Actor Oscars, for My Left Foot, There Will Be Blood and Lincoln.", "Who is Daniel Day-Lewis?"],
+      ["She won a record four acting Oscars, including one for Guess Who's Coming to Dinner.", "Who is Katharine Hepburn?"],
+      ["He played the motel owner Norman Bates in Psycho.", "Who is Anthony Perkins?"],
+      ["She played Scarlett O'Hara in Gone with the Wind.", "Who is Vivien Leigh?"],
+      ["He played Travis Bickle in Taxi Driver and Jake LaMotta in Raging Bull.", "Who is Robert De Niro?"]
+    ]
+  ]
+}

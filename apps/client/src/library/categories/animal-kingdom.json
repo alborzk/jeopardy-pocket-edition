@@ -1,0 +1,45 @@
+{
+  "id": "animal-kingdom",
+  "tiers": [
+    [
+      ["This gray giant is the largest land animal on Earth.", "What is the elephant?"],
+      ["A baby kangaroo is called this.", "What is a joey?"],
+      ["This big cat is famous for its orange coat and black stripes.", "What is a tiger?"],
+      ["These flightless birds waddle across the ice of Antarctica.", "What are penguins?"],
+      ["A group of lions is called this.", "What is a pride?"],
+      ["This black-and-white bear from China eats mostly bamboo.", "What is a giant panda?"]
+    ],
+    [
+      ["This big cat is the fastest land animal.", "What is the cheetah?"],
+      ["The blue whale holds the title of largest animal ever, and it is this kind of animal.", "What is a mammal?"],
+      ["Males of this bird fan out showy tail feathers to attract a mate.", "What is a peacock?"],
+      ["Though a mammal, this furry, duck-billed animal from Australia lays eggs.", "What is the platypus?"],
+      ["A group of crows has this ominous name.", "What is a murder?"],
+      ["This is the world's largest bird, and although it can't fly, it can sprint very fast.", "What is the ostrich?"]
+    ],
+    [
+      ["An octopus has this many hearts.", "What is three?"],
+      ["This is the fastest animal in the world, reaching over 200 mph in a dive.", "What is the peregrine falcon?"],
+      ["A group of owls is called this, like a government body.", "What is a parliament?"],
+      ["This animal's fingerprints are so similar to a human's that they can confuse crime scenes.", "What is a koala?"],
+      ["Bats find their way in the dark using this sound-based navigation.", "What is echolocation?"],
+      ["The Komodo dragon is the world's largest living species of this type of reptile.", "What is a lizard?"]
+    ],
+    [
+      ["A group of flamingos is called this flashy word.", "What is a flamboyance?"],
+      ["This deep-sea cephalopod has eyes about the size of dinner plates.", "What is the giant squid?"],
+      ["This is the only mammal capable of true, sustained flight.", "What is the bat?"],
+      ["These microscopic 'water bears' can survive in space.", "What are tardigrades?"],
+      ["In this fish, the male gives birth to the young.", "What is the seahorse?"],
+      ["This bird makes the longest annual migration, flying from the Arctic to the Antarctic and back.", "What is the Arctic tern?"]
+    ],
+    [
+      ["A narwhal's long tusk is actually one of these.", "What is a tooth?"],
+      ["The axolotl, a salamander that can regrow limbs, is native to lakes near this country's capital.", "What is Mexico?"],
+      ["A cat's whiskers are technically called this.", "What are vibrissae?"],
+      ["This Arctic shark may live for centuries, making it the longest-lived vertebrate known.", "What is the Greenland shark?"],
+      ["The hippo's closest living relatives are these marine mammals.", "What are whales? (Also: cetaceans)"],
+      ["This is the largest living species of reptile, found in coasts from India to Australia.", "What is the saltwater crocodile?"]
+    ]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "minecraft",
+  "tiers": [
+    [
+      ["Minecraft's green, hissing mobs that explode near players are called this.", "What are Creepers?"],
+      ["Players craft tools and items at this workbench.", "What is a crafting table?"],
+      ["The default blocky player character is named this.", "Who is Steve?"],
+      ["These skeletal mobs spawn in the dark and shoot arrows.", "What are skeletons?"],
+      ["Players mine this rare blue gem to craft powerful tools and armor.", "What are diamonds?"],
+      ["In this game mode, players can fly and have unlimited resources.", "What is Creative mode? (Also: Creative)"]
+    ],
+    [
+      ["The game's fiery alternate dimension filled with lava and Piglins is called this.", "What is the Nether?"],
+      ["Minecraft was created by Swedish developer Markus Persson, who goes by this nickname.", "Who is Notch?"],
+      ["Microsoft bought Minecraft's developer Mojang in 2014 for about this much.", "What is $2.5 billion?"],
+      ["The game's final boss, a dragon that lives in the End, is called this.", "What is the Ender Dragon?"],
+      ["These tall black mobs teleport around and get angry if you look them in the eye.", "What are Endermen?"],
+      ["In Survival mode, you need to eat to keep this bar from running out.", "What is the hunger bar?"]
+    ],
+    [
+      ["Minecraft villagers trade with players using this green gem as currency.", "What is an emerald?"],
+      ["You light a Nether portal built from obsidian using this tool.", "What is flint and steel?"],
+      ["The only way to get a Nether Star is by defeating this three-headed boss.", "What is the Wither?"],
+      ["Minecraft's full 1.0 release came out in this year.", "What is 2011?"],
+      ["These bouncing green cubes split into smaller ones when they are killed.", "What are slimes?"],
+      ["You tame ocelots to get these pets, which scare away Creepers.", "What are cats?"]
+    ],
+    [
+      ["This item explodes if you try to sleep in it in the Nether or the End.", "What is a bed?"],
+      ["This blind guardian of the Deep Dark, added in 2022, hunts by sensing vibrations.", "What is the Warden?"],
+      ["Notch sold Mojang to Microsoft and left the company in this year.", "What is 2014?"],
+      ["Elytra wings are repaired using this item dropped by flying mobs.", "What are phantom membranes?"],
+      ["Netherite ingots are crafted from ancient debris and this other material.", "What is gold?"],
+      ["The floating structures in the End that contain shulkers and elytra are called this.", "What is an End City?"]
+    ],
+    [
+      ["This actor played Steve in the 2025 live-action film.", "Who is Jack Black?"],
+      ["This redstone component delays a signal and extends its range.", "What is a repeater?"],
+      ["The underwater structure guarded by Guardians and filled with sponges is called this.", "What is an Ocean Monument?"],
+      ["This unusual biome, where hostile mobs do not spawn, is covered in giant fungi and mooshrooms.", "What is Mushroom Fields? (Also: Mushroom Island)"],
+      ["Minecraft became the best-selling video game ever, with more than this many copies sold.", "What is 300 million?"],
+      ["Mojang Studios is based in this Swedish city.", "What is Stockholm?"]
+    ]
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "marvel-movies",
+  "tiers": [
+    [
+      ["The armored billionaire hero Tony Stark is known by this name.", "Who is Iron Man?"],
+      ["This green rage-monster is Bruce Banner's alter ego.", "Who is the Hulk?"],
+      ["This hero, a god of thunder, wields the hammer Mjolnir.", "Who is Thor?"],
+      ["T'Challa is the king of this fictional African nation with advanced technology.", "What is Wakanda?"],
+      ["The team of heroes that includes Iron Man, Thor and the Hulk is called this.", "Who are the Avengers?"],
+      ["This web-slinging teen hero is secretly Peter Parker.", "Who is Spider-Man?"]
+    ],
+    [
+      ["The purple Titan who collects the Infinity Stones is this villain.", "Who is Thanos?"],
+      ["The six Infinity Stones are mounted in this golden gauntlet.", "What is the Infinity Gauntlet?"],
+      ["Tony Stark's AI assistant, voiced by Paul Bettany, is named this.", "What is J.A.R.V.I.S.?"],
+      ["This talking raccoon is a member of the Guardians of the Galaxy.", "Who is Rocket? (Also: Rocket Raccoon)"],
+      ["Thor's mischievous adopted brother is this trickster god.", "Who is Loki?"],
+      ["Natasha Romanoff is known by this spy codename.", "Who is Black Widow?"]
+    ],
+    [
+      ["Ryan Coogler directed this 2018 film, the first superhero movie nominated for Best Picture.", "What is Black Panther?"],
+      ["Endgame's time heist depends on this subatomic dimension first visited in Ant-Man.", "What is the Quantum Realm?"],
+      ["Nick Fury mentions this program in the post-credits scene of the first MCU film.", "What is the Avengers Initiative?"],
+      ["Taika Waititi directed this 2017 film in which the Hulk fights in gladiator combat on Sakaar.", "What is Thor: Ragnarok?"],
+      ["Captain America: Civil War splits the heroes over these government accords.", "What are the Sokovia Accords?"],
+      ["Doctor Strange begins his training at Kamar-Taj in this Nepalese city.", "What is Kathmandu?"]
+    ],
+    [
+      ["Loki's streaming series features this bureaucracy that prunes timelines.", "What is the Time Variance Authority? (Also: TVA)"],
+      ["Vision is created with this stone embedded in his forehead.", "What is the Mind Stone?"],
+      ["Gamora's adoptive sister, a blue cyborg, is named this.", "Who is Nebula?"],
+      ["Peter Quill's cassette of 1970s hits in Guardians of the Galaxy is called this.", "What is Awesome Mix Vol. 1?"],
+      ["The first film in the Marvel Cinematic Universe was released in this year.", "What is 2008?"],
+      ["Hawkeye's real name is this.", "Who is Clint Barton?"]
+    ],
+    [
+      ["The Infinity Saga ended with this 2019 film.", "What is Avengers: Endgame?"],
+      ["This 2021 Disney+ series follows Wanda Maximoff in a town of sitcom parodies.", "What is WandaVision?"],
+      ["Doctor Strange's sentient red garment is called this.", "What is the Cloak of Levitation?"],
+      ["Thor's axe, forged in the heart of a dying star in Nidavellir, is named this.", "What is Stormbreaker?"],
+      ["Bucky Barnes spent decades as this brainwashed assassin.", "Who is the Winter Soldier?"],
+      ["This longtime producer has been president of Marvel Studios since 2007.", "Who is Kevin Feige?"]
+    ]
+  ]
+}

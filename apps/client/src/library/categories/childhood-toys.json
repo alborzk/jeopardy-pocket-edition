@@ -1,0 +1,45 @@
+{
+  "id": "childhood-toys",
+  "tiers": [
+    [
+      ["These interlocking plastic bricks from Denmark can be built into almost anything.", "What is LEGO?"],
+      ["This fashion doll from Mattel is named after the founders' daughter Barbara.", "Who is Barbie?"],
+      ["Twist two knobs to draw lines on this toy's gray screen, then shake it to erase.", "What is an Etch A Sketch?"],
+      ["This soft modeling compound comes in little tubs with a distinctive smell.", "What is Play-Doh?"],
+      ["Invented by a Hungarian professor, this puzzle has six colored faces to twist back into place.", "What is the Rubik's Cube?"],
+      ["These small die-cast cars race down orange plastic tracks.", "What are Hot Wheels?"]
+    ],
+    [
+      ["In 1952, Mr. Potato Head became the first toy ever advertised on this medium.", "What is television?"],
+      ["Nerf toys are made from this soft, squishy material.", "What is foam?"],
+      ["This stuffed bear takes its name from President Theodore Roosevelt.", "What is a teddy bear?"],
+      ["This 1980s doll line came with its own birth certificate and adoption papers.", "What are Cabbage Patch Kids?"],
+      ["This flying disc was named after a pie company's tins.", "What is a Frisbee?"],
+      ["The red Radio Flyer is this type of child's ride-on toy.", "What is a wagon?"]
+    ],
+    [
+      ["Barbie's boyfriend, first introduced in 1961, goes by this name.", "Who is Ken?"],
+      ["Hasbro's 'robots in disguise' toy line launched in 1984 under this name.", "What is Transformers?"],
+      ["G.I. Joe was the first toy to be marketed with this name, coined by Hasbro.", "What is an action figure?"],
+      ["These pastel bears wear symbols on their tummies and live in Care-a-Lot.", "What are the Care Bears?"],
+      ["This toy is a coiled spring that 'walks' down stairs.", "What is a Slinky?"],
+      ["Created during World War II research into synthetic rubber, this stretchy toy can copy newspaper print.", "What is Silly Putty?"]
+    ],
+    [
+      ["LEGO comes from the Danish phrase for 'play well'.", "What is 'leg godt'?"],
+      ["A standard Rubik's Cube has this many squares on each face.", "What is nine?"],
+      ["Nintendo originally made these before any video game.", "What are playing cards? (Also: hanafuda)"],
+      ["The original Easy-Bake Oven cooked its tiny treats using this household item as its heat source.", "What is a light bulb?"],
+      ["Ernő Rubik invented the cube in this country.", "What is Hungary?"],
+      ["Mr. Potato Head's wife goes by this name.", "Who is Mrs. Potato Head?"]
+    ],
+    [
+      ["The first Mr. Potato Head kit contained plastic parts that you pushed into real ones of these.", "What are potatoes?"],
+      ["Lincoln Logs were invented by the son of this famous American architect.", "Who is Frank Lloyd Wright?"],
+      ["Inside a Magic 8 Ball floats a die with this many sides.", "What is twenty?"],
+      ["Tonka trucks were first built from this tough material.", "What is steel?"],
+      ["Mattel introduced Barbie at the New York Toy Fair in this year.", "What is 1959?"],
+      ["Mattel's Hot Wheels hit store shelves in this year.", "What is 1968?"]
+    ]
+  ]
+}

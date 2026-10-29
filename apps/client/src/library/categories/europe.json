@@ -1,0 +1,45 @@
+{
+  "id": "europe",
+  "tiers": [
+    [
+      ["The capital of France is this city.", "What is Paris?"],
+      ["The capital of Italy is this city.", "What is Rome?"],
+      ["The capital of Spain is this city.", "What is Madrid?"],
+      ["The capital of Germany is this city.", "What is Berlin?"],
+      ["The capital of the United Kingdom is this city.", "What is London?"],
+      ["This boot-shaped country juts into the Mediterranean.", "What is Italy?"]
+    ],
+    [
+      ["Vienna, on the Danube, is the capital of this country.", "What is Austria?"],
+      ["The capital of Greece is this city.", "What is Athens?"],
+      ["This Dutch capital is famous for its canals.", "What is Amsterdam?"],
+      ["The capital of Portugal is this city.", "What is Lisbon?"],
+      ["The Matterhorn sits in the Alps on the border of Italy and this country.", "What is Switzerland?"],
+      ["The capital of Sweden is this city.", "What is Stockholm?"]
+    ],
+    [
+      ["The smallest country in the world, an enclave in Rome, is this.", "What is Vatican City?"],
+      ["Most European Union countries use this common currency.", "What is the euro?"],
+      ["Europe's longest river, flowing through Russia, is this one.", "What is the Volga?"],
+      ["The capital of Norway is this city.", "What is Oslo?"],
+      ["The capital of Poland is this city.", "What is Warsaw?"],
+      ["Spain shares the Iberian Peninsula with this country.", "What is Portugal?"]
+    ],
+    [
+      ["Budapest is the capital of this landlocked Central European country.", "What is Hungary?"],
+      ["The capital of the island nation of Malta is this city.", "What is Valletta?"],
+      ["This tiny principality on the French Riviera is famous for its casino and Grand Prix.", "What is Monaco?"],
+      ["Estonia, Latvia and this country make up the Baltic states.", "What is Lithuania?"],
+      ["Croatia's long coastline sits on this sea.", "What is the Adriatic Sea?"],
+      ["The fall of this wall in 1989 began the reunification of Germany.", "What is the Berlin Wall?"]
+    ],
+    [
+      ["The capital of Slovakia is this city on the Danube.", "What is Bratislava?"],
+      ["The European Union's main institutions are based in this Belgian city.", "What is Brussels?"],
+      ["The capital of Iceland is this city.", "What is Reykjavik?"],
+      ["The 1992 treaty that created the European Union is named after this Dutch city.", "What is Maastricht?"],
+      ["Sofia is the capital of this Balkan country.", "What is Bulgaria?"],
+      ["The highest peak in the Alps, on the French-Italian border, is this mountain.", "What is Mont Blanc?"]
+    ]
+  ]
+}

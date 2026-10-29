@@ -1,0 +1,45 @@
+{
+  "id": "board-card-games",
+  "tiers": [
+    [
+      ["In this game you can buy Boardwalk and Park Place and go to jail.", "What is Monopoly?"],
+      ["Players build crosswords on a board using lettered tiles in this word game.", "What is Scrabble?"],
+      ["This card game, with Skip and Reverse cards, is won by emptying your hand and shouting its name.", "What is Uno?"],
+      ["Colonel Mustard and Miss Scarlett are suspects in this murder-mystery board game.", "What is Clue? (Also: Cluedo)"],
+      ["In this game of stacking, you pull blocks from a tower and place them on top without it falling.", "What is Jenga?"],
+      ["This ancient strategy game features a king, queen, rooks, bishops, knights and pawns.", "What is chess?"]
+    ],
+    [
+      ["A standard deck of playing cards has this many cards, not counting jokers.", "What is 52?"],
+      ["In Monopoly, a player collects this much money for passing Go.", "What is $200?"],
+      ["In Scrabble, each player's rack holds this many tiles.", "What is seven?"],
+      ["Rolling five of a kind in this dice game earns its namesake bonus.", "What is Yahtzee?"],
+      ["In Battleship, you call out coordinates like B-7 hoping to hit your opponent's these.", "What are ships?"],
+      ["In this game of world domination, players roll dice to battle for territories with armies.", "What is Risk?"]
+    ],
+    [
+      ["In Catan, players trade brick, lumber, ore, grain and this fifth resource.", "What is wool?"],
+      ["In poker, a royal flush is the ten through ace of the same one of these.", "What is a suit?"],
+      ["The standard Trivial Pursuit token has this many wedges, one per category.", "What is six?"],
+      ["In English Scrabble, these two letters are worth the most points.", "What are Q and Z?"],
+      ["In poker, three of a kind plus a pair makes this hand.", "What is a full house?"],
+      ["In Scrabble, playing all seven of your tiles in one turn earns this bonus.", "What is a bingo?"]
+    ],
+    [
+      ["In chess, this special move lets the king and a rook change places.", "What is castling?"],
+      ["The original version of Monopoly, The Landlord's Game, was created in 1904 by this woman.", "Who is Elizabeth Magie?"],
+      ["Scrabble was invented by this architect during the Great Depression.", "Who is Alfred Butts?"],
+      ["Dungeons & Dragons was first published in this decade.", "What is the 1970s?"],
+      ["Magic: The Gathering was created by this game designer in 1993.", "Who is Richard Garfield?"],
+      ["In bridge, the aim is to win these, which are rounds of cards played by four players.", "What are tricks?"]
+    ],
+    [
+      ["The strategy game Go originated in this country more than 2,500 years ago.", "What is China?"],
+      ["The game of Senet, one of the oldest known board games, comes from this ancient civilization.", "What is Egypt?"],
+      ["Klaus Teuber, the designer of Catan, was from this country.", "What is Germany?"],
+      ["In chess, a player with no legal move whose king is not in check causes this kind of draw.", "What is stalemate?"],
+      ["Checkers is called this in the United Kingdom.", "What is draughts?"],
+      ["A chessboard has this many squares in total.", "What is 64?"]
+    ]
+  ]
+}

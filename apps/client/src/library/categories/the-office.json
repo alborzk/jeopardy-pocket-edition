@@ -1,0 +1,45 @@
+{
+  "id": "the-office",
+  "tiers": [
+    [
+      ["The Office is set at the Scranton branch of this paper company.", "What is Dunder Mifflin?"],
+      ["The regional manager with the World's Best Boss mug is named this.", "Who is Michael Scott?"],
+      ["Dwight Schrute grows these on his family farm.", "What are beets?"],
+      ["Jim loves to prank Dwight by putting his stapler inside this wobbly dessert.", "What is Jell-O?"],
+      ["Jim's favorite target for pranks is this assistant to the regional manager.", "Who is Dwight Schrute?"],
+      ["Michael delivers this innuendo-filled catchphrase after unintentional setups.", "What is That's What She Said?"]
+    ],
+    [
+      ["The Office is set in this Pennsylvania city.", "What is Scranton?"],
+      ["Kevin famously spills a giant pot of this on the office floor.", "What is chili?"],
+      ["After quitting, Michael starts his own rival firm called this.", "What is the Michael Scott Paper Company?"],
+      ["Stanley loves doing these puzzles in his free time.", "What are crossword puzzles?"],
+      ["Angela owns many cats, and this one, named after a topping, is among her favorites.", "Who is Sprinkles?"],
+      ["The Dundies, the office's annual awards ceremony, are held at this chain restaurant.", "What is Chili's?"]
+    ],
+    [
+      ["The Office is filmed in the style of a fake documentary, known by this portmanteau.", "What is a mockumentary?"],
+      ["The American Office is based on a British series created by this comedian.", "Who is Ricky Gervais?"],
+      ["Michael Scott is played by this actor.", "Who is Steve Carell?"],
+      ["Jim and Pam name their daughter this.", "What is Cecelia? (Also: Cece)"],
+      ["Dwight's beet farm doubles as this lodging business.", "What is a bed and breakfast?"],
+      ["The Office originally aired on this American television network.", "What is NBC?"]
+    ],
+    [
+      ["Michael's long-term love interest, the HR rep who replaces Toby, is this woman.", "Who is Holly Flax?"],
+      ["Dunder Mifflin is bought by this printer company, which later collapses.", "What is Sabre?"],
+      ["The K in Dwight K. Schrute stands for this name.", "What is Kurt?"],
+      ["Andy Bernard's college a cappella group, which he can't stop mentioning, is named this.", "What is Here Comes Treble?"],
+      ["Creed Bratton was once a real-life guitarist in this 1960s band.", "What is The Grass Roots?"],
+      ["Michael writes and stars in this spy-parody film within the show, about agent Michael Scarn.", "What is Threat Level Midnight?"]
+    ],
+    [
+      ["The Office ran for this many seasons.", "What is nine?"],
+      ["Rainn Wilson, who plays Dwight, co-founded this digital media company.", "What is SoulPancake?"],
+      ["Jim Halpert is played by this actor, who later directed A Quiet Place.", "Who is John Krasinski?"],
+      ["Jenna Fischer and Angela Kinsey co-host this podcast rewatching the show.", "What is Office Ladies?"],
+      ["Michael leaves Scranton in season 7 to move to this Colorado city with Holly.", "What is Boulder?"],
+      ["The Office's series finale aired in this year.", "What is 2013?"]
+    ]
+  ]
+}

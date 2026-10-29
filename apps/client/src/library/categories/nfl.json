@@ -1,0 +1,45 @@
+{
+  "id": "nfl",
+  "tiers": [
+    [
+      ["The NFL's championship game is called this.", "What is the Super Bowl?"],
+      ["The team with a star on its helmet, nicknamed America's Team, is this one.", "Who are the Dallas Cowboys?"],
+      ["A touchdown is worth this many points before the extra point.", "What is six?"],
+      ["Green Bay Packers fans wear foam hats shaped like wedges of this food.", "What is cheese?"],
+      ["This quarterback won seven Super Bowls, more than any other player.", "Who is Tom Brady?"],
+      ["An NFL game is divided into this many quarters.", "What is four?"]
+    ],
+    [
+      ["The Super Bowl trophy is named after this legendary Green Bay Packers coach.", "Who is Vince Lombardi?"],
+      ["A field goal is worth this many points.", "What is three?"],
+      ["This longtime Patriots head coach won six Super Bowls.", "Who is Bill Belichick?"],
+      ["Patrick Mahomes plays quarterback for this team.", "Who are the Kansas City Chiefs?"],
+      ["The 1972 Miami Dolphins are the only team to complete a season this way.", "What is undefeated? (Also: a perfect season)"],
+      ["The Seattle Seahawks' loud fans are known by this nickname.", "Who is the 12th Man?"]
+    ],
+    [
+      ["The first Super Bowl was played in this year.", "What is 1967?"],
+      ["This Baltimore kicker booted a record 66-yard field goal in 2021.", "Who is Justin Tucker?"],
+      ["The undefeated 2007 Patriots lost the Super Bowl to this team after the Helmet Catch.", "Who are the New York Giants?"],
+      ["The Heisman Trophy honors the best player in this level of football.", "What is college football?"],
+      ["Super Bowl numbers are written using these.", "What are Roman numerals?"],
+      ["The NFL's all-time leading rusher is this former Cowboys running back.", "Who is Emmitt Smith?"]
+    ],
+    [
+      ["The Immaculate Reception, a miracle 1972 playoff catch, was made by this Steelers running back.", "Who is Franco Harris?"],
+      ["The 2013 Super Bowl was delayed by a blackout in the Superdome in this city.", "What is New Orleans?"],
+      ["This quarterback won an NFL-record five MVP awards.", "Who is Peyton Manning?"],
+      ["Roger Staubach popularized this desperate long pass, whose name comes from a prayer.", "What is the Hail Mary?"],
+      ["The AFL and NFL fully merged in this year.", "What is 1970?"],
+      ["The 2019 season marked the NFL's celebration of this many years of existence.", "What is 100?"]
+    ],
+    [
+      ["The Lombardi Trophy is made of this precious metal.", "What is sterling silver?"],
+      ["The Green Bay Packers are unusual in that they are owned by these people.", "Who are the fans? (Also: shareholders)"],
+      ["In 2020, the Washington team played under this temporary name.", "What is the Washington Football Team?"],
+      ["The first overall pick in the 2024 NFL Draft was this USC quarterback.", "Who is Caleb Williams?"],
+      ["The lowest-scoring Super Bowl ever, a 13-3 game in 2019, was won by this team.", "Who are the New England Patriots?"],
+      ["The Pittsburgh team, known for its Steel Curtain defense, is called this.", "Who are the Steelers? (Also: the Pittsburgh Steelers)"]
+    ]
+  ]
+}

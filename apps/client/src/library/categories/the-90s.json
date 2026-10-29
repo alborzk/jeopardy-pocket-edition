@@ -1,0 +1,45 @@
+{
+  "id": "the-90s",
+  "tiers": [
+    [
+      ["Kids in the 90s raised this digital, egg-shaped pet on a keychain.", "What is a Tamagotchi?"],
+      ["In 1996, these 'pocket monsters' debuted in Japan, with Pikachu as the star.", "What is Pokémon?"],
+      ["This furry electronic toy 'spoke' its own language and became a must-have in 1998.", "What is a Furby?"],
+      ["Tommy, Chuckie, Angelica and the Pickles family star in this Nickelodeon cartoon.", "What is Rugrats?"],
+      ["Nick, Brian, AJ, Howie and Kevin make up this boy band.", "Who are the Backstreet Boys?"],
+      ["This dial-up internet provider's chirpy voice famously announced, 'You've got mail!'", "What is AOL?"]
+    ],
+    [
+      ["Seattle's Nirvana and Pearl Jam defined this 1990s rock genre.", "What is grunge?"],
+      ["This 1996 Nintendo console had a three-pronged controller.", "What is the Nintendo 64?"],
+      ["Founded in 1995, this website became the world's biggest online auction house.", "What is eBay?"],
+      ["Larry Page and Sergey Brin launched this search engine in 1998.", "What is Google?"],
+      ["Pepsi flopped in 1993 with this see-through version of its cola.", "What is Crystal Pepsi?"],
+      ["This 1990s sitcom followed a hip-hop-loving teen sent from West Philadelphia to Bel-Air.", "What is The Fresh Prince of Bel-Air?"]
+    ],
+    [
+      ["In 1997 scientists in Scotland announced the birth of this cloned sheep.", "Who is Dolly?"],
+      ["These small, bean-filled plush animals from Ty Warner became a collecting craze in the mid-90s.", "What are Beanie Babies?"],
+      ["Apple's translucent, candy-colored all-in-one computer arrived in 1998 as this.", "What is the iMac?"],
+      ["Sarah Michelle Gellar starred as a teen who fought vampires on this WB series.", "What is Buffy the Vampire Slayer?"],
+      ["This early web browser, released in 1994, dominated before Internet Explorer took over.", "What is Netscape?"],
+      ["This red, giggling Sesame Street toy was the must-have gift of the 1996 holiday season.", "What is Tickle Me Elmo?"]
+    ],
+    [
+      ["In December 1991 this superpower officially dissolved.", "What is the Soviet Union?"],
+      ["Figure skater Tonya Harding was linked to the 1994 attack on this rival.", "Who is Nancy Kerrigan?"],
+      ["In 1998 Mark McGwire and Sammy Sosa chased this man's 1961 single-season home run record.", "Who is Roger Maris?"],
+      ["Princess Diana died in a car crash in this European capital in 1997.", "What is Paris?"],
+      ["This US president was impeached by the House in 1998.", "Who is Bill Clinton?"],
+      ["NASA launched this orbiting observatory in 1990.", "What is the Hubble Space Telescope?"]
+    ],
+    [
+      ["Nelson Mandela became South Africa's first Black president in this year.", "What is 1994?"],
+      ["IBM's Deep Blue beat world chess champion Garry Kasparov in this year.", "What is 1997?"],
+      ["The euro was introduced as an electronic currency in this year.", "What is 1999?"],
+      ["In 1991 this British scientist at CERN made the World Wide Web public.", "Who is Tim Berners-Lee?"],
+      ["In 1997 Hong Kong was returned from British rule to China in an event known by this name.", "What is the Handover?"],
+      ["Johnny Carson retired in 1992 after hosting The Tonight Show for this many years.", "What is thirty?"]
+    ]
+  ]
+}

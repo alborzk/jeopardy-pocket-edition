@@ -1,0 +1,45 @@
+{
+  "id": "books-authors",
+  "tiers": [
+    [
+      ["This British author created Harry Potter.", "Who is J.K. Rowling?"],
+      ["This author wrote The Cat in the Hat and Green Eggs and Ham.", "Who is Dr. Seuss?"],
+      ["Sherlock Holmes was created by this author.", "Who is Arthur Conan Doyle?"],
+      ["J.R.R. Tolkien's prelude to The Lord of the Rings follows a reluctant burglar named Bilbo Baggins.", "What is The Hobbit?"],
+      ["In Charlotte's Web, Charlotte is this kind of animal.", "What is a spider?"],
+      ["In Roald Dahl's famous book, Charlie wins a golden ticket to visit this place.", "What is Willy Wonka's chocolate factory?"]
+    ],
+    [
+      ["Jane Austen wrote this novel about Elizabeth Bennet and Mr. Darcy.", "What is Pride and Prejudice?"],
+      ["George Orwell wrote Animal Farm and this dystopian novel about Big Brother.", "What is 1984?"],
+      ["Harper Lee wrote this novel narrated by a girl named Scout Finch.", "What is To Kill a Mockingbird?"],
+      ["Mary Shelley wrote this 1818 novel about a scientist who creates life.", "What is Frankenstein?"],
+      ["F. Scott Fitzgerald wrote this novel about the mysterious millionaire Jay Gatsby.", "What is The Great Gatsby?"],
+      ["Captain Ahab chases a white whale in this Herman Melville novel.", "What is Moby-Dick?"]
+    ],
+    [
+      ["Holden Caulfield narrates this J.D. Salinger novel.", "What is The Catcher in the Rye?"],
+      ["Lucy Maud Montgomery set this novel on Prince Edward Island, with a red-haired orphan as its heroine.", "What is Anne of Green Gables?"],
+      ["This Canadian author wrote The Handmaid's Tale.", "Who is Margaret Atwood?"],
+      ["Cervantes wrote this novel about a knight who tilts at windmills.", "What is Don Quixote?"],
+      ["Charlotte Brontë wrote this novel about a governess who falls in love with Mr. Rochester.", "What is Jane Eyre?"],
+      ["Pip and Miss Havisham appear in this Charles Dickens novel.", "What is Great Expectations?"]
+    ],
+    [
+      ["Gabriel García Márquez wrote this novel about generations of the Buendía family.", "What is One Hundred Years of Solitude?"],
+      ["Four children find the land of Narnia through a wardrobe in this C.S. Lewis book.", "What is The Lion, the Witch and the Wardrobe?"],
+      ["In Fahrenheit 451, firemen's job is to do this to books.", "What is burn them?"],
+      ["This Russian author wrote War and Peace and Anna Karenina.", "Who is Leo Tolstoy?"],
+      ["Toni Morrison's Pulitzer-winning novel about a formerly enslaved woman haunted by her daughter has this one-word title.", "What is Beloved?"],
+      ["Yann Martel, a Canadian author, wrote this novel about a boy and a tiger on a lifeboat.", "What is Life of Pi?"]
+    ],
+    [
+      ["Dostoevsky wrote this novel about three brothers and the murder of their father.", "What is The Brothers Karamazov?"],
+      ["James Joyce's Ulysses takes place in this city over a single day.", "What is Dublin?"],
+      ["Virginia Woolf's 1925 novel follows Clarissa as she prepares for a party in London.", "What is Mrs Dalloway?"],
+      ["Victor Hugo wrote this novel featuring Jean Valjean and Inspector Javert.", "What is Les Misérables?"],
+      ["In 2013 this Canadian short-story writer won the Nobel Prize in Literature.", "Who is Alice Munro?"],
+      ["The Epic of Gilgamesh, one of the oldest known stories, comes from this ancient region.", "What is Mesopotamia?"]
+    ]
+  ]
+}

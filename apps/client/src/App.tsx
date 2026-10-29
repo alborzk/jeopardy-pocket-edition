@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes, useParams } from 'react-router-
 import type { ReactElement } from 'react';
 import { ROOM_CODE_REGEX } from '@jeopardy/shared';
 import { ModalProvider } from './components/Modal';
+import { useSlideArrival } from './lib/slide';
 import { Display } from './pages/Display';
 import { Editor } from './pages/Editor';
 import { Host } from './pages/Host';
@@ -16,9 +17,16 @@ function RoomRoute({ render }: { render: (code: string) => ReactElement }) {
   return render(code);
 }
 
+/** Lets a sliding page transition know when the new screen has arrived. */
+function SlideArrival() {
+  useSlideArrival();
+  return null;
+}
+
 export function App() {
   return (
     <BrowserRouter>
+      <SlideArrival />
       <ModalProvider>
         <Routes>
           <Route path="/" element={<Landing />} />

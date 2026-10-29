@@ -1,0 +1,45 @@
+{
+  "id": "valorant",
+  "tiers": [
+    [
+      ["Valorant is a 5v5 tactical shooter made by this company, which also makes League of Legends.", "What is Riot Games?"],
+      ["The playable characters in Valorant are called this.", "What are Agents?"],
+      ["Attackers plant this explosive on a site while defenders try to stop them.", "What is the Spike?"],
+      ["This powerful sniper rifle is one of Valorant's most iconic weapons.", "What is the Operator?"],
+      ["The first team to win this many rounds wins a standard match.", "What is 13?"],
+      ["This fast Korean duelist can dash and throw deadly knives.", "Who is Jett?"]
+    ],
+    [
+      ["Valorant was released in this year.", "What is 2020?"],
+      ["Sage, the healer who can revive teammates, belongs to this role.", "What are Sentinels?"],
+      ["Phoenix, Raze, Reyna and Jett all belong to this role focused on getting kills.", "What are Duelists?"],
+      ["Omen and Brimstone belong to this smoke-focused role.", "What are Controllers?"],
+      ["Every player starts with this free default pistol.", "What is the Classic?"],
+      ["Players spend these each round to buy weapons and abilities.", "What are credits?"]
+    ],
+    [
+      ["This rank sits above Immortal at the very top of the ranked ladder.", "What is Radiant?"],
+      ["Sova's signature ability is a bow-fired arrow that reveals enemies, called this.", "What is Recon Bolt?"],
+      ["Valorant's anti-cheat system is called this.", "What is Vanguard?"],
+      ["Before its official name, Valorant was developed under this code name.", "What is Project A?"],
+      ["Valorant's annual world championship is called this.", "What is Valorant Champions?"],
+      ["The map Bind is set in this North African country.", "What is Morocco?"]
+    ],
+    [
+      ["Killjoy, the gadget-building genius, comes from this country.", "What is Germany?"],
+      ["Reyna, the soul-devouring duelist, comes from this country.", "What is Mexico?"],
+      ["Chamber, the elegant weapons dealer, comes from this country.", "What is France?"],
+      ["Phoenix, the fiery duelist, comes from this country.", "What is the United Kingdom? (Also: England)"],
+      ["Viper, the toxic chemist, comes from this country.", "What is the United States?"],
+      ["Gekko, the Agent with creature companions, comes from this California city.", "What is Los Angeles?"]
+    ],
+    [
+      ["Acend won the first Valorant Champions in 2021, which was held in this German city.", "What is Berlin?"],
+      ["Haven and Lotus are the maps with this many bomb sites instead of the usual two.", "What is three?"],
+      ["The Operator costs this many credits.", "What is 4,700?"],
+      ["Phoenix's ultimate, which returns him to his starting spot if he dies, is called this.", "What is Run it Back?"],
+      ["Cypher, the Moroccan information gatherer, uses these devices to spy on enemies.", "What are cameras? (Also: Spycam)"],
+      ["Jett's ultimate, Blade Storm, gives her these throwing weapons.", "What are knives? (Also: kunai)"]
+    ]
+  ]
+}

@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { boardSchema, countClues, describeBoardIssues } from '@jeopardy/shared';
+import { SlideLink } from '../components/SlideLink';
 import { MarqueeTitle, StudioBackdrop } from '../components/Studio';
 import { loadBoards } from '../lib/boards';
 import { hostGame } from '../lib/hostGame';
 import { lastSession } from '../lib/session';
+import { useSlideNavigate } from '../lib/slide';
 
 export function Landing() {
-  const navigate = useNavigate();
+  const navigate = useSlideNavigate();
   const boards = useMemo(() => loadBoards(), []);
   const previous = useMemo(() => lastSession(), []);
   const [boardId, setBoardId] = useState(boards[0]?.id ?? '');
@@ -43,7 +44,7 @@ export function Landing() {
         </header>
 
         {previous ? (
-          <Link
+          <SlideLink
             to={previous.role === 'host' ? `/host/${previous.code}` : `/play/${previous.code}`}
             className="btn-secondary justify-between text-left"
           >
@@ -52,7 +53,7 @@ export function Landing() {
               {previous.role === 'player' && previous.name ? ` as ${previous.name}` : ' as host'}
             </span>
             <span aria-hidden>▶</span>
-          </Link>
+          </SlideLink>
         ) : null}
 
         <div className="grid gap-8 sm:grid-cols-2">
@@ -97,9 +98,9 @@ export function Landing() {
             >
               {busy ? 'Creating…' : 'Create room'}
             </button>
-            <Link to="/editor" className="btn-secondary">
+            <SlideLink to="/editor" className="btn-secondary">
               Board editor
-            </Link>
+            </SlideLink>
           </section>
 
           <section className="card flex flex-col gap-5">
@@ -108,9 +109,9 @@ export function Landing() {
               Enter the 4-letter room code shown on the TV, or scan its QR code.
             </p>
             <div className="flex-1" />
-            <Link to="/join" className="btn-primary">
+            <SlideLink to="/join" className="btn-primary">
               Join with a code
-            </Link>
+            </SlideLink>
           </section>
         </div>
       </main>

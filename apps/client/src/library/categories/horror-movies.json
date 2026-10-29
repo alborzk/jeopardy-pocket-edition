@@ -1,0 +1,45 @@
+{
+  "id": "horror-movies",
+  "tiers": [
+    [
+      ["This 1975 Steven Spielberg thriller features a giant great white shark.", "What is Jaws?"],
+      ["The masked killer who stalks babysitters on Halloween night is this man.", "Who is Michael Myers?"],
+      ["Freddy Krueger haunts teenagers in their dreams on this tree-named street.", "What is Elm Street?"],
+      ["In this 1973 film, a young girl's head spins around during a demonic possession.", "What is The Exorcist?"],
+      ["The killer in a hockey mask who haunts Camp Crystal Lake is this man.", "Who is Jason Voorhees?"],
+      ["The clown who lurks in the sewers of Derry is named this.", "Who is Pennywise?"]
+    ],
+    [
+      ["In Psycho, Norman Bates runs this roadside business.", "What is the Bates Motel?"],
+      ["Jack Torrance goes mad as caretaker of the Overlook Hotel in this 1980 film.", "What is The Shining?"],
+      ["Psycho was directed by this suspense master.", "Who is Alfred Hitchcock?"],
+      ["In Scream, the killer wears a ghostly mask and taunts victims over the phone, using this name.", "Who is Ghostface?"],
+      ["The doll possessed by a killer's soul in Child's Play is named this.", "Who is Chucky?"],
+      ["The 2017 Jordan Peele hit about the Sunken Place is this film.", "What is Get Out?"]
+    ],
+    [
+      ["The possessed girl in The Exorcist is named this.", "Who is Regan MacNeil? (Also: Regan)"],
+      ["The Blair Witch Project popularized this shaky-camera style of filmmaking.", "What is found footage?"],
+      ["Laurie Strode in the original Halloween is played by this actress.", "Who is Jamie Lee Curtis?"],
+      ["In The Conjuring series, paranormal investigator Ed Warren's wife and partner is named this.", "Who is Lorraine Warren?"],
+      ["Wes Craven directed Scream and this 1984 film about a dream killer.", "What is A Nightmare on Elm Street?"],
+      ["In Jaws, this police chief famously says that they need a bigger boat.", "Who is Chief Brody? (Also: Martin Brody)"]
+    ],
+    [
+      ["Rosemary's Baby was directed by this filmmaker.", "Who is Roman Polanski?"],
+      ["In The Ring, anyone who watches the cursed videotape dies in this many days.", "What is seven days? (Also: seven)"],
+      ["Hereditary stars this actress as a grieving mother.", "Who is Toni Collette?"],
+      ["In the first Friday the 13th, the killer turns out to be Jason's mother, named this.", "Who is Pamela Voorhees?"],
+      ["John Carpenter directed Halloween and this 1982 film about a shape-shifting Antarctic alien.", "What is The Thing?"],
+      ["The chainsaw-wielding killer in The Texas Chain Saw Massacre is known by this name.", "Who is Leatherface?"]
+    ],
+    [
+      ["The 1922 silent vampire film Nosferatu was directed by this German filmmaker.", "Who is F.W. Murnau?"],
+      ["In The Shining, the ghostly twin girls ask Danny to do this with them forever.", "What is play? (Also: come play with us)"],
+      ["The film scholar who coined the term Final Girl is this author.", "Who is Carol Clover?"],
+      ["In Jordan Peele's Us, the doppelgangers are known by this name.", "What are the Tethered?"],
+      ["The first Scream film was released in this year.", "What is 1996?"],
+      ["The exterior of the Overlook Hotel in The Shining was filmed at this lodge in Oregon.", "What is Timberline Lodge?"]
+    ]
+  ]
+}
