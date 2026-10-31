@@ -1,0 +1,45 @@
+{
+  "id": "friends",
+  "tiers": [
+    [
+      ["The six friends spend most of their time on an orange couch at this coffee house.", "What is Central Perk?"],
+      ["Rachel, the waitress who runs out on her wedding in the pilot, is played by this actress.", "Who is Jennifer Aniston?"],
+      ["Monica Geller works in this profession and is famously obsessed with cleaning.", "What is a chef?"],
+      ["Joey Tribbiani's signature pickup line is this three-word greeting.", "What is How you doin'?"],
+      ["Ross insists that he and Rachel were on one of these when he slept with someone else.", "What is a break?"],
+      ["Phoebe's best-known song, played on guitar at the coffee house, is about a stinky feline.", "What is Smelly Cat?"]
+    ],
+    [
+      ["The blond manager of the coffee house, secretly in love with Rachel, is named this.", "Who is Gunther?"],
+      ["Ross keeps this capuchin monkey as a pet in the early seasons.", "Who is Marcel?"],
+      ["Phoebe's identical twin sister, played by the same actress, is named this.", "Who is Ursula?"],
+      ["Ross Geller is a professor of this science, which studies dinosaurs and fossils.", "What is paleontology?"],
+      ["Joey declares that Joey doesn't share this when anyone reaches for his plate.", "What is food?"],
+      ["Friends premiered on NBC in this year.", "What is 1994?"]
+    ],
+    [
+      ["Ross yells this one-word instruction while trying to move a couch up a stairwell.", "What is Pivot?"],
+      ["Rachel gives birth to a daughter named this at the end of season 8.", "Who is Emma?"],
+      ["At the altar of his wedding to Emily, Ross famously says this wrong name.", "Who is Rachel Green? (Also: Rachel)"],
+      ["Monica and Chandler first hook up in this European capital, after Ross's wedding.", "What is London?"],
+      ["Phoebe often introduces herself with this fake name, Regina followed by a finger bone.", "Who is Regina Phalange?"],
+      ["The Friends theme, I'll Be There for You, was performed by this duo.", "Who are The Rembrandts?"]
+    ],
+    [
+      ["Monica dates Richard Burke, an older family friend and eye doctor, played by this Magnum, P.I. star.", "Who is Tom Selleck?"],
+      ["Phoebe's husband Mike Hannigan is played by this actor, later seen as Ant-Man.", "Who is Paul Rudd?"],
+      ["This A-list star guest-starred in a season 8 Thanksgiving episode as a former classmate who once led a club hating Rachel.", "Who is Brad Pitt?"],
+      ["In the series finale, Monica and Chandler adopt twins named Jack and this girl's name.", "Who is Erica?"],
+      ["Rachel's spoiled younger sister Jill is played by this future Oscar winner.", "Who is Reese Witherspoon?"],
+      ["Monica's apartment, with its purple walls and yellow-framed peephole, has this number.", "What is 20? (Also: apartment 20)"]
+    ],
+    [
+      ["Across its ten seasons, Friends aired a total of this many episodes.", "What is 236?"],
+      ["Friends was created by David Crane and this co-writer.", "Who is Marta Kauffman?"],
+      ["Though set in Manhattan, the show was filmed on a soundstage at this studio's Burbank lot.", "What is Warner Bros.? (Also: Warner Bros. Studios)"],
+      ["In the final two seasons, each of the six leads reportedly earned about this much per episode.", "What is $1 million?"],
+      ["The sitcom's early working title was this name for an all-night coffeehouse.", "What is Insomnia Cafe? (Also: Insomnia Café)"],
+      ["On Days of Our Lives, Joey plays a neurosurgeon with this name.", "Who is Dr. Drake Ramoray? (Also: Drake Ramoray)"]
+    ]
+  ]
+}

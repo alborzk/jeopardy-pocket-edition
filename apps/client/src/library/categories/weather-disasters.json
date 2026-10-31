@@ -1,0 +1,45 @@
+{
+  "id": "weather-disasters",
+  "tiers": [
+    [
+      ["Lightning heats the air so fast that it makes this booming sound.", "What is thunder?"],
+      ["A violently rotating funnel of air that touches the ground is called this.", "What is a tornado?"],
+      ["A giant ocean wave triggered by an undersea earthquake is called this.", "What is a tsunami?"],
+      ["A rainbow forms when sunlight passes through these falling water drops.", "What are raindrops?"],
+      ["Water vapor cooling into tiny liquid droplets to form clouds is called this.", "What is condensation?"],
+      ["A scientist who studies and forecasts the weather is called this.", "What is a meteorologist?"]
+    ],
+    [
+      ["The calm, clear center of a hurricane is known as this.", "What is the eye?"],
+      ["Hurricanes that form in the northwest Pacific Ocean go by this name.", "What are typhoons?"],
+      ["In AD 79, Mount Vesuvius buried this Roman city under ash.", "What is Pompeii?"],
+      ["In 2005, Hurricane Katrina devastated this Louisiana city.", "What is New Orleans?"],
+      ["A barometer measures this, which usually drops before a storm.", "What is air pressure? (Also: atmospheric pressure)"],
+      ["This national park, mostly in Wyoming, sits atop a giant supervolcano.", "What is Yellowstone?"]
+    ],
+    [
+      ["Before moment magnitude took over, earthquake strength was reported on this scale named after Charles Richter.", "What is the Richter scale?"],
+      ["Fast, narrow air currents high in the atmosphere steer weather systems and are called this.", "What is the jet stream?"],
+      ["Most of the world's earthquakes and volcanoes cluster around this horseshoe-shaped zone around the Pacific.", "What is the Ring of Fire?"],
+      ["Drought and dust storms ravaged the Great Plains in the 1930s, an era called this.", "What is the Dust Bowl?"],
+      ["Cold snaps in the U.S. and Canada are often blamed on this swirling mass of frigid Arctic air.", "What is a polar vortex?"],
+      ["The central U.S. region including Oklahoma and Kansas, famed for frequent twisters, goes by this nickname.", "What is Tornado Alley?"]
+    ],
+    [
+      ["Hurricanes are rated from Category 1 to 5 on this wind scale.", "What is the Saffir-Simpson scale?"],
+      ["The deadliest natural disaster in U.S. history, a 1900 hurricane, struck this Texas city.", "What is Galveston?"],
+      ["The hottest air temperature officially recorded, 134 degrees Fahrenheit in 1913, was measured in this California desert valley.", "What is Death Valley?"],
+      ["Winnipeg was largely spared in the 1997 flood thanks to this channel that diverts the river, nicknamed Duff's Ditch.", "What is the Red River Floodway?"],
+      ["In 1991, the eruption of this Philippine volcano cooled global temperatures for a couple of years.", "What is Mount Pinatubo?"],
+      ["The 1998 ice storm knocked out power for millions in Quebec and this neighboring province.", "What is Ontario?"]
+    ],
+    [
+      ["The 1815 eruption of this Indonesian volcano led to 1816 being called the Year Without a Summer.", "What is Mount Tambora?"],
+      ["The strongest earthquake ever recorded, a magnitude 9.5 in 1960, struck this South American country.", "What is Chile?"],
+      ["The deadliest twister in U.S. history, in 1925, tore through Missouri, Illinois and this state.", "What is Indiana?"],
+      ["In 1954, the remnants of this hurricane caused deadly flooding in Toronto.", "What is Hurricane Hazel?"],
+      ["A widespread, long-lived windstorm that blows in a straight line gets this Spanish name meaning straight.", "What is a derecho?"],
+      ["This scale rates earthquakes by their observed effects on people and buildings rather than by magnitude.", "What is the Mercalli scale? (Also: Modified Mercalli)"]
+    ]
+  ]
+}

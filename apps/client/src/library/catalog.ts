@@ -123,6 +123,30 @@ export const CATEGORIES: readonly CategoryInfo[] = [
     group: 'Franchises',
     blurb: 'Dunder Mifflin, Michael Scott, pranks',
   },
+  {
+    id: 'game-of-thrones',
+    name: 'Game of Thrones',
+    group: 'Franchises',
+    blurb: 'Houses, Westeros, dragons and deaths',
+  },
+  {
+    id: 'stranger-things',
+    name: 'Stranger Things',
+    group: 'Franchises',
+    blurb: 'Hawkins, the Upside Down, Eleven and the gang',
+  },
+  {
+    id: 'friends',
+    name: 'Friends',
+    group: 'Franchises',
+    blurb: 'Central Perk, the six friends, The One With…',
+  },
+  {
+    id: 'legend-of-zelda',
+    name: 'The Legend of Zelda',
+    group: 'Franchises',
+    blurb: 'Hyrule, Link, the Triforce and the games',
+  },
 
   // Music
   {
@@ -161,6 +185,12 @@ export const CATEGORIES: readonly CategoryInfo[] = [
     name: 'Classic Rock',
     group: 'Music',
     blurb: 'Bands, albums, legends. Facts, not lyrics',
+  },
+  {
+    id: 'taylor-swift',
+    name: 'Taylor Swift',
+    group: 'Music',
+    blurb: 'Eras, albums, Easter eggs and the Swifties',
   },
 
   // Nostalgia
@@ -274,6 +304,12 @@ export const CATEGORIES: readonly CategoryInfo[] = [
     group: 'Science & Nature',
     blurb: 'Elements, reactions, the periodic table',
   },
+  {
+    id: 'weather-disasters',
+    name: 'Weather & Disasters',
+    group: 'Science & Nature',
+    blurb: 'Storms, quakes, scales and famous disasters',
+  },
 
   // World
   {
@@ -372,6 +408,12 @@ export const CATEGORIES: readonly CategoryInfo[] = [
     group: 'Food & Brands',
     blurb: 'Brands, models, car culture (no racing)',
   },
+  {
+    id: 'drinks-cocktails',
+    name: 'Drinks & Cocktails',
+    group: 'Food & Brands',
+    blurb: 'Cocktails, coffee, beer, wine and spirits',
+  },
 
   // Sports
   { id: 'sports', name: 'Sports', group: 'Sports', blurb: 'Leagues, records, rules, Olympics' },
@@ -389,6 +431,12 @@ export const CATEGORIES: readonly CategoryInfo[] = [
     name: 'Gym Culture',
     group: 'Sports',
     blurb: 'Lifts, bodybuilding legends, gym lingo',
+  },
+  {
+    id: 'pro-wrestling',
+    name: 'Pro Wrestling',
+    group: 'Sports',
+    blurb: 'WWE, WrestleMania, legends, finishers and lingo',
   },
 
   // Words & Books

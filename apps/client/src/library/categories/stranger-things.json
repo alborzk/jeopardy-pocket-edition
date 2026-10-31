@@ -1,0 +1,45 @@
+{
+  "id": "stranger-things",
+  "tiers": [
+    [
+      ["Season 1 begins when this 12-year-old boy vanishes after biking home from a game night with his friends.", "Who is Will Byers?"],
+      ["Eleven can move objects with her mind, a power called this.", "What is telekinesis? (Also: psychokinesis)"],
+      ["The boys spend their evenings in Mike's basement playing this tabletop role-playing game.", "What is Dungeons & Dragons? (Also: D&D)"],
+      ["Dustin names the season 1 monster after a fearsome demon prince from the boys' favorite game.", "What is the Demogorgon?"],
+      ["Eleven, with the shaved head and the nosebleeds, is played by this actress.", "Who is Millie Bobby Brown?"],
+      ["Chief Jim Hopper, the gruff lawman of Hawkins, is played by this actor.", "Who is David Harbour?"]
+    ],
+    [
+      ["Joyce Byers talks to her missing son by hanging strands of these festive lights on her wall.", "What are Christmas lights?"],
+      ["A fan campaign demanded justice for this character, Nancy's friend who vanishes in season 1.", "Who is Barb?"],
+      ["Steve Harrington's weapon of choice against monsters is a baseball bat studded with these.", "What are nails?"],
+      ["Joyce Byers is played by this actress, famous for Beetlejuice and Edward Scissorhands.", "Who is Winona Ryder?"],
+      ["Eleven calls the scientist who raised her at Hawkins Lab by this fatherly name.", "What is Papa?"],
+      ["Stranger Things premiered on Netflix in this year.", "What is 2016?"]
+    ],
+    [
+      ["Season 3's summer of 1985 centers on this new shopping center, with a secret Russian base beneath it.", "What is Starcourt Mall?"],
+      ["Steve and Robin work in this sailor-themed ice cream shop in the mall.", "What is Scoops Ahoy?"],
+      ["In season 4, a 1985 song called Running Up That Hill by this English singer helps save Max from Vecna.", "Who is Kate Bush?"],
+      ["For Halloween 1984 in season 2, the boys dress as characters from this comedy about paranormal exterminators.", "What is Ghostbusters?"],
+      ["In season 2, Dustin finds a slimy creature in a trash can and names it this.", "What is Dart?"],
+      ["Joe Keery, who plays Steve, releases solo music under this stage name.", "What is Djo?"]
+    ],
+    [
+      ["Before he became Vecna, the season 4 villain was a gifted boy named Henry, last name this.", "What is Creel? (Also: Henry Creel)"],
+      ["On an Upside Down rooftop, Eddie Munson shreds this Metallica song on his guitar.", "What is Master of Puppets?"],
+      ["Robin is played by Maya Hawke, the daughter of Uma Thurman and this actor.", "Who is Ethan Hawke?"],
+      ["Though set in Indiana, the show is mostly filmed in this southern U.S. state.", "What is Georgia?"],
+      ["Dr. Martin Brenner is played by this actor, who also starred in Full Metal Jacket.", "Who is Matthew Modine?"],
+      ["Finn Wolfhard, who plays Mike, was born in this Canadian city.", "What is Vancouver?"]
+    ],
+    [
+      ["The retro title lettering uses a typeface called ITC this, familiar from Stephen King book covers.", "What is Benguiat?"],
+      ["The show's working title was this name of a Long Island town linked to a conspiracy about secret experiments.", "What is Montauk?"],
+      ["Gaten Matarazzo, who plays Dustin, has this condition affecting bones and teeth, which the show wrote into his character.", "What is cleidocranial dysplasia?"],
+      ["In season 4, Hopper is held in a prison camp on this remote Russian peninsula.", "What is Kamchatka?"],
+      ["The experiments at Hawkins Lab were inspired by this real CIA mind-control program.", "What is MKUltra?"],
+      ["Millie Bobby Brown, who plays Eleven, was born in this European country.", "What is Spain?"]
+    ]
+  ]
+}

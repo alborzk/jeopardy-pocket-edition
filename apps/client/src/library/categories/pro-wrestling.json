@@ -1,0 +1,45 @@
+{
+  "id": "pro-wrestling",
+  "tiers": [
+    [
+      ["Pro wrestling's biggest company, based in Stamford, Connecticut, goes by these three letters.", "What is WWE?"],
+      ["The Rock is the ring name of this actor, who starred in Moana and Jumanji.", "Who is Dwayne Johnson?"],
+      ["Hulk Hogan's red-and-yellow gear and ripped-shirt entrances fueled a craze called this.", "What is Hulkamania?"],
+      ["The Undertaker's supernatural, undead gimmick earned him this ghoulish nickname.", "Who is the Deadman? (Also: The Phenom)"],
+      ["In wrestling, the good guys are called faces and the bad guys are called these.", "What are heels?"],
+      ["Wrestling's biggest annual show, held every spring, is called this.", "What is WrestleMania?"]
+    ],
+    [
+      ["John Cena's trademark gesture is waving his hand in front of this body part while saying you can't see him.", "What is his face?"],
+      ["This 7-foot-4 star, nicknamed the Eighth Wonder of the World, played Fezzik in The Princess Bride.", "Who is Andre the Giant?"],
+      ["Triple H and Shawn Michaels formed this rowdy faction in 1997, known by its two-letter initials.", "What is D-Generation X? (Also: DX)"],
+      ["Randy Orton's finisher, a jumping cutter that strikes out of nowhere, is known by these three letters.", "What is the RKO?"],
+      ["In the Royal Rumble, a wrestler is eliminated when thrown over this part of the ring and both feet touch the floor.", "What is the top rope?"],
+      ["Steve Austin's finisher, which starts with a kick to the stomach, is called this.", "What is the Stone Cold Stunner? (Also: the Stunner)"]
+    ],
+    [
+      ["The first WrestleMania took place in 1985 at this famous New York arena.", "What is Madison Square Garden?"],
+      ["In 2002, the WWF became WWE after losing a lawsuit to this wildlife conservation group.", "What is the World Wildlife Fund? (Also: World Wide Fund for Nature)"],
+      ["The Undertaker's famous WrestleMania streak was ended in 2014 by this wrestler.", "Who is Brock Lesnar?"],
+      ["Rey Mysterio's 619 move is named after the area code of his hometown of this California city.", "What is San Diego?"],
+      ["In 1996, Hulk Hogan turned villain and helped launch this black-and-white faction.", "What is the nWo? (Also: the New World Order)"],
+      ["In January 2025, WWE's weekly show Raw moved to this streaming service.", "What is Netflix?"]
+    ],
+    [
+      ["Bret Hart lost the WWF title in a controversial finish at Survivor Series 1997 in this Canadian city.", "What is Montreal?"],
+      ["Chris Jericho, who was raised in Winnipeg, goes by this nickname that nods to the year 2000.", "What is Y2J?"],
+      ["Mankind's sock puppet, used to deliver the Mandible Claw, is named this.", "Who is Mr. Socko?"],
+      ["Goldberg's winning streak in WCW ended at Starrcade 1998 when this big man, aided by a taser, beat him.", "Who is Kevin Nash?"],
+      ["Cody Rhodes is the son of this wrestling legend, nicknamed the American Dream.", "Who is Dusty Rhodes?"],
+      ["Raw and WCW's Nitro fought a 1990s ratings battle known by this name.", "What are the Monday Night Wars?"]
+    ],
+    [
+      ["WrestleMania III in 1987 drew a claimed crowd of about 93,000 to this Michigan dome.", "What is the Pontiac Silverdome?"],
+      ["All Elite Wrestling was founded in 2019 by this wrestling fan, whose father owns the Jacksonville Jaguars.", "Who is Tony Khan?"],
+      ["Stu Hart trained wrestlers in his Calgary basement, nicknamed this ominous name.", "What is the Dungeon? (Also: the Hart Dungeon)"],
+      ["The 2023 film The Iron Claw, starring Zac Efron, follows this Texas wrestling family.", "Who are the Von Erichs?"],
+      ["The first women's Royal Rumble match, in 2018, was won by this Japanese star.", "Who is Asuka?"],
+      ["The very first Royal Rumble, in 1988, was held in Hamilton in this Canadian province.", "What is Ontario?"]
+    ]
+  ]
+}

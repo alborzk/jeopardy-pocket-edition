@@ -1,0 +1,45 @@
+{
+  "id": "drinks-cocktails",
+  "tiers": [
+    [
+      ["A margarita is made with lime juice, triple sec and this Mexican spirit.", "What is tequila?"],
+      ["James Bond famously orders his vodka martini shaken, not this.", "What is stirred?"],
+      ["A mimosa mixes sparkling wine with this breakfast juice.", "What is orange juice?"],
+      ["A piña colada blends rum, coconut cream and juice from this tropical fruit.", "What is pineapple?"],
+      ["Sparkling wine can only be called Champagne if it comes from this European country.", "What is France?"],
+      ["The Cuban mojito gets its fresh flavor from muddled leaves of this herb.", "What is mint?"]
+    ],
+    [
+      ["A Moscow Mule is traditionally served in a mug made of this metal.", "What is copper?"],
+      ["Gin gets its piney flavor from the berries of this plant.", "What is juniper?"],
+      ["A Bloody Mary is made with vodka and juice from this red fruit.", "What is a tomato?"],
+      ["The Cosmopolitan was made famous by Carrie Bradshaw and her friends in this HBO series.", "What is Sex and the City?"],
+      ["The Dude constantly sips White Russians in this Coen brothers comedy.", "What is The Big Lebowski?"],
+      ["Oktoberfest, the famous beer festival, is held every year in this German city.", "What is Munich?"]
+    ],
+    [
+      ["A Negroni combines gin, sweet vermouth and this bitter red Italian liqueur.", "What is Campari?"],
+      ["An Aperol Spritz is topped with soda water and this Italian sparkling wine.", "What is prosecco?"],
+      ["A classic Manhattan is made with sweet vermouth, bitters and this spicy type of whiskey.", "What is rye?"],
+      ["By law, bourbon's grain mixture must be at least 51 percent this crop.", "What is corn?"],
+      ["Canada's signature cocktail, invented in Calgary in 1969, pairs vodka with Clamato juice and is called this.", "What is the Caesar?"],
+      ["The Starbucks name comes from the first mate in this Herman Melville novel.", "What is Moby-Dick?"]
+    ],
+    [
+      ["The daiquiri is named after a village and beach near Santiago in this Caribbean country.", "What is Cuba?"],
+      ["The Mai Tai's almond-flavored syrup, essential to the tiki cocktail, is called this.", "What is orgeat?"],
+      ["The green spirit absinthe is flavored with anise, fennel and this bitter herb.", "What is wormwood?"],
+      ["Crown Royal whisky, sold in a purple velvet bag, is made in Gimli in this Canadian province.", "What is Manitoba?"],
+      ["The Pilsner style of beer was born in 1842 in this Czech city.", "What is Plzeň? (Also: Pilsen)"],
+      ["The flat white is a coffee claimed by both New Zealand and this country.", "What is Australia?"]
+    ],
+    [
+      ["Earl Grey tea gets its distinct aroma from the oil of this citrus fruit.", "What is bergamot?"],
+      ["Pepsi-Cola was first sold in 1893 under this name, after its pharmacist inventor.", "What is Brad's Drink?"],
+      ["The Sazerac, made with rye, bitters and an absinthe rinse, is the official cocktail of this U.S. city.", "What is New Orleans?"],
+      ["The Negroni was invented for a count in this Italian city around 1919.", "What is Florence?"],
+      ["Tonic water gets its bitter edge from this compound, once used to treat malaria.", "What is quinine?"],
+      ["The rum-and-ginger-beer Dark 'n' Stormy is widely called the national drink of this Atlantic island territory.", "What is Bermuda?"]
+    ]
+  ]
+}

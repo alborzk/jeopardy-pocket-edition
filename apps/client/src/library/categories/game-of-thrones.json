@@ -1,0 +1,45 @@
+{
+  "id": "game-of-thrones",
+  "tiers": [
+    [
+      ["House Stark's banner shows a grey one of these huge, wolf-like beasts.", "What is a direwolf?"],
+      ["The fought-over seat made from thousands of melted-down swords is called this.", "What is the Iron Throne?"],
+      ["Daenerys Targaryen is known as the Mother of these fire-breathing creatures.", "What are dragons?"],
+      ["Tyrion Lannister, the clever youngest son of Tywin, is played by this Emmy-winning actor.", "Who is Peter Dinklage?"],
+      ["Jon Snow takes the black and joins this order that guards the Wall.", "What is the Night's Watch?"],
+      ["Game of Thrones is based on the fantasy series A Song of Ice and Fire by this author.", "Who is George R.R. Martin?"]
+    ],
+    [
+      ["The Lannisters' unofficial motto says that a Lannister always pays these.", "What are debts?"],
+      ["Daenerys Targaryen is played by this British actress.", "Who is Emilia Clarke?"],
+      ["The Night King commands an army of these undead creatures.", "Who are the White Walkers?"],
+      ["Ned, Tywin and Tyrion all serve in this role as the king's chief adviser.", "What is the Hand of the King?"],
+      ["The Stark family's ancestral seat in the North is this castle.", "What is Winterfell?"],
+      ["Eddard Stark is executed on the orders of this cruel boy king.", "Who is Joffrey Baratheon?"]
+    ],
+    [
+      ["Along with Drogon and Rhaegal, Daenerys raises this third winged beast from an egg.", "What is Viserion?"],
+      ["Arya Stark's slender sword, a gift from Jon Snow, is named after this sewing tool.", "What is Needle?"],
+      ["Ned Stark is played by this actor, who also played Boromir in The Lord of the Rings.", "Who is Sean Bean?"],
+      ["Cersei's twin brother and lover, nicknamed the Kingslayer, is this man.", "Who is Jaime Lannister?"],
+      ["The Greyjoys of the Iron Islands have this tentacled sea monster as their sigil.", "What is a kraken?"],
+      ["The reply to valar morghulis, all men must die, is valar dohaeris: all men must do this.", "What is to serve?"]
+    ],
+    [
+      ["The Red Wedding takes place at the Twins, the castle of this house led by Walder.", "What is House Frey? (Also: the Freys)"],
+      ["Cersei destroys the Great Sept of Baelor using stockpiles of this green explosive substance.", "What is wildfire?"],
+      ["The walled Croatian city of Dubrovnik stands in for this capital of the Seven Kingdoms.", "What is King's Landing?"],
+      ["Ramsay, the sadistic bastard son of Roose, belongs to this house, whose sigil is a flayed man.", "What is House Bolton?"],
+      ["Jon Snow's parents are Lyanna Stark and this Targaryen prince.", "Who is Rhaegar Targaryen?"],
+      ["In the 2019 finale, the lords of Westeros choose this Stark, nicknamed the Broken, as king.", "Who is Bran Stark? (Also: Bran the Broken)"]
+    ],
+    [
+      ["Hodor's real name, revealed in a season 6 time-travel scene, is this.", "Who is Wylis?"],
+      ["The Dothraki and Valyrian languages were created for the show by this linguist.", "Who is David J. Peterson?"],
+      ["The show's theme was composed by this German-born composer, who also scored Westworld and Iron Man.", "Who is Ramin Djawadi?"],
+      ["Melisandre, the Red Woman, serves this fire god.", "Who is R'hllor? (Also: the Lord of Light)"],
+      ["Much of the show was filmed at Titanic Studios in this capital of Northern Ireland.", "What is Belfast?"],
+      ["Prince Oberyn Martell of Dorne goes by this venomous nickname.", "Who is the Red Viper?"]
+    ]
+  ]
+}

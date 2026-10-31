@@ -1,0 +1,45 @@
+{
+  "id": "legend-of-zelda",
+  "tiers": [
+    [
+      ["Link, Zelda and Ganon each hold a piece of this golden relic made of three triangles.", "What is the Triforce?"],
+      ["Link pulls this legendary blade, the Blade of Evil's Bane, from a stone pedestal.", "What is the Master Sword?"],
+      ["Link's loyal steed is a horse with this name.", "Who is Epona?"],
+      ["Link collects these colorful gems as the currency of Hyrule.", "What are rupees?"],
+      ["Link's health is shown as a row of these, and he can find containers to add more.", "What are hearts?"],
+      ["Hitting one of these farm birds over and over makes a whole angry flock attack you.", "What are Cuccos? (Also: chickens)"]
+    ],
+    [
+      ["Link's archenemy, the Gerudo King of Thieves, is named this.", "Who is Ganondorf? (Also: Ganon)"],
+      ["In Ocarina of Time, Link's fairy companion is forever telling him to listen.", "Who is Navi?"],
+      ["The 2023 sequel to Breath of the Wild has this title.", "What is Tears of the Kingdom?"],
+      ["In Twilight Princess, Link can transform into this animal.", "What is a wolf?"],
+      ["The very first Legend of Zelda game was released in Japan in this year.", "What is 1986?"],
+      ["The rock-loving race that lives on Death Mountain is called this.", "Who are the Gorons?"]
+    ],
+    [
+      ["Miyamoto named the princess after Zelda Fitzgerald, wife of this author of The Great Gatsby.", "Who is F. Scott Fitzgerald?"],
+      ["The Wind Waker's bold, cartoon-like look, which divided fans in 2002, is called this art style.", "What is cel-shading? (Also: cel-shaded)"],
+      ["Unlike most heroes, Link is traditionally this-handed with his sword.", "What is left-handed? (Also: left)"],
+      ["Majora's Mask gives Link this many days before the moon crashes down.", "What is three?"],
+      ["The Zelda theme and much of the series' iconic music was composed by this Nintendo composer.", "Who is Koji Kondo?"],
+      ["The 1991 Super Nintendo adventure sends Link between a Light World and a Dark World.", "What is A Link to the Past?"]
+    ],
+    [
+      ["Link's Awakening, the 1993 Game Boy adventure, is set on this dreamlike island.", "What is Koholint Island? (Also: Koholint)"],
+      ["Link's sarcastic, imp-like companion in Twilight Princess is named this.", "Who is Midna?"],
+      ["In Majora's Mask, the troublemaker who steals Link's horse and ocarina is called this.", "Who is Skull Kid?"],
+      ["In Breath of the Wild, these tiny forest spirits hide under rocks and reward you with seeds.", "Who are the Koroks?"],
+      ["In The Wind Waker, Zelda spends most of the game disguised as this pirate captain.", "Who is Tetra?"],
+      ["In Breath of the Wild, Link uses this tablet-like device to take photos and activate runes.", "What is the Sheikah Slate?"]
+    ],
+    [
+      ["Skyward Sword's helpful sword spirit, who lives inside the Goddess Sword, is named this.", "Who is Fi?"],
+      ["In The Wind Waker, Link sails the Great Sea aboard a talking boat with this royal name.", "Who is the King of Red Lions?"],
+      ["The 1987 sequel, Zelda II: The Adventure of Link, shifted much of the action to this camera view.", "What is side-scrolling? (Also: a side view)"],
+      ["Breath of the Wild scatters this many shrines across Hyrule.", "What is 120?"],
+      ["In Breath of the Wild, the Zora Champion who pilots Vah Ruta is a childhood friend of Link named this.", "Who is Mipha?"],
+      ["In the sequel to Breath of the Wild, the ancient civilization whose gadgets Link fuses together is called this.", "Who are the Zonai?"]
+    ]
+  ]
+}
