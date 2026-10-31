@@ -61,6 +61,12 @@ export const CATEGORIES: readonly CategoryInfo[] = [
     group: 'Entertainment',
     blurb: 'Pirates, Devil Fruits, the Grand Line',
   },
+  {
+    id: 'dino',
+    name: 'Dino',
+    group: 'Entertainment',
+    blurb: "Adults only. Don't ask.",
+  },
 
   // Franchises
   {

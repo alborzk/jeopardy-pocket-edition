@@ -33,7 +33,7 @@ for each room and rejoins on every reconnect, keeping the player's seat, score a
 ## The category library
 
 You don't have to write clues yourself: the board editor (`/editor`) can fill them in from a
-library of 77 categories, each with 30 clues: six candidates for each of five difficulty tiers. A
+library of 78 categories, each with 30 clues: six candidates for each of five difficulty tiers. A
 board's rows draw from the matching tiers, so $200 is easy and $1,000 is hard, and the same
 category gives different clues each time.
 
